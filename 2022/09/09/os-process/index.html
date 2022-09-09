@@ -9,7 +9,7 @@
     
     <title>
         
-            HTML 基础篇 |
+            操作系统知识点总结-进程管理 |
         
         🎈小客栈🎈
     </title>
@@ -244,7 +244,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">HTML 基础篇</span>
+            <span class="title-hover-animation">操作系统知识点总结-进程管理</span>
         </div>
 
         
@@ -263,24 +263,9 @@ mjx-container[display="true"] + br {
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-07 21:55:02</span>
-        <span class="mobile">2022-09-07 21:55</span>
+        <span class="pc">2022-09-09 12:42:33</span>
+        <span class="mobile">2022-09-09 12:42</span>
     </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/HTML/">HTML</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/HTML/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -288,11 +273,11 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/HTML/">HTML</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
+                        | <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">操作系统，进程管理</a>&nbsp;
                     </li>
                 
             </ul>
@@ -311,18 +296,82 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h1 id="HTML-基础总结"><a href="#HTML-基础总结" class="headerlink" title="HTML 基础总结"></a>HTML 基础总结</h1><h2 id="SEO-相关内容"><a href="#SEO-相关内容" class="headerlink" title="SEO 相关内容"></a>SEO 相关内容</h2><p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
-<h3 id="1-HTML-语义化的理解"><a href="#1-HTML-语义化的理解" class="headerlink" title="1. HTML 语义化的理解"></a>1. HTML 语义化的理解</h3><p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
-<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
-<ol>
-<li>更好的维护项目，提高代码可读性。</li>
-<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
-</ol>
-<h3 id="2-h1-标签和-title-标签之间的区别是什么？"><a href="#2-h1-标签和-title-标签之间的区别是什么？" class="headerlink" title="2. h1 标签和 title 标签之间的区别是什么？"></a>2. h1 标签和 title 标签之间的区别是什么？</h3><ul>
-<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
-<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
+            <h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><blockquote>
+<p>进程是资源分配的基本单位。</p>
+<p>进程控制块(Process Control Block PCB)描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 <code>PCB</code> 的操作。</p>
+</blockquote>
+<p>进程控制块包含下列信息：</p>
+<h5 id="1-进程标识符（PID）"><a href="#1-进程标识符（PID）" class="headerlink" title="1. 进程标识符（PID）"></a>1. 进程标识符（PID）</h5><p>进程标识符用于唯一地标识一个进程。</p>
+<p>一个进程通常由两种标识符组成：</p>
+<ul>
+<li><h6 id="内部标识符："><a href="#内部标识符：" class="headerlink" title="内部标识符："></a>内部标识符：</h6></li>
 </ul>
-<h3 id="3-lt-img-x2F-gt-中的-title-属性和-alt-属性的区别"><a href="#3-lt-img-x2F-gt-中的-title-属性和-alt-属性的区别" class="headerlink" title="3. <img /> 中的 title 属性和 alt 属性的区别"></a>3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3><p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
+<p>在所有操作系统中，都为每一个进程赋予了一个唯一的数字标识符，它通常是一个进程的序号，设置内部标识符主要是为了方便系统使用。</p>
+<ul>
+<li><h6 id="外部标识符："><a href="#外部标识符：" class="headerlink" title="外部标识符："></a>外部标识符：</h6></li>
+</ul>
+<p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p>
+<p>可以参考一个指令 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> pid </span><br><span class="line"><span class="built_in">kill</span> p_name</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-处理机状态"><a href="#2-处理机状态" class="headerlink" title="2. 处理机状态"></a>2. 处理机状态</h5><p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
+<p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW </code>、<code>用户栈指针</code></p>
+<p>这些信息显然和进程相关，因此，进程一旦被中断，就必须把这些信息保存在 <code>PCB</code> 中，以便在恢复运行时能完全恢复中断前的状态。</p>
+<h5 id="3-进程调度信息"><a href="#3-进程调度信息" class="headerlink" title="3. 进程调度信息"></a>3. 进程调度信息</h5><p>在 PCB 中还存放一些进程调度和进程对换相关的信息。</p>
+<p>包括：<code>进程状态</code>、<code>进程优先级</code>、<code>进程调度所需要的其他信息</code>（所采用的进程调度算法有关），<code>事件</code>（指进程由执行状态变为阻塞态所等待发生的事件，即阻塞原因）</p>
+<h5 id="4-进程控制信息"><a href="#4-进程控制信息" class="headerlink" title="4. 进程控制信息"></a>4. 进程控制信息</h5><ul>
+<li><p>程序和数据的地址。</p>
+</li>
+<li><p>进程同步和通信机制，指实现进程同步和进程通信时必须的机制，如消息队列的指针、信号量等，他们可能全部或部分的放在 <code>PCB</code>中。</p>
+</li>
+<li><p>资源清单，列出了出 <code>CPU</code>以外的、进程所需的全部资源及已经分配到改进程的资源清单。</p>
+</li>
+<li><p>链接指针，他给出了本进程（<code>PCB</code>）所在队列的下一个进程的 <code>PCB</code> 的首地址。</p>
+</li>
+</ul>
+<pre class="mermaid">classDiagram
+    class PCB
+    PCB : +唯一标识符
+    PCB : +状态机信息
+    PCB : +进程调度信息
+    PCB : +进程控制信息</pre>
+
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>线程是独立调度的基本单位。</p>
+<p>一个进程中可以由多个线程，他们共享进程资源。</p>
+<p>比如：QQ和浏览器是两个进程，浏览器中里面由很多线程，竟然刚好探讨到了浏览器的线程，值得一提的是单个页面基本有五种线程构成，包含插件线程，网络请求线程，计时器线程，渲染线程，事件触发线程（DomEvent），JS 线程。这里可以知道线程之间是可以共享资源 (HTML)的，但是浏览器的运行与QQ之间是不可通信的，资源是不共享的，QQ又有自己的进程，其下还有自己的线程。</p>
+<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
+<li>资源</li>
+</ul>
+<p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问所属进程的资源</p>
+<ul>
+<li>调度</li>
+</ul>
+<p>线程是独立调度的基本单位，在同一个进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换</p>
+<ul>
+<li>系统开销</li>
+</ul>
+<p>由于创建或撤销进程时,系统都要为之分配或回收资源，如内存空间，I/O 设备等，所付出的开销远大于创建或撤销线程时的开销。在进行进程切换时，涉及当前执行进程 <code>CPU</code> 环境的保存及新调度进 <code>CPU</code> 环境的设置，而线程切换时只需要设置和保存少量的少量的寄存器内容，故开销也很小。</p>
+<ul>
+<li>通信方面</li>
+</ul>
+<p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 <code>PIC</code>。</p>
+<h2 id="进程态的切换"><a href="#进程态的切换" class="headerlink" title="进程态的切换"></a>进程态的切换</h2><p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p>
+<ul>
+<li><p>就绪状态(ready): 等待被调度</p>
+</li>
+<li><p>运行状态(running)</p>
+</li>
+<li><p>阻塞状态(waiting): 等待资源</p>
+</li>
+</ul>
+<blockquote>
+<p>需要注意:</p>
+<ul>
+<li>只有就绪态和运行态可以相互转换,其他的都是单向转换,就绪状态的进程通过调度算法从而获得 <code>CPU</code> 事件,转为运行状态;而运行状态的进程,在分配给他的 CPU 时间片用完之后就会转为就绪状态,等待下一次调度.</li>
+<li>阻塞状态是缺少需要的资源从而由运行</li>
+<li></li>
+</ul>
+</blockquote>
 
         </div>
 
@@ -332,11 +381,11 @@ mjx-container[display="true"] + br {
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/HTML/">#HTML</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;
                     </li>
                 
                     <li class="tag-item">
-                        <a href="/tags/2023%E9%9D%A2%E8%AF%95/">#2023面试</a>&nbsp;
+                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">#操作系统，进程管理</a>&nbsp;
                     </li>
                 
             </ul>
@@ -345,21 +394,21 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
                            href="/2022/09/08/os/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">操作系统知识点总结-概览</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -463,7 +512,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93"><span class="nav-text">HTML 基础总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO-%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="nav-text">SEO 相关内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML-%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">1. HTML 语义化的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-h1-%E6%A0%87%E7%AD%BE%E5%92%8C-title-%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">2. h1 标签和 title 标签之间的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-lt-img-x2F-gt-%E4%B8%AD%E7%9A%84-title-%E5%B1%9E%E6%80%A7%E5%92%8C-alt-%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">3. &lt;img &#x2F;&gt; 中的 title 属性和 alt 属性的区别</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%88PID%EF%BC%89"><span class="nav-text">1. 进程标识符（PID）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">内部标识符：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">外部标识符：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%8A%B6%E6%80%81"><span class="nav-text">2. 处理机状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">3. 进程调度信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="nav-text">4. 进程控制信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">两者的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">进程态的切换</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

@@ -9,7 +9,7 @@
     
     <title>
         
-            操作系统知识点总结 |
+            操作系统知识点总结-概览 |
         
         🎈小客栈🎈
     </title>
@@ -238,12 +238,13 @@ mjx-container[display="true"] + br {
 
             <div class="main-content">
 
+
                 
                     <div class="fade-in-down-animation">
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">操作系统知识点总结</span>
+            <span class="title-hover-animation">操作系统知识点总结-概览</span>
         </div>
 
         
@@ -272,7 +273,15 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%82%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">基础知识。操作系统</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%A6%82%E8%A7%88/">概览</a>&nbsp;
                     </li>
                 
             </ul>
@@ -292,6 +301,36 @@ mjx-container[display="true"] + br {
 
         <div class="article-content markdown-body">
             <h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
+<pre class="mermaid">graph LR
+    %% Graph 图，待处理解析展示
+    Center((操作系统))
+    
+    Center --&gt; basePersonility(基本特征)
+    basePersonility--&gt;并发
+    basePersonility--&gt;共享
+    basePersonility--&gt;虚拟
+    basePersonility--&gt;异步
+    
+    Center --&gt; baseFunction(基本功能)
+    baseFunction--&gt;进程管理
+    baseFunction--&gt;内存管理
+    baseFunction--&gt;文件管理
+    baseFunction--&gt;设备管理
+
+    Center--根据系统功能分类--&gt;sysInner(内核)
+    sysInner--系统功能全在内核--&gt;marco(宏内核)
+    sysInner--除核心功能之外的系统功能在内部--&gt;mirco(微内核) 
+    sysInner--结合宏内核和微内核的特点--&gt;minixco(混合内核)
+    
+    Center--&gt;sysCall(系统调用)
+    
+    Center--&gt;interperter(中断分类)
+    interperter--CPU执行指令之外的事件--&gt;外中断
+    interperter--CPU执行内部事件引起的事件---&gt;异常
+    interperter--在用户程序中使用的系统调用--&gt;陷入</pre>
+
+
+
 <h2 id="基础特征"><a href="#基础特征" class="headerlink" title="基础特征"></a>基础特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><blockquote>
 <p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
@@ -311,7 +350,7 @@ mjx-container[display="true"] + br {
 
 
 
-<h4 id="3-虚拟"><a href="#3-虚拟" class="headerlink" title="3. 虚拟"></a>3. 虚拟</h4><blockquote>
+<h3 id="3-虚拟"><a href="#3-虚拟" class="headerlink" title="3. 虚拟"></a>3. 虚拟</h3><blockquote>
 <p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
 <p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p>
 <p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p>
@@ -327,7 +366,7 @@ mjx-container[display="true"] + br {
 <p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p>
 </blockquote>
 <ol>
-<li><p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（fork），撤销已有进程，实现进程状态转换的功能；</p>
+<li><p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（<strong>fork</strong>），撤销已有进程，实现进程状态转换的功能；</p>
 </li>
 <li><p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p>
 <p> 进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p>
@@ -404,7 +443,7 @@ mjx-container[display="true"] + br {
 <p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p>
 <h3 id="2-微内核"><a href="#2-微内核" class="headerlink" title="2. 微内核"></a>2. 微内核</h3><p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p>
-<h4 id="总结-摘抄自知乎"><a href="#总结-摘抄自知乎" class="headerlink" title="总结(摘抄自知乎)"></a>总结(摘抄自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h4><blockquote>
+<h3 id="总结-摘抄自知乎"><a href="#总结-摘抄自知乎" class="headerlink" title="总结(摘抄自知乎)"></a>总结(摘抄自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h3><blockquote>
 <p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p>
 </blockquote>
 <blockquote>
@@ -429,11 +468,9 @@ mjx-container[display="true"] + br {
     Wait=>operation: 等待
     st->cond
     cond(yes)->V
-    cond(no)->Wait</textarea><textarea id="flowchart-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">participant A
-participant B
-Note left of A: 进程A
+    cond(no)->Wait</textarea><textarea id="flowchart-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">Note left of A: 进程A
 Note right of B: 进程B
-Note over A。B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
+Note over A,B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
 participant B
 Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script>
         </div>
@@ -444,7 +481,15 @@ Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%82%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#基础知识。操作系统</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%A6%82%E8%A7%88/">#概览</a>&nbsp;
                     </li>
                 
             </ul>
@@ -452,6 +497,21 @@ Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/09/os-process/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-进程管理</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -571,7 +631,7 @@ Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
