@@ -100,10 +100,36 @@
 <p>需要注意:</p>
 <ul>
 <li>只有就绪态和运行态可以相互转换,其他的都是单向转换,就绪状态的进程通过调度算法从而获得 <code>CPU</code> 事件,转为运行状态;而运行状态的进程,在分配给他的 CPU 时间片用完之后就会转为就绪状态,等待下一次调度.</li>
-<li>阻塞状态是缺少需要的资源从而由运行</li>
-<li></li>
+<li>阻塞状态是缺少需要的资源从而由运行状态转换而来,但是该资源不包括<code>CPU</code>时间,缺少<code>CPU</code> 时间会从运行态转换为就绪态.</li>
 </ul>
 </blockquote>
+<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><p>不同环境的调度算法目标不同,因此需要针对不同环境来讨论调度算法.</p>
+<h3 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1. 批处理系统"></a>1. 批处理系统</h3><p>批处理系统没有太多的用户操作,该系统中,调度算法目标是保证吞吐量和周转时间(从提交到终止的时间).</p>
+<h4 id="1-1-先来先服务-first-come-fist-serverd-FCFS"><a href="#1-1-先来先服务-first-come-fist-serverd-FCFS" class="headerlink" title="1.1 先来先服务(first-come-fist-serverd FCFS)"></a>1.1 先来先服务(first-come-fist-serverd FCFS)</h4><p>非抢占式的调度算法,按照顺序进行调度.</p>
+<p>有利于长作业,但不利于短作业,因为短作业必须一直等待前面的长作业执行完毕才能执行,而长作业又需要执行很长的时间,造成了短作业等待的时间过长.</p>
+<p>最优状态,耗时短的作业先被执行:</p>
+<div id="sequence-0"></div>
+
+<p>最不利状态,耗时的作业一直占用 <code>CPU</code>,使得最短作业始终无法完成:</p>
+<div id="sequence-1"></div>
+
+
+
+<h4 id="1-2-短作业优先-shortest-job-fist-SJF"><a href="#1-2-短作业优先-shortest-job-fist-SJF" class="headerlink" title="1.2 短作业优先(shortest-job-fist SJF)"></a>1.2 短作业优先(shortest-job-fist SJF)</h4><p>非抢占式的掉段算法,按估计运行时间最短的顺序进行调度.</p>
+<p>长作业有可能会饿死,处于一直等待短作业执行完毕的状态.因为如果一直有短作业到来,那么长作业永远得不到调度.</p>
+<p>比较优的状态,耗时短的任务总量少于长任务,这样让作业更多的占比完成:</p>
+<div id="sequence-2"></div>
+
+<p>不利状态,耗时短的任务总量远大于长任务,那么这样饿死:</p>
+<h4 id="1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN" class="headerlink" title="1.3 最短剩余时间优先(shortest remaining time time next SRTN)"></a>1.3 最短剩余时间优先(shortest remaining time time next SRTN)</h4><p>最短作业优先的抢占式版本,按剩余运行时间的顺序调度,当一个新作也到达时,其整个运行时间与当前进程的剩余时间作比较,如果新的进程需要的时间更少,则挂起当前进程,运行新的进程,否则新的进程等待.<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">participant work_short_time_1
+participant work_short_time_2
+participant work_long_time_1
+participant worl_long_time_2</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant work_long_time_1
+participant worl_long_time_2
+participant work_short_time_1
+participant work_short_time_2</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script><textarea id="sequence-2-code" style="display: none">participant work_short_time
+participant work_short_time
+participant work_long_time</textarea><textarea id="sequence-2-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-2-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-2-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-2", options);</script></p>
 ]]></content>
       <tags>
         <tag>基础知识</tag>
