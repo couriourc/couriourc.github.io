@@ -25,4 +25,87 @@
         <tag>2023面试</tag>
       </tags>
   </entry>
+  <entry>
+    <title>操作系统知识点总结</title>
+    <url>/2022/09/08/os/</url>
+    <content><![CDATA[<h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
+<h2 id="基础特征"><a href="#基础特征" class="headerlink" title="基础特征"></a>基础特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><blockquote>
+<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+</blockquote>
+<p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p>
+<!--TODO: 处理 Hexo 时序图问题--->
+
+<div id="sequence-0"></div>
+
+<h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><blockquote>
+<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
+<p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
+</blockquote>
+<div id="sequence-1"></div>
+
+
+
+<h4 id="3-虚拟"><a href="#3-虚拟" class="headerlink" title="3. 虚拟"></a>3. 虚拟</h4><blockquote>
+<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p>
+<p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p>
+<p>虚拟内存则是使用了空分复用技术，他将物理内存抽象为地址空间，每一个进程都有各自的地址空间，地址空间的也被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
+<p>虚拟内存的关键问题：主要有调度问题、地址映射问题、替换问题、更新问题（要确保主存与辅存的一致性）</p>
+</blockquote>
+<p>个人认为，虚拟的好处在于可控，让每一步操作是出于可被控制可被调度的，也就使得可优化，更加稳定。</p>
+<h3 id="4-异步"><a href="#4-异步" class="headerlink" title="4. 异步"></a>4. 异步</h3><blockquote>
+<p>异步进程不是一次性排队完成，而是走走停停，每一步耗费的时间是不可知的</p>
+</blockquote>
+<p>异步和同步各自有不同的应用场景，不只是在操作系统上的概念，在各大编程语言上也有不同的信息。</p>
+<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><h3 id="1-进程管理"><a href="#1-进程管理" class="headerlink" title="1. 进程管理"></a>1. 进程管理</h3><blockquote>
+<p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p>
+</blockquote>
+<ol>
+<li><p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（fork），撤销已有进程，实现进程状态转换的功能；</p>
+</li>
+<li><p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p>
+<p> 进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p>
+<p> 这种两个或多个进程读写某些共享数据，而最后的结果却决于进行的精准时序，称为数据竞争，而这种多个程序可以并发执行，但是由于系统资源有限，程序的执行不是一贯到底的，而是以不可预知的速度推进的，这也就是之前说的<strong>异步性</strong>。</p>
+<p> 这种受到访问顺序限制的的数据是没有意义的（对于程序运行不能有二义性，也就是某一个状态是确定的），所以为了能够使得进程有一定的顺序来访问数据，从而引入了同步的概念。</p>
+<p> 对于资源是如此，对于数据库操作同样也是如此。</p>
+<p> 而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p>
+<p> <strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
+<h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><p> PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
+<p> 当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
+ <div id="flowchart-0" class="flow-chart"></div>
+
+<h4 id="V-操作"><a href="#V-操作" class="headerlink" title="V 操作"></a>V 操作</h4><p> 当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
+ <div id="flowchart-1" class="flow-chart"></div>
+
+ 
+</li>
+<li></li>
+</ol>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">    st=>start: P 操作
+    P=>operation: 减一执行进程
+    cond=>condition: 信号量>0?
+    Wait=>operation: 等待
+    st->cond
+    cond(yes)->P
+    cond(no)->Wait</textarea><textarea id="flowchart-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">    st=>start: V 操作
+    V=>operation: 减一执行进程
+    cond=>condition: 信号量>0?
+    Wait=>operation: 等待
+    st->cond
+    cond(yes)->V
+    cond(no)->Wait</textarea><textarea id="flowchart-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">participant A
+participant B
+Note left of A: 进程A
+Note right of B: 进程B
+Note over A,B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
+participant B
+Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script>]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
 </search>
