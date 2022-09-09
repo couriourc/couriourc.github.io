@@ -272,11 +272,7 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%82%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">基础知识。操作系统</a>&nbsp;
                     </li>
                 
             </ul>
@@ -341,16 +337,86 @@ mjx-container[display="true"] + br {
 <p> 而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p>
 <p> <strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
 <h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><p> PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
-<p> 当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
+<h4 id="P-操作"><a href="#P-操作" class="headerlink" title="P 操作"></a>P 操作</h4><p> 当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
  <div id="flowchart-0" class="flow-chart"></div>
 
 <h4 id="V-操作"><a href="#V-操作" class="headerlink" title="V 操作"></a>V 操作</h4><p> 当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
- <div id="flowchart-1" class="flow-chart"></div>
-
- 
-</li>
-<li></li>
+ <div id="flowchart-1" class="flow-chart"></div></li>
 </ol>
+<h3 id="2-内存管理"><a href="#2-内存管理" class="headerlink" title="2. 内存管理"></a>2. 内存管理</h3><blockquote>
+<p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
+</blockquote>
+<p>内存的管理分为文件内存，和运行内存，对于进程管理比较重要的就是运存的管理了。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pica.zhimg.com/v2-4c9fcddd65b35e84c4c6783aaeee3826_1440w.jpg?source=172ae18b" alt="操作系统—内存管理"></p>
+<h3 id="3-文件管理"><a href="#3-文件管理" class="headerlink" title="3. 文件管理"></a>3. 文件管理</h3><blockquote>
+<p>文件存储空间的管理、目录管理、文件读写管理和保护等</p>
+</blockquote>
+<h3 id="4-设备管理"><a href="#4-设备管理" class="headerlink" title="4. 设备管理"></a>4. 设备管理</h3><blockquote>
+<p>完成用户的 I/O 请求。为方便用户使用各种设备。并提高设备的利用率。</p>
+<p>主要包括缓冲管理、设备分配、设备处理、虚拟设备等</p>
+</blockquote>
+<p>这是对外的扩展。比如一些键盘。鼠标的信号输入处理。除此之外。网络 I/O 。需要注意的是，文件 I/O 和这种I/O 是由区别的，文件 I/O，更多的偏向于软件层面，</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2186c6a7b85642089000f57d49a3e58c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="img"></p>
+<blockquote>
+<p>我们日常讨论的网络通信本质上就是网络I/O，通过网络I/O，我们可以和远程设备进行通信（数据交换）。由于网络I/O和正常的磁盘I/O在性能和访问方式上有较大的差异，所以针对磁盘I/O的读写方法也就无法适用于网络I/O身上，大部分操作系统针对网络I/O抽象除了一套特殊的接口—— <strong>网络Socket接口</strong> ，用于对网络I/O进行操作。当然，上面也说了，在Linux当中“一切皆文件”，为了统一概念，Socket在Linux当中也是通过文件描述符来进行描述的，只不过这个文件描述符描述的不是本地文件，而是远程设备对应的文件。<br>作者：Brucebat<br>链接：<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7022249649511596063">https://juejin.cn/post/7022249649511596063<i class="fas fa-external-link-alt"></i></a><br>来源：稀土掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>对于 I/O 而言都是资源的访问，与接受，这两者的在我们使用的时候可能区别不大，但是对于计算机而言，处理的是不一样的信号量，网络 I/O 就像是外部数据的输入，文件 I/O 就如同内部资源的读写，网络 I/O 的另外一方就是通过网桥连接起来，使得信号能够交流.</p>
+<p>Linux 的系统调用主要有以下:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>进程控制</td>
+<td>fork();exit();wait()</td>
+</tr>
+<tr>
+<td>进程通信</td>
+<td>pipe();shmget();mmap();</td>
+</tr>
+<tr>
+<td>文件操作</td>
+<td>open();read();write();</td>
+</tr>
+<tr>
+<td>设备操作</td>
+<td>ioctl();read();write();</td>
+</tr>
+<tr>
+<td>信息维护</td>
+<td>getpid();alarm();sleep();</td>
+</tr>
+<tr>
+<td>安全</td>
+<td>chmod();umask();chown();</td>
+</tr>
+</tbody></table>
+<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而进入内核，有操作系统代为完成。</p>
+<p>用户态只能调用受限指令。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/319223950e3f4d6484f708d710d694da.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h2><h3 id="1-宏内核"><a href="#1-宏内核" class="headerlink" title="1. 宏内核"></a>1. 宏内核</h3><blockquote>
+<p>宏内核是将操作系统功能作为一个紧密结合的整体放到类和。由于各个模块共享信息，因此有很高的性能。</p>
+</blockquote>
+<p>那么由于宏内核就是将所有的系统调用直接放在一层，那么这样的操作就避免了跨层的调用，因此效果很好，但是带来的问题就是耦合度明显很高，同时安全性也有待商榷。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p>
+<h3 id="2-微内核"><a href="#2-微内核" class="headerlink" title="2. 微内核"></a>2. 微内核</h3><p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p>
+<h4 id="总结-摘抄自知乎"><a href="#总结-摘抄自知乎" class="headerlink" title="总结(摘抄自知乎)"></a>总结(摘抄自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h4><blockquote>
+<p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p>
+</blockquote>
+<blockquote>
+<p>而微内核则恰恰相反，它为了降低耦合，内核中只会允许一些核心功能的存在，而其余所有功能都会被移出内核，变成一种特殊的用户进程——服务进程。其优点就是各个模块之间是独立的，不会相互影响，但其性能相比宏内核会大幅度下降。</p>
+</blockquote>
+<blockquote>
+<p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p>
+</blockquote>
+<p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p>
+<h2 id="中断分类"><a href="#中断分类" class="headerlink" title="中断分类"></a>中断分类</h2><h3 id="1-外中断"><a href="#1-外中断" class="headerlink" title="1. 外中断"></a>1. 外中断</h3><p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
+<h3 id="2-异常"><a href="#2-异常" class="headerlink" title="2. 异常"></a>2. 异常</h3><p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
+<h3 id="3-陷入"><a href="#3-陷入" class="headerlink" title="3. 陷入"></a>3. 陷入</h3><p>在用户程序中使用系统调用。</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">    st=>start: P 操作
     P=>operation: 减一执行进程
     cond=>condition: 信号量>0?
@@ -367,9 +433,9 @@ mjx-container[display="true"] + br {
 participant B
 Note left of A: 进程A
 Note right of B: 进程B
-Note over A,B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
+Note over A。B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
 participant B
-Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script>
+Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script>
         </div>
 
         
@@ -378,11 +444,7 @@ Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同�
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E3%80%82%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#基础知识。操作系统</a>&nbsp;
                     </li>
                 
             </ul>
@@ -509,7 +571,7 @@ Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
