@@ -339,14 +339,20 @@ mjx-container[display="true"] + br {
 <p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p>
 <!--TODO: 处理 Hexo 时序图问题--->
 
-<div id="sequence-0"></div>
+<pre class="mermaid">sequenceDiagram
+Note left of A: 进程A
+Note right of B: 进程B
+Note over A,B: CPU 在 AB 之间快速切换</pre>
 
 <h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><blockquote>
 <p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
 <p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
 <p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
 </blockquote>
-<div id="sequence-1"></div>
+<pre class="mermaid">sequenceDiagram
+participant A
+participant B
+Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</pre>
 
 
 
@@ -377,10 +383,15 @@ mjx-container[display="true"] + br {
 <p> <strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
 <h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><p> PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
 <h4 id="P-操作"><a href="#P-操作" class="headerlink" title="P 操作"></a>P 操作</h4><p> 当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
- <div id="flowchart-0" class="flow-chart"></div>
-
+ <pre class="mermaid">    graph TB
+ start(P 操作)--&gt;isSingleN{信号量}
+ isSingleN---大于0--&gt; down(信号量减一)
+ isSingleN---等于0--&gt; wait(等待)</pre>
 <h4 id="V-操作"><a href="#V-操作" class="headerlink" title="V 操作"></a>V 操作</h4><p> 当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
- <div id="flowchart-1" class="flow-chart"></div></li>
+ <pre class="mermaid">    graph TB
+ start(V 操作)--&gt;isSingleN{信号量}
+ isSingleN---大于0--&gt; down(信号量减一)
+ isSingleN---等于0--&gt; wait(等待)</pre></li>
 </ol>
 <h3 id="2-内存管理"><a href="#2-内存管理" class="headerlink" title="2. 内存管理"></a>2. 内存管理</h3><blockquote>
 <p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
@@ -456,23 +467,7 @@ mjx-container[display="true"] + br {
 <h2 id="中断分类"><a href="#中断分类" class="headerlink" title="中断分类"></a>中断分类</h2><h3 id="1-外中断"><a href="#1-外中断" class="headerlink" title="1. 外中断"></a>1. 外中断</h3><p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
 <h3 id="2-异常"><a href="#2-异常" class="headerlink" title="2. 异常"></a>2. 异常</h3><p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
 <h3 id="3-陷入"><a href="#3-陷入" class="headerlink" title="3. 陷入"></a>3. 陷入</h3><p>在用户程序中使用系统调用。</p>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">    st=>start: P 操作
-    P=>operation: 减一执行进程
-    cond=>condition: 信号量>0?
-    Wait=>operation: 等待
-    st->cond
-    cond(yes)->P
-    cond(no)->Wait</textarea><textarea id="flowchart-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">    st=>start: V 操作
-    V=>operation: 减一执行进程
-    cond=>condition: 信号量>0?
-    Wait=>operation: 等待
-    st->cond
-    cond(yes)->V
-    cond(no)->Wait</textarea><textarea id="flowchart-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">Note left of A: 进程A
-Note right of B: 进程B
-Note over A,B: CPU 在 AB 之间快速切换</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant A
-participant B
-Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script>
+
         </div>
 
         
@@ -548,19 +543,34 @@ Note over A。B: 按照顺序的去进入同一个进程，或者说叫做被同
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2022</span>
-              -
+                <span>2022</span>
+                -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a>
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+                    href="/">CouriourC</a>
         </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
+            &nbsp;|&nbsp;主题
+            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                v3.4.5</a>
         </div>
         
         
     </div>
+
 </footer>
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script>
+
+
+
 
         </div>
     </div>

@@ -312,7 +312,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p>
 <p>可以参考一个指令 </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> pid </span><br><span class="line"><span class="built_in">kill</span> p_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">kill</span> pid <br><span class="hljs-built_in">kill</span> p_name<br></code></pre></td></tr></table></figure>
 
 <h5 id="2-处理机状态"><a href="#2-处理机状态" class="headerlink" title="2. 处理机状态"></a>2. 处理机状态</h5><p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
 <p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW </code>、<code>用户栈指针</code></p>
@@ -376,28 +376,24 @@ mjx-container[display="true"] + br {
 <h4 id="1-1-先来先服务-first-come-fist-serverd-FCFS"><a href="#1-1-先来先服务-first-come-fist-serverd-FCFS" class="headerlink" title="1.1 先来先服务(first-come-fist-serverd FCFS)"></a>1.1 先来先服务(first-come-fist-serverd FCFS)</h4><p>非抢占式的调度算法,按照顺序进行调度.</p>
 <p>有利于长作业,但不利于短作业,因为短作业必须一直等待前面的长作业执行完毕才能执行,而长作业又需要执行很长的时间,造成了短作业等待的时间过长.</p>
 <p>最优状态,耗时短的作业先被执行:</p>
-<div id="sequence-0"></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sequence">participant work_short_time_1<br>participant work_short_time_2<br>participant work_long_time_1<br>participant worl_long_time_2<br></code></pre></td></tr></table></figure>
 
 <p>最不利状态,耗时的作业一直占用 <code>CPU</code>,使得最短作业始终无法完成:</p>
-<div id="sequence-1"></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sequence">participant work_long_time_1<br>participant worl_long_time_2<br>participant work_short_time_1<br>participant work_short_time_2<br></code></pre></td></tr></table></figure>
 
 
 
 <h4 id="1-2-短作业优先-shortest-job-fist-SJF"><a href="#1-2-短作业优先-shortest-job-fist-SJF" class="headerlink" title="1.2 短作业优先(shortest-job-fist SJF)"></a>1.2 短作业优先(shortest-job-fist SJF)</h4><p>非抢占式的掉段算法,按估计运行时间最短的顺序进行调度.</p>
 <p>长作业有可能会饿死,处于一直等待短作业执行完毕的状态.因为如果一直有短作业到来,那么长作业永远得不到调度.</p>
 <p>比较优的状态,耗时短的任务总量少于长任务,这样让作业更多的占比完成:</p>
-<div id="sequence-2"></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sequence">participant work_short_time<br>participant work_short_time<br>participant work_long_time<br></code></pre></td></tr></table></figure>
 
-<p>不利状态,耗时短的任务总量远大于长任务,那么这样饿死:</p>
-<h4 id="1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN" class="headerlink" title="1.3 最短剩余时间优先(shortest remaining time time next SRTN)"></a>1.3 最短剩余时间优先(shortest remaining time time next SRTN)</h4><p>最短作业优先的抢占式版本,按剩余运行时间的顺序调度,当一个新作也到达时,其整个运行时间与当前进程的剩余时间作比较,如果新的进程需要的时间更少,则挂起当前进程,运行新的进程,否则新的进程等待.<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">participant work_short_time_1
-participant work_short_time_2
-participant work_long_time_1
-participant worl_long_time_2</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant work_long_time_1
-participant worl_long_time_2
-participant work_short_time_1
-participant work_short_time_2</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script><textarea id="sequence-2-code" style="display: none">participant work_short_time
-participant work_short_time
-participant work_long_time</textarea><textarea id="sequence-2-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-2-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-2-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-2", options);</script></p>
+<p>不利状态,耗时短的任务总量远大于长任务,那么这样饿死的就是相对较短的长任务了🎃:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sequence">participant work_short_time<br>participant work_short_time_2<br>participant .....一堆短任务<br>participant work_long_time_1<br>participant work_long_time_2<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN" class="headerlink" title="1.3 最短剩余时间优先(shortest remaining time time next SRTN)"></a>1.3 最短剩余时间优先(shortest remaining time time next SRTN)</h4><p>最短作业优先的抢占式版本,按剩余运行时间的顺序调度,当一个新作也到达时,其整个运行时间与当前进程的剩余时间作比较,如果新的进程需要的时间更少,则挂起当前进程,运行新的进程,否则新的进程等待.</p>
 
         </div>
 
@@ -455,19 +451,34 @@ participant work_long_time</textarea><textarea id="sequence-2-options" style="di
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2022</span>
-              -
+                <span>2022</span>
+                -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a>
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+                    href="/">CouriourC</a>
         </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
+            &nbsp;|&nbsp;主题
+            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                v3.4.5</a>
         </div>
         
         
     </div>
+
 </footer>
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script>
+
+
+
 
         </div>
     </div>
