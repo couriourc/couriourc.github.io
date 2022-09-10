@@ -27,7 +27,7 @@
   </entry>
   <entry>
     <title>操作系统知识点总结-概览</title>
-    <url>/2022/09/08/os-README/</url>
+    <url>/2022/09/08/os-os-overview/</url>
     <content><![CDATA[<h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
 <pre class="mermaid">graph LR
     %% Graph 图，待处理解析展示
