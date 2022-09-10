@@ -89,11 +89,11 @@
 <p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 <code>PIC</code>。</p>
 <h2 id="进程态的切换"><a href="#进程态的切换" class="headerlink" title="进程态的切换"></a>进程态的切换</h2><p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p>
 <ul>
-<li><p>就绪状态(ready): 等待被调度</p>
+<li><p>就绪状态(<code>ready</code>): 等待被调度</p>
 </li>
-<li><p>运行状态(running)</p>
+<li><p>运行状态(<code>running</code>)</p>
 </li>
-<li><p>阻塞状态(waiting): 等待资源</p>
+<li><p>阻塞状态(<code>waiting</code>): 等待资源</p>
 </li>
 </ul>
 <blockquote>
@@ -108,25 +108,41 @@
 <h4 id="1-1-先来先服务-first-come-fist-serverd-FCFS"><a href="#1-1-先来先服务-first-come-fist-serverd-FCFS" class="headerlink" title="1.1 先来先服务(first-come-fist-serverd FCFS)"></a>1.1 先来先服务(first-come-fist-serverd FCFS)</h4><p>非抢占式的调度算法,按照顺序进行调度.</p>
 <p>有利于长作业,但不利于短作业,因为短作业必须一直等待前面的长作业执行完毕才能执行,而长作业又需要执行很长的时间,造成了短作业等待的时间过长.</p>
 <p>最优状态,耗时短的作业先被执行:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">participant work_short_time_1<br>participant work_short_time_2<br>participant work_long_time_1<br>participant worl_long_time_2<br></code></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+    participant work_short_time_1
+    participant work_short_time_2
+    participant work_long_time_1
+    participant worl_long_time_2</pre>
 
 <p>最不利状态,耗时的作业一直占用 <code>CPU</code>,使得最短作业始终无法完成:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">participant work_long_time_1<br>participant worl_long_time_2<br>participant work_short_time_1<br>participant work_short_time_2<br></code></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+participant work_long_time_1
+participant worl_long_time_2
+participant work_short_time_1
+participant work_short_time_2</pre>
 
 
 
 <h4 id="1-2-短作业优先-shortest-job-fist-SJF"><a href="#1-2-短作业优先-shortest-job-fist-SJF" class="headerlink" title="1.2 短作业优先(shortest-job-fist SJF)"></a>1.2 短作业优先(shortest-job-fist SJF)</h4><p>非抢占式的掉段算法,按估计运行时间最短的顺序进行调度.</p>
 <p>长作业有可能会饿死,处于一直等待短作业执行完毕的状态.因为如果一直有短作业到来,那么长作业永远得不到调度.</p>
 <p>比较优的状态,耗时短的任务总量少于长任务,这样让作业更多的占比完成:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">participant work_short_time<br>participant work_short_time<br>participant work_long_time<br></code></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+participant work_short_time
+participant work_short_time
+participant work_long_time</pre>
 
 <p>不利状态,耗时短的任务总量远大于长任务,那么这样饿死的就是相对较短的长任务了🎃:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">participant work_short_time<br>participant work_short_time_2<br>participant .....一堆短任务<br>participant work_long_time_1<br>participant work_long_time_2<br><br></code></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+    participant work_short_time
+    participant work_short_time_2
+    participant .....一堆短任务
+    participant work_long_time_1
+    participant work_long_time_2</pre>
 
 
 
 <h4 id="1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-time-next-SRTN" class="headerlink" title="1.3 最短剩余时间优先(shortest remaining time time next SRTN)"></a>1.3 最短剩余时间优先(shortest remaining time time next SRTN)</h4><p>最短作业优先的抢占式版本,按剩余运行时间的顺序调度,当一个新作也到达时,其整个运行时间与当前进程的剩余时间作比较,如果新的进程需要的时间更少,则挂起当前进程,运行新的进程,否则新的进程等待.</p>
-]]></content>
+<h3 id="2-交互式系统"><a href="#2-交互式系统" class="headerlink" title="2.交互式系统"></a>2.交互式系统</h3>]]></content>
       <tags>
         <tag>基础知识</tag>
         <tag>操作系统，进程管理</tag>
@@ -175,9 +191,9 @@
 <!--TODO: 处理 Hexo 时序图问题--->
 
 <pre class="mermaid">sequenceDiagram
-Note left of A: 进程A
-Note right of B: 进程B
-Note over A,B: CPU 在 AB 之间快速切换</pre>
+    Note left of A: 进程A
+    Note right of B: 进程B
+    Note over A,B: CPU 在 AB 之间快速切换</pre>
 
 <h3 id="2-共享"><a href="#2-共享" class="headerlink" title="2. 共享"></a>2. 共享</h3><blockquote>
 <p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
@@ -185,9 +201,9 @@ Note over A,B: CPU 在 AB 之间快速切换</pre>
 <p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
 </blockquote>
 <pre class="mermaid">sequenceDiagram
-participant A
-participant B
-Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</pre>
+    participant A
+    participant B
+    Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</pre>
 
 
 
@@ -219,14 +235,14 @@ Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同�
 <h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><p> PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
 <h4 id="P-操作"><a href="#P-操作" class="headerlink" title="P 操作"></a>P 操作</h4><p> 当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
  <pre class="mermaid">    graph TB
- start(P 操作)--&gt;isSingleN{信号量}
- isSingleN---大于0--&gt; down(信号量减一)
- isSingleN---等于0--&gt; wait(等待)</pre>
+     start(P 操作)--&gt;isSingleN{信号量}
+     isSingleN---大于0--&gt; down(信号量减一)
+     isSingleN---等于0--&gt; wait(等待)</pre>
 <h4 id="V-操作"><a href="#V-操作" class="headerlink" title="V 操作"></a>V 操作</h4><p> 当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
  <pre class="mermaid">    graph TB
- start(V 操作)--&gt;isSingleN{信号量}
- isSingleN---大于0--&gt; down(信号量减一)
- isSingleN---等于0--&gt; wait(等待)</pre></li>
+     start(V 操作)--&gt;isSingleN{信号量}
+     isSingleN---大于0--&gt; down(信号量减一)
+     isSingleN---等于0--&gt; wait(等待)</pre></li>
 </ol>
 <h3 id="2-内存管理"><a href="#2-内存管理" class="headerlink" title="2. 内存管理"></a>2. 内存管理</h3><blockquote>
 <p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
