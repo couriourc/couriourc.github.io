@@ -503,6 +503,8 @@ Center--&gt;Feedback</pre>
 <p>可以将这种算法看作是 RR 和优先级调度算法的结合.</p>
 <p>对于优先级最低的队列来说,里面遵循的是 <code>RR</code> .也就是说,位于队列中有  M 个作业,他们的运行时间是通过队列所设定的时间片来确定的;对于其他队列,遵循的是<code>FIFS</code>,每一个进程分配一定的时间片,若时间片进程未结束,则进入下一优先级队列的末尾.</p>
 <p>各个队列的时间片是随着优先级的增加而减少的,也就是说,优先级越高的队列中他的时间片越短,同时,为了便于那些超大作业的完成,最后一个队列的时间片一般不大.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 关于非抢占式的多级反馈系统</span><br><br><br><br></code></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -533,10 +535,10 @@ Center--&gt;Feedback</pre>
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/08/os-os-overview/"
+                           href="/2022/09/08/os-os-development/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">操作系统知识点总结-概览</span>
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">

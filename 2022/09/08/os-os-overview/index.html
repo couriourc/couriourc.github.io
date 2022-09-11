@@ -329,8 +329,14 @@ mjx-container[display="true"] + br {
     interperter--CPU执行内部事件引起的事件---&gt;异常
     interperter--在用户程序中使用的系统调用--&gt;陷入</pre>
 
-
-
+<h2 id="操作系统的基本定义"><a href="#操作系统的基本定义" class="headerlink" title="操作系统的基本定义"></a>操作系统的基本定义</h2><blockquote>
+<p>操作系统(Operating System,OS) 是指控制和管理整个计算机系统的硬件和软件资源,并合理地组织调度计算机和资源分配;提供给<strong>用户和其他软件方便的接口和环境</strong>;它是计算机系统中最基本的<strong>系统软件</strong>.</p>
+</blockquote>
+<h3 id="操作系统的角色"><a href="#操作系统的角色" class="headerlink" title="操作系统的角色"></a>操作系统的角色</h3><ul>
+<li>操作系统是系统资源的<strong>管理者</strong></li>
+<li>操作系统<strong>向上提供</strong>方便易用的服务</li>
+<li>操作系统是<strong>最接近硬件</strong>的一层<strong>软件</strong></li>
+</ul>
 <h2 id="基础特征"><a href="#基础特征" class="headerlink" title="基础特征"></a>基础特征</h2><h3 id="1-并发"><a href="#1-并发" class="headerlink" title="1. 并发"></a>1. 并发</h3><blockquote>
 <p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
@@ -350,9 +356,9 @@ mjx-container[display="true"] + br {
 <p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
 </blockquote>
 <pre class="mermaid">sequenceDiagram
-    participant A
-    participant B
-    Note over A,B: 按照顺序的去进入同一个进程，或者说叫做被同一个进程依次占有，就像打印机队列那样</pre>
+    title 按照顺序的去进入同一个进程
+    participant AssetA
+    participant AssetB</pre>
 
 
 
@@ -465,6 +471,14 @@ mjx-container[display="true"] + br {
 <p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p>
 </blockquote>
 <p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p>
+<h2 id="操作系统向上提供方便易用的服务"><a href="#操作系统向上提供方便易用的服务" class="headerlink" title="操作系统向上提供方便易用的服务"></a>操作系统向上提供方便易用的服务</h2><h3 id="命令接口"><a href="#命令接口" class="headerlink" title="命令接口"></a>命令接口</h3><ul>
+<li>联机命令接口(交互式命令接口)-&gt;基本命令行(CLI)</li>
+<li>脱机命令接口(批处理命令接口)-&gt;脚本(bat ,sh)</li>
+<li>程序接口(广义指令)-&gt;GUI</li>
+</ul>
+<blockquote>
+<p>可以再程序中进行系统调用来使用程序接口,普通用户不能直接使用程序接口,只能通过程序代码间接使用.</p>
+</blockquote>
 <h2 id="中断分类"><a href="#中断分类" class="headerlink" title="中断分类"></a>中断分类</h2><h3 id="1-外中断"><a href="#1-外中断" class="headerlink" title="1. 外中断"></a>1. 外中断</h3><p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
 <h3 id="2-异常"><a href="#2-异常" class="headerlink" title="2. 异常"></a>2. 异常</h3><p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
 <h3 id="3-陷入"><a href="#3-陷入" class="headerlink" title="3. 陷入"></a>3. 陷入</h3><p>在用户程序中使用系统调用。</p>
@@ -497,13 +511,13 @@ mjx-container[display="true"] + br {
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/09/09/os-os-process/"
+                           href="/2022/09/08/os-os-development/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">操作系统知识点总结-进程管理</span>
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -642,7 +656,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%A7%88"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">操作系统的基本定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-text">操作系统的角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%90%91%E4%B8%8A%E6%8F%90%E4%BE%9B%E6%96%B9%E4%BE%BF%E6%98%93%E7%94%A8%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-text">操作系统向上提供方便易用的服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%8E%A5%E5%8F%A3"><span class="nav-text">命令接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
