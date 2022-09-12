@@ -305,7 +305,49 @@ mjx-container[display="true"] + br {
 
         <div class="article-content markdown-body">
             <h1 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h1><p>不同环境的调度算法目标不同,因此需要针对不同环境来讨论调度算法.</p>
-<h2 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1. 批处理系统"></a>1. 批处理系统</h2><p>批处理系统没有太多的用户操作,该系统中,调度算法目标是保证吞吐量和周转时间(从提交到终止的时间).</p>
+<h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><blockquote>
+<p>在处理机调度是对处理机进行分配，即从就绪队列中按照一定的算法选择一个进程并将处理机给它运行，以实现进程并发地运行。</p>
+</blockquote>
+<p>这样说起来可能有点绕，其实就是 CPU 这些处理器，按照一定策略执行某个进程。</p>
+<p>处理机调度是多道程序操作系统的基础，是操作系统设计的核心问题。</p>
+<h2 id="调度的层次"><a href="#调度的层次" class="headerlink" title="调度的层次"></a>调度的层次</h2><h3 id="作业调度（高级调度）"><a href="#作业调度（高级调度）" class="headerlink" title="作业调度（高级调度）"></a>作业调度（高级调度）</h3><blockquote>
+<p>按照一定原则从外存上处于后备（待开始）队列的作业选择一个或多个作业，给予必要的资源，并建立相应的<strong>进程块</strong>（<strong>PCB</strong>）,以使他获得竞争处理及资源的权力。</p>
+</blockquote>
+<p>作业调度是外存和内存之间的调度，每个作业只调用一次，调出一次，作业调度时建立。</p>
+<p>也就是进程的创建过程。</p>
+<h3 id="内存调度（中级调度）"><a href="#内存调度（中级调度）" class="headerlink" title="内存调度（中级调度）"></a>内存调度（中级调度）</h3><blockquote>
+<p>可以将暂时不能运行的进程调至外存等待，这些进程会进入“<strong>挂起</strong>”状态，其 <strong>PCB</strong> 仍然常驻在内存，将放入到挂起队列中，其目的是提高内存利用率和系统吞吐量。</p>
+</blockquote>
+<p>通过中级调度来决定哪个处于挂起状态的进程重新调入内存中。</p>
+<h3 id="进程调度（低级调度）"><a href="#进程调度（低级调度）" class="headerlink" title="进程调度（低级调度）"></a>进程调度（低级调度）</h3><blockquote>
+<p>按照某种方法和策略从就绪队列中选择一个进程，将处理及分配。</p>
+</blockquote>
+<p>进程调度是操作系统<strong>最基本的一种调度，其频率很高</strong>，一般几十毫秒（一个时间片</p>
+<table>
+<thead>
+<tr>
+<th>调度类型</th>
+<th>调度位置</th>
+<th>进程状态变化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>作业调度（高级调度）</td>
+<td>外存–&gt;内存（面向作业）</td>
+<td>无–&gt;创建态–&gt;就绪态</td>
+</tr>
+<tr>
+<td>内存调度（中级调度）</td>
+<td>外存–&gt;内存（面向进程）</td>
+<td>挂起–&gt;就绪态（阻塞挂起–&gt;阻塞态）</td>
+</tr>
+<tr>
+<td>进程调度（低级调度）</td>
+<td>内存–&gt;CPU</td>
+<td>就绪态–&gt;挂起态</td>
+</tr>
+</tbody></table>
+<h2 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h2><p>批处理系统没有太多的用户操作,该系统中,调度算法目标是保证吞吐量和周转时间(从提交到终止的时间).</p>
 <h3 id="1-1-先来先服务-first-come-fist-serverd-FCFS"><a href="#1-1-先来先服务-first-come-fist-serverd-FCFS" class="headerlink" title="1.1 先来先服务(first-come-fist-serverd FCFS)"></a><span id="FCFS">1.1 先来先服务(first-come-fist-serverd FCFS)</span></h3><p>非抢占式的调度算法,按照顺序进行调度.</p>
 <p>有利于长作业,但不利于短作业,因为短作业必须一直等待前面的长作业执行完毕才能执行,而长作业又需要执行很长的时间,造成了短作业等待的时间过长.</p>
 <p>最优状态,耗时短的作业先被执行:</p>
@@ -429,9 +471,41 @@ Center--&gt;Feedback</pre>
 <h3 id="2-3-多级反馈队列"><a href="#2-3-多级反馈队列" class="headerlink" title="2.3 多级反馈队列"></a>2.3 多级反馈队列</h3><p>一个进程需要 100 个时间片,如果采用<code>RR</code> ,那么需要交换 100 次.</p>
 <p>多级队列是为这种需要连续执行多个时间片的进程考虑的,它设置了多个队列,每个队列时间片大小都不同,列如 1,2,4,8,..…进程在第一个队列没执行完,就会被移到下一个队列.这种方式下,之前的进程只需要交换 7 次.</p>
 <p>每个队列的优先权也不同,最上面的优先权最高.因此只有上一个队列没有进程在排队,才能调度当前队列上的进程.</p>
-<p>可以将这种算法看作是 RR 和优先级调度算法的结合.</p>
+<p>可以将这种算法看作是 <code>RR </code>和优先级调度算法的结合.</p>
 <p>对于优先级最低的队列来说,里面遵循的是 <code>RR</code> .也就是说,位于队列中有  M 个作业,他们的运行时间是通过队列所设定的时间片来确定的;对于其他队列,遵循的是<code>FIFS</code>,每一个进程分配一定的时间片,若时间片进程未结束,则进入下一优先级队列的末尾.</p>
 <p>各个队列的时间片是随着优先级的增加而减少的,也就是说,优先级越高的队列中他的时间片越短,同时,为了便于那些超大作业的完成,最后一个队列的时间片一般不大</p>
+<h2 id="上下文及切换地址"><a href="#上下文及切换地址" class="headerlink" title="上下文及切换地址"></a>上下文及切换地址</h2><pre class="mermaid">graph BT
+
+subgraph 线程的内容
+    pc(程序计数器)
+    registry(寄存器)
+    heap(堆栈)
+    status(状态)
+end
+
+subgraph 进程的内容
+    addreaddSpace(地址空间)
+    globalVar(全局变量)
+    assets("打开文件")
+end
+
+classDef important fill:#b03853,color: #eeee;
+class addreaddSpace,pc,registry,heap important;</pre>
+
+<blockquote>
+<p>标红部分 是进程/线程切换时需要恢复的上下文</p>
+</blockquote>
+<p>进程切换导致的地址空间代价巨大：</p>
+<ul>
+<li><p>保存/恢复页表寄存器</p>
+</li>
+<li><p><code>TLB </code>全部失效<img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-70f03a91b02fe51cced8cb57fa30d84b_720w.jpg" alt="img"></p>
+</li>
+<li><p><code>Cache </code>全部失效，有可能需要 <code>Cache </code>回写恢复</p>
+</li>
+<li><p>新进程运行初期可能缺页不高，需要 <code>I/O</code> 操作</p>
+</li>
+</ul>
 
         </div>
 
@@ -461,6 +535,21 @@ Center--&gt;Feedback</pre>
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/12/os-os-process-sync/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-进程同步</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -595,7 +684,7 @@ Center--&gt;Feedback</pre>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">进程调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%89%B9%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">1. 批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1-first-come-fist-serverd-FCFS"><span class="nav-text">1.1 先来先服务(first-come-fist-serverd FCFS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88-shortest-job-fist-SJF"><span class="nav-text">1.2 短作业优先(shortest-job-fist SJF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%9C%80%E7%9F%AD%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88-shortest-remaining-time-time-next-SRTN"><span class="nav-text">1.3 最短剩余时间优先(shortest remaining time time next SRTN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-text">2.交互式系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC"><span class="nav-text">2.1 时间片轮转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="nav-text">2.2 优先级调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97"><span class="nav-text">2.3 多级反馈队列</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">进程调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">调度的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="nav-text">调度的层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6%EF%BC%88%E9%AB%98%E7%BA%A7%E8%B0%83%E5%BA%A6%EF%BC%89"><span class="nav-text">作业调度（高级调度）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E8%B0%83%E5%BA%A6%EF%BC%88%E4%B8%AD%E7%BA%A7%E8%B0%83%E5%BA%A6%EF%BC%89"><span class="nav-text">内存调度（中级调度）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%EF%BC%88%E4%BD%8E%E7%BA%A7%E8%B0%83%E5%BA%A6%EF%BC%89"><span class="nav-text">进程调度（低级调度）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1-first-come-fist-serverd-FCFS"><span class="nav-text">1.1 先来先服务(first-come-fist-serverd FCFS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88-shortest-job-fist-SJF"><span class="nav-text">1.2 短作业优先(shortest-job-fist SJF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%9C%80%E7%9F%AD%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88-shortest-remaining-time-time-next-SRTN"><span class="nav-text">1.3 最短剩余时间优先(shortest remaining time time next SRTN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-text">2.交互式系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-text">调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC"><span class="nav-text">2.1 时间片轮转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="nav-text">2.2 优先级调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97"><span class="nav-text">2.3 多级反馈队列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E5%88%87%E6%8D%A2%E5%9C%B0%E5%9D%80"><span class="nav-text">上下文及切换地址</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
