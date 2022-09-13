@@ -1,15 +1,458 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="前端复习总结 前端 面试"><meta name="description" content="前端复习总结"><meta name="author" content="CouriourC"><title>操作系统知识点总结-进程管理 | 🎈小客栈🎈</title><link rel="stylesheet" href="/css/style.css"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css"><script id="hexo-configurations">let KEEP=window.KEEP||{};KEEP.hexo_config={hostname:"couriourc.github.io",root:"/",language:"zh-CN",path:"search.xml"},KEEP.theme_config={toc:{enable:!0,number:!1,expand_all:!1,init_open:!1},style:{primary_color:"#0066CC",avatar:"/images/avatar.jpg",favicon:"/images/avatar.jpg",article_img_align:"left",left_side_width:"260px",content_max_width:"920px",hover:{shadow:!0,scale:!0},first_screen:{enable:!1,background_img:"/images/bg.svg",description:"Keep writing and Keep loving."},scroll:{progress_bar:{enable:!1},percent:{enable:!1}}},local_search:{enable:!0,preload:!0},code_copy:{enable:!0,style:"default"},pjax:{enable:!0},lazyload:{enable:!0},version:"3.4.5"},KEEP.language_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"}</script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="pjax-progress-icon"><i class="fas fa-circle-notch fa-spin"></i></span></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper"><div class="header-content"><div class="left"><a class="logo-image" href="/"><img src="/images/avatar.jpg"> </a><a class="logo-title" href="/">🎈小客栈🎈</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/archives">归档</a></li><li class="menu-item search search-popup-trigger"><i class="fas fa-search"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="/">首页</a></li><li class="drawer-menu-item flex-center"><a href="/archives">归档</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation">操作系统知识点总结-进程管理</span></div><div class="article-header"><div class="avatar"><img src="/images/avatar.jpg"></div><div class="info"><div class="author"><span class="name">CouriourC</span> <span class="author-label">Lv1</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fas fa-edit"></i>&nbsp; <span class="pc">2022-09-09 12:42:33</span> <span class="mobile">2022-09-09 12:42</span> </span><span class="article-tags article-meta-item"><i class="fas fa-tags"></i>&nbsp;<ul><li><a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;</li><li>| <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;</li><li>| <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">进程管理</a>&nbsp;</li><li>| <a href="/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">进程与线程</a>&nbsp;</li></ul></span></div></div></div></div><div class="article-content markdown-body"><h1>进程与线程</h1><h2 id="进程">进程</h2><blockquote><p>进程是资源分配的基本单位。</p><p>进程控制块(Process Control Block PCB)描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 <code>PCB</code> 的操作。</p></blockquote><p>进程控制块包含下列信息：</p><h3 id="1-进程标识符（PID）">1. 进程标识符（PID）</h3><p>进程标识符用于唯一地标识一个进程。</p><p>一个进程通常由两种标识符组成：</p><ul><li><h6 id="内部标识符：">内部标识符：</h6></li></ul><p>在所有操作系统中，都为每一个进程赋予了一个唯一的数字标识符，它通常是一个进程的序号，设置内部标识符主要是为了方便系统使用。</p><ul><li><h6 id="外部标识符：">外部标识符：</h6></li></ul><p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p><p>可以参考一个指令</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">kill</span> pid <br><span class="hljs-built_in">kill</span> p_name<br></code></pre></td></tr></table></figure><h3 id="2-处理机状态">2. 处理机状态</h3><p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p><p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW</code>、<code>用户栈指针</code></p><p>这些信息显然和进程相关，因此，进程一旦被中断，就必须把这些信息保存在 <code>PCB</code> 中，以便在恢复运行时能完全恢复中断前的状态。</p><h3 id="3-进程调度信息">3. 进程调度信息</h3><p>在 PCB 中还存放一些进程调度和进程对换相关的信息。</p><p>包括：<code>进程状态</code>、<code>进程优先级</code>、<code>进程调度所需要的其他信息</code>（所采用的进程调度算法有关），<code>事件</code>（指进程由执行状态变为阻塞态所等待发生的事件，即阻塞原因）</p><h3 id="4-进程控制信息">4. 进程控制信息</h3><ul><li><p>程序和数据的地址。</p></li><li><p>进程同步和通信机制，指实现进程同步和进程通信时必须的机制，如消息队列的指针、信号量等，他们可能全部或部分的放在 <code>PCB</code>中。</p></li><li><p>资源清单，列出了出 <code>CPU</code>以外的、进程所需的全部资源及已经分配到改进程的资源清单。</p></li><li><p>链接指针，他给出了本进程（<code>PCB</code>）所在队列的下一个进程的 <code>PCB</code> 的首地址。</p></li></ul><pre class="mermaid">classDiagram
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="前端复习总结 前端 面试">
+    <meta name="description" content="前端复习总结">
+    <meta name="author" content="CouriourC">
+    
+    <title>
+        
+            操作系统知识点总结-进程管理 |
+        
+        🎈小客栈🎈
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"couriourc.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                🎈小客栈🎈
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">操作系统知识点总结-进程管理</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">CouriourC</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-09 12:42:33</span>
+        <span class="mobile">2022-09-09 12:42</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">进程管理</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">进程与线程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1>进程与线程</h1>
+<h2 id="进程">进程</h2>
+<blockquote>
+<p>进程是资源分配的基本单位。</p>
+<p>进程控制块(Process Control Block PCB)描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 <code>PCB</code> 的操作。</p>
+</blockquote>
+<p>进程控制块包含下列信息：</p>
+<h3 id="1-进程标识符（PID）">1. 进程标识符（PID）</h3>
+<p>进程标识符用于唯一地标识一个进程。</p>
+<p>一个进程通常由两种标识符组成：</p>
+<ul>
+<li>
+<h6 id="内部标识符：">内部标识符：</h6>
+</li>
+</ul>
+<p>在所有操作系统中，都为每一个进程赋予了一个唯一的数字标识符，它通常是一个进程的序号，设置内部标识符主要是为了方便系统使用。</p>
+<ul>
+<li>
+<h6 id="外部标识符：">外部标识符：</h6>
+</li>
+</ul>
+<p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p>
+<p>可以参考一个指令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">kill</span> pid <br><span class="hljs-built_in">kill</span> p_name<br></code></pre></td></tr></table></figure>
+<h3 id="2-处理机状态">2. 处理机状态</h3>
+<p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
+<p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW </code>、<code>用户栈指针</code></p>
+<p>这些信息显然和进程相关，因此，进程一旦被中断，就必须把这些信息保存在 <code>PCB</code> 中，以便在恢复运行时能完全恢复中断前的状态。</p>
+<h3 id="3-进程调度信息">3. 进程调度信息</h3>
+<p>在 PCB 中还存放一些进程调度和进程对换相关的信息。</p>
+<p>包括：<code>进程状态</code>、<code>进程优先级</code>、<code>进程调度所需要的其他信息</code>（所采用的进程调度算法有关），<code>事件</code>（指进程由执行状态变为阻塞态所等待发生的事件，即阻塞原因）</p>
+<h3 id="4-进程控制信息">4. 进程控制信息</h3>
+<ul>
+<li>
+<p>程序和数据的地址。</p>
+</li>
+<li>
+<p>进程同步和通信机制，指实现进程同步和进程通信时必须的机制，如消息队列的指针、信号量等，他们可能全部或部分的放在 <code>PCB</code>中。</p>
+</li>
+<li>
+<p>资源清单，列出了出 <code>CPU</code>以外的、进程所需的全部资源及已经分配到改进程的资源清单。</p>
+</li>
+<li>
+<p>链接指针，他给出了本进程（<code>PCB</code>）所在队列的下一个进程的 <code>PCB</code> 的首地址。</p>
+</li>
+</ul>
+<pre class="mermaid">classDiagram
     class PCB
     PCB : +唯一标识符
     PCB : +状态机信息
     PCB : +进程调度信息
-    PCB : +进程控制信息</pre><h3 id="进程的特征">进程的特征</h3><ol><li><h5 id="动态性（进程的基本特征）">动态性（进程的基本特征）</h5><p>进程是程序的一次执行过程，是动态地产生，变化和消亡</p></li><li><h5 id="并发性">并发性</h5><p>内存中有多个进程实体，各进程可并发执行</p></li><li><h5 id="独立性">独立性</h5><p>进程是<strong>独立运行</strong>，<strong>独立获得资源</strong>，<strong>独立接受调度</strong>的<strong>基本单位</strong></p></li><li><h5 id="异步性">异步性</h5><p>各进程按各自独立的，不可预知的速度向前推进，操作系统要提供”<strong>进程同步机制</strong>“来解决异步问题</p></li><li><h5 id="结构性">结构性</h5><p>每个进程都会配置一个 <strong>PCB</strong> ，结构上看，进程由程序段，数据段，<strong>PCB</strong> 组成</p></li></ol><h3 id="进程态的切换">进程态的切换</h3><p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p><ul><li>创建态(created): <strong>进程</strong>正在被创建，包括建立空白 <strong>PCB</strong>，由系统为进程分配资源等。</li></ul><h4 id="基本状态">基本状态</h4><ul><li><p>就绪状态(<code>ready</code>): <strong>进程</strong>获得了除了<strong>处理机外的一切资源</strong>，一旦获得了处理及资源就可以立刻开始运行，系统中处于就绪态的进程可以由很多个，通常将他们排成一个队列，称为就绪队列。</p></li><li><p>运行状态(<code>running</code>)：<strong>进程</strong>正在处理机上运行。单处理机情况下每一每刻最多只有一个进程处于运行态。</p></li><li><p>阻塞状态(<code>waiting</code>): <strong>进程</strong>请求等待某个事件发生，在该事件完成前，即使处理机资源空闲，该进程也不能运行，例如请求了系统调用或者是等待某些资源。</p></li></ul><hr><ul><li>中止态(<strong>dead</strong>): 进程正在结束。系统先将进程置为结束态，之后再进行资源的释放和回收等工作。</li></ul><blockquote><p>需要注意:</p><ul><li>只有就绪态和运行态可以相互转换,其他的都是单向转换,就绪状态的进程通过调度算法从而获得 <code>CPU</code> 事件,转为运行状态;而运行状态的进程,在分配给他的 CPU 时间片用完之后就会转为就绪状态,等待下一次调度。</li><li>阻塞状态是缺少需要的资源从而由运行状态转换而来,但是该资源不包括<code>CPU</code>时间,缺少<code>CPU</code> 时间会从运行态转换为就绪态。</li><li>运行态道阻塞态<strong>一般</strong>是<strong>主动</strong>的行为。</li><li>阻塞态道就绪态是被动的行为。</li></ul></blockquote><h3 id="进程的组织方式">进程的组织方式</h3><ul><li>链式方式：将同一状态的 <strong>PCB</strong> 连接道同一个队列</li><li>索引方式：将同一状态的 <strong>PCB</strong> 放在同一个索引表中</li></ul><h3 id="进程控制">进程控制</h3><p>进程控制是用<strong>原语</strong>来实现的：</p><blockquote><p>tips:</p><p>原语是指执行期间不允许终中断的程序段，是同一个不可分割的基本单位。</p><p>通过”<strong>关中断指令</strong>“和”<strong>开中断指令</strong>“实现了原语的<strong>原子性</strong></p></blockquote><h3 id="进程的创建">进程的创建</h3><h5 id="创建原语">创建原语</h5><ol><li>申请空白 <strong>PCB</strong></li><li>为进程分配所需资源</li><li>初始化 <strong>PCB</strong></li><li>将 PCB 插入就绪队列（创建态-&gt;就绪态）</li></ol><pre class="mermaid">graph TB;
+    PCB : +进程控制信息</pre>
+<h3 id="进程的特征">进程的特征</h3>
+<ol>
+<li>
+<h5 id="动态性（进程的基本特征）">动态性（进程的基本特征）</h5>
+<p>进程是程序的一次执行过程，是动态地产生，变化和消亡</p>
+</li>
+<li>
+<h5 id="并发性">并发性</h5>
+<p>内存中有多个进程实体，各进程可并发执行</p>
+</li>
+<li>
+<h5 id="独立性">独立性</h5>
+<p>进程是<strong>独立运行</strong>，<strong>独立获得资源</strong>，<strong>独立接受调度</strong>的<strong>基本单位</strong></p>
+</li>
+<li>
+<h5 id="异步性">异步性</h5>
+<p>各进程按各自独立的，不可预知的速度向前推进，操作系统要提供”<strong>进程同步机制</strong>“来解决异步问题</p>
+</li>
+<li>
+<h5 id="结构性">结构性</h5>
+<p>每个进程都会配置一个 <strong>PCB</strong> ，结构上看，进程由程序段，数据段，<strong>PCB</strong> 组成</p>
+</li>
+</ol>
+<h3 id="进程态的切换">进程态的切换</h3>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p>
+<ul>
+<li>创建态(created): <strong>进程</strong>正在被创建，包括建立空白 <strong>PCB</strong>，由系统为进程分配资源等。</li>
+</ul>
+<h4 id="基本状态">基本状态</h4>
+<ul>
+<li>
+<p>就绪状态(<code>ready</code>): <strong>进程</strong>获得了除了<strong>处理机外的一切资源</strong>，一旦获得了处理及资源就可以立刻开始运行，系统中处于就绪态的进程可以由很多个，通常将他们排成一个队列，称为就绪队列。</p>
+</li>
+<li>
+<p>运行状态(<code>running</code>)：<strong>进程</strong>正在处理机上运行。单处理机情况下每一每刻最多只有一个进程处于运行态。</p>
+</li>
+<li>
+<p>阻塞状态(<code>waiting</code>): <strong>进程</strong>请求等待某个事件发生，在该事件完成前，即使处理机资源空闲，该进程也不能运行，例如请求了系统调用或者是等待某些资源。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>中止态(<strong>dead</strong>): 进程正在结束。系统先将进程置为结束态，之后再进行资源的释放和回收等工作。</li>
+</ul>
+<blockquote>
+<p>需要注意:</p>
+<ul>
+<li>只有就绪态和运行态可以相互转换,其他的都是单向转换,就绪状态的进程通过调度算法从而获得 <code>CPU</code> 事件,转为运行状态;而运行状态的进程,在分配给他的 CPU 时间片用完之后就会转为就绪状态,等待下一次调度。</li>
+<li>阻塞状态是缺少需要的资源从而由运行状态转换而来,但是该资源不包括<code>CPU</code>时间,缺少<code>CPU</code> 时间会从运行态转换为就绪态。</li>
+<li>运行态道阻塞态<strong>一般</strong>是<strong>主动</strong>的行为。</li>
+<li>阻塞态道就绪态是被动的行为。</li>
+</ul>
+</blockquote>
+<h3 id="进程的组织方式">进程的组织方式</h3>
+<ul>
+<li>链式方式：将同一状态的 <strong>PCB</strong> 连接道同一个队列</li>
+<li>索引方式：将同一状态的 <strong>PCB</strong> 放在同一个索引表中</li>
+</ul>
+<h3 id="进程控制">进程控制</h3>
+<p>进程控制是用<strong>原语</strong>来实现的：</p>
+<blockquote>
+<p>tips:</p>
+<p>原语是指执行期间不允许终中断的程序段，是同一个不可分割的基本单位。</p>
+<p>通过”<strong>关中断指令</strong>“和”<strong>开中断指令</strong>“实现了原语的<strong>原子性</strong></p>
+</blockquote>
+<h3 id="进程的创建">进程的创建</h3>
+<h5 id="创建原语">创建原语</h5>
+<ol>
+<li>申请空白 <strong>PCB</strong></li>
+<li>为进程分配所需资源</li>
+<li>初始化 <strong>PCB</strong></li>
+<li>将 PCB 插入就绪队列（创建态-&gt;就绪态）</li>
+</ol>
+<pre class="mermaid">graph TB;
 start(申请空白的PCB);
 assign(分配所需资源);
 init(初始化 PCB);
 insert(将 PCB 插入就绪队列);
 %%  开始连接
-start--&gt;assign--&gt;init--&gt;insert;</pre><h5 id="引起进程创建的事件">引起进程创建的事件</h5><ol><li>用户登陆</li><li>作业调度（有新的作业将要运行）</li><li>提供服务</li><li>应用请求（用户进程主动请求创建子进程）</li></ol><h4 id="进程的终止">进程的终止</h4><h5 id="撤销原语">撤销原语</h5><ol><li>从 <strong>PCB</strong> 集合中找到终止进程的 <strong>PCB</strong></li><li>若进程正在运行，立刻剥夺 <strong>CPU</strong>，将 <strong>CPU</strong> 分配给其他进程</li><li>中止其所有的子进程</li><li>将该进程的所有资源归还给父进程或是操作系统</li><li>删除 <strong>PCB</strong></li></ol><pre class="mermaid">graph TB;
+start--&gt;assign--&gt;init--&gt;insert;</pre>
+<h5 id="引起进程创建的事件">引起进程创建的事件</h5>
+<ol>
+<li>用户登陆</li>
+<li>作业调度（有新的作业将要运行）</li>
+<li>提供服务</li>
+<li>应用请求（用户进程主动请求创建子进程）</li>
+</ol>
+<h4 id="进程的终止">进程的终止</h4>
+<h5 id="撤销原语">撤销原语</h5>
+<ol>
+<li>从 <strong>PCB</strong> 集合中找到终止进程的 <strong>PCB</strong></li>
+<li>若进程正在运行，立刻剥夺 <strong>CPU</strong>，将 <strong>CPU</strong> 分配给其他进程</li>
+<li>中止其所有的子进程</li>
+<li>将该进程的所有资源归还给父进程或是操作系统</li>
+<li>删除 <strong>PCB</strong></li>
+</ol>
+<pre class="mermaid">graph TB;
 kill(找到终止进程);
 checkStatus
 assign(立刻剥夺 CPU);
@@ -19,7 +462,167 @@ delete(删除所有的 PCB);
 kill--&gt;checkStatus
 checkStatus--正在运行==&gt;assign--&gt;stopChildProcess
 checkStatus--其他状态==&gt;stopChildProcess
-stopChildProcess--&gt;delete</pre><h5 id="引起进程终止的事件">引起进程终止的事件</h5><ul><li><p>正常结束</p></li><li><p>异常结束</p></li><li><p>外界干预</p></li></ul><h4 id="span-id-process-switch-进程切换-span"><span id="process-switch">进程切换</span></h4><h5 id="切换原语">切换原语</h5><ol><li>将运行环境信息存入 <strong>PCB</strong></li><li>将 <strong>PCB</strong> 移入相应队列</li><li>选择另一个进程执行，并更新其 <strong>PCB</strong></li><li>根据 <strong>PCB</strong> 恢复进程所需的运行环境</li></ol><h6 id="引起切换的事件">引起切换的事件</h6><ul><li>当前进程<strong>时间片</strong>到，该被处理了</li><li>更高级的进程到达</li><li>当前进程主动阻塞</li><li>当前进程中止</li></ul><h3 id="进程通信">进程通信</h3><h4 id="1-共享存储">1. 共享存储</h4><ul><li><p>两个进程对共享空间的访问必须时互斥的（临界资源）</p></li><li><p>操作系统只提供<strong>共享空间</strong>和<strong>同步互斥工具</strong>（P,V操作）</p><blockquote><p>主要有两种方式:</p><ul><li>基于数据结构的共享<ul><li>只能共享固定的数据结构</li><li>速度慢，是一种低效的共享方式</li></ul></li><li>基于存储区的共享<ul><li>共享方式和大小由进程自己决定</li><li>速度快，是一种高级的共享方式</li></ul></li></ul></blockquote></li></ul><h4 id="2-管道通信">2. 管道通信</h4><ul><li><p>管道是半双工的，先进先出的，它把一个进程的输出和另一个进程的输入连接在一起</p></li><li><p>一个进程（写进程）在管道的尾部写入数据，另一个进程（读进程）从管道的头部读出数据</p></li><li><p>无名管道用于父子进程之间的通信；有名管道用于运行同一个系统中的任意两个进程间的通信</p></li><li><p>各个进程对管道的访问是互斥的</p></li><li><p>管道没有写满的时候，不能向管道中再写（读）数据</p></li><li><p>从管道中读取数据是一次性的，数据一旦被读取就会从管道中抛弃</p></li><li><p>一次只能由一个<strong>读进程</strong>，但是可以有多个<strong>写进程</strong></p><blockquote><p>无名管道：创建管道——读管道——写管道——关闭管道</p><p>有名管道：创建管道——删除管道——打开管道——关闭管道——读管道——写管道</p></blockquote></li></ul><h4 id="3-消息传递">3. 消息传递</h4><blockquote><p>进程间的数据交换以格式化消息（message）为单位。</p><p>通过<strong>发送消息/接收消息</strong>两个原语进行</p></blockquote><h5 id="直接通信方式">直接通信方式</h5><p>发送进程直接将消息发送到接受进程的<strong>消息缓冲队列</strong>中</p><h5 id="间接通信方式">间接通信方式</h5><p>发送进程将消息发送到某个中间实体，一般为__信箱__，接收端从中间实体接受消息</p><h2 id="线程">线程</h2><h3 id="基本概念">基本概念</h3><p>线程是独立调度的<strong>基本单位</strong>。</p><p>一个进程中可以由多个线程，他们共享进程资源。</p><p>比如：QQ和浏览器是两个进程，浏览器中里面由很多线程，竟然刚好探讨到了浏览器的线程，值得一提的是单个页面基本有五种线程构成，包含插件线程，网络请求线程，计时器线程，渲染线程，事件触发线程（DomEvent），JS 线程。这里可以知道线程之间是可以共享资源 (HTML)的，但是浏览器的运行与QQ之间是不可通信的，资源是不共享的，QQ又有自己的进程，其下还有自己的线程。</p><h3 id="特点">特点</h3><h4 id="调度">调度</h4><p>线程作为独立调度的基本单位，进程内的线程调度不会引起<a href="#process-switch">进程切换</a>，开销更小。</p><h4 id="并发性-v2">并发性</h4><ul><li>同一进程内的线程可以并发运行。</li><li>不同进程间内的线程可以并发运行。</li></ul><h4 id="资源">资源</h4><ul><li>线程几乎不占有资源，而是共享进程资源。</li></ul><h4 id="支持多处理机系统">支持多处理机系统</h4><ul><li>可以将多个线程分配给多个处理机运行。</li></ul><h3 id="线程的实现方式">线程的实现方式</h3><p>线程库支持的线程（用户级线程 <strong>User-Level Threed,ULT</strong>）</p><ul><li>线程的切换由应用程序负责，在用户态下即可完成。</li><li>线程表存储在用户空间，系统内核意识下到线程的存在。</li><li>调度：<ul><li>操作系统为进程分配时间片。</li><li>用户的调度程序再将时间片分给线程。</li></ul></li><li>优点<ul><li>线程的切换在用户态即可完成，<strong>开销小</strong>，<strong>效率高</strong>。</li></ul></li><li>缺点<ul><li>当<strong>一个线程阻塞</strong>后，其他线程<strong>都会被阻塞</strong>，并发度不高。</li></ul></li></ul><h3 id="多线程模式">多线程模式</h3><h4 id="一对一模式">一对一模式</h4><p>一个用户级线程映射一个内核级线程（一个 <strong>UTL</strong> 一个 <strong>TCB</strong>(<strong>Thread Control Block</strong>))</p><h5 id="优点">优点</h5><ul><li>并发能力强</li></ul><h5 id="缺点">缺点</h5><ul><li>开销大</li></ul><h4 id="多对一模式">多对一模式</h4><p>将多个用户级线程映射到一个内核级线程，等同于用户级线程（多个 <strong>UTL</strong> 一个 <strong>TCB</strong>）</p><h5 id="优点-v2">优点</h5><ul><li>效率高</li></ul><h5 id="缺点-v2">缺点</h5><ul><li>并发能力弱，多个线程不能并行的运行在多个处理机上</li></ul><h4 id="多对多模式">多对多模式</h4><p>将 n 个 ULT 映射到 m 个内核级线程（ m &lt;= n）</p><h3 id="线程的控制">线程的控制</h3><h5 id="线程的切换">线程的切换</h5><pre class="mermaid">graph LR
+stopChildProcess--&gt;delete</pre>
+<h5 id="引起进程终止的事件">引起进程终止的事件</h5>
+<ul>
+<li>
+<p>正常结束</p>
+</li>
+<li>
+<p>异常结束</p>
+</li>
+<li>
+<p>外界干预</p>
+</li>
+</ul>
+<h4 id="span-id-process-switch-进程切换-span"><span id="process-switch">进程切换</span></h4>
+<h5 id="切换原语">切换原语</h5>
+<ol>
+<li>将运行环境信息存入 <strong>PCB</strong></li>
+<li>将 <strong>PCB</strong> 移入相应队列</li>
+<li>选择另一个进程执行，并更新其 <strong>PCB</strong></li>
+<li>根据 <strong>PCB</strong> 恢复进程所需的运行环境</li>
+</ol>
+<h6 id="引起切换的事件">引起切换的事件</h6>
+<ul>
+<li>当前进程<strong>时间片</strong>到，该被处理了</li>
+<li>更高级的进程到达</li>
+<li>当前进程主动阻塞</li>
+<li>当前进程中止</li>
+</ul>
+<h3 id="进程通信">进程通信</h3>
+<h4 id="1-共享存储">1. 共享存储</h4>
+<ul>
+<li>
+<p>两个进程对共享空间的访问必须时互斥的（临界资源）</p>
+</li>
+<li>
+<p>操作系统只提供<strong>共享空间</strong>和<strong>同步互斥工具</strong>（P,V操作）</p>
+<blockquote>
+<p>主要有两种方式:</p>
+<ul>
+<li>基于数据结构的共享
+<ul>
+<li>只能共享固定的数据结构</li>
+<li>速度慢，是一种低效的共享方式</li>
+</ul>
+</li>
+<li>基于存储区的共享
+<ul>
+<li>共享方式和大小由进程自己决定</li>
+<li>速度快，是一种高级的共享方式</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-管道通信">2. 管道通信</h4>
+<ul>
+<li>
+<p>管道是半双工的，先进先出的，它把一个进程的输出和另一个进程的输入连接在一起</p>
+</li>
+<li>
+<p>一个进程（写进程）在管道的尾部写入数据，另一个进程（读进程）从管道的头部读出数据</p>
+</li>
+<li>
+<p>无名管道用于父子进程之间的通信；有名管道用于运行同一个系统中的任意两个进程间的通信</p>
+</li>
+<li>
+<p>各个进程对管道的访问是互斥的</p>
+</li>
+<li>
+<p>管道没有写满的时候，不能向管道中再写（读）数据</p>
+</li>
+<li>
+<p>从管道中读取数据是一次性的，数据一旦被读取就会从管道中抛弃</p>
+</li>
+<li>
+<p>一次只能由一个<strong>读进程</strong>，但是可以有多个<strong>写进程</strong></p>
+<blockquote>
+<p>无名管道：创建管道——读管道——写管道——关闭管道</p>
+<p>有名管道：创建管道——删除管道——打开管道——关闭管道——读管道——写管道</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="3-消息传递">3. 消息传递</h4>
+<blockquote>
+<p>进程间的数据交换以格式化消息（message）为单位。</p>
+<p>通过<strong>发送消息/接收消息</strong>两个原语进行</p>
+</blockquote>
+<h5 id="直接通信方式">直接通信方式</h5>
+<p>发送进程直接将消息发送到接受进程的<strong>消息缓冲队列</strong>中</p>
+<h5 id="间接通信方式">间接通信方式</h5>
+<p>发送进程将消息发送到某个中间实体，一般为__信箱__，接收端从中间实体接受消息</p>
+<h2 id="线程">线程</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>线程是独立调度的<strong>基本单位</strong>。</p>
+<p>一个进程中可以由多个线程，他们共享进程资源。</p>
+<p>比如：QQ和浏览器是两个进程，浏览器中里面由很多线程，竟然刚好探讨到了浏览器的线程，值得一提的是单个页面基本有五种线程构成，包含插件线程，网络请求线程，计时器线程，渲染线程，事件触发线程（DomEvent），JS 线程。这里可以知道线程之间是可以共享资源 (HTML)的，但是浏览器的运行与QQ之间是不可通信的，资源是不共享的，QQ又有自己的进程，其下还有自己的线程。</p>
+<h3 id="特点">特点</h3>
+<h4 id="调度">调度</h4>
+<p>线程作为独立调度的基本单位，进程内的线程调度不会引起<a href="#process-switch">进程切换</a>，开销更小。</p>
+<h4 id="并发性-v2">并发性</h4>
+<ul>
+<li>同一进程内的线程可以并发运行。</li>
+<li>不同进程间内的线程可以并发运行。</li>
+</ul>
+<h4 id="资源">资源</h4>
+<ul>
+<li>线程几乎不占有资源，而是共享进程资源。</li>
+</ul>
+<h4 id="支持多处理机系统">支持多处理机系统</h4>
+<ul>
+<li>可以将多个线程分配给多个处理机运行。</li>
+</ul>
+<h3 id="线程的实现方式">线程的实现方式</h3>
+<p>线程库支持的线程（用户级线程 <strong>User-Level Threed,ULT</strong>）</p>
+<ul>
+<li>线程的切换由应用程序负责，在用户态下即可完成。</li>
+<li>线程表存储在用户空间，系统内核意识下到线程的存在。</li>
+<li>调度：
+<ul>
+<li>操作系统为进程分配时间片。</li>
+<li>用户的调度程序再将时间片分给线程。</li>
+</ul>
+</li>
+<li>优点
+<ul>
+<li>线程的切换在用户态即可完成，<strong>开销小</strong>，<strong>效率高</strong>。</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>当<strong>一个线程阻塞</strong>后，其他线程<strong>都会被阻塞</strong>，并发度不高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程模式">多线程模式</h3>
+<h4 id="一对一模式">一对一模式</h4>
+<p>一个用户级线程映射一个内核级线程（一个 <strong>UTL</strong> 一个 <strong>TCB</strong>(<strong>Thread Control Block</strong>))</p>
+<h5 id="优点">优点</h5>
+<ul>
+<li>并发能力强</li>
+</ul>
+<h5 id="缺点">缺点</h5>
+<ul>
+<li>开销大</li>
+</ul>
+<h4 id="多对一模式">多对一模式</h4>
+<p>将多个用户级线程映射到一个内核级线程，等同于用户级线程（多个 <strong>UTL</strong> 一个 <strong>TCB</strong>）</p>
+<h5 id="优点-v2">优点</h5>
+<ul>
+<li>效率高</li>
+</ul>
+<h5 id="缺点-v2">缺点</h5>
+<ul>
+<li>并发能力弱，多个线程不能并行的运行在多个处理机上</li>
+</ul>
+<h4 id="多对多模式">多对多模式</h4>
+<p>将 n 个 ULT 映射到  m 个内核级线程（ m &lt;= n）</p>
+<h3 id="线程的控制">线程的控制</h3>
+<h5 id="线程的切换">线程的切换</h5>
+<pre class="mermaid">graph LR
 Wait((就绪))
 Running((运行))
 Stop((阻塞))
@@ -29,11 +632,311 @@ classDef default fill: #f9a, stroke: #333, stroke-width: 4px;
 Wait--    "③被调度程序选中" --&gt;Running
 Running --"②时间用完"      --&gt; Wait
 Stop --   "④等待事件发生"   --&gt;Wait
-Running-- "①等待某事件"    --&gt;Stop</pre><h4 id="线程的组织与控制">线程的组织与控制</h4><p>将 TCB 组织成线程表进行管理</p><pre class="mermaid">classDiagram
+Running-- "①等待某事件"    --&gt;Stop</pre>
+<h4 id="线程的组织与控制">线程的组织与控制</h4>
+<p>将 TCB 组织成线程表进行管理</p>
+<pre class="mermaid">classDiagram
     class TCB
     TCB : +线程控制标识符
     TCB : +线程计数器
     TCB : +其他寄存器信息，存放中间结果
     TCB : +堆栈指针
     TCB : +线程运行状态["Wait Runing Jam"]
-    TCB : +优先级</pre><h2 id="总结">总结</h2><ul><li>资源</li></ul><p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问所属进程的资源</p><ul><li>调度</li></ul><p>线程是独立调度的基本单位，在同一个进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换</p><ul><li>系统开销</li></ul><p>由于创建或撤销进程时,系统都要为之分配或回收资源，如内存空间，I/O 设备等，所付出的开销远大于创建或撤销线程时的开销。在进行进程切换时，涉及当前执行进程 <code>CPU</code> 环境的保存及新调度进 <code>CPU</code> 环境的设置，而线程切换时只需要设置和保存少量的少量的寄存器内容，故开销也很小。</p><ul><li>通信方面</li></ul><p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 <code>PIC</code>。</p></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">#进程管理</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">#进程与线程</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2022/09/09/os-os-process-sheduler/"><span class="left arrow-icon flex-center"><i class="fas fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">操作系统知识点总结-进程调度算法</span> <span class="post-nav-item">上一篇</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/2022/09/08/os-os-overview/"><span class="title flex-center"><span class="post-nav-title-item">操作系统知识点总结-概览</span> <span class="post-nav-item">下一篇</span> </span><span class="right arrow-icon flex-center"><i class="fas fa-chevron-right"></i></span></a></div></div></div></div></div></div><div class="page-main-content-bottom"><footer class="footer"><div class="info-container"><div class="copyright-info info-item">&copy; <span>2022</span> - 2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a></div><div class="theme-info info-item">由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 &nbsp;|&nbsp;主题 &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a></div></div></footer><script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script><script>window.mermaid&&mermaid.initialize({theme:"dark"})</script></div></div><div class="post-tools"><div class="post-tools-container"><ul class="tools-list"><li class="tools-item page-aside-toggle"><i class="fas fa-outdent"></i></li></ul></div></div><div class="right-bottom-side-tools"><div class="side-tools-container"><ul class="side-tools-list"><li class="tools-item tool-font-adjust-plus flex-center"><i class="fas fa-search-plus"></i></li><li class="tools-item tool-font-adjust-minus flex-center"><i class="fas fa-search-minus"></i></li><li class="tools-item tool-expand-width flex-center"><i class="fas fa-arrows-alt-h"></i></li><li class="tools-item tool-dark-light-toggle flex-center"><i class="fas fa-moon"></i></li><li class="tools-item tool-scroll-to-top flex-center"><i class="fas fa-arrow-up"></i></li><li class="tools-item tool-scroll-to-bottom flex-center"><i class="fas fa-arrow-down"></i></li></ul><ul class="exposed-tools-list"><li class="tools-item tool-toggle-show flex-center"><i class="fas fa-cog fa-spin"></i></li></ul></div></div><aside class="page-aside"><div class="post-toc-wrap"><div class="post-toc"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%88PID%EF%BC%89"><span class="nav-text">1. 进程标识符（PID）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">内部标识符：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">外部标识符：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%8A%B6%E6%80%81"><span class="nav-text">2. 处理机状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">3. 进程调度信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="nav-text">4. 进程控制信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%80%A7%EF%BC%88%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%EF%BC%89"><span class="nav-text">动态性（进程的基本特征）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">独立性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%80%A7"><span class="nav-text">异步性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%80%A7"><span class="nav-text">结构性</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">进程态的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%8A%B6%E6%80%81"><span class="nav-text">基本状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="nav-text">进程的组织方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">进程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%9F%E8%AF%AD"><span class="nav-text">创建原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程创建的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2"><span class="nav-text">进程的终止</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E5%8E%9F%E8%AF%AD"><span class="nav-text">撤销原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程终止的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#span-id-process-switch-%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2-span"><span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%8E%9F%E8%AF%AD"><span class="nav-text">切换原语</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%88%87%E6%8D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起切换的事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-text">1. 共享存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1"><span class="nav-text">2. 管道通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="nav-text">3. 消息传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">直接通信方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">间接通信方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6"><span class="nav-text">调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7-v2"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-text">资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E5%A4%84%E7%90%86%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">支持多处理机系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">线程的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">多线程模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">一对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-v2"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-v2"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对多模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">线程的切换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的组织与控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></div></div></aside><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fas fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fas fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script><div class="post-scripts pjax"><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script></div><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script><script>window.addEventListener("DOMContentLoaded",()=>{window.pjax=new Pjax({selectors:["head title",".page-container",".pjax"],history:!0,debug:!1,cacheBust:!1,timeout:0,analytics:!1,currentUrlFullReload:!1,scrollRestoration:!1}),document.addEventListener("pjax:send",()=>{KEEP.utils.pjaxProgressBarStart()}),document.addEventListener("pjax:complete",()=>{KEEP.utils.pjaxProgressBarEnd(),window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")),KEEP.refresh()})})</script></body></html>
+    TCB : +优先级</pre>
+<h2 id="总结">总结</h2>
+<ul>
+<li>资源</li>
+</ul>
+<p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问所属进程的资源</p>
+<ul>
+<li>调度</li>
+</ul>
+<p>线程是独立调度的基本单位，在同一个进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换</p>
+<ul>
+<li>系统开销</li>
+</ul>
+<p>由于创建或撤销进程时,系统都要为之分配或回收资源，如内存空间，I/O 设备等，所付出的开销远大于创建或撤销线程时的开销。在进行进程切换时，涉及当前执行进程 <code>CPU</code> 环境的保存及新调度进 <code>CPU</code> 环境的设置，而线程切换时只需要设置和保存少量的少量的寄存器内容，故开销也很小。</p>
+<ul>
+<li>通信方面</li>
+</ul>
+<p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 <code>PIC</code>。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">#进程管理</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">#进程与线程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/09/os-os-process-sheduler/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-进程调度算法</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/08/os-os-development/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2022</span>
+                -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+                    href="/">CouriourC</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
+            &nbsp;|&nbsp;主题
+            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                v3.4.5</a>
+        </div>
+        
+        
+    </div>
+
+</footer>
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'dark'});
+      }
+    </script>
+
+
+
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%88PID%EF%BC%89"><span class="nav-text">1. 进程标识符（PID）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">内部标识符：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">外部标识符：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%8A%B6%E6%80%81"><span class="nav-text">2. 处理机状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">3. 进程调度信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="nav-text">4. 进程控制信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%80%A7%EF%BC%88%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%EF%BC%89"><span class="nav-text">动态性（进程的基本特征）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">独立性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%80%A7"><span class="nav-text">异步性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%80%A7"><span class="nav-text">结构性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">进程态的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%8A%B6%E6%80%81"><span class="nav-text">基本状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="nav-text">进程的组织方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">进程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%9F%E8%AF%AD"><span class="nav-text">创建原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程创建的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2"><span class="nav-text">进程的终止</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E5%8E%9F%E8%AF%AD"><span class="nav-text">撤销原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程终止的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#span-id-process-switch-%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2-span"><span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%8E%9F%E8%AF%AD"><span class="nav-text">切换原语</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%88%87%E6%8D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起切换的事件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-text">1. 共享存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1"><span class="nav-text">2. 管道通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="nav-text">3. 消息传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">直接通信方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">间接通信方式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6"><span class="nav-text">调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7-v2"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-text">资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E5%A4%84%E7%90%86%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">支持多处理机系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">线程的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">多线程模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">一对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-v2"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-v2"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对多模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">线程的切换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的组织与控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

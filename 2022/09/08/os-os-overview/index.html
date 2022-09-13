@@ -1,4 +1,308 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="前端复习总结 前端 面试"><meta name="description" content="前端复习总结"><meta name="author" content="CouriourC"><title>操作系统知识点总结-概览 | 🎈小客栈🎈</title><link rel="stylesheet" href="/css/style.css"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css"><script id="hexo-configurations">let KEEP=window.KEEP||{};KEEP.hexo_config={hostname:"couriourc.github.io",root:"/",language:"zh-CN",path:"search.xml"},KEEP.theme_config={toc:{enable:!0,number:!1,expand_all:!1,init_open:!1},style:{primary_color:"#0066CC",avatar:"/images/avatar.jpg",favicon:"/images/avatar.jpg",article_img_align:"left",left_side_width:"260px",content_max_width:"920px",hover:{shadow:!0,scale:!0},first_screen:{enable:!1,background_img:"/images/bg.svg",description:"Keep writing and Keep loving."},scroll:{progress_bar:{enable:!1},percent:{enable:!1}}},local_search:{enable:!0,preload:!0},code_copy:{enable:!0,style:"default"},pjax:{enable:!0},lazyload:{enable:!0},version:"3.4.5"},KEEP.language_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"}</script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="pjax-progress-icon"><i class="fas fa-circle-notch fa-spin"></i></span></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper"><div class="header-content"><div class="left"><a class="logo-image" href="/"><img src="/images/avatar.jpg"> </a><a class="logo-title" href="/">🎈小客栈🎈</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/archives">归档</a></li><li class="menu-item search search-popup-trigger"><i class="fas fa-search"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="/">首页</a></li><li class="drawer-menu-item flex-center"><a href="/archives">归档</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation">操作系统知识点总结-概览</span></div><div class="article-header"><div class="avatar"><img src="/images/avatar.jpg"></div><div class="info"><div class="author"><span class="name">CouriourC</span> <span class="author-label">Lv1</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fas fa-edit"></i>&nbsp; <span class="pc">2022-09-08 21:30:29</span> <span class="mobile">2022-09-08 21:30</span> </span><span class="article-tags article-meta-item"><i class="fas fa-tags"></i>&nbsp;<ul><li><a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;</li><li>| <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;</li><li>| <a href="/tags/%E6%A6%82%E8%A7%88/">概览</a>&nbsp;</li></ul></span></div></div></div></div><div class="article-content markdown-body"><h1>概览</h1><p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p><pre class="mermaid">graph LR
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="前端复习总结 前端 面试">
+    <meta name="description" content="前端复习总结">
+    <meta name="author" content="CouriourC">
+    
+    <title>
+        
+            操作系统知识点总结-概览 |
+        
+        🎈小客栈🎈
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"couriourc.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                🎈小客栈🎈
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">操作系统知识点总结-概览</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">CouriourC</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-08 21:30:29</span>
+        <span class="mobile">2022-09-08 21:30</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%A6%82%E8%A7%88/">概览</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1>概览</h1>
+<p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
+<pre class="mermaid">graph LR
     %% Graph 图，待处理解析展示
     Center((操作系统))
     
@@ -24,16 +328,462 @@
     Center--&gt;interperter(中断分类)
 	interperter--CPU执行指令之外的事件--&gt;外中断
 	interperter--CPU执行内部事件引起的事件---&gt;异常
-	interperter--在用户程序中使用的系统调用--&gt;陷入</pre><h2 id="操作系统的基本定义">操作系统的基本定义</h2><blockquote><p>操作系统(Operating System,OS) 是指控制和管理整个计算机系统的硬件和软件资源,并合理地组织调度计算机和资源分配;提供给<strong>用户和其他软件方便的接口和环境</strong>;它是计算机系统中最基本的<strong>系统软件</strong>.</p></blockquote><h3 id="操作系统的角色">操作系统的角色</h3><ul><li>操作系统是系统资源的<strong>管理者</strong></li><li>操作系统<strong>向上提供</strong>方便易用的服务</li><li>操作系统是<strong>最接近硬件</strong>的一层<strong>软件</strong></li></ul><h2 id="基础特征">基础特征</h2><h3 id="1-并发">1. 并发</h3><blockquote><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p><p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p><p>操作系统通过引入进程和线程，使得程序能够并发运行。</p></blockquote><p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p><pre class="mermaid">sequenceDiagram
+	interperter--在用户程序中使用的系统调用--&gt;陷入</pre>
+<h2 id="操作系统的基本定义">操作系统的基本定义</h2>
+<blockquote>
+<p>操作系统(Operating System,OS) 是指控制和管理整个计算机系统的硬件和软件资源,并合理地组织调度计算机和资源分配;提供给<strong>用户和其他软件方便的接口和环境</strong>;它是计算机系统中最基本的<strong>系统软件</strong>.</p>
+</blockquote>
+<h3 id="操作系统的角色">操作系统的角色</h3>
+<ul>
+<li>操作系统是系统资源的<strong>管理者</strong></li>
+<li>操作系统<strong>向上提供</strong>方便易用的服务</li>
+<li>操作系统是<strong>最接近硬件</strong>的一层<strong>软件</strong></li>
+</ul>
+<h2 id="基础特征">基础特征</h2>
+<h3 id="1-并发">1. 并发</h3>
+<blockquote>
+<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+</blockquote>
+<p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p>
+<!--TODO: 处理 Hexo 时序图问题--->
+<pre class="mermaid">sequenceDiagram
     Note left of A: 进程A
     Note right of B: 进程B
-    Note over A,B: CPU 在 AB 之间快速切换</pre><h3 id="2-共享">2. 共享</h3><blockquote><p>共享是指系统中的资源可以被多个并发进程共同使用。</p><p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p><p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p></blockquote><pre class="mermaid">sequenceDiagram
+    Note over A,B: CPU 在 AB 之间快速切换</pre>
+<h3 id="2-共享">2. 共享</h3>
+<blockquote>
+<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
+<p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
+</blockquote>
+<pre class="mermaid">sequenceDiagram
 	title :按照顺序的去进入同一个进程
     participant AssetA
-    participant AssetB</pre><h3 id="3-虚拟">3. 虚拟</h3><blockquote><p>虚拟技术把一个物理实体转换为多个逻辑实体。</p><p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p><p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p><p>虚拟内存则是使用了空分复用技术，他将物理内存抽象为地址空间，每一个进程都有各自的地址空间，地址空间的也被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有物理内存的页时，执行页面置换算法，将该页置换到内存中。</p><p>虚拟内存的关键问题：主要有调度问题、地址映射问题、替换问题、更新问题（要确保主存与辅存的一致性）</p></blockquote><p>个人认为，虚拟的好处在于可控，让每一步操作是出于可被控制可被调度的，也就使得可优化，更加稳定。</p><h3 id="4-异步">4. 异步</h3><blockquote><p>异步进程不是一次性排队完成，而是走走停停，每一步耗费的时间是不可知的</p></blockquote><p>异步和同步各自有不同的应用场景，不只是在操作系统上的概念，在各大编程语言上也有不同的信息。</p><h2 id="基本功能">基本功能</h2><h3 id="1-进程管理">1. 进程管理</h3><blockquote><p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p></blockquote><ol><li><p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（<strong>fork</strong>），撤销已有进程，实现进程状态转换的功能；</p></li><li><p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p><p>进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p><p>这种两个或多个进程读写某些共享数据，而最后的结果却决于进行的精准时序，称为数据竞争，而这种多个程序可以并发执行，但是由于系统资源有限，程序的执行不是一贯到底的，而是以不可预知的速度推进的，这也就是之前说的<strong>异步性</strong>。</p><p>这种受到访问顺序限制的的数据是没有意义的（对于程序运行不能有二义性，也就是某一个状态是确定的），所以为了能够使得进程有一定的顺序来访问数据，从而引入了同步的概念。</p><p>对于资源是如此，对于数据库操作同样也是如此。</p><p>而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p><p><strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p><h4 id="PV操作">PV操作</h4><p>PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p><h4 id="P-操作">P 操作</h4><p>当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p><pre class="mermaid">    graph TB
+    participant AssetB</pre>
+<h3 id="3-虚拟">3. 虚拟</h3>
+<blockquote>
+<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p>
+<p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p>
+<p>虚拟内存则是使用了空分复用技术，他将物理内存抽象为地址空间，每一个进程都有各自的地址空间，地址空间的也被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
+<p>虚拟内存的关键问题：主要有调度问题、地址映射问题、替换问题、更新问题（要确保主存与辅存的一致性）</p>
+</blockquote>
+<p>个人认为，虚拟的好处在于可控，让每一步操作是出于可被控制可被调度的，也就使得可优化，更加稳定。</p>
+<h3 id="4-异步">4. 异步</h3>
+<blockquote>
+<p>异步进程不是一次性排队完成，而是走走停停，每一步耗费的时间是不可知的</p>
+</blockquote>
+<p>异步和同步各自有不同的应用场景，不只是在操作系统上的概念，在各大编程语言上也有不同的信息。</p>
+<h2 id="基本功能">基本功能</h2>
+<h3 id="1-进程管理">1. 进程管理</h3>
+<blockquote>
+<p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p>
+</blockquote>
+<ol>
+<li>
+<p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（<strong>fork</strong>），撤销已有进程，实现进程状态转换的功能；</p>
+</li>
+<li>
+<p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p>
+<p>进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p>
+<p>这种两个或多个进程读写某些共享数据，而最后的结果却决于进行的精准时序，称为数据竞争，而这种多个程序可以并发执行，但是由于系统资源有限，程序的执行不是一贯到底的，而是以不可预知的速度推进的，这也就是之前说的<strong>异步性</strong>。</p>
+<p>这种受到访问顺序限制的的数据是没有意义的（对于程序运行不能有二义性，也就是某一个状态是确定的），所以为了能够使得进程有一定的顺序来访问数据，从而引入了同步的概念。</p>
+<p>对于资源是如此，对于数据库操作同样也是如此。</p>
+<p>而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p>
+<p><strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
+<h4 id="PV操作">PV操作</h4>
+<p>PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
+<h4 id="P-操作">P 操作</h4>
+<p>当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
+ <pre class="mermaid">    graph TB
      start(P 操作)--&gt;isSingleN{信号量}
      isSingleN---大于0--&gt; down(信号量减一)
-     isSingleN---等于0--&gt; wait(等待)</pre><h4 id="V-操作">V 操作</h4><p>当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p><pre class="mermaid">    graph TB
+     isSingleN---等于0--&gt; wait(等待)</pre>
+<h4 id="V-操作">V 操作</h4>
+<p>当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
+ <pre class="mermaid">    graph TB
      start(V 操作)--&gt;isSingleN{信号量}
      isSingleN---大于0--&gt; down(信号量减一)
-     isSingleN---等于0--&gt; wait(等待)</pre></li></ol><h3 id="2-内存管理">2. 内存管理</h3><blockquote><p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p></blockquote><p>内存的管理分为文件内存，和运行内存，对于进程管理比较重要的就是运存的管理了。</p><p><img lazyload="" src="/images/loading.svg" data-src="https://pica.zhimg.com/v2-4c9fcddd65b35e84c4c6783aaeee3826_1440w.jpg?source=172ae18b" alt="操作系统—内存管理"></p><h3 id="3-文件管理">3. 文件管理</h3><blockquote><p>文件存储空间的管理、目录管理、文件读写管理和保护等</p></blockquote><h3 id="4-设备管理">4. 设备管理</h3><blockquote><p>完成用户的 I/O 请求。为方便用户使用各种设备。并提高设备的利用率。</p><p>主要包括缓冲管理、设备分配、设备处理、虚拟设备等</p></blockquote><p>这是对外的扩展。比如一些键盘。鼠标的信号输入处理。除此之外。网络 I/O 。需要注意的是，文件 I/O 和这种I/O 是由区别的，文件 I/O，更多的偏向于软件层面，</p><p><img lazyload="" src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2186c6a7b85642089000f57d49a3e58c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="img"></p><blockquote><p>我们日常讨论的网络通信本质上就是网络I/O，通过网络I/O，我们可以和远程设备进行通信（数据交换）。由于网络I/O和正常的磁盘I/O在性能和访问方式上有较大的差异，所以针对磁盘I/O的读写方法也就无法适用于网络I/O身上，大部分操作系统针对网络I/O抽象除了一套特殊的接口—— <strong>网络Socket接口</strong> ，用于对网络I/O进行操作。当然，上面也说了，在Linux当中“一切皆文件”，为了统一概念，Socket在Linux当中也是通过文件描述符来进行描述的，只不过这个文件描述符描述的不是本地文件，而是远程设备对应的文件。<br>作者：Brucebat<br>链接：<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7022249649511596063">https://juejin.cn/post/7022249649511596063<i class="fas fa-external-link-alt"></i></a><br>来源：稀土掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></blockquote><p>对于 I/O 而言都是资源的访问，与接受，这两者的在我们使用的时候可能区别不大，但是对于计算机而言，处理的是不一样的信号量，网络 I/O 就像是外部数据的输入，文件 I/O 就如同内部资源的读写，网络 I/O 的另外一方就是通过网桥连接起来，使得信号能够交流.</p><p>Linux 的系统调用主要有以下:</p><table><thead><tr><th>Task</th><th>Commands</th></tr></thead><tbody><tr><td>进程控制</td><td>fork();exit();wait()</td></tr><tr><td>进程通信</td><td>pipe();shmget();mmap();</td></tr><tr><td>文件操作</td><td>open();read();write();</td></tr><tr><td>设备操作</td><td>ioctl();read();write();</td></tr><tr><td>信息维护</td><td>getpid();alarm();sleep();</td></tr><tr><td>安全</td><td>chmod();umask();chown();</td></tr></tbody></table><h2 id="系统调用">系统调用</h2><p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而进入内核，有操作系统代为完成。</p><p>用户态只能调用受限指令。</p><p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/319223950e3f4d6484f708d710d694da.png#pic_center" alt="在这里插入图片描述"></p><h2 id="内核">内核</h2><h3 id="1-宏内核">1. 宏内核</h3><blockquote><p>宏内核是将操作系统功能作为一个紧密结合的整体放到类和。由于各个模块共享信息，因此有很高的性能。</p></blockquote><p>那么由于宏内核就是将所有的系统调用直接放在一层，那么这样的操作就避免了跨层的调用，因此效果很好，但是带来的问题就是耦合度明显很高，同时安全性也有待商榷。</p><p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p><h3 id="2-微内核">2. 微内核</h3><p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p><p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p><h3 id="总结-摘抄自知乎">总结(摘抄自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h3><blockquote><p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p></blockquote><blockquote><p>而微内核则恰恰相反，它为了降低耦合，内核中只会允许一些核心功能的存在，而其余所有功能都会被移出内核，变成一种特殊的用户进程——服务进程。其优点就是各个模块之间是独立的，不会相互影响，但其性能相比宏内核会大幅度下降。</p></blockquote><blockquote><p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p></blockquote><p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p><h2 id="操作系统向上提供方便易用的服务">操作系统向上提供方便易用的服务</h2><h3 id="命令接口">命令接口</h3><ul><li>联机命令接口(交互式命令接口)-&gt;基本命令行(CLI)</li><li>脱机命令接口(批处理命令接口)-&gt;脚本(bat ,sh)</li><li>程序接口(广义指令)-&gt;GUI</li></ul><blockquote><p>可以再程序中进行系统调用来使用程序接口,普通用户不能直接使用程序接口,只能通过程序代码间接使用.</p></blockquote><h2 id="中断分类">中断分类</h2><h3 id="1-外中断">1. 外中断</h3><p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p><h3 id="2-异常">2. 异常</h3><p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p><h3 id="3-陷入">3. 陷入</h3><p>在用户程序中使用系统调用。</p></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E6%A6%82%E8%A7%88/">#概览</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2022/09/09/os-os-process/"><span class="left arrow-icon flex-center"><i class="fas fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">操作系统知识点总结-进程管理</span> <span class="post-nav-item">上一篇</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/2022/09/08/os-os-development/"><span class="title flex-center"><span class="post-nav-title-item">操作系统知识点总结-发展与分类</span> <span class="post-nav-item">下一篇</span> </span><span class="right arrow-icon flex-center"><i class="fas fa-chevron-right"></i></span></a></div></div></div></div></div></div><div class="page-main-content-bottom"><footer class="footer"><div class="info-container"><div class="copyright-info info-item">&copy; <span>2022</span> - 2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a></div><div class="theme-info info-item">由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 &nbsp;|&nbsp;主题 &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a></div></div></footer><script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script><script>window.mermaid&&mermaid.initialize({theme:"dark"})</script></div></div><div class="post-tools"><div class="post-tools-container"><ul class="tools-list"><li class="tools-item page-aside-toggle"><i class="fas fa-outdent"></i></li></ul></div></div><div class="right-bottom-side-tools"><div class="side-tools-container"><ul class="side-tools-list"><li class="tools-item tool-font-adjust-plus flex-center"><i class="fas fa-search-plus"></i></li><li class="tools-item tool-font-adjust-minus flex-center"><i class="fas fa-search-minus"></i></li><li class="tools-item tool-expand-width flex-center"><i class="fas fa-arrows-alt-h"></i></li><li class="tools-item tool-dark-light-toggle flex-center"><i class="fas fa-moon"></i></li><li class="tools-item tool-scroll-to-top flex-center"><i class="fas fa-arrow-up"></i></li><li class="tools-item tool-scroll-to-bottom flex-center"><i class="fas fa-arrow-down"></i></li></ul><ul class="exposed-tools-list"><li class="tools-item tool-toggle-show flex-center"><i class="fas fa-cog fa-spin"></i></li></ul></div></div><aside class="page-aside"><div class="post-toc-wrap"><div class="post-toc"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">操作系统的基本定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-text">操作系统的角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%90%91%E4%B8%8A%E6%8F%90%E4%BE%9B%E6%96%B9%E4%BE%BF%E6%98%93%E7%94%A8%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-text">操作系统向上提供方便易用的服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%8E%A5%E5%8F%A3"><span class="nav-text">命令接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol></div></div></aside><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fas fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fas fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script><div class="post-scripts pjax"><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script></div><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script><script>window.addEventListener("DOMContentLoaded",()=>{window.pjax=new Pjax({selectors:["head title",".page-container",".pjax"],history:!0,debug:!1,cacheBust:!1,timeout:0,analytics:!1,currentUrlFullReload:!1,scrollRestoration:!1}),document.addEventListener("pjax:send",()=>{KEEP.utils.pjaxProgressBarStart()}),document.addEventListener("pjax:complete",()=>{KEEP.utils.pjaxProgressBarEnd(),window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")),KEEP.refresh()})})</script></body></html>
+     isSingleN---等于0--&gt; wait(等待)</pre>
+</li>
+</ol>
+<h3 id="2-内存管理">2. 内存管理</h3>
+<blockquote>
+<p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
+</blockquote>
+<p>内存的管理分为文件内存，和运行内存，对于进程管理比较重要的就是运存的管理了。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pica.zhimg.com/v2-4c9fcddd65b35e84c4c6783aaeee3826_1440w.jpg?source=172ae18b" alt="操作系统—内存管理"></p>
+<h3 id="3-文件管理">3. 文件管理</h3>
+<blockquote>
+<p>文件存储空间的管理、目录管理、文件读写管理和保护等</p>
+</blockquote>
+<h3 id="4-设备管理">4. 设备管理</h3>
+<blockquote>
+<p>完成用户的 I/O 请求。为方便用户使用各种设备。并提高设备的利用率。</p>
+<p>主要包括缓冲管理、设备分配、设备处理、虚拟设备等</p>
+</blockquote>
+<p>这是对外的扩展。比如一些键盘。鼠标的信号输入处理。除此之外。网络 I/O 。需要注意的是，文件 I/O 和这种I/O 是由区别的，文件 I/O，更多的偏向于软件层面，</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2186c6a7b85642089000f57d49a3e58c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="img"></p>
+<blockquote>
+<p>我们日常讨论的网络通信本质上就是网络I/O，通过网络I/O，我们可以和远程设备进行通信（数据交换）。由于网络I/O和正常的磁盘I/O在性能和访问方式上有较大的差异，所以针对磁盘I/O的读写方法也就无法适用于网络I/O身上，大部分操作系统针对网络I/O抽象除了一套特殊的接口—— <strong>网络Socket接口</strong> ，用于对网络I/O进行操作。当然，上面也说了，在Linux当中“一切皆文件”，为了统一概念，Socket在Linux当中也是通过文件描述符来进行描述的，只不过这个文件描述符描述的不是本地文件，而是远程设备对应的文件。<br>
+作者：Brucebat<br>
+链接：<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7022249649511596063">https://juejin.cn/post/7022249649511596063<i class="fas fa-external-link-alt"></i></a><br>
+来源：稀土掘金<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>对于 I/O 而言都是资源的访问，与接受，这两者的在我们使用的时候可能区别不大，但是对于计算机而言，处理的是不一样的信号量，网络 I/O 就像是外部数据的输入，文件 I/O 就如同内部资源的读写，网络 I/O 的另外一方就是通过网桥连接起来，使得信号能够交流.</p>
+<p>Linux 的系统调用主要有以下:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进程控制</td>
+<td>fork();exit();wait()</td>
+</tr>
+<tr>
+<td>进程通信</td>
+<td>pipe();shmget();mmap();</td>
+</tr>
+<tr>
+<td>文件操作</td>
+<td>open();read();write();</td>
+</tr>
+<tr>
+<td>设备操作</td>
+<td>ioctl();read();write();</td>
+</tr>
+<tr>
+<td>信息维护</td>
+<td>getpid();alarm();sleep();</td>
+</tr>
+<tr>
+<td>安全</td>
+<td>chmod();umask();chown();</td>
+</tr>
+</tbody>
+</table>
+<h2 id="系统调用">系统调用</h2>
+<p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而进入内核，有操作系统代为完成。</p>
+<p>用户态只能调用受限指令。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/319223950e3f4d6484f708d710d694da.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="内核">内核</h2>
+<h3 id="1-宏内核">1. 宏内核</h3>
+<blockquote>
+<p>宏内核是将操作系统功能作为一个紧密结合的整体放到类和。由于各个模块共享信息，因此有很高的性能。</p>
+</blockquote>
+<p>那么由于宏内核就是将所有的系统调用直接放在一层，那么这样的操作就避免了跨层的调用，因此效果很好，但是带来的问题就是耦合度明显很高，同时安全性也有待商榷。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p>
+<h3 id="2-微内核">2. 微内核</h3>
+<p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p>
+<h3 id="总结-摘抄自知乎">总结(摘抄自<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h3>
+<blockquote>
+<p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p>
+</blockquote>
+<blockquote>
+<p>而微内核则恰恰相反，它为了降低耦合，内核中只会允许一些核心功能的存在，而其余所有功能都会被移出内核，变成一种特殊的用户进程——服务进程。其优点就是各个模块之间是独立的，不会相互影响，但其性能相比宏内核会大幅度下降。</p>
+</blockquote>
+<blockquote>
+<p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p>
+</blockquote>
+<p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p>
+<h2 id="操作系统向上提供方便易用的服务">操作系统向上提供方便易用的服务</h2>
+<h3 id="命令接口">命令接口</h3>
+<ul>
+<li>联机命令接口(交互式命令接口)-&gt;基本命令行(CLI)</li>
+<li>脱机命令接口(批处理命令接口)-&gt;脚本(bat ,sh)</li>
+<li>程序接口(广义指令)-&gt;GUI</li>
+</ul>
+<blockquote>
+<p>可以再程序中进行系统调用来使用程序接口,普通用户不能直接使用程序接口,只能通过程序代码间接使用.</p>
+</blockquote>
+<h2 id="中断分类">中断分类</h2>
+<h3 id="1-外中断">1. 外中断</h3>
+<p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
+<h3 id="2-异常">2. 异常</h3>
+<p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
+<h3 id="3-陷入">3. 陷入</h3>
+<p>在用户程序中使用系统调用。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">#基础知识</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%A6%82%E8%A7%88/">#概览</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/08/os-os-development/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/07/html-HTML-base/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">HTML 基础篇</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2022</span>
+                -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+                    href="/">CouriourC</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
+            &nbsp;|&nbsp;主题
+            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                v3.4.5</a>
+        </div>
+        
+        
+    </div>
+
+</footer>
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'dark'});
+      }
+    </script>
+
+
+
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">操作系统的基本定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-text">操作系统的角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%89%B9%E5%BE%81"><span class="nav-text">基础特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91"><span class="nav-text">1. 并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B1%E4%BA%AB"><span class="nav-text">2. 共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F"><span class="nav-text">3. 虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%82%E6%AD%A5"><span class="nav-text">4. 异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">1. 进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PV%E6%93%8D%E4%BD%9C"><span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-%E6%93%8D%E4%BD%9C"><span class="nav-text">P 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-%E6%93%8D%E4%BD%9C"><span class="nav-text">V 操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">2. 内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">3. 文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-text">4. 设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8"><span class="nav-text">内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-text">1. 宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-text">2. 微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-%E6%91%98%E6%8A%84%E8%87%AA%E7%9F%A5%E4%B9%8E"><span class="nav-text">总结(摘抄自知乎)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%90%91%E4%B8%8A%E6%8F%90%E4%BE%9B%E6%96%B9%E4%BE%BF%E6%98%93%E7%94%A8%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-text">操作系统向上提供方便易用的服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%8E%A5%E5%8F%A3"><span class="nav-text">命令接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-text">1. 外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%82%E5%B8%B8"><span class="nav-text">2. 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%99%B7%E5%85%A5"><span class="nav-text">3. 陷入</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

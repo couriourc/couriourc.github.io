@@ -1,1 +1,587 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="前端复习总结 前端 面试"><meta name="description" content="前端复习总结"><meta name="author" content="CouriourC"><title>HTML 基础篇 | 🎈小客栈🎈</title><link rel="stylesheet" href="/css/style.css"><link rel="shortcut icon" href="/images/avatar.jpg"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css"><script id="hexo-configurations">let KEEP=window.KEEP||{};KEEP.hexo_config={hostname:"couriourc.github.io",root:"/",language:"zh-CN",path:"search.xml"},KEEP.theme_config={toc:{enable:!0,number:!1,expand_all:!1,init_open:!1},style:{primary_color:"#0066CC",avatar:"/images/avatar.jpg",favicon:"/images/avatar.jpg",article_img_align:"left",left_side_width:"260px",content_max_width:"920px",hover:{shadow:!0,scale:!0},first_screen:{enable:!1,background_img:"/images/bg.svg",description:"Keep writing and Keep loving."},scroll:{progress_bar:{enable:!1},percent:{enable:!1}}},local_search:{enable:!0,preload:!0},code_copy:{enable:!0,style:"default"},pjax:{enable:!0},lazyload:{enable:!0},version:"3.4.5"},KEEP.language_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"}</script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="pjax-progress-icon"><i class="fas fa-circle-notch fa-spin"></i></span></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper"><div class="header-content"><div class="left"><a class="logo-image" href="/"><img src="/images/avatar.jpg"> </a><a class="logo-title" href="/">🎈小客栈🎈</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/archives">归档</a></li><li class="menu-item search search-popup-trigger"><i class="fas fa-search"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="/">首页</a></li><li class="drawer-menu-item flex-center"><a href="/archives">归档</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation">HTML 基础篇</span></div><div class="article-header"><div class="avatar"><img src="/images/avatar.jpg"></div><div class="info"><div class="author"><span class="name">CouriourC</span> <span class="author-label">Lv1</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fas fa-edit"></i>&nbsp; <span class="pc">2022-09-07 21:55:02</span> <span class="mobile">2022-09-07 21:55</span> </span><span class="article-categories article-meta-item"><i class="fas fa-folder"></i>&nbsp;<ul><li><a href="/categories/HTML/">HTML</a>&nbsp;</li><li>&gt; <a href="/categories/HTML/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fas fa-tags"></i>&nbsp;<ul><li><a href="/tags/HTML/">HTML</a>&nbsp;</li><li>| <a href="/tags/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;</li></ul></span></div></div></div></div><div class="article-content markdown-body"><h1>HTML 基础总结</h1><h2 id="SEO-相关内容">SEO 相关内容</h2><p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p><h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3><p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p><p>简而言之，一种 <code>Web</code>开发规范，规范的作用就有：</p><ol><li>更好的维护项目，提高代码可读性。</li><li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria</code>都有帮助，同时有利于编译器进行一系列优化。</li></ol><h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3><ul><li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li><li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li></ul><h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3><p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/HTML/">#HTML</a>&nbsp;</li><li class="tag-item"><a href="/tags/2023%E9%9D%A2%E8%AF%95/">#2023面试</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2022/09/08/os-os-development/"><span class="left arrow-icon flex-center"><i class="fas fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">操作系统知识点总结-发展与分类</span> <span class="post-nav-item">上一篇</span></span></a></div></div></div></div></div></div><div class="page-main-content-bottom"><footer class="footer"><div class="info-container"><div class="copyright-info info-item">&copy; <span>2022</span> - 2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a></div><div class="theme-info info-item">由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 &nbsp;|&nbsp;主题 &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a></div></div></footer><script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script><script>window.mermaid&&mermaid.initialize({theme:"dark"})</script></div></div><div class="post-tools"><div class="post-tools-container"><ul class="tools-list"><li class="tools-item page-aside-toggle"><i class="fas fa-outdent"></i></li></ul></div></div><div class="right-bottom-side-tools"><div class="side-tools-container"><ul class="side-tools-list"><li class="tools-item tool-font-adjust-plus flex-center"><i class="fas fa-search-plus"></i></li><li class="tools-item tool-font-adjust-minus flex-center"><i class="fas fa-search-minus"></i></li><li class="tools-item tool-expand-width flex-center"><i class="fas fa-arrows-alt-h"></i></li><li class="tools-item tool-dark-light-toggle flex-center"><i class="fas fa-moon"></i></li><li class="tools-item tool-scroll-to-top flex-center"><i class="fas fa-arrow-up"></i></li><li class="tools-item tool-scroll-to-bottom flex-center"><i class="fas fa-arrow-down"></i></li></ul><ul class="exposed-tools-list"><li class="tools-item tool-toggle-show flex-center"><i class="fas fa-cog fa-spin"></i></li></ul></div></div><aside class="page-aside"><div class="post-toc-wrap"><div class="post-toc"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">HTML 基础总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO-%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="nav-text">SEO 相关内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML-%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">1. HTML 语义化的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-h1-%E6%A0%87%E7%AD%BE%E5%92%8C-title-%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">2. h1 标签和 title 标签之间的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-img-%E4%B8%AD%E7%9A%84-title-%E5%B1%9E%E6%80%A7%E5%92%8C-alt-%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">3. &lt;img &#x2F;&gt; 中的 title 属性和 alt 属性的区别</span></a></li></ol></li></ol></li></ol></div></div></aside><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fas fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fas fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script><div class="post-scripts pjax"><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script></div><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script><script>window.addEventListener("DOMContentLoaded",()=>{window.pjax=new Pjax({selectors:["head title",".page-container",".pjax"],history:!0,debug:!1,cacheBust:!1,timeout:0,analytics:!1,currentUrlFullReload:!1,scrollRestoration:!1}),document.addEventListener("pjax:send",()=>{KEEP.utils.pjaxProgressBarStart()}),document.addEventListener("pjax:complete",()=>{KEEP.utils.pjaxProgressBarEnd(),window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")),KEEP.refresh()})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="前端复习总结 前端 面试">
+    <meta name="description" content="前端复习总结">
+    <meta name="author" content="CouriourC">
+    
+    <title>
+        
+            HTML 基础篇 |
+        
+        🎈小客栈🎈
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"couriourc.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                🎈小客栈🎈
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">HTML 基础篇</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">CouriourC</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-07 21:55:02</span>
+        <span class="mobile">2022-09-07 21:55</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/HTML/">HTML</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/HTML/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/HTML/">HTML</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1>HTML 基础总结</h1>
+<h2 id="SEO-相关内容">SEO 相关内容</h2>
+<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
+<h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3>
+<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
+<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
+<ol>
+<li>更好的维护项目，提高代码可读性。</li>
+<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
+</ol>
+<h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3>
+<ul>
+<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
+<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
+</ul>
+<h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
+<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/HTML/">#HTML</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/2023%E9%9D%A2%E8%AF%95/">#2023面试</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/08/os-os-overview/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-概览</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2022</span>
+                -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+                    href="/">CouriourC</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
+            &nbsp;|&nbsp;主题
+            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                v3.4.5</a>
+        </div>
+        
+        
+    </div>
+
+</footer>
+
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'dark'});
+      }
+    </script>
+
+
+
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">HTML 基础总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO-%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="nav-text">SEO 相关内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML-%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">1. HTML 语义化的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-h1-%E6%A0%87%E7%AD%BE%E5%92%8C-title-%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">2. h1 标签和 title 标签之间的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-img-%E4%B8%AD%E7%9A%84-title-%E5%B1%9E%E6%80%A7%E5%92%8C-alt-%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">3. &lt;img &#x2F;&gt; 中的 title 属性和 alt 属性的区别</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
