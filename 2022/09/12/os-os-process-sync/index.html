@@ -304,7 +304,10 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h1 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h1><h2 id="进程同步的概念"><a href="#进程同步的概念" class="headerlink" title="进程同步的概念"></a>进程同步的概念</h2><h3 id="临界资源"><a href="#临界资源" class="headerlink" title="临界资源"></a>临界资源</h3><p>临界资源指一个时间段内只允许一个进程使用的资源（互斥资源）。</p>
+            <h1>进程同步</h1>
+<h2 id="进程同步的概念">进程同步的概念</h2>
+<h3 id="临界资源">临界资源</h3>
+<p>临界资源指一个时间段内只允许一个进程使用的资源（互斥资源）。</p>
 <blockquote>
 <p>例如物理设备，内存缓冲区等都是临界资源</p>
 </blockquote>
@@ -317,9 +320,8 @@ participant exit as 退出区
 participant remainder as 剩余区
 
 loop always
-    entry  --&gt; remainder: 
+	entry  --&gt; remainder: 
 end</pre>
-
 <ul>
 <li><strong>进入区</strong>：检查是否可以进入临界区，若可以进入，则设置正在访问临界资源的标志，以阻止其他进程进入临界区。</li>
 <li><strong>临界区</strong>（<strong>临界段</strong>）：进程中访问临界区的一段代码。</li>
@@ -327,97 +329,112 @@ end</pre>
 <li><strong>剩余区</strong>：代码中其他部分。</li>
 </ul>
 <p><span style="color:red;">🧡进入区和退出区负责实现互斥</span></p>
-<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><p><strong>同步</strong>：亦称为<strong>直接制约关系</strong>，他是指完成某种任务而建立的<strong>两个或多个</strong>进程，这些进程因为需要在某些位置上协调他们的工作次序而产生的制约关系。进程间的<strong>直接制约关系</strong>就是因为他们的相互合作。</p>
-<h2 id="互斥"><a href="#互斥" class="headerlink" title="互斥"></a>互斥</h2><p>对临界资源的访问，<strong>必须</strong>互斥的进行。</p>
+<h2 id="同步">同步</h2>
+<p><strong>同步</strong>：亦称为<strong>直接制约关系</strong>，他是指完成某种任务而建立的<strong>两个或多个</strong>进程，这些进程因为需要在某些位置上协调他们的工作次序而产生的制约关系。进程间的<strong>直接制约关系</strong>就是因为他们的相互合作。</p>
+<h2 id="互斥">互斥</h2>
+<p>对临界资源的访问，<strong>必须</strong>互斥的进行。</p>
 <p>互斥：亦称<strong>间接制约关系</strong>，进程互斥指当一个进程访问临界资源时，另一个想要访问该临界资源的进程必须等待。当前访问临界资源的进程访问结束。释放该资源之后，另一个进程才能去访问临界资源。</p>
-<h3 id="互斥的原则"><a href="#互斥的原则" class="headerlink" title="互斥的原则"></a>互斥的原则</h3><ul>
+<h3 id="互斥的原则">互斥的原则</h3>
+<ul>
 <li>空闲让进：临界区空闲时，可以允许一个请求进入临界区的进程，立即进入临界区。</li>
 <li>忙则等待：若已有进程进入临界区时，其他试图进入临界区的进程必须等待。</li>
 <li>有限等待：对请求访问的进程，因保证能在有限时间内进入临界区（保证不饥饿）</li>
 <li>让权等待：当进程不能进入临界区时，应立刻释放处理机，防止进程忙等待。</li>
 </ul>
 <blockquote>
-<p>一句话，就是 <strong>（处理机or资源）物尽其用</strong>，**(能力or资源)不够就等**</p>
+<p>一句话，就是 <strong>（处理机or资源）物尽其用</strong>，<strong>(能力or资源)不够就等</strong></p>
 </blockquote>
-<h2 id="临界区互斥的实现"><a href="#临界区互斥的实现" class="headerlink" title="临界区互斥的实现"></a>临界区互斥的实现</h2><h3 id="单标志法"><a href="#单标志法" class="headerlink" title="单标志法"></a>单标志法</h3><p>一个进程在访问完临界区后会把临界区资源的权限交给另一个进程，也就是说每个进程进入临界区的权限只能由前辈（另一个程序赋予）</p>
+<h2 id="临界区互斥的实现">临界区互斥的实现</h2>
+<h3 id="单标志法">单标志法</h3>
+<p>一个进程在访问完临界区后会把临界区资源的权限交给另一个进程，也就是说每个进程进入临界区的权限只能由前辈（另一个程序赋予）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (turn != <span class="hljs-number">0</span>);<br>    critical section;<br>    turn = <span class="hljs-number">1</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(turn != <span class="hljs-number">1</span>);<br>    critical section;<br>    turn = <span class="hljs-number">0</span>;<br>    remainder section;<br>}<br><br></code></pre></td></tr></table></figure>
-
 <p>就如同单锁一样，自己在用的时候，其他进程就不能用，自己用完了，立马就把占有权给人家。</p>
 <blockquote>
-<p>好比如：现在是桌上只有一双筷子，有A跟B两个人，一开始先把筷子给A，A吃完后直接就把筷子洗干净给B了，然后说你吃完再把筷子洗干净给我，结果B无语了，他也没说要用筷子吃东西，然后A就是说不管，你必须吃完过后再把筷子给我，结果A自己又想吃的时候结果没有筷子用，因为筷子还在B那里呢，B还在纳闷A怕不是有什么大病。<br>    该比喻来自 CSDN「叫我蘑菇先生」的<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43305485/article/details/120754983">原创文章<i class="fas fa-external-link-alt"></i></a></p>
+<p>好比如：现在是桌上只有一双筷子，有A跟B两个人，一开始先把筷子给A，A吃完后直接就把筷子洗干净给B了，然后说你吃完再把筷子洗干净给我，结果B无语了，他也没说要用筷子吃东西，然后A就是说不管，你必须吃完过后再把筷子给我，结果A自己又想吃的时候结果没有筷子用，因为筷子还在B那里呢，B还在纳闷A怕不是有什么大病。<br>
+该比喻来自 CSDN「叫我蘑菇先生」的<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43305485/article/details/120754983">原创文章<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
-<h3 id="双标志先检查法"><a href="#双标志先检查法" class="headerlink" title="双标志先检查法"></a>双标志先检查法</h3><p>设置一个数组，相应元素标识进程访问的资源的意愿。</p>
+<h3 id="双标志先检查法">双标志先检查法</h3>
+<p>设置一个数组，相应元素标识进程访问的资源的意愿。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = {<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-comment">// 或者 用 if (flag[1]) return ;</span><br>  <span class="hljs-comment">//大抵就是，如果 1 占有的时候，就不继续执行下面的，</span><br>    <span class="hljs-keyword">while</span> (flag[<span class="hljs-number">1</span>]);<br>    <span class="hljs-comment">// 表明自己在占有</span><br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 拿到临界区资源</span><br>    critical section;<br>    <span class="hljs-comment">// 自己用好了</span><br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 退回资源</span><br>    remaider section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(flag[<span class="hljs-number">0</span>]);<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 拿到临界区资源</span><br>    critical section;<br>    <span class="hljs-comment">// 自己用好了</span><br>    falg[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>  <span class="hljs-comment">// 退回资源</span><br>    remaider section;<br>}<br></code></pre></td></tr></table></figure>
-
 <p>相当于时各自等待别人表态，如果别人不用了，自己再用；可能<strong>违背忙则等待</strong>的原则。</p>
 <blockquote>
 <p>好比如：现在同样是桌上只有一双筷子，有A跟B两个人，但是现在这两个人会察言观色了，会先看对方会不会想要先用筷子，然后再判断下一步是使用筷子还是接着等待。一开始，两个人都不说自己想不想用筷子，就等对方先表态，毕竟要多谦让，最后彼此看这么久都不说话，估计就是不想用了，然后彼此都默认对方不想用筷子。这个时候就会出现问题了，两个人都默认彼此不想用筷子，然后自己就下意识去拿筷子，结果刚好对方也想用，这就尴尬了，那最后是谁用呢，这个时候就会出现资源被同时访问的问题。</p>
 <p>该比喻来自 CSDN「叫我蘑菇先生」的<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43305485/article/details/120754983">原创文章<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <hr>
-<h3 id="双标志后检查法"><a href="#双标志后检查法" class="headerlink" title="双标志后检查法"></a>双标志后检查法</h3><p>相比于双标志先检查法，此算法先修改自己的一员，再进行检查。</p>
+<h3 id="双标志后检查法">双标志后检查法</h3>
+<p>相比于双标志先检查法，此算法先修改自己的一员，再进行检查。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = { <span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;which)</span></span>{<br>    <span class="hljs-keyword">while</span>(which);<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">1</span>]);<br>    critical section;<br>  flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">0</span>]);<br>    critical section;<br>  flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br></code></pre></td></tr></table></figure>
-
 <p>这一算法解决了“忙则等待”的问题，但是若两个进程同时标记为true，又会相互等待造成<strong>饥饿</strong>，违背了“<strong>空闲让进</strong>”和“<strong>有限等待</strong>”原则。</p>
 <blockquote>
-<p>好比如：现在还是桌上只有一双筷子，但是现在就不是A跟B了，换成孔融1号和孔融2号，为什么给他们这样取名字呢，后面就知道啦！现在这两个人呢，在想用筷子的时候都会先说出来表明自己的态度，然后再看对方会不会想要先用筷子，然后再判断下一步是使用筷子还是接着等待。如果一开始两个人同时表明自己想要筷子的话，对方都会考虑到礼仪问题，谦让给对方用，毕竟谁叫他们叫孔融呢，但是这样出现的问题就是明明有筷子可以用但是因为谦让而僵持住。结果两个人就只能饿着了，在操作系统里面这里就出现了”死等”，即会存在进程产生”饥饿”。</p>
+<p>好比如：现在还是桌上只有一双筷子，但是现在就不是A跟B了，换成孔融1号和孔融2号，为什么给他们这样取名字呢，后面就知道啦！现在这两个人呢，在想用筷子的时候都会先说出来表明自己的态度，然后再看对方会不会想要先用筷子，然后再判断下一步是使用筷子还是接着等待。如果一开始两个人同时表明自己想要筷子的话，对方都会考虑到礼仪问题，谦让给对方用，毕竟谁叫他们叫孔融呢，但是这样出现的问题就是明明有筷子可以用但是因为谦让而僵持住。结果两个人就只能饿着了，在操作系统里面这里就出现了"死等"，即会存在进程产生"饥饿"。</p>
 <p>该比喻来自 CSDN「叫我蘑菇先生」的<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43305485/article/details/120754983">原创文章<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <hr>
-<h3 id="Peterson-算法"><a href="#Peterson-算法" class="headerlink" title="Peterson 算法"></a>Peterson 算法</h3><p>基本思路：设置一个数组<code> flag[2]</code>，这里与前面不同之处，先设置自己的标志位，再检查对方的标志状态，若对方的标志位为 <code>true</code>，再检查对方的标志状态，若对方的标志位为 <code>true</code> 则等待，</p>
+<h3 id="Peterson-算法">Peterson 算法</h3>
+<p>基本思路：设置一个数组<code> flag[2]</code>，这里与前面不同之处，先设置自己的标志位，再检查对方的标志状态，若对方的标志位为 <code>true</code>，再检查对方的标志状态，若对方的标志位为 <code>true</code> 则等待，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = {<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;              <span class="hljs-comment">//标记P0希望进入临界区</span><br>  turn = <span class="hljs-number">1</span>;<br>    <br>  <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">1</span>] &amp;&amp; turn == <span class="hljs-number">1</span>);<br>    critical section;<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    turn = <span class="hljs-number">0</span>;<br>    <br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">0</span>] &amp;&amp; turn == <span class="hljs-number">0</span>);<br>    critical section;<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br></code></pre></td></tr></table></figure>
-
 <blockquote>
 <p>此算法利用flag[ ]实现了临界资源的<strong>互斥访问</strong>，并用<strong>turn</strong>解决了“<strong>饥饿</strong>”现象；</p>
 <p>遵循了空闲让进、忙则等待和有限等待原则；</p>
 <p>但是<strong>没有遵循让权等待原则</strong>（需要在CPU上不断循环检测）。</p>
 </blockquote>
-<h2 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h2><h3 id="中断屏蔽方法"><a href="#中断屏蔽方法" class="headerlink" title="中断屏蔽方法"></a>中断屏蔽方法</h3><p>利用开关中断的方式实现</p>
+<h2 id="硬件实现">硬件实现</h2>
+<h3 id="中断屏蔽方法">中断屏蔽方法</h3>
+<p>利用开关中断的方式实现</p>
 <pre class="mermaid">graph TB
 close(关中断)
 critical(临界区)
 open(开中断)
 close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</pre>
-
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<h4 id="优点">优点</h4>
+<ul>
 <li>简洁，高校</li>
 </ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li><p>不适用于多处理机</p>
+<h4 id="缺点">缺点</h4>
+<ul>
+<li>
+<p>不适用于多处理机</p>
 </li>
-<li><p>只适用于操作系统内核进程（开关中断只能在内核执行）</p>
+<li>
+<p>只适用于操作系统内核进程（开关中断只能在内核执行）</p>
 </li>
 </ul>
-<h3 id="TSL-TestAndSet-指令"><a href="#TSL-TestAndSet-指令" class="headerlink" title="TSL(TestAndSet)指令"></a>TSL(TestAndSet)指令</h3><p><strong>TS/TSL</strong> 指令时用<strong>硬件</strong>实现的，执行过程不允许被中断。</p>
+<h3 id="TSL-TestAndSet-指令">TSL(TestAndSet)指令</h3>
+<p><strong>TS/TSL</strong> 指令时用<strong>硬件</strong>实现的，执行过程不允许被中断。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> lock;  <span class="hljs-comment">//共享变量表示临界资源是否上锁</span><br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">TSL</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;g_lock)</span></span>{<br>    <span class="hljs-type">bool</span> old = g_lock;<br>    g_lock = <span class="hljs-literal">true</span>;   <span class="hljs-comment">//无论之前是否上锁，将lock设置为true</span><br>    <span class="hljs-keyword">return</span> old; <span class="hljs-comment">//返回之前lock的值</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">TSL</span>(lock));<span class="hljs-comment">//若可以进入临界区，则进入循环</span><br>    critical section;<br>    lock = <span class="hljs-literal">false</span>;  <span class="hljs-comment">//为临界资源解锁</span><br>    remainder section;<br>}<br><br></code></pre></td></tr></table></figure>
-
-<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<h3 id="优点-v2">优点</h3>
+<ul>
 <li>实现简单</li>
 <li>适用于多处理机环境</li>
 </ul>
-<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>不满足让权等待原则，暂时无法进入临界区的资源任然会占用 <strong>CPU</strong> 并循环执行 <code>TS</code> 指令，导致<strong>“忙等”</strong></li>
+<h4 id="缺点-v2">缺点</h4>
+<ul>
+<li>不满足让权等待原则，暂时无法进入临界区的资源任然会占用 <strong>CPU</strong> 并循环执行 <code>TS</code> 指令，导致**“忙等”**</li>
 </ul>
-<h3 id="Swap-指令"><a href="#Swap-指令" class="headerlink" title="Swap 指令"></a>Swap 指令</h3><p>也称之为 <strong>Exchange</strong> 指令，或者简称 <strong>XCHG</strong>。</p>
+<h3 id="Swap-指令">Swap 指令</h3>
+<p>也称之为 <strong>Exchange</strong> 指令，或者简称 <strong>XCHG</strong>。</p>
 <p>该指令和 <strong>TSL</strong> 类似，都是用硬件实现的，执行过程不允许被中断。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> lock;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Swap</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;a,<span class="hljs-type">bool</span> &amp;b)</span> </span>{<br>    a = a^b;<br>    b = a^b;<br>    a = a^b;<br>}<br><span class="hljs-type">bool</span> old = <span class="hljs-literal">true</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (old== <span class="hljs-literal">true</span>) <span class="hljs-built_in">Swap</span>(old,lock);<br>    critical section;<br>    lock = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br><br><br></code></pre></td></tr></table></figure>
-
 <p>其原理，优缺点和 <strong>TSL</strong> 类似。</p>
-<h2 id="🔒锁（自旋锁🔒）"><a href="#🔒锁（自旋锁🔒）" class="headerlink" title="🔒锁（自旋锁🔒）"></a>🔒锁（自旋锁🔒）</h2><p>解决临界区最简单的方法就是锁。进程在进入临界区时获得锁，退出临界区时释放锁。</p>
+<h2 id="🔒锁（自旋锁🔒）">🔒锁（自旋锁🔒）</h2>
+<p>解决临界区最简单的方法就是锁。进程在进入临界区时获得锁，退出临界区时释放锁。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> locked;<span class="hljs-comment">//设置是否被锁的状态 true,已锁， false,未锁</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">if</span> (locked) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// 没有上锁就不管</span><br>    <br>    lock = <span class="hljs-literal">true</span>; <span class="hljs-comment">// 加锁</span><br>  <span class="hljs-built_in">wait_unlock</span>(); <span class="hljs-comment">// 做一些东西，做完之后就 unlock</span><br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">unlock</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 解锁</span><br>    locked = <span class="hljs-literal">false</span>;<br>}<br><br><span class="hljs-comment">// or </span><br><span class="hljs-type">bool</span> available;<br><span class="hljs-comment">// 获得锁</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">acquire</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(!available); <span class="hljs-comment">//忙等锁，注意和 nodejs 不一样，nodejs 的话就直接卡在这里超时了，而这里主要考虑的是，喔，实测这玩意在 CPP 也寄，估计这玩意需要用在多处理器之间，嗯，对，这里就是讨论的不同进程之间。</span><br>    available = <span class="hljs-literal">false</span>;  <span class="hljs-comment">//获得锁</span><br>}<br><br><span class="hljs-comment">// 释放锁</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">release</span><span class="hljs-params">()</span></span>{<br>    available = <span class="hljs-literal">true</span>;  <span class="hljs-comment">//释放锁</span><br>}<br><br><span class="hljs-comment">// 同第一种一样，把释放加锁放到中间更加自然，就不要一直 while;</span><br></code></pre></td></tr></table></figure>
-
 <p>上锁和解锁必须时原子操作。</p>
-<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ul>
+<h3 id="优点-v3">优点</h3>
+<ul>
 <li>等待器件不用切换进程上下文，多核处理器中若上锁的时间很短，则等待代价很低。</li>
 <li>常用于多处理器系统，一个核忙等待，其他核正常工作，并快速释放临界区。</li>
 </ul>
-<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<h3 id="缺点-v3">缺点</h3>
+<ul>
 <li>需要忙等，进程时间片用完才释放处理机资源，违反了“<strong>让权等待</strong>”</li>
 <li>不适用于单处理机系统，忙等过程不可解锁。</li>
 </ul>
-<h2 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h2><p>信号量是一种功能较强的机制，可用于解决互斥与同步问题。他只能被两个标准原语 <strong>“Walit(S)”</strong> 和 <strong>“Signal(S)”</strong>访问，也被记作 “<strong>P操作</strong>” “<strong>V操作</strong>”。</p>
+<h2 id="信号量">信号量</h2>
+<p>信号量是一种功能较强的机制，可用于解决互斥与同步问题。他只能被两个标准原语 “<strong>Walit(S)</strong>” 和 **“Signal(S)”**访问，也被记作 “<strong>P操作</strong>” “<strong>V操作</strong>”。</p>
 <blockquote>
-<p>:information_source:在荷兰文中，通过叫passeren，释放叫vrijgeven，PV操作因此得名</p>
+<p>ℹ️在荷兰文中，通过叫passeren，释放叫vrijgeven，PV操作因此得名</p>
 </blockquote>
 
         </div>
@@ -582,7 +599,7 @@ close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">进程同步的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E8%B5%84%E6%BA%90"><span class="nav-text">临界资源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5"><span class="nav-text">同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E6%96%A5"><span class="nav-text">互斥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-text">互斥的原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA%E4%BA%92%E6%96%A5%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">临界区互斥的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E6%A0%87%E5%BF%97%E6%B3%95"><span class="nav-text">单标志法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%85%88%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">双标志先检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%90%8E%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">双标志后检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Peterson-%E7%AE%97%E6%B3%95"><span class="nav-text">Peterson 算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-text">硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%96%B9%E6%B3%95"><span class="nav-text">中断屏蔽方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TSL-TestAndSet-%E6%8C%87%E4%BB%A4"><span class="nav-text">TSL(TestAndSet)指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-1"><span class="nav-text">优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-%E6%8C%87%E4%BB%A4"><span class="nav-text">Swap 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%92%E9%94%81%EF%BC%88%E8%87%AA%E6%97%8B%E9%94%81%F0%9F%94%92%EF%BC%89"><span class="nav-text">🔒锁（自旋锁🔒）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-2"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-2"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">信号量</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">进程同步的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E8%B5%84%E6%BA%90"><span class="nav-text">临界资源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5"><span class="nav-text">同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E6%96%A5"><span class="nav-text">互斥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-text">互斥的原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA%E4%BA%92%E6%96%A5%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">临界区互斥的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E6%A0%87%E5%BF%97%E6%B3%95"><span class="nav-text">单标志法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%85%88%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">双标志先检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%90%8E%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-text">双标志后检查法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Peterson-%E7%AE%97%E6%B3%95"><span class="nav-text">Peterson 算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-text">硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%96%B9%E6%B3%95"><span class="nav-text">中断屏蔽方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TSL-TestAndSet-%E6%8C%87%E4%BB%A4"><span class="nav-text">TSL(TestAndSet)指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-v2"><span class="nav-text">优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-v2"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-%E6%8C%87%E4%BB%A4"><span class="nav-text">Swap 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%92%E9%94%81%EF%BC%88%E8%87%AA%E6%97%8B%E9%94%81%F0%9F%94%92%EF%BC%89"><span class="nav-text">🔒锁（自旋锁🔒）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-v3"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-v3"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">信号量</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

@@ -304,37 +304,50 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><blockquote>
+            <h1>进程与线程</h1>
+<h2 id="进程">进程</h2>
+<blockquote>
 <p>进程是资源分配的基本单位。</p>
 <p>进程控制块(Process Control Block PCB)描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 <code>PCB</code> 的操作。</p>
 </blockquote>
 <p>进程控制块包含下列信息：</p>
-<h3 id="1-进程标识符（PID）"><a href="#1-进程标识符（PID）" class="headerlink" title="1. 进程标识符（PID）"></a>1. 进程标识符（PID）</h3><p>进程标识符用于唯一地标识一个进程。</p>
+<h3 id="1-进程标识符（PID）">1. 进程标识符（PID）</h3>
+<p>进程标识符用于唯一地标识一个进程。</p>
 <p>一个进程通常由两种标识符组成：</p>
 <ul>
-<li><h6 id="内部标识符："><a href="#内部标识符：" class="headerlink" title="内部标识符："></a>内部标识符：</h6></li>
+<li>
+<h6 id="内部标识符：">内部标识符：</h6>
+</li>
 </ul>
 <p>在所有操作系统中，都为每一个进程赋予了一个唯一的数字标识符，它通常是一个进程的序号，设置内部标识符主要是为了方便系统使用。</p>
 <ul>
-<li><h6 id="外部标识符："><a href="#外部标识符：" class="headerlink" title="外部标识符："></a>外部标识符：</h6></li>
+<li>
+<h6 id="外部标识符：">外部标识符：</h6>
+</li>
 </ul>
 <p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p>
-<p>可以参考一个指令 </p>
+<p>可以参考一个指令</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">kill</span> pid <br><span class="hljs-built_in">kill</span> p_name<br></code></pre></td></tr></table></figure>
-
-<h3 id="2-处理机状态"><a href="#2-处理机状态" class="headerlink" title="2. 处理机状态"></a>2. 处理机状态</h3><p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
+<h3 id="2-处理机状态">2. 处理机状态</h3>
+<p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
 <p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW </code>、<code>用户栈指针</code></p>
 <p>这些信息显然和进程相关，因此，进程一旦被中断，就必须把这些信息保存在 <code>PCB</code> 中，以便在恢复运行时能完全恢复中断前的状态。</p>
-<h3 id="3-进程调度信息"><a href="#3-进程调度信息" class="headerlink" title="3. 进程调度信息"></a>3. 进程调度信息</h3><p>在 PCB 中还存放一些进程调度和进程对换相关的信息。</p>
+<h3 id="3-进程调度信息">3. 进程调度信息</h3>
+<p>在 PCB 中还存放一些进程调度和进程对换相关的信息。</p>
 <p>包括：<code>进程状态</code>、<code>进程优先级</code>、<code>进程调度所需要的其他信息</code>（所采用的进程调度算法有关），<code>事件</code>（指进程由执行状态变为阻塞态所等待发生的事件，即阻塞原因）</p>
-<h3 id="4-进程控制信息"><a href="#4-进程控制信息" class="headerlink" title="4. 进程控制信息"></a>4. 进程控制信息</h3><ul>
-<li><p>程序和数据的地址。</p>
+<h3 id="4-进程控制信息">4. 进程控制信息</h3>
+<ul>
+<li>
+<p>程序和数据的地址。</p>
 </li>
-<li><p>进程同步和通信机制，指实现进程同步和进程通信时必须的机制，如消息队列的指针、信号量等，他们可能全部或部分的放在 <code>PCB</code>中。</p>
+<li>
+<p>进程同步和通信机制，指实现进程同步和进程通信时必须的机制，如消息队列的指针、信号量等，他们可能全部或部分的放在 <code>PCB</code>中。</p>
 </li>
-<li><p>资源清单，列出了出 <code>CPU</code>以外的、进程所需的全部资源及已经分配到改进程的资源清单。</p>
+<li>
+<p>资源清单，列出了出 <code>CPU</code>以外的、进程所需的全部资源及已经分配到改进程的资源清单。</p>
 </li>
-<li><p>链接指针，他给出了本进程（<code>PCB</code>）所在队列的下一个进程的 <code>PCB</code> 的首地址。</p>
+<li>
+<p>链接指针，他给出了本进程（<code>PCB</code>）所在队列的下一个进程的 <code>PCB</code> 的首地址。</p>
 </li>
 </ul>
 <pre class="mermaid">classDiagram
@@ -343,29 +356,44 @@ mjx-container[display="true"] + br {
     PCB : +状态机信息
     PCB : +进程调度信息
     PCB : +进程控制信息</pre>
-
-<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><ol>
-<li><h5 id="动态性（进程的基本特征）"><a href="#动态性（进程的基本特征）" class="headerlink" title="动态性（进程的基本特征）"></a>动态性（进程的基本特征）</h5><p> 进程是程序的一次执行过程，是动态地产生，变化和消亡</p>
+<h3 id="进程的特征">进程的特征</h3>
+<ol>
+<li>
+<h5 id="动态性（进程的基本特征）">动态性（进程的基本特征）</h5>
+<p>进程是程序的一次执行过程，是动态地产生，变化和消亡</p>
 </li>
-<li><h5 id="并发性"><a href="#并发性" class="headerlink" title="并发性"></a>并发性</h5><p> 内存中有多个进程实体，各进程可并发执行</p>
+<li>
+<h5 id="并发性">并发性</h5>
+<p>内存中有多个进程实体，各进程可并发执行</p>
 </li>
-<li><h5 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h5><p> 进程是<strong>独立运行</strong>，<strong>独立获得资源</strong>，<strong>独立接受调度</strong>的<strong>基本单位</strong></p>
+<li>
+<h5 id="独立性">独立性</h5>
+<p>进程是<strong>独立运行</strong>，<strong>独立获得资源</strong>，<strong>独立接受调度</strong>的<strong>基本单位</strong></p>
 </li>
-<li><h5 id="异步性"><a href="#异步性" class="headerlink" title="异步性"></a>异步性</h5><p> 各进程按各自独立的，不可预知的速度向前推进，操作系统要提供”<strong>进程同步机制</strong>“来解决异步问题</p>
+<li>
+<h5 id="异步性">异步性</h5>
+<p>各进程按各自独立的，不可预知的速度向前推进，操作系统要提供”<strong>进程同步机制</strong>“来解决异步问题</p>
 </li>
-<li><h5 id="结构性"><a href="#结构性" class="headerlink" title="结构性"></a>结构性</h5><p> 每个进程都会配置一个 <strong>PCB</strong> ，结构上看，进程由程序段，数据段，<strong>PCB</strong> 组成</p>
+<li>
+<h5 id="结构性">结构性</h5>
+<p>每个进程都会配置一个 <strong>PCB</strong> ，结构上看，进程由程序段，数据段，<strong>PCB</strong> 组成</p>
 </li>
 </ol>
-<h3 id="进程态的切换"><a href="#进程态的切换" class="headerlink" title="进程态的切换"></a>进程态的切换</h3><p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p>
+<h3 id="进程态的切换">进程态的切换</h3>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://camo.githubusercontent.com/0398c2bace5b1b0695f5a34f6cfedf6e358db565408abc83dd161de71d3bfec8/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f50726f6365737353746174652e706e67" alt="img"></p>
 <ul>
 <li>创建态(created): <strong>进程</strong>正在被创建，包括建立空白 <strong>PCB</strong>，由系统为进程分配资源等。</li>
 </ul>
-<h4 id="基本状态"><a href="#基本状态" class="headerlink" title="基本状态"></a>基本状态</h4><ul>
-<li><p>就绪状态(<code>ready</code>): <strong>进程</strong>获得了除了<strong>处理机外的一切资源</strong>，一旦获得了处理及资源就可以立刻开始运行，系统中处于就绪态的进程可以由很多个，通常将他们排成一个队列，称为就绪队列。</p>
+<h4 id="基本状态">基本状态</h4>
+<ul>
+<li>
+<p>就绪状态(<code>ready</code>): <strong>进程</strong>获得了除了<strong>处理机外的一切资源</strong>，一旦获得了处理及资源就可以立刻开始运行，系统中处于就绪态的进程可以由很多个，通常将他们排成一个队列，称为就绪队列。</p>
 </li>
-<li><p>运行状态(<code>running</code>)：<strong>进程</strong>正在处理机上运行。单处理机情况下每一每刻最多只有一个进程处于运行态。</p>
+<li>
+<p>运行状态(<code>running</code>)：<strong>进程</strong>正在处理机上运行。单处理机情况下每一每刻最多只有一个进程处于运行态。</p>
 </li>
-<li><p>阻塞状态(<code>waiting</code>): <strong>进程</strong>请求等待某个事件发生，在该事件完成前，即使处理机资源空闲，该进程也不能运行，例如请求了系统调用或者是等待某些资源。</p>
+<li>
+<p>阻塞状态(<code>waiting</code>): <strong>进程</strong>请求等待某个事件发生，在该事件完成前，即使处理机资源空闲，该进程也不能运行，例如请求了系统调用或者是等待某些资源。</p>
 </li>
 </ul>
 <hr>
@@ -381,17 +409,21 @@ mjx-container[display="true"] + br {
 <li>阻塞态道就绪态是被动的行为。</li>
 </ul>
 </blockquote>
-<h3 id="进程的组织方式"><a href="#进程的组织方式" class="headerlink" title="进程的组织方式"></a>进程的组织方式</h3><ul>
+<h3 id="进程的组织方式">进程的组织方式</h3>
+<ul>
 <li>链式方式：将同一状态的 <strong>PCB</strong> 连接道同一个队列</li>
 <li>索引方式：将同一状态的 <strong>PCB</strong> 放在同一个索引表中</li>
 </ul>
-<h3 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h3><p>进程控制是用<strong>原语</strong>来实现的：</p>
+<h3 id="进程控制">进程控制</h3>
+<p>进程控制是用<strong>原语</strong>来实现的：</p>
 <blockquote>
 <p>tips:</p>
 <p>原语是指执行期间不允许终中断的程序段，是同一个不可分割的基本单位。</p>
 <p>通过”<strong>关中断指令</strong>“和”<strong>开中断指令</strong>“实现了原语的<strong>原子性</strong></p>
 </blockquote>
-<h3 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h3><h5 id="创建原语"><a href="#创建原语" class="headerlink" title="创建原语"></a>创建原语</h5><ol>
+<h3 id="进程的创建">进程的创建</h3>
+<h5 id="创建原语">创建原语</h5>
+<ol>
 <li>申请空白 <strong>PCB</strong></li>
 <li>为进程分配所需资源</li>
 <li>初始化 <strong>PCB</strong></li>
@@ -404,16 +436,16 @@ init(初始化 PCB);
 insert(将 PCB 插入就绪队列);
 %%  开始连接
 start--&gt;assign--&gt;init--&gt;insert;</pre>
-
-
-
-<h5 id="引起进程创建的事件"><a href="#引起进程创建的事件" class="headerlink" title="引起进程创建的事件"></a>引起进程创建的事件</h5><ol>
+<h5 id="引起进程创建的事件">引起进程创建的事件</h5>
+<ol>
 <li>用户登陆</li>
 <li>作业调度（有新的作业将要运行）</li>
 <li>提供服务</li>
 <li>应用请求（用户进程主动请求创建子进程）</li>
 </ol>
-<h4 id="进程的终止"><a href="#进程的终止" class="headerlink" title="进程的终止"></a>进程的终止</h4><h5 id="撤销原语"><a href="#撤销原语" class="headerlink" title="撤销原语"></a>撤销原语</h5><ol>
+<h4 id="进程的终止">进程的终止</h4>
+<h5 id="撤销原语">撤销原语</h5>
+<ol>
 <li>从 <strong>PCB</strong> 集合中找到终止进程的 <strong>PCB</strong></li>
 <li>若进程正在运行，立刻剥夺 <strong>CPU</strong>，将 <strong>CPU</strong> 分配给其他进程</li>
 <li>中止其所有的子进程</li>
@@ -431,42 +463,52 @@ kill--&gt;checkStatus
 checkStatus--正在运行==&gt;assign--&gt;stopChildProcess
 checkStatus--其他状态==&gt;stopChildProcess
 stopChildProcess--&gt;delete</pre>
-
-
-
-<h5 id="引起进程终止的事件"><a href="#引起进程终止的事件" class="headerlink" title="引起进程终止的事件"></a>引起进程终止的事件</h5><ul>
-<li><p>正常结束</p>
+<h5 id="引起进程终止的事件">引起进程终止的事件</h5>
+<ul>
+<li>
+<p>正常结束</p>
 </li>
-<li><p>异常结束</p>
+<li>
+<p>异常结束</p>
 </li>
-<li><p>外界干预</p>
+<li>
+<p>外界干预</p>
 </li>
 </ul>
-<h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a><span id="process-switch">进程切换</span></h4><h5 id="切换原语"><a href="#切换原语" class="headerlink" title="切换原语"></a>切换原语</h5><ol>
+<h4 id="span-id-process-switch-进程切换-span"><span id="process-switch">进程切换</span></h4>
+<h5 id="切换原语">切换原语</h5>
+<ol>
 <li>将运行环境信息存入 <strong>PCB</strong></li>
 <li>将 <strong>PCB</strong> 移入相应队列</li>
 <li>选择另一个进程执行，并更新其 <strong>PCB</strong></li>
 <li>根据 <strong>PCB</strong> 恢复进程所需的运行环境</li>
 </ol>
-<h6 id="引起切换的事件"><a href="#引起切换的事件" class="headerlink" title="引起切换的事件"></a>引起切换的事件</h6><ul>
+<h6 id="引起切换的事件">引起切换的事件</h6>
+<ul>
 <li>当前进程<strong>时间片</strong>到，该被处理了</li>
 <li>更高级的进程到达</li>
 <li>当前进程主动阻塞</li>
 <li>当前进程中止</li>
 </ul>
-<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><h4 id="1-共享存储"><a href="#1-共享存储" class="headerlink" title="1. 共享存储"></a>1. 共享存储</h4><ul>
-<li><p>两个进程对共享空间的访问必须时互斥的（临界资源）</p>
+<h3 id="进程通信">进程通信</h3>
+<h4 id="1-共享存储">1. 共享存储</h4>
+<ul>
+<li>
+<p>两个进程对共享空间的访问必须时互斥的（临界资源）</p>
 </li>
-<li><p>操作系统只提供<strong>共享空间</strong>和<strong>同步互斥工具</strong>（P,V操作）</p>
+<li>
+<p>操作系统只提供<strong>共享空间</strong>和<strong>同步互斥工具</strong>（P,V操作）</p>
 <blockquote>
 <p>主要有两种方式:</p>
 <ul>
-<li>基于数据结构的共享<ul>
+<li>基于数据结构的共享
+<ul>
 <li>只能共享固定的数据结构</li>
 <li>速度慢，是一种低效的共享方式</li>
 </ul>
 </li>
-<li>基于存储区的共享<ul>
+<li>基于存储区的共享
+<ul>
 <li>共享方式和大小由进程自己决定</li>
 <li>速度快，是一种高级的共享方式</li>
 </ul>
@@ -475,80 +517,112 @@ stopChildProcess--&gt;delete</pre>
 </blockquote>
 </li>
 </ul>
-<h4 id="2-管道通信"><a href="#2-管道通信" class="headerlink" title="2. 管道通信"></a>2. 管道通信</h4><ul>
-<li><p>管道是半双工的，先进先出的，它把一个进程的输出和另一个进程的输入连接在一起</p>
+<h4 id="2-管道通信">2. 管道通信</h4>
+<ul>
+<li>
+<p>管道是半双工的，先进先出的，它把一个进程的输出和另一个进程的输入连接在一起</p>
 </li>
-<li><p>一个进程（写进程）在管道的尾部写入数据，另一个进程（读进程）从管道的头部读出数据</p>
+<li>
+<p>一个进程（写进程）在管道的尾部写入数据，另一个进程（读进程）从管道的头部读出数据</p>
 </li>
-<li><p>无名管道用于父子进程之间的通信；有名管道用于运行同一个系统中的任意两个进程间的通信</p>
+<li>
+<p>无名管道用于父子进程之间的通信；有名管道用于运行同一个系统中的任意两个进程间的通信</p>
 </li>
-<li><p>各个进程对管道的访问是互斥的</p>
+<li>
+<p>各个进程对管道的访问是互斥的</p>
 </li>
-<li><p>管道没有写满的时候，不能向管道中再写（读）数据</p>
+<li>
+<p>管道没有写满的时候，不能向管道中再写（读）数据</p>
 </li>
-<li><p>从管道中读取数据是一次性的，数据一旦被读取就会从管道中抛弃</p>
+<li>
+<p>从管道中读取数据是一次性的，数据一旦被读取就会从管道中抛弃</p>
 </li>
-<li><p>一次只能由一个<strong>读进程</strong>，但是可以有多个<strong>写进程</strong></p>
+<li>
+<p>一次只能由一个<strong>读进程</strong>，但是可以有多个<strong>写进程</strong></p>
 <blockquote>
 <p>无名管道：创建管道——读管道——写管道——关闭管道</p>
 <p>有名管道：创建管道——删除管道——打开管道——关闭管道——读管道——写管道</p>
 </blockquote>
 </li>
 </ul>
-<h4 id="3-消息传递"><a href="#3-消息传递" class="headerlink" title="3. 消息传递"></a>3. 消息传递</h4><blockquote>
+<h4 id="3-消息传递">3. 消息传递</h4>
+<blockquote>
 <p>进程间的数据交换以格式化消息（message）为单位。</p>
 <p>通过<strong>发送消息/接收消息</strong>两个原语进行</p>
 </blockquote>
-<h5 id="直接通信方式"><a href="#直接通信方式" class="headerlink" title="直接通信方式"></a>直接通信方式</h5><p>发送进程直接将消息发送到接受进程的<strong>消息缓冲队列</strong>中</p>
-<h5 id="间接通信方式"><a href="#间接通信方式" class="headerlink" title="间接通信方式"></a>间接通信方式</h5><p>发送进程将消息发送到某个中间实体，一般为__信箱__，接收端从中间实体接受消息</p>
-<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>线程是独立调度的<strong>基本单位</strong>。</p>
+<h5 id="直接通信方式">直接通信方式</h5>
+<p>发送进程直接将消息发送到接受进程的<strong>消息缓冲队列</strong>中</p>
+<h5 id="间接通信方式">间接通信方式</h5>
+<p>发送进程将消息发送到某个中间实体，一般为__信箱__，接收端从中间实体接受消息</p>
+<h2 id="线程">线程</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>线程是独立调度的<strong>基本单位</strong>。</p>
 <p>一个进程中可以由多个线程，他们共享进程资源。</p>
 <p>比如：QQ和浏览器是两个进程，浏览器中里面由很多线程，竟然刚好探讨到了浏览器的线程，值得一提的是单个页面基本有五种线程构成，包含插件线程，网络请求线程，计时器线程，渲染线程，事件触发线程（DomEvent），JS 线程。这里可以知道线程之间是可以共享资源 (HTML)的，但是浏览器的运行与QQ之间是不可通信的，资源是不共享的，QQ又有自己的进程，其下还有自己的线程。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h4 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h4><p>线程作为独立调度的基本单位，进程内的线程调度不会引起<a href="#process-switch">进程切换</a>，开销更小。</p>
-<h4 id="并发性-1"><a href="#并发性-1" class="headerlink" title="并发性"></a>并发性</h4><ul>
+<h3 id="特点">特点</h3>
+<h4 id="调度">调度</h4>
+<p>线程作为独立调度的基本单位，进程内的线程调度不会引起<a href="#process-switch">进程切换</a>，开销更小。</p>
+<h4 id="并发性-v2">并发性</h4>
+<ul>
 <li>同一进程内的线程可以并发运行。</li>
 <li>不同进程间内的线程可以并发运行。</li>
 </ul>
-<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><ul>
+<h4 id="资源">资源</h4>
+<ul>
 <li>线程几乎不占有资源，而是共享进程资源。</li>
 </ul>
-<h4 id="支持多处理机系统"><a href="#支持多处理机系统" class="headerlink" title="支持多处理机系统"></a>支持多处理机系统</h4><ul>
+<h4 id="支持多处理机系统">支持多处理机系统</h4>
+<ul>
 <li>可以将多个线程分配给多个处理机运行。</li>
 </ul>
-<h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><p>线程库支持的线程（用户级线程 <strong>User-Level Threed,ULT</strong>）</p>
+<h3 id="线程的实现方式">线程的实现方式</h3>
+<p>线程库支持的线程（用户级线程 <strong>User-Level Threed,ULT</strong>）</p>
 <ul>
 <li>线程的切换由应用程序负责，在用户态下即可完成。</li>
 <li>线程表存储在用户空间，系统内核意识下到线程的存在。</li>
-<li>调度：<ul>
+<li>调度：
+<ul>
 <li>操作系统为进程分配时间片。</li>
 <li>用户的调度程序再将时间片分给线程。</li>
 </ul>
 </li>
-<li>优点<ul>
+<li>优点
+<ul>
 <li>线程的切换在用户态即可完成，<strong>开销小</strong>，<strong>效率高</strong>。</li>
 </ul>
 </li>
-<li>缺点<ul>
+<li>缺点
+<ul>
 <li>当<strong>一个线程阻塞</strong>后，其他线程<strong>都会被阻塞</strong>，并发度不高。</li>
 </ul>
 </li>
 </ul>
-<h3 id="多线程模式"><a href="#多线程模式" class="headerlink" title="多线程模式"></a>多线程模式</h3><h4 id="一对一模式"><a href="#一对一模式" class="headerlink" title="一对一模式"></a>一对一模式</h4><p>一个用户级线程映射一个内核级线程（一个 <strong>UTL</strong> 一个 <strong>TCB</strong>(<strong>Thread Control Block</strong>))</p>
-<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<h3 id="多线程模式">多线程模式</h3>
+<h4 id="一对一模式">一对一模式</h4>
+<p>一个用户级线程映射一个内核级线程（一个 <strong>UTL</strong> 一个 <strong>TCB</strong>(<strong>Thread Control Block</strong>))</p>
+<h5 id="优点">优点</h5>
+<ul>
 <li>并发能力强</li>
 </ul>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<h5 id="缺点">缺点</h5>
+<ul>
 <li>开销大</li>
 </ul>
-<h4 id="多对一模式"><a href="#多对一模式" class="headerlink" title="多对一模式"></a>多对一模式</h4><p>将多个用户级线程映射到一个内核级线程，等同于用户级线程（多个 <strong>UTL</strong> 一个 <strong>TCB</strong>）</p>
-<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><ul>
+<h4 id="多对一模式">多对一模式</h4>
+<p>将多个用户级线程映射到一个内核级线程，等同于用户级线程（多个 <strong>UTL</strong> 一个 <strong>TCB</strong>）</p>
+<h5 id="优点-v2">优点</h5>
+<ul>
 <li>效率高</li>
 </ul>
-<h5 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<h5 id="缺点-v2">缺点</h5>
+<ul>
 <li>并发能力弱，多个线程不能并行的运行在多个处理机上</li>
 </ul>
-<h4 id="多对多模式"><a href="#多对多模式" class="headerlink" title="多对多模式"></a>多对多模式</h4><p>将 n 个 ULT 映射到  m 个内核级线程（ m &lt;= n）</p>
-<h3 id="线程的控制"><a href="#线程的控制" class="headerlink" title="线程的控制"></a>线程的控制</h3><h5 id="线程的切换"><a href="#线程的切换" class="headerlink" title="线程的切换"></a>线程的切换</h5><pre class="mermaid">graph LR
+<h4 id="多对多模式">多对多模式</h4>
+<p>将 n 个 ULT 映射到  m 个内核级线程（ m &lt;= n）</p>
+<h3 id="线程的控制">线程的控制</h3>
+<h5 id="线程的切换">线程的切换</h5>
+<pre class="mermaid">graph LR
 Wait((就绪))
 Running((运行))
 Stop((阻塞))
@@ -559,10 +633,8 @@ Wait--    "③被调度程序选中" --&gt;Running
 Running --"②时间用完"      --&gt; Wait
 Stop --   "④等待事件发生"   --&gt;Wait
 Running-- "①等待某事件"    --&gt;Stop</pre>
-
-
-
-<h4 id="线程的组织与控制"><a href="#线程的组织与控制" class="headerlink" title="线程的组织与控制"></a>线程的组织与控制</h4><p>将 TCB 组织成线程表进行管理</p>
+<h4 id="线程的组织与控制">线程的组织与控制</h4>
+<p>将 TCB 组织成线程表进行管理</p>
 <pre class="mermaid">classDiagram
     class TCB
     TCB : +线程控制标识符
@@ -571,10 +643,8 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
     TCB : +堆栈指针
     TCB : +线程运行状态["Wait Runing Jam"]
     TCB : +优先级</pre>
-
-
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<h2 id="总结">总结</h2>
+<ul>
 <li>资源</li>
 </ul>
 <p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问所属进程的资源</p>
@@ -639,10 +709,10 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/08/os-os-overview/"
+                           href="/2022/09/08/os-os-development/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">操作系统知识点总结-概览</span>
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -768,7 +838,7 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%88PID%EF%BC%89"><span class="nav-text">1. 进程标识符（PID）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">内部标识符：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">外部标识符：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%8A%B6%E6%80%81"><span class="nav-text">2. 处理机状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">3. 进程调度信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="nav-text">4. 进程控制信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%80%A7%EF%BC%88%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%EF%BC%89"><span class="nav-text">动态性（进程的基本特征）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">独立性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%80%A7"><span class="nav-text">异步性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%80%A7"><span class="nav-text">结构性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">进程态的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%8A%B6%E6%80%81"><span class="nav-text">基本状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="nav-text">进程的组织方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">进程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%9F%E8%AF%AD"><span class="nav-text">创建原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程创建的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2"><span class="nav-text">进程的终止</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E5%8E%9F%E8%AF%AD"><span class="nav-text">撤销原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程终止的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2"><span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%8E%9F%E8%AF%AD"><span class="nav-text">切换原语</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%88%87%E6%8D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起切换的事件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-text">1. 共享存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1"><span class="nav-text">2. 管道通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="nav-text">3. 消息传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">直接通信方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">间接通信方式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6"><span class="nav-text">调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7-1"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-text">资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E5%A4%84%E7%90%86%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">支持多处理机系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">线程的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">多线程模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">一对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-1"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对多模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">线程的切换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的组织与控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%88PID%EF%BC%89"><span class="nav-text">1. 进程标识符（PID）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">内部标识符：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A"><span class="nav-text">外部标识符：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%84%E7%90%86%E6%9C%BA%E7%8A%B6%E6%80%81"><span class="nav-text">2. 处理机状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E4%BF%A1%E6%81%AF"><span class="nav-text">3. 进程调度信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="nav-text">4. 进程控制信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%80%A7%EF%BC%88%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%EF%BC%89"><span class="nav-text">动态性（进程的基本特征）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">独立性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%80%A7"><span class="nav-text">异步性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%80%A7"><span class="nav-text">结构性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">进程态的切换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%8A%B6%E6%80%81"><span class="nav-text">基本状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="nav-text">进程的组织方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">进程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%9F%E8%AF%AD"><span class="nav-text">创建原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程创建的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2"><span class="nav-text">进程的终止</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E5%8E%9F%E8%AF%AD"><span class="nav-text">撤销原语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起进程终止的事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#span-id-process-switch-%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2-span"><span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%8E%9F%E8%AF%AD"><span class="nav-text">切换原语</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%88%87%E6%8D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-text">引起切换的事件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-text">进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-text">1. 共享存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AE%A1%E9%81%93%E9%80%9A%E4%BF%A1"><span class="nav-text">2. 管道通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="nav-text">3. 消息传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">直接通信方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-text">间接通信方式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6"><span class="nav-text">调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7-v2"><span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-text">资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E5%A4%84%E7%90%86%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">支持多处理机系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">线程的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">多线程模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">一对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对一模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E7%82%B9-v2"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-v2"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%A8%A1%E5%BC%8F"><span class="nav-text">多对多模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-text">线程的切换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">线程的组织与控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
