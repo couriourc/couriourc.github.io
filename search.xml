@@ -1,146 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTML 基础篇</title>
-    <url>/2022/09/07/html-HTML-base/</url>
-    <content><![CDATA[<h1>HTML 基础总结</h1>
-<h2 id="SEO-相关内容">SEO 相关内容</h2>
-<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
-<h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3>
-<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
-<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
-<ol>
-<li>更好的维护项目，提高代码可读性。</li>
-<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
-</ol>
-<h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3>
-<ul>
-<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
-<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
-</ul>
-<h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
-<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
-]]></content>
-      <categories>
-        <category>HTML</category>
-        <category>2023面试</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>2023面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结-发展与分类</title>
-    <url>/2022/09/08/os-os-development/</url>
-    <content><![CDATA[<h1>操作系统的发展与分类</h1>
-<h2 id="手工操作阶段-纸带机">手工操作阶段(纸带机)</h2>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="R-S"></p>
-<ul>
-<li>用户独占主机</li>
-<li>CPU 资源利用不充分</li>
-<li>主要做偏向数理运算</li>
-</ul>
-<h2 id="批处理阶段">批处理阶段</h2>
-<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段,将指令进行打包存储(物理打包💦.</p>
-<h3 id="单道批处理系统">单道批处理系统</h3>
-<p>主要使用磁带作为载体,引入了<strong>脱机输入/输出技术</strong>,并由监督程序复杂作业的输入输出.</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
-<h3 id="主要优点">主要优点</h3>
-<ul>
-<li>
-<p>相比于手工接线,能避免这样的信息传输矛盾,资源利用率有所提升</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
-</li>
-</ul>
-<blockquote>
-<p>这里就相当于人工充当了 I/O 接口,和 DMA</p>
-</blockquote>
-<ul>
-<li>代码/脚本 更便于保存(相对而言</li>
-</ul>
-<h3 id="主要缺点">主要缺点</h3>
-<ul>
-<li>
-<p>内存中仅能有一道程序运行,且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
-</li>
-<li>
-<p>一次性消耗,如果出现 BUG ,很难修复,需要重新打孔☢</p>
-</li>
-</ul>
-<h3 id="多道批处理系统-操作系统的正式诞生">多道批处理系统(操作系统的正式诞生</h3>
-<p>每次往计算机内存中输入多道程序,并引入了中断技术,有操作系统负责管理这些程序的并发运行.</p>
-<p>过程和单道批处理系统差不多,只不过是可以向计算机<strong>内存</strong>中调入多道程序,让他们可以<strong>并发</strong>运行. — 基本特征</p>
-<h4 id="主要优点-v2">主要优点</h4>
-<ul>
-<li>开始出现<strong>并发</strong>概念,<strong>共享</strong>计算机资源,CPU利用率大幅提升,让人工相对而言解放.</li>
-</ul>
-<h4 id="主要缺点-v2">主要缺点</h4>
-<ul>
-<li>用户响应时间长,没有人机交互功能(用户提交自己的作业之后只能等待计算机处理完成,无法介入控制自己的作业执行.</li>
-</ul>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
-<h2 id="分时操作系统-RR">分时操作系统(RR</h2>
-<p>计算机中 <strong>CPU</strong> 以时间片(<strong>10~100ms</strong>)为单位轮流为各个用户/作业服务,各个用户可以通过终端与计算机进行交互.</p>
-<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="主要优点-v3">主要优点</h3>
-<ul>
-<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
-</ul>
-<h3 id="主要缺点-v3">主要缺点</h3>
-<ul>
-<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户/作业</strong>都是完全公平的，循环的为每一个 用户/作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
-</ul>
-<h2 id="实时操作系统">实时操作系统</h2>
-<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
-<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
-<h3 id="主要优点-v4">主要优点</h3>
-<ul>
-<li>响应紧急任务更加及时，紧急任务可以插队</li>
-</ul>
-<blockquote>
-<p>实时操作系统分为：</p>
-<ul>
-<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
-<li>软实时系统（能偶尔违反时间规定，如12306火车退票系统，有时候数据并不是实时的）</li>
-</ul>
-</blockquote>
-<h2 id="其他现代操作系统">其他现代操作系统</h2>
-<ul>
-<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
-<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
-<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
-</ul>
-<h2 id="总结">总结</h2>
-<pre class="mermaid">graph LR
-    Center(操作系统的发展)
-    HumanHandle(手工操作阶段)
-    BatchHandle(批处理阶段)
-    SingleBatchHandle(单道批处理操作系统)
-    MultiBatchHandle(多道批处理系统)
-    RRCPUHandle(分时操作系统)
-    FeedbackCPUHandle(实时操作系统)
-    AnotherHandle(其他操作系统)
-
-    Center--&gt;HumanHandle
-    Center--&gt;BatchHandle--&gt;SingleBatchHandle
-    BatchHandle--&gt;MultiBatchHandle
-    Center--&gt;RRCPUHandle
-    Center--&gt;FeedbackCPUHandle
-    Center--&gt;AnotherHandle</pre>
-]]></content>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
-        <tag>发展与分类</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统知识点总结-概览</title>
     <url>/2022/09/08/os-os-overview/</url>
     <content><![CDATA[<h1>概览</h1>
@@ -359,6 +219,146 @@
         <tag>基础知识</tag>
         <tag>操作系统</tag>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统知识点总结-发展与分类</title>
+    <url>/2022/09/08/os-os-development/</url>
+    <content><![CDATA[<h1>操作系统的发展与分类</h1>
+<h2 id="手工操作阶段-纸带机">手工操作阶段(纸带机)</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="R-S"></p>
+<ul>
+<li>用户独占主机</li>
+<li>CPU 资源利用不充分</li>
+<li>主要做偏向数理运算</li>
+</ul>
+<h2 id="批处理阶段">批处理阶段</h2>
+<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段,将指令进行打包存储(物理打包💦.</p>
+<h3 id="单道批处理系统">单道批处理系统</h3>
+<p>主要使用磁带作为载体,引入了<strong>脱机输入/输出技术</strong>,并由监督程序复杂作业的输入输出.</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
+<h3 id="主要优点">主要优点</h3>
+<ul>
+<li>
+<p>相比于手工接线,能避免这样的信息传输矛盾,资源利用率有所提升</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>这里就相当于人工充当了 I/O 接口,和 DMA</p>
+</blockquote>
+<ul>
+<li>代码/脚本 更便于保存(相对而言</li>
+</ul>
+<h3 id="主要缺点">主要缺点</h3>
+<ul>
+<li>
+<p>内存中仅能有一道程序运行,且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
+</li>
+<li>
+<p>一次性消耗,如果出现 BUG ,很难修复,需要重新打孔☢</p>
+</li>
+</ul>
+<h3 id="多道批处理系统-操作系统的正式诞生">多道批处理系统(操作系统的正式诞生</h3>
+<p>每次往计算机内存中输入多道程序,并引入了中断技术,有操作系统负责管理这些程序的并发运行.</p>
+<p>过程和单道批处理系统差不多,只不过是可以向计算机<strong>内存</strong>中调入多道程序,让他们可以<strong>并发</strong>运行. — 基本特征</p>
+<h4 id="主要优点-v2">主要优点</h4>
+<ul>
+<li>开始出现<strong>并发</strong>概念,<strong>共享</strong>计算机资源,CPU利用率大幅提升,让人工相对而言解放.</li>
+</ul>
+<h4 id="主要缺点-v2">主要缺点</h4>
+<ul>
+<li>用户响应时间长,没有人机交互功能(用户提交自己的作业之后只能等待计算机处理完成,无法介入控制自己的作业执行.</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
+<h2 id="分时操作系统-RR">分时操作系统(RR</h2>
+<p>计算机中 <strong>CPU</strong> 以时间片(<strong>10~100ms</strong>)为单位轮流为各个用户/作业服务,各个用户可以通过终端与计算机进行交互.</p>
+<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="主要优点-v3">主要优点</h3>
+<ul>
+<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
+</ul>
+<h3 id="主要缺点-v3">主要缺点</h3>
+<ul>
+<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户/作业</strong>都是完全公平的，循环的为每一个 用户/作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
+</ul>
+<h2 id="实时操作系统">实时操作系统</h2>
+<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
+<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
+<h3 id="主要优点-v4">主要优点</h3>
+<ul>
+<li>响应紧急任务更加及时，紧急任务可以插队</li>
+</ul>
+<blockquote>
+<p>实时操作系统分为：</p>
+<ul>
+<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
+<li>软实时系统（能偶尔违反时间规定，如12306火车退票系统，有时候数据并不是实时的）</li>
+</ul>
+</blockquote>
+<h2 id="其他现代操作系统">其他现代操作系统</h2>
+<ul>
+<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
+<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
+<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
+</ul>
+<h2 id="总结">总结</h2>
+<pre class="mermaid">graph LR
+    Center(操作系统的发展)
+    HumanHandle(手工操作阶段)
+    BatchHandle(批处理阶段)
+    SingleBatchHandle(单道批处理操作系统)
+    MultiBatchHandle(多道批处理系统)
+    RRCPUHandle(分时操作系统)
+    FeedbackCPUHandle(实时操作系统)
+    AnotherHandle(其他操作系统)
+
+    Center--&gt;HumanHandle
+    Center--&gt;BatchHandle--&gt;SingleBatchHandle
+    BatchHandle--&gt;MultiBatchHandle
+    Center--&gt;RRCPUHandle
+    Center--&gt;FeedbackCPUHandle
+    Center--&gt;AnotherHandle</pre>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>概览</tag>
+        <tag>发展与分类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML 基础篇</title>
+    <url>/2022/09/07/html-HTML-base/</url>
+    <content><![CDATA[<h1>HTML 基础总结</h1>
+<h2 id="SEO-相关内容">SEO 相关内容</h2>
+<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
+<h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3>
+<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
+<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
+<ol>
+<li>更好的维护项目，提高代码可读性。</li>
+<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
+</ol>
+<h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3>
+<ul>
+<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
+<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
+</ul>
+<h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
+<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>2023面试</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>2023面试</tag>
       </tags>
   </entry>
   <entry>
@@ -720,6 +720,186 @@ close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</
 <blockquote>
 <p>ℹ️在荷兰文中，通过叫passeren，释放叫vrijgeven，PV操作因此得名</p>
 </blockquote>
+<h3 id="整型信号量">整型信号量</h3>
+<p>🚨一个整型的变量作为信号量，用来标识系统中某种资源的数量。</p>
+<p>与普通整型变量相比，信号量只有三种原子操作: <strong>初始化</strong>、<strong>P 操作</strong>、<strong>V 操作</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> S = <span class="hljs-number">1</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span> <span class="hljs-params">()</span> </span>{       <span class="hljs-comment">//wait原语，相当于进入区</span><br>    <span class="hljs-keyword">while</span> ( S &lt;= <span class="hljs-number">0</span> ) ;  <span class="hljs-comment">//若资源不够，则一直等待</span><br>    S = S - <span class="hljs-number">1</span>;      <span class="hljs-comment">//若资源够，则使用/消耗这个资源</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">signal</span><span class="hljs-params">()</span></span>{ <span class="hljs-comment">// signal 原语</span><br>    S = S + <span class="hljs-number">1</span>; <span class="hljs-comment">// 释放资源</span><br>}<br><br></code></pre></td></tr></table></figure>
+<p>由于 <strong>P操作</strong> 中资源不够时会一直等待，所以不能满足让权等待，会发生<strong>忙等</strong>。</p>
+<h3 id="记录型信号量">记录型信号量</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> {<br>    <span class="hljs-type">int</span> value;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">process</span> *L;<br>} semapher;<br></code></pre></td></tr></table></figure>
+<p>在记录型变量中，除了代表资源数量的 <strong>value</strong> 之外，还有一个进程链表 <strong>L</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span><span class="hljs-params">(semapher S)</span> </span>{<br>    S.value --;<br>    <span class="hljs-keyword">if</span> (S.value &lt; <span class="hljs-number">0</span>) {<br>        <span class="hljs-built_in">block</span>(S.L);<span class="hljs-comment">// 资源数量不足，则使用block原语将进程阻塞，并加入等待队列之中</span><br>    }<br>} <br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">signal</span><span class="hljs-params">(semapher S)</span></span>{<br>    S.value ++;<br>    <span class="hljs-keyword">if</span> ( S.value &lt;=<span class="hljs-number">0</span> ){<br>        <span class="hljs-built_in">wakeup</span>(S.L);  <span class="hljs-comment">//若释放资源后可还有进程在等待，则唤醒该进程，使其从阻塞态变为就绪态</span><br>    }<br>}<br></code></pre></td></tr></table></figure>
+<p>此机制遵循了让权等待原则，不会发生“<strong>忙等</strong>”。</p>
+<h2 id="用信号量实现进程同步、互斥">用信号量实现进程同步、互斥</h2>
+<h3 id="进程互斥">进程互斥</h3>
+<p>互斥的重点其实就是保证只有一个进程访问，那么这样的话其实就是加锁，上锁的过程。所以 PV 会成对出现。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">do_something</span>();<br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 申请进入临界区</span><br>    critical section ;<span class="hljs-comment">// 获得临界区资源</span><br>    <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 释放资源</span><br>    <span class="hljs-built_in">do_something</span>();<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">do_something</span>();<br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 申请进入临界区</span><br>    critical section ;<span class="hljs-comment">// 获得临界区资源</span><br>    <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 释放资源</span><br>    <span class="hljs-built_in">do_something</span>();<br>}<br></code></pre></td></tr></table></figure>
+<p>ℹ️ 可以理解为此信号量表示进入临界区的名额，并且只有一个。</p>
+<blockquote>
+<p>🚨 需要为不同的临界资源设置不同的互斥信号量,PV 操作必须成对出现。</p>
+</blockquote>
+<h3 id="进程同步">进程同步</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semphore S = <span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span><span class="hljs-params">()</span></span>{<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">1</span>);<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">2</span>);<br>   <span class="hljs-built_in">V</span>(S);<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">3</span>);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(S);<br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">4</span>);    <br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">5</span>);    <br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">6</span>);    <br>}<br><br></code></pre></td></tr></table></figure>
+<p>只有 <code>do_something </code>1和2 执行完毕，且进行了<strong>V操作</strong>之后，进程2中的<strong>P操作</strong>才不会阻塞，并且能够继续执行下去。</p>
+<h2 id="信号量实现前驱关系">信号量实现前驱关系</h2>
+<pre class="mermaid">graph TB
+%%{init:{'theme':'forest'}}%%
+
+
+s1((S1))
+s2((S2))
+s2((S2))
+s3((S3))
+s4((S4))
+s5((S5))
+s6((S6))
+
+s1--a=0--&gt;s2
+s1--b=0--&gt;s3
+s3--c=0--&gt;s6
+s2--d=0--&gt;s4
+s2--e=0--&gt;s5
+s4--f=0--&gt;s6
+s5--g=0--&gt;s6
+
+linkStyle 0,1,2,3,4,5,6 stroke:#7BCCAC,stroke-width:4px;</pre>
+<ol>
+<li>
+<p>需要为每一对前去关系设置一个同步信号量</p>
+</li>
+<li>
+<p>在前操作之后对相应的同步信号量执行 <strong>V 操作</strong></p>
+</li>
+<li>
+<p>在后操作之前对相应的同步信号量执行 <strong>P 操作</strong></p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    S1;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>    <span class="hljs-built_in">V</span>(a); <span class="hljs-comment">// or signal(a);</span><br>    <span class="hljs-built_in">V</span>(b); <span class="hljs-comment">// or signal(b);</span><br>}<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(a);<br>    <span class="hljs-comment">// 执行 S2 内容</span><br>    S2;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>    <span class="hljs-built_in">V</span>(d); <span class="hljs-comment">// or signal(a);</span><br>    <span class="hljs-built_in">V</span>(e); <span class="hljs-comment">// or signal(b);</span><br>}<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P3</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(b);<br>    <span class="hljs-comment">// 执行 S3 内容</span><br>    S3;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(c);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P4</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    <span class="hljs-built_in">P</span>(d);<br>    S4;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(f);<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P5</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(e);<br>    <span class="hljs-comment">// 执行 S5 内容</span><br>    S5;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(g);<br>}<br>    <br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P6</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(c);<br>    <span class="hljs-built_in">P</span>(f);<br>    <span class="hljs-built_in">P</span>(g);<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    S6;<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>🚦 个人理解：其实这玩意就是 AOV 拓扑排序，具体应用有点像共享变量求和。共享资源的位置就像寄存器一样，保存操作结果，然后 <strong>P</strong> 取出，<strong>V</strong> 放入。</p>
+</blockquote>
+<h2 id="管程">管程</h2>
+<p><a class="link" href="https://baike.baidu.com/item/%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/9175303">信号量机制<i class="fas fa-external-link-alt"></i></a>的缺点：进程自备<a class="link" href="https://baike.baidu.com/item/%E5%90%8C%E6%AD%A5/984802">同步<i class="fas fa-external-link-alt"></i></a>操作，P(S)和V(S)操作大量分散在各个进程中，不易管理，易发生死锁。1974年和1977年，Hore和Hansen提出了管程。</p>
+<blockquote>
+<p>这玩意还是看国外的吧 🤕，国内名词管程，莫名其妙的</p>
+</blockquote>
+<p>Monitors are a programming language component that aids in the regulation of shared data access. The Monitor is a package that contains shared data structures, operations, and synchronization between concurrent procedure calls. Therefore, a monitor is also known as a synchronization tool. <strong>Java, C#, Visual Basic, Ada, and concurrent Euclid</strong> are among some of the languages that allow the use of monitors. Processes operating outside the monitor can’t access the monitor’s internal variables, but they can call the monitor’s procedures.</p>
+<p><strong>管程</strong>是一种帮助管理共享数据访问编程语言 组件/包。 Monitor 是包含共享数据结构、操作和并发过程调用之间的同步处理的包。 因此，<strong>管程</strong>也称为同步工具。 <strong>Java、C#、Visual Basic、Ada 和 concurrent Euclid</strong> 都是一些允许使用<strong>管程</strong>的编程语言。 在<strong>管程</strong>之外运行的进程不允许访问<strong>管程</strong>的内部变量，但它们可以调用<strong>管程</strong>的过程。</p>
+<p><strong>For example</strong>, synchronization methods like the wait() and notify() constructs are available in the Java programming language.</p>
+<p><strong>例如</strong>，<strong>Java</strong> 编程语言中提供了诸如 wait() 和 notify() 构造类的同步方法</p>
+<h3 id="Syntax-of-monitor-in-OS（操作系统中的管程）">Syntax of monitor in OS（操作系统中的管程）</h3>
+<p>Monitor in os has a simple syntax similar to how we define a class, it is as follows:（这句就不翻译了）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Monitor monitorName{<br>    variables_declaration;<br>    condition_variables;<br>    <br>    procedure p1{ ... };<br>    procedure p2{ ... };<br>    ...<br>    procedure pn{ ... };<br>    <br>    {<br>        initializing_code;<br>    }<br>    <br>}<br></code></pre></td></tr></table></figure>
+<h3 id="Characteristics-of-Monitors-in-OS（管程的特征）">Characteristics of Monitors in OS（管程的特征）</h3>
+<p>A monitor in os has the following characteristics:</p>
+<ul>
+<li>We can only run one program at a time inside the monitor.</li>
+<li>Monitors in an operating system are defined as a group of methods and fields that are combined with a special type of package in the os.</li>
+<li>A program cannot access the monitor’s internal variable if it is running outside the monitor. Although, a program can call the monitor’s functions.</li>
+<li>Monitors were created to make synchronization problems less complicated.</li>
+<li>Monitors provide a high level of synchronization between processes.</li>
+</ul>
+<p>一个管程应该有以下几种特征：</p>
+<ul>
+<li>只能在<strong>管程</strong>内同时运行一个程序。</li>
+<li>操作系统中的<strong>管程</strong>被定义为一组方法和字段，它们与操作系统中的一种特殊类型的包结合使用。</li>
+<li>在<strong>管程</strong>外部运行的程序<strong>不允许</strong>访问<strong>管程</strong>内部变量，哪怕是一个能调用管程函数的程序也 哒咩 🤕</li>
+<li><strong>管程</strong>的出现是为了使同步问题不那么复杂</li>
+<li><strong>管程</strong>在进程之间提供一个<strong>高级</strong>同步</li>
+</ul>
+<h3 id="Components-of-Monitor-in-an-operating-system-管程的组成">Components of Monitor in an operating system(管程的组成)</h3>
+<p>The monitor is made up of four primary parts:</p>
+<ol>
+<li><strong>Initialization:</strong> The code for initialization is included in the package, and we just need it once when <strong>creating the monitors</strong>.</li>
+<li><strong>Private Data:</strong> It is a feature of the monitor in an operating system to make the data private. It holds all of the monitor’s secret data, which includes private functions that may only be utilized within the monitor. As a result, private fields and functions are not visible outside of the monitor.</li>
+<li><strong>Monitor Procedure:</strong> Procedures or functions that can be invoked from outside of the monitor are known as <strong>monitor procedures</strong>.</li>
+<li><strong>Monitor Entry Queue:</strong> Another important component of the monitor is the Monitor Entry Queue. It contains all of the threads, which are commonly referred to as procedures only.</li>
+</ol>
+<p>管程由以下四个基本部分构成：</p>
+<ol>
+<li>
+<p><strong>初始化：<strong>初始化管程的指令在包中，只需要在</strong>创建管程时</strong>调用一次。</p>
+</li>
+<li>
+<p><strong>私有数据：</strong> 将数据私有化是管程的一个功能。它存储了管程中所有私有数据，包括只管程内使用的私有函数。所以，私有字段和函数在管程之外是不可见的。</p>
+</li>
+<li>
+<p><strong>监控程序：<strong>可以从管程外部调用的程序或函数称为</strong>监控程序</strong>。(insight)</p>
+</li>
+<li>
+<p><strong>管程入口队列：管程入口队列</strong>是<strong>管程</strong>的另一个重要部分，它包含进程所有线程，也就是所说的程序。</p>
+</li>
+</ol>
+<h3 id="Condition-Variables（条件变量）">Condition Variables（条件变量）</h3>
+<p>There are two sorts of operations we can perform on the monitor’s condition variables:</p>
+<ol>
+<li>Wait</li>
+<li>Signal</li>
+</ol>
+<p>Consider a condition variable (y) is declared in the monitor:</p>
+<p><strong>y.wait():</strong> The activity/process that applies the wait operation on a condition variable will be suspended, and the suspended process is located in the condition variable’s block queue.</p>
+<p><strong>y.signal():</strong> If an activity/process applies the signal action on the condition variable, then one of the blocked activity/processes in the monitor is given a chance to execute.</p>
+<p>我们可以对管程中的条件变量执行两种操作：</p>
+<ol>
+<li>Wait（<strong>P操作</strong>)</li>
+<li>Signal (<strong>V 操作</strong>)</li>
+</ol>
+<p>假设在<strong>管程</strong>中声明了一个条件变量 (y)：</p>
+<p><strong>y.wait():</strong> 对条件变量执行 <strong>P 操作</strong>的 <strong>活动/进程</strong> 将被挂起，挂起的进程位于条件变量的阻塞队列。</p>
+<p><strong>y.signal():</strong> 如果一个 <strong>活动/进程</strong> 对条件变量执行 V 操作，那么监视器中被阻塞的活动/进程之一就有机会执行。</p>
+<blockquote>
+<p>可以简单理解为资源的<strong>等待队列</strong>，一个条件变量代表一种阻塞的原因</p>
+<p>条件变量的调用使用signal/wait</p>
+<p>条件变量无法实现互斥，实际使用一般与锁配合使用</p>
+</blockquote>
+<h3 id="与信号量方法的区别">与信号量方法的区别</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Monitors</strong></th>
+<th><strong>Semaphore</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>We can use condition variables only in the monitors.</td>
+<td>In semaphore, we can use condition variables anywhere in the program, but we cannot use conditions variables in a semaphore.</td>
+</tr>
+<tr>
+<td>In monitors, wait always block the caller.</td>
+<td>In semaphore, wait does not always block the caller.</td>
+</tr>
+<tr>
+<td>The monitors are comprised of the shared variables and the procedures which operate the shared variable.</td>
+<td>The semaphore S value means the number of shared resources that are present in the system.</td>
+</tr>
+<tr>
+<td>Condition variables are present in the monitor.</td>
+<td>Condition variables are not present in the semaphore.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Advantages-of-Monitor-in-OS">Advantages of Monitor in OS</h3>
+<ul>
+<li>Monitors offer the benefit of making concurrent or parallel programming easier and less error-prone than semaphore-based solutions.</li>
+<li>It helps in process synchronization in the operating system.</li>
+<li>Monitors have built-in mutual exclusion.</li>
+<li>Monitors are easier to set up than semaphores.</li>
+<li>Monitors may be able to correct for the timing faults that <strong>semaphores cause</strong>.</li>
+</ul>
+<h3 id="Disadvantages-of-Monitor-in-OS">Disadvantages of Monitor in OS</h3>
+<ul>
+<li>Monitors must be <strong>implemented</strong> with the programming language.</li>
+<li>Monitor increases the compiler’s workload.</li>
+<li>The monitor requires to understand what <strong>operating system</strong> features are available for <strong>controlling crucial</strong> sections in the parallel procedures.</li>
+</ul>
+<h3 id="Conclusion">Conclusion</h3>
+<ul>
+<li>Monitor in an operating system is one method for achieving process synchronization.</li>
+<li>Monitors in OS offer the benefit of making concurrent or parallel programming easier and less error-prone than semaphore-based solutions.</li>
+<li>The monitor is made up of four primary parts, Initialization, Private Data, Monitor Procedure, and Monitor Entry Queue.</li>
+<li>wait() and signal() are two methods that we can use with the <strong>monitor’s condition variables</strong>.</li>
+</ul>
 ]]></content>
       <tags>
         <tag>基础知识</tag>
