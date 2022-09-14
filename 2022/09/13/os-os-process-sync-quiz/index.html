@@ -256,7 +256,7 @@ mjx-container[display="true"] + br {
                     <div class="author">
                         <span class="name">CouriourC</span>
                         
-                            <span class="author-label">Lv1</span>
+                            <span class="author-label">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -351,8 +351,8 @@ participant buffer as 缓冲区
 actor consumer as 消费者
 %% 共享资源应该总是满足 同步互斥的关系
 alt 共享有资源
-	producer -&gt;&gt;buffer: 生产者生产时占据队列 
-	buffer-&gt;&gt;consumer: 消费者消耗时占据队列
+	producer -&gt;&gt; buffer: 生产者生产时占据队列 
+	consumer -&gt;&gt; buffer: 消费者消耗时占据队列
 	producer --&gt; consumer: 
 end</pre>
 <p>为什么要互斥呢，因为缓冲区的本身就是一个共享资源，所以，也可以这样去理解。</p>
@@ -444,6 +444,23 @@ end</pre>
 <li>拿起了两根筷子时，哲学家开始进食</li>
 <li>用餐完毕后放下筷子继续思考</li>
 </ul>
+<h3 id="关系分析-v3">关系分析</h3>
+<p>鉴于这个和之前的不一样，所以阐明一下我的思考过程：</p>
+<ul>
+<li>
+<p>什么是共享资源？</p>
+<p>筷子？不不不，不止，我们假定一个人饿了，那么他周围的两个人都拿不到，因为他们周边只有一个筷子了，但是对于对角线的位置的人却还是可以拿到的，而且是二者之一，</p>
+<p>也就是说相邻的三人之间的关系是互斥，但是对于其他人是同步的，也就是说相邻的人之间的筷子才是共享资源。</p>
+</li>
+<li>
+<p>信号量怎样设置？</p>
+<p>其实信号量有点类似资源状态机，那么我们应该表示的是被使用的筷子会更加方便，其实筷子对应哲学家的数量，所以也不是特别大的影响</p>
+</li>
+</ul>
+<h3 id="信号量设置-v4">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">semaphore chopstick[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}; <span class="hljs-comment">//代表五根筷子的资源</span><br>semaphore mutex = <span class="hljs-number">1</span>;  <span class="hljs-comment">//对左右筷子整体资源互斥访问</span><br></code></pre></td></tr></table></figure>
+<h3 id="实际代码">实际代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Philosophy_i</span><span class="hljs-params">()</span></span>{ <span class="hljs-comment">// 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 进入临界区，也就是要开始拿共享资源了</span><br>        <span class="hljs-built_in">P</span>(chopstick[i]); <span class="hljs-comment">// </span><br>        <span class="hljs-built_in">P</span>(chopstick[ (i+<span class="hljs-number">1</span>) % <span class="hljs-number">5</span> ]);<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-comment">// 筷子拿到了，干饭</span><br>        <span class="hljs-comment">// 干完了</span><br>        <span class="hljs-built_in">V</span>(chopstick[i]);<br>        <span class="hljs-built_in">V</span>(chopstick[(i+<span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<br>    <span class="hljs-comment">// 继续思考        </span><br>    }<br>}<br></code></pre></td></tr></table></figure>
 
         </div>
 
@@ -478,6 +495,21 @@ end</pre>
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/14/os-os-process-dead-lock/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统知识点总结-进程-死锁</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
@@ -497,6 +529,63 @@ end</pre>
             </div>
         
 
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '89b09c1ace1068a64740',
+                    clientSecret: 'a790fd5655b56ce21a8462dc286b9e913592d742',
+                    repo: 'couriourc.blog_talk',
+                    owner: 'couriourc',
+                    admin: ['couriourc'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
         
     </div>
 </div>
@@ -558,6 +647,10 @@ end</pre>
 
         <!-- go comment -->
         
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
     </ul>
 </div>
 
@@ -611,7 +704,7 @@ end</pre>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程管理(经典问题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E9%97%AE%E9%A2%98"><span class="nav-text">生产者-消费问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%85%B3%E7%B3%BB"><span class="nav-text">分析关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">设置信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%94%9F%E4%BA%A7%E8%80%85-%E5%A4%9A%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">多生产者-多消费者问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90"><span class="nav-text">关系分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB"><span class="nav-text">互斥关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB"><span class="nav-text">同步关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0"><span class="nav-text">程序实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%9F%E9%AC%BC%E9%97%AE%E9%A2%98-%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BA%A7%E8%80%85-%E5%A4%9A%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-text">烟鬼问题(一个生产者-多消费者)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">分析关系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-text">互斥关系：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">同步关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE-v2"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-v2"><span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85-%E9%97%AE%E9%A2%98"><span class="nav-text">读者-写者 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90-v2"><span class="nav-text">关系分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">互斥关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE-v3"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0-v2"><span class="nav-text">程序实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90%E9%97%AE%E9%A2%98"><span class="nav-text">哲学家进餐问题</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">进程管理(经典问题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E9%97%AE%E9%A2%98"><span class="nav-text">生产者-消费问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%85%B3%E7%B3%BB"><span class="nav-text">分析关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-text">设置信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%94%9F%E4%BA%A7%E8%80%85-%E5%A4%9A%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">多生产者-多消费者问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90"><span class="nav-text">关系分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB"><span class="nav-text">互斥关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB"><span class="nav-text">同步关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0"><span class="nav-text">程序实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%9F%E9%AC%BC%E9%97%AE%E9%A2%98-%E4%B8%80%E4%B8%AA%E7%94%9F%E4%BA%A7%E8%80%85-%E5%A4%9A%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-text">烟鬼问题(一个生产者-多消费者)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">分析关系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-text">互斥关系：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">同步关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE-v2"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-v2"><span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85-%E9%97%AE%E9%A2%98"><span class="nav-text">读者-写者 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90-v2"><span class="nav-text">关系分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E5%85%B3%E7%B3%BB-v2"><span class="nav-text">互斥关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE-v3"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0-v2"><span class="nav-text">程序实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90%E9%97%AE%E9%A2%98"><span class="nav-text">哲学家进餐问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90-v3"><span class="nav-text">关系分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E7%BD%AE-v4"><span class="nav-text">信号量设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E4%BB%A3%E7%A0%81"><span class="nav-text">实际代码</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
