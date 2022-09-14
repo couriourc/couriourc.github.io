@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML 基础篇</title>
+    <url>/2022/09/07/html-HTML-base/</url>
+    <content><![CDATA[<h1>HTML 基础总结</h1>
+<h2 id="SEO-相关内容">SEO 相关内容</h2>
+<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
+<h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3>
+<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
+<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
+<ol>
+<li>更好的维护项目，提高代码可读性。</li>
+<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
+</ol>
+<h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3>
+<ul>
+<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
+<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
+</ul>
+<h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
+<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>2023面试</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>2023面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统知识点总结-发展与分类</title>
     <url>/2022/09/08/os-os-development/</url>
     <content><![CDATA[<h1>操作系统的发展与分类</h1>
@@ -108,257 +138,6 @@
         <tag>操作系统</tag>
         <tag>概览</tag>
         <tag>发展与分类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML 基础篇</title>
-    <url>/2022/09/07/html-HTML-base/</url>
-    <content><![CDATA[<h1>HTML 基础总结</h1>
-<h2 id="SEO-相关内容">SEO 相关内容</h2>
-<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
-<h3 id="1-HTML-语义化的理解">1. HTML 语义化的理解</h3>
-<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
-<p>简而言之，一种 <code>Web </code>开发规范，规范的作用就有：</p>
-<ol>
-<li>更好的维护项目，提高代码可读性。</li>
-<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria </code>都有帮助，同时有利于编译器进行一系列优化。</li>
-</ol>
-<h3 id="2-h1-标签和-title-标签之间的区别是什么？">2. h1 标签和 title 标签之间的区别是什么？</h3>
-<ul>
-<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
-<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
-</ul>
-<h3 id="3-img-中的-title-属性和-alt-属性的区别">3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
-<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
-]]></content>
-      <categories>
-        <category>HTML</category>
-        <category>2023面试</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>2023面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结-概览</title>
-    <url>/2022/09/08/os-os-overview/</url>
-    <content><![CDATA[<h1>概览</h1>
-<p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
-<pre class="mermaid">graph LR
-    %% Graph 图，待处理解析展示
-    Center((操作系统))
-    
-    Center --&gt; basePersonility(基本特征)
-    basePersonility--&gt;并发
-    basePersonility--&gt;共享
-    basePersonility--&gt;虚拟
-    basePersonility--&gt;异步
-    
-    Center --&gt; baseFunction(基本功能)
-    baseFunction--&gt;进程管理
-    baseFunction--&gt;内存管理
-    baseFunction--&gt;文件管理
-    baseFunction--&gt;设备管理
-
-    Center--根据系统功能分类--&gt;sysInner(内核)
-    sysInner--系统功能全在内核--&gt;marco(宏内核)
-    sysInner--除核心功能之外的系统功能在内部--&gt;mirco(微内核) 
-    sysInner--结合宏内核和微内核的特点--&gt;minixco(混合内核)
-    
-    Center--&gt;sysCall(系统调用)
-    
-    Center--&gt;interperter(中断分类)
-	interperter--CPU执行指令之外的事件--&gt;外中断
-	interperter--CPU执行内部事件引起的事件---&gt;异常
-	interperter--在用户程序中使用的系统调用--&gt;陷入</pre>
-<h2 id="操作系统的基本定义">操作系统的基本定义</h2>
-<blockquote>
-<p>操作系统(Operating System,OS) 是指控制和管理整个计算机系统的硬件和软件资源,并合理地组织调度计算机和资源分配;提供给<strong>用户和其他软件方便的接口和环境</strong>;它是计算机系统中最基本的<strong>系统软件</strong>.</p>
-</blockquote>
-<h3 id="操作系统的角色">操作系统的角色</h3>
-<ul>
-<li>操作系统是系统资源的<strong>管理者</strong></li>
-<li>操作系统<strong>向上提供</strong>方便易用的服务</li>
-<li>操作系统是<strong>最接近硬件</strong>的一层<strong>软件</strong></li>
-</ul>
-<h2 id="基础特征">基础特征</h2>
-<h3 id="1-并发">1. 并发</h3>
-<blockquote>
-<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
-<p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
-<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
-</blockquote>
-<p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p>
-<!--TODO: 处理 Hexo 时序图问题--->
-<pre class="mermaid">sequenceDiagram
-    Note left of A: 进程A
-    Note right of B: 进程B
-    Note over A,B: CPU 在 AB 之间快速切换</pre>
-<h3 id="2-共享">2. 共享</h3>
-<blockquote>
-<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
-<p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
-<p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
-</blockquote>
-<pre class="mermaid">sequenceDiagram
-	title :按照顺序的去进入同一个进程
-    participant AssetA
-    participant AssetB</pre>
-<h3 id="3-虚拟">3. 虚拟</h3>
-<blockquote>
-<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
-<p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p>
-<p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p>
-<p>虚拟内存则是使用了空分复用技术，他将物理内存抽象为地址空间，每一个进程都有各自的地址空间，地址空间的也被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
-<p>虚拟内存的关键问题：主要有调度问题、地址映射问题、替换问题、更新问题（要确保主存与辅存的一致性）</p>
-</blockquote>
-<p>个人认为，虚拟的好处在于可控，让每一步操作是出于可被控制可被调度的，也就使得可优化，更加稳定。</p>
-<h3 id="4-异步">4. 异步</h3>
-<blockquote>
-<p>异步进程不是一次性排队完成，而是走走停停，每一步耗费的时间是不可知的</p>
-</blockquote>
-<p>异步和同步各自有不同的应用场景，不只是在操作系统上的概念，在各大编程语言上也有不同的信息。</p>
-<h2 id="基本功能">基本功能</h2>
-<h3 id="1-进程管理">1. 进程管理</h3>
-<blockquote>
-<p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p>
-</blockquote>
-<ol>
-<li>
-<p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（<strong>fork</strong>），撤销已有进程，实现进程状态转换的功能；</p>
-</li>
-<li>
-<p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p>
-<p>进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p>
-<p>这种两个或多个进程读写某些共享数据，而最后的结果却决于进行的精准时序，称为数据竞争，而这种多个程序可以并发执行，但是由于系统资源有限，程序的执行不是一贯到底的，而是以不可预知的速度推进的，这也就是之前说的<strong>异步性</strong>。</p>
-<p>这种受到访问顺序限制的的数据是没有意义的（对于程序运行不能有二义性，也就是某一个状态是确定的），所以为了能够使得进程有一定的顺序来访问数据，从而引入了同步的概念。</p>
-<p>对于资源是如此，对于数据库操作同样也是如此。</p>
-<p>而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p>
-<p><strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
-<h4 id="PV操作">PV操作</h4>
-<p>PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
-<h4 id="P-操作">P 操作</h4>
-<p>当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
- <pre class="mermaid">    graph TB
-     start(P 操作)--&gt;isSingleN{信号量}
-     isSingleN---大于0--&gt; down(信号量减一)
-     isSingleN---等于0--&gt; wait(等待)</pre>
-<h4 id="V-操作">V 操作</h4>
-<p>当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
- <pre class="mermaid">    graph TB
-     start(V 操作)--&gt;isSingleN{信号量}
-     isSingleN---大于0--&gt; down(信号量减一)
-     isSingleN---等于0--&gt; wait(等待)</pre>
-</li>
-</ol>
-<h3 id="2-内存管理">2. 内存管理</h3>
-<blockquote>
-<p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
-</blockquote>
-<p>内存的管理分为文件内存，和运行内存，对于进程管理比较重要的就是运存的管理了。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pica.zhimg.com/v2-4c9fcddd65b35e84c4c6783aaeee3826_1440w.jpg?source=172ae18b" alt="操作系统—内存管理"></p>
-<h3 id="3-文件管理">3. 文件管理</h3>
-<blockquote>
-<p>文件存储空间的管理、目录管理、文件读写管理和保护等</p>
-</blockquote>
-<h3 id="4-设备管理">4. 设备管理</h3>
-<blockquote>
-<p>完成用户的 I/O 请求。为方便用户使用各种设备。并提高设备的利用率。</p>
-<p>主要包括缓冲管理、设备分配、设备处理、虚拟设备等</p>
-</blockquote>
-<p>这是对外的扩展。比如一些键盘。鼠标的信号输入处理。除此之外。网络 I/O 。需要注意的是，文件 I/O 和这种I/O 是由区别的，文件 I/O，更多的偏向于软件层面，</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2186c6a7b85642089000f57d49a3e58c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="img"></p>
-<blockquote>
-<p>我们日常讨论的网络通信本质上就是网络I/O，通过网络I/O，我们可以和远程设备进行通信（数据交换）。由于网络I/O和正常的磁盘I/O在性能和访问方式上有较大的差异，所以针对磁盘I/O的读写方法也就无法适用于网络I/O身上，大部分操作系统针对网络I/O抽象除了一套特殊的接口—— <strong>网络Socket接口</strong> ，用于对网络I/O进行操作。当然，上面也说了，在Linux当中“一切皆文件”，为了统一概念，Socket在Linux当中也是通过文件描述符来进行描述的，只不过这个文件描述符描述的不是本地文件，而是远程设备对应的文件。<br>
-作者：Brucebat<br>
-链接：<a class="link" href="https://juejin.cn/post/7022249649511596063">https://juejin.cn/post/7022249649511596063<i class="fas fa-external-link-alt"></i></a><br>
-来源：稀土掘金<br>
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<p>对于 I/O 而言都是资源的访问，与接受，这两者的在我们使用的时候可能区别不大，但是对于计算机而言，处理的是不一样的信号量，网络 I/O 就像是外部数据的输入，文件 I/O 就如同内部资源的读写，网络 I/O 的另外一方就是通过网桥连接起来，使得信号能够交流.</p>
-<p>Linux 的系统调用主要有以下:</p>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Commands</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>进程控制</td>
-<td>fork();exit();wait()</td>
-</tr>
-<tr>
-<td>进程通信</td>
-<td>pipe();shmget();mmap();</td>
-</tr>
-<tr>
-<td>文件操作</td>
-<td>open();read();write();</td>
-</tr>
-<tr>
-<td>设备操作</td>
-<td>ioctl();read();write();</td>
-</tr>
-<tr>
-<td>信息维护</td>
-<td>getpid();alarm();sleep();</td>
-</tr>
-<tr>
-<td>安全</td>
-<td>chmod();umask();chown();</td>
-</tr>
-</tbody>
-</table>
-<h2 id="系统调用">系统调用</h2>
-<p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而进入内核，有操作系统代为完成。</p>
-<p>用户态只能调用受限指令。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/319223950e3f4d6484f708d710d694da.png#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="内核">内核</h2>
-<h3 id="1-宏内核">1. 宏内核</h3>
-<blockquote>
-<p>宏内核是将操作系统功能作为一个紧密结合的整体放到类和。由于各个模块共享信息，因此有很高的性能。</p>
-</blockquote>
-<p>那么由于宏内核就是将所有的系统调用直接放在一层，那么这样的操作就避免了跨层的调用，因此效果很好，但是带来的问题就是耦合度明显很高，同时安全性也有待商榷。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p>
-<h3 id="2-微内核">2. 微内核</h3>
-<p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p>
-<h3 id="总结-摘抄自知乎">总结(摘抄自<a class="link" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h3>
-<blockquote>
-<p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p>
-</blockquote>
-<blockquote>
-<p>而微内核则恰恰相反，它为了降低耦合，内核中只会允许一些核心功能的存在，而其余所有功能都会被移出内核，变成一种特殊的用户进程——服务进程。其优点就是各个模块之间是独立的，不会相互影响，但其性能相比宏内核会大幅度下降。</p>
-</blockquote>
-<blockquote>
-<p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p>
-</blockquote>
-<p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p>
-<h2 id="操作系统向上提供方便易用的服务">操作系统向上提供方便易用的服务</h2>
-<h3 id="命令接口">命令接口</h3>
-<ul>
-<li>联机命令接口(交互式命令接口)-&gt;基本命令行(CLI)</li>
-<li>脱机命令接口(批处理命令接口)-&gt;脚本(bat ,sh)</li>
-<li>程序接口(广义指令)-&gt;GUI</li>
-</ul>
-<blockquote>
-<p>可以再程序中进行系统调用来使用程序接口,普通用户不能直接使用程序接口,只能通过程序代码间接使用.</p>
-</blockquote>
-<h2 id="中断分类">中断分类</h2>
-<h3 id="1-外中断">1. 外中断</h3>
-<p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
-<h3 id="2-异常">2. 异常</h3>
-<p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
-<h3 id="3-陷入">3. 陷入</h3>
-<p>在用户程序中使用系统调用。</p>
-]]></content>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
       </tags>
   </entry>
   <entry>
@@ -586,6 +365,227 @@ class addreaddSpace,pc,registry,heap important;</pre>
       </tags>
   </entry>
   <entry>
+    <title>操作系统知识点总结-概览</title>
+    <url>/2022/09/08/os-os-overview/</url>
+    <content><![CDATA[<h1>概览</h1>
+<p>操作系统个人认为更像是竞争问题，对于 CPU 的算力分配，和进程之间的分配问题，既要高效，又要健壮稳定。</p>
+<pre class="mermaid">graph LR
+    %% Graph 图，待处理解析展示
+    Center((操作系统))
+    
+    Center --&gt; basePersonility(基本特征)
+    basePersonility--&gt;并发
+    basePersonility--&gt;共享
+    basePersonility--&gt;虚拟
+    basePersonility--&gt;异步
+    
+    Center --&gt; baseFunction(基本功能)
+    baseFunction--&gt;进程管理
+    baseFunction--&gt;内存管理
+    baseFunction--&gt;文件管理
+    baseFunction--&gt;设备管理
+
+    Center--根据系统功能分类--&gt;sysInner(内核)
+    sysInner--系统功能全在内核--&gt;marco(宏内核)
+    sysInner--除核心功能之外的系统功能在内部--&gt;mirco(微内核) 
+    sysInner--结合宏内核和微内核的特点--&gt;minixco(混合内核)
+    
+    Center--&gt;sysCall(系统调用)
+    
+    Center--&gt;interperter(中断分类)
+	interperter--CPU执行指令之外的事件--&gt;外中断
+	interperter--CPU执行内部事件引起的事件---&gt;异常
+	interperter--在用户程序中使用的系统调用--&gt;陷入</pre>
+<h2 id="操作系统的基本定义">操作系统的基本定义</h2>
+<blockquote>
+<p>操作系统(Operating System,OS) 是指控制和管理整个计算机系统的硬件和软件资源,并合理地组织调度计算机和资源分配;提供给<strong>用户和其他软件方便的接口和环境</strong>;它是计算机系统中最基本的<strong>系统软件</strong>.</p>
+</blockquote>
+<h3 id="操作系统的角色">操作系统的角色</h3>
+<ul>
+<li>操作系统是系统资源的<strong>管理者</strong></li>
+<li>操作系统<strong>向上提供</strong>方便易用的服务</li>
+<li>操作系统是<strong>最接近硬件</strong>的一层<strong>软件</strong></li>
+</ul>
+<h2 id="基础特征">基础特征</h2>
+<h3 id="1-并发">1. 并发</h3>
+<blockquote>
+<p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则是指同一时刻能运行多个指令。</p>
+<p>并行需要硬件支持，如多流水线，多核处理器或者分布式计算系统。</p>
+<p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
+</blockquote>
+<p>并发运行并不是真真的同时完成多个任务，而是 <code>CPU</code> 的高速处理，使得各个任务之间来回进行，完成各个任务，而并行也就是我们实际业务希望解决的问题，但是对应带来的成本问题也就出现了。</p>
+<!--TODO: 处理 Hexo 时序图问题--->
+<pre class="mermaid">sequenceDiagram
+    Note left of A: 进程A
+    Note right of B: 进程B
+    Note over A,B: CPU 在 AB 之间快速切换</pre>
+<h3 id="2-共享">2. 共享</h3>
+<blockquote>
+<p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<p>主要有两种共享方式：<strong>互斥共享</strong>和<strong>同时共享</strong>。</p>
+<p>互斥共享的资源被称为临界资源，特点是同时只能有一个占用，比如对于打印机这种外接设备，在同时只能允许一个进程访问，需要用同步机制实现互斥访问，有点类似队列结构（FIFO）。</p>
+</blockquote>
+<pre class="mermaid">sequenceDiagram
+	title :按照顺序的去进入同一个进程
+    participant AssetA
+    participant AssetB</pre>
+<h3 id="3-虚拟">3. 虚拟</h3>
+<blockquote>
+<p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<p>主要有两种虚拟技术：时（时分复用技术）、空（空分复用技术）。</p>
+<p>多个进程能在同一个处理器上并发执行也就利用了时分复用技术，让每一个进程轮流占用处理器，每次只执行一小个时间片，并快速切换。</p>
+<p>虚拟内存则是使用了空分复用技术，他将物理内存抽象为地址空间，每一个进程都有各自的地址空间，地址空间的也被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
+<p>虚拟内存的关键问题：主要有调度问题、地址映射问题、替换问题、更新问题（要确保主存与辅存的一致性）</p>
+</blockquote>
+<p>个人认为，虚拟的好处在于可控，让每一步操作是出于可被控制可被调度的，也就使得可优化，更加稳定。</p>
+<h3 id="4-异步">4. 异步</h3>
+<blockquote>
+<p>异步进程不是一次性排队完成，而是走走停停，每一步耗费的时间是不可知的</p>
+</blockquote>
+<p>异步和同步各自有不同的应用场景，不只是在操作系统上的概念，在各大编程语言上也有不同的信息。</p>
+<h2 id="基本功能">基本功能</h2>
+<h3 id="1-进程管理">1. 进程管理</h3>
+<blockquote>
+<p><strong>进程控制</strong>，<strong>进程同步</strong>，<strong>进程通信</strong>，<strong>死锁处理</strong>，<strong>处理机调度</strong>等；</p>
+</blockquote>
+<ol>
+<li>
+<p>进程控制的主要功能是对系统中所有进程实施有效的管理，它具有创建新进程（<strong>fork</strong>），撤销已有进程，实现进程状态转换的功能；</p>
+</li>
+<li>
+<p>进程同步，也就是异步环境下的一组并发进程因直接制约而互相发送消息，进行互相合作，互相等待，使得各个进程按一定的速度执行的过程，成为进程间的同步，具有同步关系的一组并发进程称为合作进程，合作进程互相发送的信号成为消息或事件，对这样的消息或者事件给一个名称，则我们可用 wait(消息名)表示经常等待合作进程发来的消息，而用过程 signal(消息名)表示像合作进程发送消息。</p>
+<p>进程同时处理同一串数据，会造成不确定性，有多个进程同时对一个文件进行读写，那么读文件的进程无法确定督导的数据是它本来想要的数据（老数据），还是被修改的数据（新数据 <code>modified data</code>），除此之外，当先读后写的时候，由于缓冲区没有写入数据，读进程无数据可读，就进入了阻塞态。</p>
+<p>这种两个或多个进程读写某些共享数据，而最后的结果却决于进行的精准时序，称为数据竞争，而这种多个程序可以并发执行，但是由于系统资源有限，程序的执行不是一贯到底的，而是以不可预知的速度推进的，这也就是之前说的<strong>异步性</strong>。</p>
+<p>这种受到访问顺序限制的的数据是没有意义的（对于程序运行不能有二义性，也就是某一个状态是确定的），所以为了能够使得进程有一定的顺序来访问数据，从而引入了同步的概念。</p>
+<p>对于资源是如此，对于数据库操作同样也是如此。</p>
+<p>而之前所说的信号，下述便是对于用信号量实现进程同步的步骤，主要分为 PV 两大操作。</p>
+<p><strong>信号量</strong>的作用就是控制多进程共享资源的访问（资源有限并且不共享），其本质是任一时刻只能有一个进程访问临界区（代码）数据更新的代码。</p>
+<h4 id="PV操作">PV操作</h4>
+<p>PV操作即是针对信号量进行的相应操作，PV操作由P操作原语和V操作原语组成（原语是不可中断的过程）。</p>
+<h4 id="P-操作">P 操作</h4>
+<p>当进程执行P操作，若信号量大于零（有共享资源），则信号量减一，进程继续执行；若信号量为零，则进程等待。</p>
+ <pre class="mermaid">    graph TB
+     start(P 操作)--&gt;isSingleN{信号量}
+     isSingleN---大于0--&gt; down(信号量减一)
+     isSingleN---等于0--&gt; wait(等待)</pre>
+<h4 id="V-操作">V 操作</h4>
+<p>当进程执行 V 操作 ，若信号量大于零（有共享资源），则信号量加一；若信号量为零，则唤醒等待进程。</p>
+ <pre class="mermaid">    graph TB
+     start(V 操作)--&gt;isSingleN{信号量}
+     isSingleN---大于0--&gt; down(信号量减一)
+     isSingleN---等于0--&gt; wait(等待)</pre>
+</li>
+</ol>
+<h3 id="2-内存管理">2. 内存管理</h3>
+<blockquote>
+<p><strong>内存分配</strong>，<strong>地址映射</strong>，<strong>内存保护与共享</strong>，<strong>虚拟内存</strong>等</p>
+</blockquote>
+<p>内存的管理分为文件内存，和运行内存，对于进程管理比较重要的就是运存的管理了。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pica.zhimg.com/v2-4c9fcddd65b35e84c4c6783aaeee3826_1440w.jpg?source=172ae18b" alt="操作系统—内存管理"></p>
+<h3 id="3-文件管理">3. 文件管理</h3>
+<blockquote>
+<p>文件存储空间的管理、目录管理、文件读写管理和保护等</p>
+</blockquote>
+<h3 id="4-设备管理">4. 设备管理</h3>
+<blockquote>
+<p>完成用户的 I/O 请求。为方便用户使用各种设备。并提高设备的利用率。</p>
+<p>主要包括缓冲管理、设备分配、设备处理、虚拟设备等</p>
+</blockquote>
+<p>这是对外的扩展。比如一些键盘。鼠标的信号输入处理。除此之外。网络 I/O 。需要注意的是，文件 I/O 和这种I/O 是由区别的，文件 I/O，更多的偏向于软件层面，</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2186c6a7b85642089000f57d49a3e58c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="img"></p>
+<blockquote>
+<p>我们日常讨论的网络通信本质上就是网络I/O，通过网络I/O，我们可以和远程设备进行通信（数据交换）。由于网络I/O和正常的磁盘I/O在性能和访问方式上有较大的差异，所以针对磁盘I/O的读写方法也就无法适用于网络I/O身上，大部分操作系统针对网络I/O抽象除了一套特殊的接口—— <strong>网络Socket接口</strong> ，用于对网络I/O进行操作。当然，上面也说了，在Linux当中“一切皆文件”，为了统一概念，Socket在Linux当中也是通过文件描述符来进行描述的，只不过这个文件描述符描述的不是本地文件，而是远程设备对应的文件。<br>
+作者：Brucebat<br>
+链接：<a class="link" href="https://juejin.cn/post/7022249649511596063">https://juejin.cn/post/7022249649511596063<i class="fas fa-external-link-alt"></i></a><br>
+来源：稀土掘金<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>对于 I/O 而言都是资源的访问，与接受，这两者的在我们使用的时候可能区别不大，但是对于计算机而言，处理的是不一样的信号量，网络 I/O 就像是外部数据的输入，文件 I/O 就如同内部资源的读写，网络 I/O 的另外一方就是通过网桥连接起来，使得信号能够交流.</p>
+<p>Linux 的系统调用主要有以下:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进程控制</td>
+<td>fork();exit();wait()</td>
+</tr>
+<tr>
+<td>进程通信</td>
+<td>pipe();shmget();mmap();</td>
+</tr>
+<tr>
+<td>文件操作</td>
+<td>open();read();write();</td>
+</tr>
+<tr>
+<td>设备操作</td>
+<td>ioctl();read();write();</td>
+</tr>
+<tr>
+<td>信息维护</td>
+<td>getpid();alarm();sleep();</td>
+</tr>
+<tr>
+<td>安全</td>
+<td>chmod();umask();chown();</td>
+</tr>
+</tbody>
+</table>
+<h2 id="系统调用">系统调用</h2>
+<p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而进入内核，有操作系统代为完成。</p>
+<p>用户态只能调用受限指令。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/319223950e3f4d6484f708d710d694da.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="内核">内核</h2>
+<h3 id="1-宏内核">1. 宏内核</h3>
+<blockquote>
+<p>宏内核是将操作系统功能作为一个紧密结合的整体放到类和。由于各个模块共享信息，因此有很高的性能。</p>
+</blockquote>
+<p>那么由于宏内核就是将所有的系统调用直接放在一层，那么这样的操作就避免了跨层的调用，因此效果很好，但是带来的问题就是耦合度明显很高，同时安全性也有待商榷。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-da9cab3e423cd0634c3752dce1a4ce82_720w.jpg" alt="img"></p>
+<h3 id="2-微内核">2. 微内核</h3>
+<p>由于操作系统不断复杂。因此将一部分操作系统功能移出内核(主要是上面描述的系统基本功能)。剩下保留一些核心的如时钟。中断的功能，微内核之间使用了消息通知机制。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-4aa2bb36f7461989770c6b14bf153776_720w.jpg" alt="img"></p>
+<h3 id="总结-摘抄自知乎">总结(摘抄自<a class="link" href="https://zhuanlan.zhihu.com/p/394560786">知乎<i class="fas fa-external-link-alt"></i></a>)</h3>
+<blockquote>
+<p>宏内核其实就是把所有的功能都耦合起来，放在内核中，这样的优势就是性能极高，因为各个功能模块之间是可以直接调用的。缺点就是因为各个模块是相互关联，容易出现一错皆错的问题。</p>
+</blockquote>
+<blockquote>
+<p>而微内核则恰恰相反，它为了降低耦合，内核中只会允许一些核心功能的存在，而其余所有功能都会被移出内核，变成一种特殊的用户进程——服务进程。其优点就是各个模块之间是独立的，不会相互影响，但其性能相比宏内核会大幅度下降。</p>
+</blockquote>
+<blockquote>
+<p>混合内核则是结合上面二者的特点，它与微内核相似，只是会将一些功能模块又放回到内核中去，而不常用的功能模块还是放在用户层中。这样在微内核的基础上，又可以提高性能。</p>
+</blockquote>
+<p>内核的出现是为了解决系统调用复杂的耦合关系，也让各自的功能划分更加清晰。</p>
+<h2 id="操作系统向上提供方便易用的服务">操作系统向上提供方便易用的服务</h2>
+<h3 id="命令接口">命令接口</h3>
+<ul>
+<li>联机命令接口(交互式命令接口)-&gt;基本命令行(CLI)</li>
+<li>脱机命令接口(批处理命令接口)-&gt;脚本(bat ,sh)</li>
+<li>程序接口(广义指令)-&gt;GUI</li>
+</ul>
+<blockquote>
+<p>可以再程序中进行系统调用来使用程序接口,普通用户不能直接使用程序接口,只能通过程序代码间接使用.</p>
+</blockquote>
+<h2 id="中断分类">中断分类</h2>
+<h3 id="1-外中断">1. 外中断</h3>
+<p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
+<h3 id="2-异常">2. 异常</h3>
+<p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
+<h3 id="3-陷入">3. 陷入</h3>
+<p>在用户程序中使用系统调用。</p>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统知识点总结-进程同步问题</title>
     <url>/2022/09/13/os-os-process-sync-quiz/</url>
     <content><![CDATA[<h1>进程管理(经典问题)</h1>
@@ -595,11 +595,134 @@ class addreaddSpace,pc,registry,heap important;</pre>
 <p>系统中有一组生产者进程和一组消费者，生产者进程每次生产一个产品放入缓冲区，消费者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用；</p>
 </li>
 <li>
-<p>生产者、消费者共享一个初始为空，大小为 n 的缓冲区。</p>
+<p>生产者、消费者共享一个初始为空，大小为 n 的缓冲区；</p>
 </li>
 <li>
-<p>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待</p>
+<p>只有缓冲区<strong>没满时</strong>，生产者才能把产品<strong>放入</strong>缓冲区，否则必须等待；</p>
 </li>
+<li>
+<p>只有缓冲区<strong>不空时</strong>，消费者才能从中取出产品，否则必须等待；</p>
+</li>
+<li>
+<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>访问。</p>
+</li>
+</ul>
+<h3 id="分析关系">分析关系</h3>
+<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914092555906.png" alt="image-20220914092555906"></p>
+<ul>
+<li>
+<p>生产者和消费者访问缓冲区是互斥的。</p>
+</li>
+<li>
+<p>生产者和消费者的工作需要同步，即生产完之后才能消费。</p>
+</li>
+</ul>
+<h3 id="设置信号量">设置信号量</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br>semaphore empty = n;<br>semaphore full  = <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="代码实现">代码实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(empty);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 存入缓冲区</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(full);<span class="hljs-comment">// 唤起消费者</span><br>    }    <br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(full);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 使用资源</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>    <span class="hljs-built_in">V</span>(empty);        <br>    }    <br>    <br>}<br><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>其实实现思路很简单，无非就是<strong>同步互斥</strong>关系</p>
+</blockquote>
+<pre class="mermaid">sequenceDiagram
+actor producer as 生产者 
+%%可以理解为厂商关系
+participant buffer as 缓冲区
+actor consumer as 消费者
+%% 共享资源应该总是满足 同步互斥的关系
+alt 共享有资源
+	producer -&gt;&gt;buffer: 生产者生产时占据队列 
+	buffer-&gt;&gt;consumer: 消费者消耗时占据队列
+	producer --&gt; consumer: 
+end</pre>
+<p>为什么要互斥呢，因为缓冲区的本身就是一个共享资源，所以，也可以这样去理解。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore buffer_full = <span class="hljs-number">0</span>;<br>semaphore buffer = <span class="hljs-number">1</span>; <span class="hljs-comment">// 表示 缓冲区 只有一个</span><br>semaphore buffer_empty = n; <span class="hljs-comment">// 注意buffer_full + buffer_empty = n; 这表示了容量</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_empty); <span class="hljs-comment">// 等待空位</span><br>        <span class="hljs-built_in">P</span>(buffer); <span class="hljs-comment">// 申请使用 buffer</span><br>        <span class="hljs-comment">// 使用空位</span><br>        <span class="hljs-built_in">V</span>(buffer); <span class="hljs-comment">// 这里应该先退出，这样 consumer 才不会因为检测到满了，然后争夺 buffer 却拿不到权限进去，应该让他先进去，因为满足的是不满就可以进。</span><br>        <span class="hljs-built_in">V</span>(buffer_full); <span class="hljs-comment">// 更新满的状态，或者说元素的数目</span><br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_full);<br>        <span class="hljs-built_in">P</span>(buffer);<br>        <span class="hljs-comment">// 消费资源</span><br>        <span class="hljs-built_in">V</span>(buffer);<br>        <span class="hljs-built_in">V</span>(buffer_empty);<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>🍨 能否用前驱关系理解呢？</p>
+</blockquote>
+<h2 id="多生产者-多消费者问题">多生产者-多消费者问题</h2>
+<p>有父亲、母亲、儿子、女儿四人，其中：</p>
+<ul>
+<li>父亲往盘子中放苹果；</li>
+<li>母亲往盘子中放橘子；</li>
+<li>女儿从盘子中拿苹果；</li>
+<li>儿子从盘子中拿橘子；</li>
+<li>只有盘子空时才能放水果；</li>
+<li>只有有需要的水果时才能拿水果。</li>
+</ul>
+<h3 id="关系分析">关系分析</h3>
+<h4 id="互斥关系">互斥关系</h4>
+<p>父亲和母亲使用同一个盘子</p>
+<h4 id="同步关系">同步关系</h4>
+<p>父亲放完苹果之后，女儿才能拿到苹果</p>
+<p>母亲放入橘子之后，儿子才能拿到橘子</p>
+<p>盘子为空才能放水果（大抵是只有一个空位吧）</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914100906662.png" alt="image-20220914100906662"></p>
+<h3 id="信号量设置">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的互斥关系</span><br>semaphore plate = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的剩余空位</span><br>semaphore apple = <span class="hljs-number">0</span>;<br>semaphore orange= <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="程序实现">程序实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dad</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍎放苹果 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(apple); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 爸爸 并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">mom</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍊放橘子 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(orange); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 妈妈 也并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">daughter</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(apple); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👩吃🍎 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(apple);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">son</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(orange); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👦吃🍊 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(orange);<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>由于本问题缓冲区为1，可以考虑不设置信号量。</p>
+</blockquote>
+<h2 id="烟鬼问题-一个生产者-多消费者">烟鬼问题(一个生产者-多消费者)</h2>
+<p>系统中有一个供应者和三个吸烟者，吸烟者吸烟需要自己卷烟，其中</p>
+<ul>
+<li>卷烟需要烟草、纸、胶水三种材料</li>
+<li>每个吸烟者各有其中的一种材料</li>
+<li>供应者每次会提供其中两种材料，并由缺少该材料的吸烟者拿取</li>
+<li>吸烟者制作完烟并抽掉后，发出信号，供应者放下一组物品</li>
+</ul>
+<h3 id="分析关系-v2">分析关系</h3>
+<p>供应者：提供两种材料</p>
+<ul>
+<li>组合一：烟草 + 纸</li>
+<li>组合二：烟草 + 胶水</li>
+<li>组合三：胶水 + 纸</li>
+</ul>
+<p>烟鬼：需要两种类型，也就是供应者每次提供只够一个人使用</p>
+<h4 id="互斥关系：">互斥关系：</h4>
+<ul>
+<li>烟鬼之间互斥</li>
+</ul>
+<h4 id="同步关系-v2">同步关系</h4>
+<ul>
+<li>供应者提供的组合顺序</li>
+</ul>
+<h3 id="信号量设置-v2">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore cigratteAndPaper  = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草纸组合</span><br>semaphore cigratteAndGlue   = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草胶组合</span><br>semaphore glueAndPaper    = <span class="hljs-number">0</span>; <span class="hljs-comment">// 胶纸组合</span><br>semaphore finish            = <span class="hljs-number">0</span>; <span class="hljs-comment">// 抽烟状态</span><br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>; <span class="hljs-comment">// 用于标记是几轮</span><br></code></pre></td></tr></table></figure>
+<h3 id="代码实现-v2">代码实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">1</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndGlue);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">2</span>) {<br>            <span class="hljs-built_in">V</span>(glueAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>        i = (i+<span class="hljs-number">1</span>) % <span class="hljs-number">3</span>;<br>        <span class="hljs-built_in">P</span>(finish);<br>    }<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndPaperConsumer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(cigratteAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndGlueConsumer</span>  <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {<br>      <span class="hljs-built_in">P</span>(cigratteAndGlue);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">glueAndPaperConsumer</span>     <span class="hljs-params">()</span></span>{<br>     <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(glueAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<h2 id="读者-写者-问题">读者-写者 问题</h2>
+<p>有读者和写者两组并发进程，共享一个文件。要求：</p>
+<ul>
+<li>读者可以同时读取文件；</li>
+<li>同一时间只能有一个写者进行写操作；</li>
+<li>任一写着完成写操作之前不允许其他进程进行读或写操作；</li>
+<li>写者执行写操作前，应让其他读者和写者全部退出。</li>
+</ul>
+<h3 id="关系分析-v2">关系分析</h3>
+<h4 id="互斥关系-v2">互斥关系</h4>
+<ul>
+<li>
+<p>写进程和写进程之间</p>
+</li>
+<li>
+<p>写进程和读进程之间</p>
+</li>
+</ul>
+<h3 id="信号量设置-v3">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore rw = <span class="hljs-number">1</span>;<br>semaphore ww = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>semaphore mutex = <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="程序实现-v2">程序实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">writer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(rw);<br>        <span class="hljs-comment">// 写作</span><br>        <span class="hljs-built_in">V</span>(rw);<br>        <span class="hljs-built_in">V</span>(ww);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reader</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">P</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(ww);<br>        <br>        <span class="hljs-comment">// 读文件</span><br>         <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (--count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>    }   <br>}<br></code></pre></td></tr></table></figure>
+<h2 id="哲学家进餐问题">哲学家进餐问题</h2>
+<p>在一个桌子上，有5位哲学家，其中</p>
+<ul>
+<li>每位哲学家之间摆着一<strong>根</strong>筷子，共计5根</li>
+<li>哲学家平时在思考人生，饿了就会尝试拿起左右手的筷子（一根一根的拿）</li>
+<li>如果筷子在别人手上，则等待</li>
+<li>拿起了两根筷子时，哲学家开始进食</li>
+<li>用餐完毕后放下筷子继续思考</li>
 </ul>
 ]]></content>
       <tags>
