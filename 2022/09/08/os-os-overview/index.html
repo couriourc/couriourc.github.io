@@ -508,7 +508,7 @@ mjx-container[display="true"] + br {
 <h3 id="1-外中断">1. 外中断</h3>
 <p>由 CPU 执行指令之外的事件引起，如 I/O 完成终端，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。池外还有时钟中断，控制台中断等。</p>
 <h3 id="2-异常">2. 异常</h3>
-<p>由 CPU 执行指令的内部事件引起，如非法操作码，地址越界，算数溢出等。</p>
+<p>xxxxxxxxxx13 1void Philosophy_i(){ // 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者2    while (1) {3        P(mutex); // 进入临界区，也就是要开始拿共享资源了4        P(chopstick[i]); // 5        P(chopstick[ (i+1) % 5 ]);6        V(mutex);7        // 筷子拿到了，干饭8        // 干完了9        V(chopstick[i]);10        V(chopstick[(i+1)%5]);11        // 继续思考        12    }13}cpp</p>
 <h3 id="3-陷入">3. 陷入</h3>
 <p>在用户程序中使用系统调用。</p>
 
@@ -540,13 +540,13 @@ mjx-container[display="true"] + br {
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/09/09/os-os-process/"
+                           href="/2022/09/08/os-os-development/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">操作系统知识点总结-进程管理</span>
+                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -556,10 +556,10 @@ mjx-container[display="true"] + br {
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/08/os-os-development/"
+                           href="/2022/09/07/html-HTML-base/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">操作系统知识点总结-发展与分类</span>
+                                <span class="post-nav-title-item">HTML 基础篇</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
