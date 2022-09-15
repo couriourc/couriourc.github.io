@@ -11,7 +11,7 @@
         
             归档 |
         
-        🎈小客栈🎈
+        CouriourC Blog
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"couriourc.github.io","root":"/","language":"zh-CN","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"保持疯狂 - 保持热爱."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -29,6 +29,8 @@
 
 <body>
 <div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
     
 
     
@@ -57,7 +59,7 @@
                 </a>
             
             <a class="logo-title" href="/">
-                🎈小客栈🎈
+                CouriourC Blog
             </a>
         </div>
 
@@ -125,7 +127,6 @@
         <div class="page-main-content-middle">
 
             <div class="main-content">
-
 
                 
                     <div class="fade-in-down-animation">
@@ -215,34 +216,33 @@
         <div class="copyright-info info-item">
             &copy;
             
-                <span>2022</span>
-                -
+              <span>2022</span>
+              -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
-                    href="/">CouriourC</a>
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">CouriourC</a>
         </div>
         
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动
-            &nbsp;|&nbsp;主题
-            &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
-                v3.4.5</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
         </div>
         
         
     </div>
-
 </footer>
-
-    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
-    <script>
-      if (window.mermaid) {
-        mermaid.initialize({theme: 'dark'});
-      }
-    </script>
-
-
-
 
         </div>
     </div>
@@ -272,10 +272,6 @@
         
 
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="fas fa-arrow-up"></i>
-            </li>
-        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -286,6 +282,11 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
         
     </ul>
 </div>
@@ -331,6 +332,20 @@
     
 
 </main>
+
+    <!--  修改 开始位置-->
+    <script>
+      let mermaidLoad = document.createElement('script');
+      mermaidLoad.src = 'https://unpkg.com/mermaid@9.1.2/dist/mermaid.min.js';
+      mermaidLoad.addEventListener('load', () => {
+        if (window.mermaid) {
+          mermaid.initialize({  });
+        }
+      });
+      document.head.append(mermaidLoad);
+    </script>
+
+
 
 
 
