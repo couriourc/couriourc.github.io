@@ -329,7 +329,7 @@ mjx-container[display="true"] + br {
 <h4 id="编译">编译</h4>
 <p>将高级语言编译为机器语言，形成一组目标模块。</p>
 <h4 id="链接">链接</h4>
-<p>形成🚥 <span style="color:red;text-decoration:underline;">逻辑地址</span>，将编译后的目标模块所需的静态库一起，形成一个完整的装入模块。</p>
+<p>形成🚥 <span style="color:red;">逻辑地址</span>，将编译后的目标模块所需的静态库一起，形成一个完整的装入模块。</p>
 <h5 id="静态链接">静态链接</h5>
 <p>在程序执行前将各目标模块及其所需库函数组成一个完整的装入模块。</p>
 <h5 id="装入时动态链接">装入时动态链接</h5>
@@ -360,13 +360,277 @@ mjx-container[display="true"] + br {
 <p>可以动态的分配内存</p>
 </li>
 </ul>
-<h2 id="内存管理的功能">内存管理的功能</h2>
+<h3 id="内存管理的功能">内存管理的功能</h3>
 <ul>
 <li><strong>内存空间的分配与回收</strong>：主存储器空间的分配与管理。</li>
 <li><strong>地址转换</strong>：逻辑地址到物理地址。</li>
 <li><strong>内存中空间的扩展</strong>：虚拟化。</li>
 <li><strong>存储保护</strong>：保护各个作业只能访问自己的内存空间。</li>
 </ul>
+<h3 id="内存保护">内存保护</h3>
+<ul>
+<li>
+<p>设置<strong>上、下</strong>寄存器，进行越界检测</p>
+</li>
+<li>
+<p>通过重定位寄存器和界地址寄存器，进行越界检测，其中<strong>重定位寄存器存放起始物理地址</strong>，<strong>界地址寄存器</strong>存放<strong>最大逻辑地址</strong>。</p>
+</li>
+</ul>
+<h3 id="内存共享">内存共享</h3>
+<ul>
+<li>可重入代码：允许多个进程同时访问，但不允许修改。</li>
+<li>为每个进程匹配局部数据区，将可能改变的部分复制进去，修改进程自己的私有数据。</li>
+</ul>
+<h2 id="覆盖与交换">覆盖与交换</h2>
+<h3 id="覆盖技术">覆盖技术</h3>
+<p>将用户空间分为一个固定区和若干覆盖区。</p>
+<p>常用的部分放入固定区，不常用的段咋需要时放入覆盖区，当需要使用时将相应的段放入外存调入覆盖区。</p>
+<ul>
+<li>内存中能够更新的地方只有覆盖区的部分。</li>
+<li>对用户不透明。</li>
+</ul>
+<h3 id="交换技术">交换技术</h3>
+<p>当内存空间紧张时，将内存中的某些进程暂时换出到外存，并将内存中某些已经具备允许条件的进程换入内存。</p>
+<blockquote>
+<p><svg viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" style="color: rgb(211, 61, 61); height: 20px; vertical-align: middle; width: 20px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 1a.5.5 0 01.424.235l7.5 12A.5.5 0 0115.5 14H.5a.5.5 0 01-.424-.765l7.5-12A.5.5 0 018 1zM1.402 13h13.196L8 2.443 1.402 13z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9.41V6.12h1v3.29h-1z" fill="currentColor"></path><path d="M8 11.67a.76.76 0 110-1.52.76.76 0 010 1.52z" fill="currentColor"></path></svg> PCB 是常驻内存的</p>
+</blockquote>
+<p>中级调度（内存调度）就是决定将哪个处于挂起状态的进程重新换入内存。</p>
+<ul>
+<li>在具有交换功能的操作系统中，磁盘空间通常分为文件和对换区
+<ul>
+<li>文件区存储文件，追求磁盘空间的利用率，对磁盘空间的管理采用离散分配方式。</li>
+<li>对换区占用空间很小，追求换入换出速度，对磁盘空间的管理采用连续分配方式。</li>
+</ul>
+</li>
+<li>交换通常发生在有较多进程运行且内存吃紧的时刻。</li>
+<li>当系统符合降低时停止交换，</li>
+<li>一般会优先换出<strong>阻塞进程</strong>以及低优先级的进程，同时为了防止出现饥饿现象，有时还要考虑进程在内存中的驻留时间。</li>
+</ul>
+<h2 id="连续分配管理方式">连续分配管理方式</h2>
+<p>连续分配：系统为用户进程分配的必须是一个连续的内存空间，</p>
+<h3 id="单一连续分配">单一连续分配</h3>
+<p>在单一连续分配方式中，内存被分为系统区和用户区。</p>
+<ul>
+<li>系统区: 通常位于内存的低地址部分，用于存放操作系统相关数据。</li>
+<li>用户区: 用于存放用户进程相关数据。</li>
+</ul>
+<p>内存中只能有一道用户程序，用户程序独占整个用户区空间。</p>
+<ul>
+<li>
+<p>优点：</p>
+<ol>
+<li>实现简单</li>
+<li>无外部碎片</li>
+<li>可以采用覆盖技术扩充内存</li>
+<li>不一定需要采取内存保护</li>
+</ol>
+</li>
+<li>
+<p>缺点</p>
+<ol>
+<li>只能用于单用户/单任务操作系统中</li>
+<li>有内部碎片</li>
+<li>存储器利用率低</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>内部碎片：系统分配给进程的内存空间中，没有被利用到的区域</p>
+<p>外部碎片：内存中的某些空闲分区太小而难以利用</p>
+</blockquote>
+<h3 id="固定分区分配">固定分区分配</h3>
+<p>将整个用户空间划分为若干个<strong>固定大小</strong>的分区，在每个分区中只装入一道作业。</p>
+<ul>
+<li>
+<p>分区大小相等</p>
+<p>缺乏灵活性</p>
+<p>适合用一台计算机控制多个相同对象的场合</p>
+</li>
+<li>
+<p>分区大小不等</p>
+<p>增加了灵活性，可以满足不同大小的进程需求。</p>
+<p>更据常在系统中运行的作业大小情况划分</p>
+</li>
+</ul>
+<p>操作系统需要建立一个<strong>数据结构</strong>–<strong>分区说明表</strong>，来实现各个分区的分配与回收，每个表项对应一个分区，通常按分区大小排列，内容包括对应分区的大小，起始地址，状态（是否已分配）</p>
+<ul>
+<li>
+<p>优点</p>
+<ol>
+<li>
+<p>实现简单</p>
+</li>
+<li>
+<p>无外部碎片</p>
+</li>
+</ol>
+</li>
+<li>
+<p>缺点</p>
+<ol>
+<li>
+<p>当用户程序太大的时候，可能所有的分区都不能满足需求，此时不得不采用<strong>覆盖技术</strong>来解决，但这又会降低性能</p>
+</li>
+<li>
+<p>会产生内部碎片，内存利用率低</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="动态分区分配（可变分区分配）">动态分区分配（可变分区分配）</h3>
+<p>不会预先划分内存分区，而是更据进程在装入内存时，根据<strong>进程的大小</strong>动态建立分区，并使分区的大小正好合适进程的需要，因此<strong>系统分区</strong>的<strong>大小</strong>和<strong>数目</strong>是可变的。</p>
+<p>使用数据结构存储内存的使用情况</p>
+<ul>
+<li><strong>空闲分区表</strong>：每一个空闲分区对应一个表项，其内容包括空闲分区的起始位置、大小、分区号、状态等信息。</li>
+<li><strong>空闲分区链</strong>：每一个空闲分区的起始部分和末尾部分分别设置前向指针和后向指针，只想前（后）一个空闲分区，同时在起始部分存储分区大小等信息。</li>
+</ul>
+<p>当很多空闲分区都能满足需求时，应该选择哪个分区进行分配</p>
+<ul>
+<li>使用<strong>动态分区分配算法</strong></li>
+</ul>
+<p>如何进行空间的分配与删除</p>
+<ul>
+<li>
+<p>使用<strong>空闲分区表</strong></p>
+<ol>
+<li><strong>分配</strong>: 修改或直接删除相应的空闲分区。</li>
+<li><strong>回收</strong>: 修改或直接新增空闲分区，若存在合并，则删除掉其中一个。</li>
+</ol>
+</li>
+</ul>
+<h4 id="优点">优点</h4>
+<ul>
+<li>系统分区的大小和数目是可变的</li>
+<li>不会产生内部碎片</li>
+</ul>
+<h4 id="缺点">缺点</h4>
+<ul>
+<li>可能产生外部碎片</li>
+</ul>
+<blockquote>
+<p>🍨可以采用<strong>拼凑</strong>技术来解决内部碎片，即操作系统不断地移动各个分区，使之相邻，挤出更大地空闲分区。</p>
+<p>紧凑技术需要<strong>重定位寄存器</strong>的支持。</p>
+</blockquote>
+<h3 id="动态分区分配算法">动态分区分配算法</h3>
+<p>在存在多个可用的空闲分区时，通过动态分区分配算法，来决定使用哪个空闲分区。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="image-20220916140551442.png" alt="Dynamic Partitioning"></p>
+<h4 id="首次适应算法（First-Fit）">首次适应算法（First Fit）</h4>
+<p>每次都从<strong>低地址</strong>开始查找，找到<strong>第一个</strong>能满足大小的空闲分区，相应的，空闲分区以地址<strong>递增</strong>的方式进行排列。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="6bb37f646bb385139e00c90dce95aeda.jpg" alt="First Fit"></p>
+<h4 id="邻近适应（Next-Fit">邻近适应（Next Fit)</h4>
+<p>相当于对首次适应算法的改良，每一次从上次找找结束的地方开始继续查找，找到第一个能满足大小的空闲分区。相应的空闲分区再递增存储的同时，可以使用循环链表等类似的数据结构。</p>
+<ul>
+<li>**FF（首次适应算法）**相比于临近适应算法开销较大（每次都要从头开始检索）</li>
+<li><strong>FF</strong> 每次都从头开始检索，会优先利用低地址部分的小分区，能够给大进程留下更多的大空闲分区。</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="a96144ed10e675e83a7b5746c9976ce5.jpg" alt="img"></p>
+<h4 id="最佳适应算法（Best-Fit）">最佳适应算法（Best Fit）</h4>
+<p>尽可能优先使用<strong>小的空闲区</strong>，找到第一个能满足大小的空闲分区，相应的，空闲分区按照<strong>容量递增</strong>的方式排序</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="535702bd0a4aab925c9deadd59ae60a9.jpg" alt="Best Fit"></p>
+<h4 id="最坏适应（Worst-Fit）">最坏适应（Worst Fit）</h4>
+<p>也称之为最大适应算法，优先使用大分区，找到第一个能满足大小的空闲分区。相应地，空闲分区按照<strong>容量递减</strong>的方式排序。大的空闲分区不断变小，可能导致<span style="color:red;">后到来地大进程无内存可用</span>。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="486ea7e477be53c4765125e15cfc53f4.jpg" alt="Worst Fit"></p>
+<blockquote>
+<p>四种算法中，首次适应一般效果最好。</p>
+</blockquote>
+<h2 id="非连续分配管理方式">非连续分配管理方式</h2>
+<h3 id="基本分页存储方式">基本分页存储方式</h3>
+<p>将内存空间分为一个个大小相等的分区，每个分区就是一个<strong>页框</strong>（页帧，内存块，物理块，物理页面）。每个页框有一个编号，即页框号（页帧号，内存块号，物理块号，物理页号），页框号从 <strong>0</strong> 开始。</p>
+<p>将进程的逻辑地址空间也分为与页框大小相等的一个个部分，每个部分称为一个页或页面。每个页面也有一个编号，即页号，页号也是从 <strong>0</strong> 开始。</p>
+<ul>
+<li>操作系统以页框为单位为各个进程分配内存空间。</li>
+<li>进程的页面与内存的页框有一一对应的关系。</li>
+<li>各个页面不必连续存放，可以放到不相邻的各个页框中。</li>
+</ul>
+<h3 id="基本分段存储管理">基本分段存储管理</h3>
+<p><strong>进程的地址空间</strong>：按照程序自身的逻辑关系划分为若干个段，每个段都有一个段名，每段从 0 开始编制。</p>
+<p><strong>内存分配规则</strong>：以段为单位进行分配，每个段再内存中占据连续空间，但各段之间可以不相邻。</p>
+<p>分段系统的逻辑地址结构由段号（段名）和段内地址（段内偏移量）所组成，其中：</p>
+<ul>
+<li><strong>段号的位数</strong>决定了每个进程<strong>最多</strong>可以分几个段</li>
+<li><strong>段内地址位数</strong>决定了每个段的<strong>最大</strong>长度是多少</li>
+</ul>
+<p>引入段式存储主要是为了满足以下的需求：</p>
+<ul>
+<li>方便编程</li>
+<li>分段共享</li>
+<li>分段保护</li>
+<li>动态链接</li>
+<li>动态增长</li>
+</ul>
+<h4 id="段表">段表</h4>
+<p>作用与页表类似，结构包含段号，段长，基址，每个段表项的长度是相同的；</p>
+<ul>
+<li>段号：由于段表项长度相同，可以是隐晦的</li>
+<li>段长：该段的长度</li>
+<li>基址：该段在内存中的起始地址</li>
+</ul>
+<h4 id="地址变换">地址变换</h4>
+<ul>
+<li>
+<p>根据逻辑结构得到段号，段内地址</p>
+</li>
+<li>
+<p>判断段号是否越界（段号应小于段表长度 M</p>
+</li>
+<li>
+<p>查询段表，得到相应的段表项（段表项地址 = 段表始址 + 段号 * 段表项长度）</p>
+</li>
+<li>
+<p>判断段内地址是否超过段长</p>
+</li>
+<li>
+<p>计算得到物理地址（物理地址 = 段基址 + 段内地址）</p>
+</li>
+<li>
+<p>访问目标内存单元</p>
+</li>
+</ul>
+<h3 id="分段和分页管理的区别">分段和分页管理的区别</h3>
+<h4 id="分页管理">分页管理</h4>
+<ul>
+<li>页是信息的物理单位</li>
+<li>分页的主要目的是为了实现离散分配，提高内存利用率，不会产生外部碎片，只有少量内部碎片</li>
+<li>分页仅仅是系统管理的需要，完全是系统行为，对用户是不可见的</li>
+<li>分页的用户进程地址空间是一维的，程序员只需要给出一个记忆符即可表示一个地址</li>
+</ul>
+<h4 id="分段管理">分段管理</h4>
+<ul>
+<li>段是信息的逻辑单位</li>
+<li>分段的主要目的是更好地满足用户需求，会产生外部碎片</li>
+<li>一个段通常包含着一组属于一个逻辑模块的信息</li>
+<li>分段对用户是可见的，用户编程时需要显示地给出段名</li>
+<li>分段地用户进程地址空间是二维地，程序员在表示一个地址时，既要给出段名，也要给出段内地址</li>
+<li>分段更容易实现信息的共享和保护</li>
+</ul>
+<h3 id="段页式管理方式">段页式管理方式</h3>
+<ul>
+<li>将进程按逻辑模块分段</li>
+<li>再将各段分页（如每个页面4KB）</li>
+<li>再将内存空间分为天小相同的内存块</li>
+<li>运行进程前将各页面分别装入各内存块中</li>
+</ul>
+<p>段页式管理方式的逻辑地址由段号、页号和页内偏移量组成，其中</p>
+<ul>
+<li>段号的位数决定了每个进程最多可以分几段</li>
+<li>页号的位数决定了每个段最大由多少页</li>
+<li>页内偏移量决定了页面的大小和内存块的大小</li>
+</ul>
+<h3 id="数据结构">数据结构</h3>
+<p><strong>段表</strong>：段表项包括段号（隐含）、页表长度、页表存放块号（页表起始地址）</p>
+<p><strong>页表</strong>：页表项包含页号（隐含）、页面存放的内存块号</p>
+<h3 id="地址转化过程">地址转化过程</h3>
+<ol>
+<li>根据<strong>逻辑地址</strong>得到<strong>段号S</strong>、<strong>页号P</strong>和<strong>页内偏移量W</strong></li>
+<li>判断段号是否越界（段号S应当小于段表长度M）</li>
+<li>查询段表，找到相应的段表项（段表项地址 = 段表始址F + 段号S * 段表项长度）</li>
+<li>检查页号是否越界（页号应当小于页表长度）</li>
+<li>根据<strong>页表存放块号</strong>和<strong>页号</strong>找到对应的<strong>页表项</strong></li>
+<li>根据<strong>内存块号</strong>和<strong>页内偏移量</strong>得到<strong>物理地址</strong></li>
+</ol>
+<p>总计三次访问内存</p>
+<p>同样可以引入快表，并以段号和页号作为查询关键字，若快表命中，则可以直接得到物理地址，仅需一次访存。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="os-paging-example2.png" alt="OS Paging Example 2"><img lazyload="" src="/images/loading.svg" data-src="os-paging.png" alt="OS Paging"></p>
 
         </div>
 
@@ -587,7 +851,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">内存管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">内存相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E8%A6%81%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">内存管理的基本原理和要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">逻辑地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.2.</span> <span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A3%85%E5%85%A5%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.</span> <span class="nav-text">程序的装入和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.1.</span> <span class="nav-text">静态链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A3%85%E5%85%A5%E6%97%B6%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.2.</span> <span class="nav-text">装入时动态链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.3.</span> <span class="nav-text">运行时动态链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%85%E5%85%A5"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">装入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">内存管理的功能</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">内存管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">内存相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E8%A6%81%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">内存管理的基本原理和要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">逻辑地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.2.</span> <span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A3%85%E5%85%A5%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.</span> <span class="nav-text">程序的装入和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.1.</span> <span class="nav-text">静态链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A3%85%E5%85%A5%E6%97%B6%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.2.</span> <span class="nav-text">装入时动态链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.2.3.</span> <span class="nav-text">运行时动态链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%85%E5%85%A5"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">装入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.4.</span> <span class="nav-text">内存管理的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E4%BF%9D%E6%8A%A4"><span class="nav-number">1.2.5.</span> <span class="nav-text">内存保护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%85%B1%E4%BA%AB"><span class="nav-number">1.2.6.</span> <span class="nav-text">内存共享</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2"><span class="nav-number">1.3.</span> <span class="nav-text">覆盖与交换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E6%8A%80%E6%9C%AF"><span class="nav-number">1.3.1.</span> <span class="nav-text">覆盖技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-number">1.3.2.</span> <span class="nav-text">交换技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D"><span class="nav-number">1.4.1.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-number">1.4.2.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%EF%BC%88%E5%8F%AF%E5%8F%98%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%EF%BC%89"><span class="nav-number">1.4.3.</span> <span class="nav-text">动态分区分配（可变分区分配）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95"><span class="nav-number">1.4.4.</span> <span class="nav-text">动态分区分配算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A6%96%E6%AC%A1%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95%EF%BC%88First-Fit%EF%BC%89"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">首次适应算法（First Fit）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%BB%E8%BF%91%E9%80%82%E5%BA%94%EF%BC%88Next-Fit"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">邻近适应（Next Fit)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95%EF%BC%88Best-Fit%EF%BC%89"><span class="nav-number">1.4.4.3.</span> <span class="nav-text">最佳适应算法（Best Fit）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%9D%8F%E9%80%82%E5%BA%94%EF%BC%88Worst-Fit%EF%BC%89"><span class="nav-number">1.4.4.4.</span> <span class="nav-text">最坏适应（Worst Fit）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">非连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.1.</span> <span class="nav-text">基本分页存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.5.2.</span> <span class="nav-text">基本分段存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%A1%A8"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">段表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">地址变换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E5%92%8C%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.5.3.</span> <span class="nav-text">分段和分页管理的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">分页管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E7%AE%A1%E7%90%86"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">分段管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.4.</span> <span class="nav-text">段页式管理方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.5.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E8%BD%AC%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.6.</span> <span class="nav-text">地址转化过程</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
