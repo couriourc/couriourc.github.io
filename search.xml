@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据结构知识点（823）总结-概览</title>
+    <url>/2022/09/17/data-structer-overview-data-structer-overview/</url>
+    <content><![CDATA[<h1>数据结构</h1>
+<h2 id="应对考试（823）">应对考试（823）</h2>
+<h3 id="一、考试性质">一、考试性质</h3>
+<p>本课程是计算机类专业、网络空间安全专业的专业基础必修课，<br>
+其涵盖知识是相关专业研究生开展创新研究必须具备的基础。</p>
+<h3 id="二、考查目标">二、考查目标</h3>
+<p>本课程主要考核常见数据结构（线性表、树、图）表示方法、操<br>
+作及应用；常用查找技术与排序算法等。</p>
+<ol>
+<li>
+<p>数据结构和算法设计基础知识，计算机内部数据对象的表示和特性，线性表、树、图等常见数据逻辑结构、存储结构表示及其差异，针对具体问题的模型分析与求解。</p>
+</li>
+<li>
+<p>常见数据结构上的基本操作和算法；排序、查找等算法原理及实现；算法的时间复杂度和空间复杂度分析方法。</p>
+</li>
+<li>
+<p>综合运用课程知识开展数据结构、算法的设计与分析。</p>
+</li>
+</ol>
+<h3 id="三、适用范围">三、适用范围</h3>
+<p>本考试大纲适用于我校计算机与信息安全学院的081200 计算机科学与技术、083900 网络空间安全、085400 电子信息（01 计算机技术、02 软件工程）专业的硕士研究生招生考试。</p>
+<h3 id="四、考试形式和试卷结构">四、考试形式和试卷结构</h3>
+<h4 id="试卷内容结构">试卷内容结构</h4>
+<ol>
+<li>
+<p>数据结构、算法的基础知识：约20 分；</p>
+</li>
+<li>
+<p>数据结构、算法的应用和分析：约80 分；</p>
+</li>
+<li>
+<p>数据结构、算法的代码分析、设计和实现：约50 分。</p>
+</li>
+</ol>
+<p>4． 命题可根据考核需要，对试卷内容结构、题型结构及分值比例做适当调整。</p>
+<h3 id="五、考查内容">五、考查内容</h3>
+<h4 id="1．-数据结构与算法绪论">1． 数据结构与算法绪论</h4>
+<ul>
+<li>数据结构的基本概念，包括数据的逻辑特点、存储表示；</li>
+<li>数据抽象方法，数据结构的抽象数据类型ADT 表示；</li>
+<li>算法描述方法、算法精化过程和算法时间、空间复杂度分析方法。</li>
+</ul>
+<h4 id="2．-线性表">2． 线性表</h4>
+<ul>
+<li>线性表的逻辑结构和抽象数据类型定义；</li>
+<li>线性表的顺序存储和链式存储，线性表创建、插入、删除和查找等基本操作的实现以及算法时间复杂度分析；</li>
+<li>能分析不同存储结构的优缺点和适用场合，能分析不同的存储方式对算法性能的影响；</li>
+<li>单循环链表、双链表和循环双链表的实现以及应用；</li>
+<li>线性表的应用实例分析：一元多项式运算；Josephus 问题；</li>
+<li>字符串的逻辑结构、存储结构和模式匹配。</li>
+</ul>
+<h4 id="3．-栈和队列">3． 栈和队列</h4>
+<ul>
+<li>栈和队列的逻辑特点、抽象数据类型；</li>
+<li>栈和队列的顺序表示和链接表示，以及基于不同存储结构的基本操作的实现</li>
+<li>递归函数的执行过程以及使用栈进行递归函数与非递归函数的转换；</li>
+<li>栈的应用：数制转换；迷宫问题；</li>
+<li>队列的应用：农夫过河问题；银行业务模拟；密码加密解密问题；</li>
+<li>深度优先和广度优先搜索策略的原理、不同之处以及应用场合。</li>
+</ul>
+<h4 id="4．-树与二叉树">4． 树与二叉树</h4>
+<ul>
+<li>树与二叉树抽象数据类型、不同存储实现与约束分析；</li>
+<li>树与二叉树周游算法及复杂度分析；</li>
+<li>最优前缀编码问题及算法分析；</li>
+<li>线索二叉树；</li>
+<li>二叉排序树表示、操作实现以及时间、空间复杂度分析；</li>
+<li>平衡二叉排序树表示、操作实现以及时间、空间复杂度分析；</li>
+</ul>
+<h4 id="5．-图">5． 图</h4>
+<ul>
+<li>图的抽象数据类型、不同存储结构与适用性分析；</li>
+<li>图的深度优先周游和广度优先周游两类策略和实现方法，能基于图的具体存储结构分析周游的处理过程，并分析两类周游算法的复杂度；</li>
+<li>面向应用的核心算法实现与分析，包括Prim 和Kruskal 最小生成树算法、Dijkstra 和Floyd 最短路径算法；</li>
+<li>面向特定应用的图形态，包括AOV 网和AOE 网。</li>
+</ul>
+<h4 id="6．-集合与字典">6． 集合与字典</h4>
+<ul>
+<li>集合与字典的顺序表示、操作实现以及时间、空间复杂度分析；</li>
+<li>字典的散列表示、操作实现以及时间、空间复杂度分析。</li>
+</ul>
+<h4 id="7-排序">7. 排序</h4>
+<ul>
+<li>插入类排序：直接插入、二分插入和希尔插入排序；</li>
+<li>选择类排序：直接选择和堆排序；</li>
+<li>交换类排序：冒泡排序和快速排序；</li>
+<li>分配类排序：基数排序；</li>
+<li>归并类排序：两路归并排序；</li>
+<li>各种排序算法时间复杂度、空间复杂度、算法稳定性等方面的综合比较，根据应用场合选择合适的排序算法。</li>
+</ul>
+<h3 id="六、参考书目（本校本科生教学用书）">六、参考书目（本校本科生教学用书）</h3>
+<p>张乃孝，陈光，孙猛. 算法与数据结构（C 语言描述）（第3 版），高等教育出版社，2012 年.</p>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>数据结构</tag>
+        <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 基础篇</title>
     <url>/2022/09/07/html-HTML-base/</url>
     <content><![CDATA[<h1>HTML 基础总结</h1>
@@ -28,116 +130,6 @@
       <tags>
         <tag>HTML</tag>
         <tag>2023面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结-发展与分类</title>
-    <url>/2022/09/08/os-os-development/</url>
-    <content><![CDATA[<h1>操作系统的发展与分类</h1>
-<h2 id="手工操作阶段-纸带机">手工操作阶段(纸带机)</h2>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="R-S"></p>
-<ul>
-<li>用户独占主机</li>
-<li>CPU 资源利用不充分</li>
-<li>主要做偏向数理运算</li>
-</ul>
-<h2 id="批处理阶段">批处理阶段</h2>
-<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段,将指令进行打包存储(物理打包💦.</p>
-<h3 id="单道批处理系统">单道批处理系统</h3>
-<p>主要使用磁带作为载体,引入了<strong>脱机输入/输出技术</strong>,并由监督程序复杂作业的输入输出.</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
-<h3 id="主要优点">主要优点</h3>
-<ul>
-<li>
-<p>相比于手工接线,能避免这样的信息传输矛盾,资源利用率有所提升</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
-</li>
-</ul>
-<blockquote>
-<p>这里就相当于人工充当了 I/O 接口,和 DMA</p>
-</blockquote>
-<ul>
-<li>代码/脚本 更便于保存(相对而言</li>
-</ul>
-<h3 id="主要缺点">主要缺点</h3>
-<ul>
-<li>
-<p>内存中仅能有一道程序运行,且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
-</li>
-<li>
-<p>一次性消耗,如果出现 BUG ,很难修复,需要重新打孔☢</p>
-</li>
-</ul>
-<h3 id="多道批处理系统-操作系统的正式诞生">多道批处理系统(操作系统的正式诞生</h3>
-<p>每次往计算机内存中输入多道程序,并引入了中断技术,有操作系统负责管理这些程序的并发运行.</p>
-<p>过程和单道批处理系统差不多,只不过是可以向计算机<strong>内存</strong>中调入多道程序,让他们可以<strong>并发</strong>运行. — 基本特征</p>
-<h4 id="主要优点-v2">主要优点</h4>
-<ul>
-<li>开始出现<strong>并发</strong>概念,<strong>共享</strong>计算机资源,CPU利用率大幅提升,让人工相对而言解放.</li>
-</ul>
-<h4 id="主要缺点-v2">主要缺点</h4>
-<ul>
-<li>用户响应时间长,没有人机交互功能(用户提交自己的作业之后只能等待计算机处理完成,无法介入控制自己的作业执行.</li>
-</ul>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
-<h2 id="分时操作系统-RR">分时操作系统(RR</h2>
-<p>计算机中 <strong>CPU</strong> 以时间片(<strong>10~100ms</strong>)为单位轮流为各个用户/作业服务,各个用户可以通过终端与计算机进行交互.</p>
-<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="主要优点-v3">主要优点</h3>
-<ul>
-<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
-</ul>
-<h3 id="主要缺点-v3">主要缺点</h3>
-<ul>
-<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户/作业</strong>都是完全公平的，循环的为每一个 用户/作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
-</ul>
-<h2 id="实时操作系统">实时操作系统</h2>
-<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
-<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
-<h3 id="主要优点-v4">主要优点</h3>
-<ul>
-<li>响应紧急任务更加及时，紧急任务可以插队</li>
-</ul>
-<blockquote>
-<p>实时操作系统分为：</p>
-<ul>
-<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
-<li>软实时系统（能偶尔违反时间规定，如12306火车退票系统，有时候数据并不是实时的）</li>
-</ul>
-</blockquote>
-<h2 id="其他现代操作系统">其他现代操作系统</h2>
-<ul>
-<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
-<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
-<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
-</ul>
-<h2 id="总结">总结</h2>
-<pre class="mermaid">graph LR
-    Center(操作系统的发展)
-    HumanHandle(手工操作阶段)
-    BatchHandle(批处理阶段)
-    SingleBatchHandle(单道批处理操作系统)
-    MultiBatchHandle(多道批处理系统)
-    RRCPUHandle(分时操作系统)
-    FeedbackCPUHandle(实时操作系统)
-    AnotherHandle(其他操作系统)
-
-    Center--&gt;HumanHandle
-    Center--&gt;BatchHandle--&gt;SingleBatchHandle
-    BatchHandle--&gt;MultiBatchHandle
-    Center--&gt;RRCPUHandle
-    Center--&gt;FeedbackCPUHandle
-    Center--&gt;AnotherHandle</pre>
-]]></content>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
-        <tag>发展与分类</tag>
       </tags>
   </entry>
   <entry>
@@ -477,6 +469,116 @@
       </tags>
   </entry>
   <entry>
+    <title>操作系统知识点总结-发展与分类</title>
+    <url>/2022/09/08/os-os-development/</url>
+    <content><![CDATA[<h1>操作系统的发展与分类</h1>
+<h2 id="手工操作阶段-纸带机">手工操作阶段(纸带机)</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="R-S"></p>
+<ul>
+<li>用户独占主机</li>
+<li>CPU 资源利用不充分</li>
+<li>主要做偏向数理运算</li>
+</ul>
+<h2 id="批处理阶段">批处理阶段</h2>
+<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段,将指令进行打包存储(物理打包💦.</p>
+<h3 id="单道批处理系统">单道批处理系统</h3>
+<p>主要使用磁带作为载体,引入了<strong>脱机输入/输出技术</strong>,并由监督程序复杂作业的输入输出.</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
+<h3 id="主要优点">主要优点</h3>
+<ul>
+<li>
+<p>相比于手工接线,能避免这样的信息传输矛盾,资源利用率有所提升</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>这里就相当于人工充当了 I/O 接口,和 DMA</p>
+</blockquote>
+<ul>
+<li>代码/脚本 更便于保存(相对而言</li>
+</ul>
+<h3 id="主要缺点">主要缺点</h3>
+<ul>
+<li>
+<p>内存中仅能有一道程序运行,且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
+</li>
+<li>
+<p>一次性消耗,如果出现 BUG ,很难修复,需要重新打孔☢</p>
+</li>
+</ul>
+<h3 id="多道批处理系统-操作系统的正式诞生">多道批处理系统(操作系统的正式诞生</h3>
+<p>每次往计算机内存中输入多道程序,并引入了中断技术,有操作系统负责管理这些程序的并发运行.</p>
+<p>过程和单道批处理系统差不多,只不过是可以向计算机<strong>内存</strong>中调入多道程序,让他们可以<strong>并发</strong>运行. — 基本特征</p>
+<h4 id="主要优点-v2">主要优点</h4>
+<ul>
+<li>开始出现<strong>并发</strong>概念,<strong>共享</strong>计算机资源,CPU利用率大幅提升,让人工相对而言解放.</li>
+</ul>
+<h4 id="主要缺点-v2">主要缺点</h4>
+<ul>
+<li>用户响应时间长,没有人机交互功能(用户提交自己的作业之后只能等待计算机处理完成,无法介入控制自己的作业执行.</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
+<h2 id="分时操作系统-RR">分时操作系统(RR</h2>
+<p>计算机中 <strong>CPU</strong> 以时间片(<strong>10~100ms</strong>)为单位轮流为各个用户/作业服务,各个用户可以通过终端与计算机进行交互.</p>
+<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="主要优点-v3">主要优点</h3>
+<ul>
+<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
+</ul>
+<h3 id="主要缺点-v3">主要缺点</h3>
+<ul>
+<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户/作业</strong>都是完全公平的，循环的为每一个 用户/作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
+</ul>
+<h2 id="实时操作系统">实时操作系统</h2>
+<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
+<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
+<h3 id="主要优点-v4">主要优点</h3>
+<ul>
+<li>响应紧急任务更加及时，紧急任务可以插队</li>
+</ul>
+<blockquote>
+<p>实时操作系统分为：</p>
+<ul>
+<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
+<li>软实时系统（能偶尔违反时间规定，如12306火车退票系统，有时候数据并不是实时的）</li>
+</ul>
+</blockquote>
+<h2 id="其他现代操作系统">其他现代操作系统</h2>
+<ul>
+<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
+<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
+<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
+</ul>
+<h2 id="总结">总结</h2>
+<pre class="mermaid">graph LR
+    Center(操作系统的发展)
+    HumanHandle(手工操作阶段)
+    BatchHandle(批处理阶段)
+    SingleBatchHandle(单道批处理操作系统)
+    MultiBatchHandle(多道批处理系统)
+    RRCPUHandle(分时操作系统)
+    FeedbackCPUHandle(实时操作系统)
+    AnotherHandle(其他操作系统)
+
+    Center--&gt;HumanHandle
+    Center--&gt;BatchHandle--&gt;SingleBatchHandle
+    BatchHandle--&gt;MultiBatchHandle
+    Center--&gt;RRCPUHandle
+    Center--&gt;FeedbackCPUHandle
+    Center--&gt;AnotherHandle</pre>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>概览</tag>
+        <tag>操作系统</tag>
+        <tag>发展与分类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统知识点总结-概览</title>
     <url>/2022/09/08/os-os-overview/</url>
     <content><![CDATA[<h1>概览</h1>
@@ -693,8 +795,8 @@
 ]]></content>
       <tags>
         <tag>基础知识</tag>
-        <tag>操作系统</tag>
         <tag>概览</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -892,6 +994,171 @@
         <tag>操作系统</tag>
         <tag>进程管理</tag>
         <tag>死锁</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统知识点总结-进程同步问题</title>
+    <url>/2022/09/13/os-os-process-sync-quiz/</url>
+    <content><![CDATA[<h1>进程管理(经典问题)</h1>
+<h2 id="生产者-消费问题">生产者-消费问题</h2>
+<ul>
+<li>
+<p>系统中有一组生产者进程和一组消费者，生产者进程每次生产一个产品放入缓冲区，消费者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用；</p>
+</li>
+<li>
+<p>生产者、消费者共享一个初始为空，大小为 n 的缓冲区；</p>
+</li>
+<li>
+<p>只有缓冲区<strong>没满时</strong>，生产者才能把产品<strong>放入</strong>缓冲区，否则必须等待；</p>
+</li>
+<li>
+<p>只有缓冲区<strong>不空时</strong>，消费者才能从中取出产品，否则必须等待；</p>
+</li>
+<li>
+<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>访问。</p>
+</li>
+</ul>
+<h3 id="分析关系">分析关系</h3>
+<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914092555906.png" alt="image-20220914092555906"></p>
+<ul>
+<li>
+<p>生产者和消费者访问缓冲区是互斥的。</p>
+</li>
+<li>
+<p>生产者和消费者的工作需要同步，即生产完之后才能消费。</p>
+</li>
+</ul>
+<h3 id="设置信号量">设置信号量</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br>semaphore empty = n;<br>semaphore full  = <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="代码实现">代码实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(empty);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 存入缓冲区</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(full);<span class="hljs-comment">// 唤起消费者</span><br>    }    <br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(full);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 使用资源</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>    <span class="hljs-built_in">V</span>(empty);        <br>    }    <br>    <br>}<br><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>其实实现思路很简单，无非就是<strong>同步互斥</strong>关系</p>
+</blockquote>
+<pre class="mermaid">sequenceDiagram
+actor producer as 生产者 
+%%可以理解为厂商关系
+participant buffer as 缓冲区
+actor consumer as 消费者
+%% 共享资源应该总是满足 同步互斥的关系
+alt 共享有资源
+	producer -&gt;&gt; buffer: 生产者生产时占据队列 
+	consumer -&gt;&gt; buffer: 消费者消耗时占据队列
+	producer --&gt; consumer: 
+end</pre>
+<p>为什么要互斥呢，因为缓冲区的本身就是一个共享资源，所以，也可以这样去理解。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore buffer_full = <span class="hljs-number">0</span>;<br>semaphore buffer = <span class="hljs-number">1</span>; <span class="hljs-comment">// 表示 缓冲区 只有一个</span><br>semaphore buffer_empty = n; <span class="hljs-comment">// 注意buffer_full + buffer_empty = n; 这表示了容量</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_empty); <span class="hljs-comment">// 等待空位</span><br>        <span class="hljs-built_in">P</span>(buffer); <span class="hljs-comment">// 申请使用 buffer</span><br>        <span class="hljs-comment">// 使用空位</span><br>        <span class="hljs-built_in">V</span>(buffer); <span class="hljs-comment">// 这里应该先退出，这样 consumer 才不会因为检测到满了，然后争夺 buffer 却拿不到权限进去，应该让他先进去，因为满足的是不满就可以进。</span><br>        <span class="hljs-built_in">V</span>(buffer_full); <span class="hljs-comment">// 更新满的状态，或者说元素的数目</span><br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_full);<br>        <span class="hljs-built_in">P</span>(buffer);<br>        <span class="hljs-comment">// 消费资源</span><br>        <span class="hljs-built_in">V</span>(buffer);<br>        <span class="hljs-built_in">V</span>(buffer_empty);<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>🍨 能否用前驱关系理解呢？</p>
+</blockquote>
+<h2 id="多生产者-多消费者问题">多生产者-多消费者问题</h2>
+<p>有父亲、母亲、儿子、女儿四人，其中：</p>
+<ul>
+<li>父亲往盘子中放苹果；</li>
+<li>母亲往盘子中放橘子；</li>
+<li>女儿从盘子中拿苹果；</li>
+<li>儿子从盘子中拿橘子；</li>
+<li>只有盘子空时才能放水果；</li>
+<li>只有有需要的水果时才能拿水果。</li>
+</ul>
+<h3 id="关系分析">关系分析</h3>
+<h4 id="互斥关系">互斥关系</h4>
+<p>父亲和母亲使用同一个盘子</p>
+<h4 id="同步关系">同步关系</h4>
+<p>父亲放完苹果之后，女儿才能拿到苹果</p>
+<p>母亲放入橘子之后，儿子才能拿到橘子</p>
+<p>盘子为空才能放水果（大抵是只有一个空位吧）</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914100906662.png" alt="image-20220914100906662"></p>
+<h3 id="信号量设置">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的互斥关系</span><br>semaphore plate = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的剩余空位</span><br>semaphore apple = <span class="hljs-number">0</span>;<br>semaphore orange= <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="程序实现">程序实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dad</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍎放苹果 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(apple); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 爸爸 并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">mom</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍊放橘子 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(orange); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 妈妈 也并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">daughter</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(apple); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👩吃🍎 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(apple);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">son</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(orange); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👦吃🍊 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(orange);<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>由于本问题缓冲区为1，可以考虑不设置信号量。</p>
+</blockquote>
+<h2 id="烟鬼问题-一个生产者-多消费者">烟鬼问题(一个生产者-多消费者)</h2>
+<p>系统中有一个供应者和三个吸烟者，吸烟者吸烟需要自己卷烟，其中</p>
+<ul>
+<li>卷烟需要烟草、纸、胶水三种材料</li>
+<li>每个吸烟者各有其中的一种材料</li>
+<li>供应者每次会提供其中两种材料，并由缺少该材料的吸烟者拿取</li>
+<li>吸烟者制作完烟并抽掉后，发出信号，供应者放下一组物品</li>
+</ul>
+<h3 id="分析关系-v2">分析关系</h3>
+<p>供应者：提供两种材料</p>
+<ul>
+<li>组合一：烟草 + 纸</li>
+<li>组合二：烟草 + 胶水</li>
+<li>组合三：胶水 + 纸</li>
+</ul>
+<p>烟鬼：需要两种类型，也就是供应者每次提供只够一个人使用</p>
+<h4 id="互斥关系：">互斥关系：</h4>
+<ul>
+<li>烟鬼之间互斥</li>
+</ul>
+<h4 id="同步关系-v2">同步关系</h4>
+<ul>
+<li>供应者提供的组合顺序</li>
+</ul>
+<h3 id="信号量设置-v2">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore cigratteAndPaper  = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草纸组合</span><br>semaphore cigratteAndGlue   = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草胶组合</span><br>semaphore glueAndPaper    = <span class="hljs-number">0</span>; <span class="hljs-comment">// 胶纸组合</span><br>semaphore finish            = <span class="hljs-number">0</span>; <span class="hljs-comment">// 抽烟状态</span><br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>; <span class="hljs-comment">// 用于标记是几轮</span><br></code></pre></td></tr></table></figure>
+<h3 id="代码实现-v2">代码实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">1</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndGlue);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">2</span>) {<br>            <span class="hljs-built_in">V</span>(glueAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>        i = (i+<span class="hljs-number">1</span>) % <span class="hljs-number">3</span>;<br>        <span class="hljs-built_in">P</span>(finish);<br>    }<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndPaperConsumer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(cigratteAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndGlueConsumer</span>  <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {<br>      <span class="hljs-built_in">P</span>(cigratteAndGlue);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">glueAndPaperConsumer</span>     <span class="hljs-params">()</span></span>{<br>     <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(glueAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br></code></pre></td></tr></table></figure>
+<h2 id="读者-写者-问题">读者-写者 问题</h2>
+<p>有读者和写者两组并发进程，共享一个文件。要求：</p>
+<ul>
+<li>读者可以同时读取文件；</li>
+<li>同一时间只能有一个写者进行写操作；</li>
+<li>任一写着完成写操作之前不允许其他进程进行读或写操作；</li>
+<li>写者执行写操作前，应让其他读者和写者全部退出。</li>
+</ul>
+<h3 id="关系分析-v2">关系分析</h3>
+<h4 id="互斥关系-v2">互斥关系</h4>
+<ul>
+<li>
+<p>写进程和写进程之间</p>
+</li>
+<li>
+<p>写进程和读进程之间</p>
+</li>
+</ul>
+<h3 id="信号量设置-v3">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore rw = <span class="hljs-number">1</span>;<br>semaphore ww = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>semaphore mutex = <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="程序实现-v2">程序实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">writer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(rw);<br>        <span class="hljs-comment">// 写作</span><br>        <span class="hljs-built_in">V</span>(rw);<br>        <span class="hljs-built_in">V</span>(ww);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reader</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">P</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(ww);<br>        <br>        <span class="hljs-comment">// 读文件</span><br>         <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (--count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>    }   <br>}<br></code></pre></td></tr></table></figure>
+<h2 id="哲学家进餐问题">哲学家进餐问题</h2>
+<p>在一个桌子上，有5位哲学家，其中</p>
+<ul>
+<li>每位哲学家之间摆着一<strong>根</strong>筷子，共计5根</li>
+<li>哲学家平时在思考人生，饿了就会尝试拿起左右手的筷子（一根一根的拿）</li>
+<li>如果筷子在别人手上，则等待</li>
+<li>拿起了两根筷子时，哲学家开始进食</li>
+<li>用餐完毕后放下筷子继续思考</li>
+</ul>
+<h3 id="关系分析-v3">关系分析</h3>
+<p>鉴于这个和之前的不一样，所以阐明一下我的思考过程：</p>
+<ul>
+<li>
+<p>什么是共享资源？</p>
+<p>筷子？不不不，不止，我们假定一个人饿了，那么他周围的两个人都拿不到，因为他们周边只有一个筷子了，但是对于对角线的位置的人却还是可以拿到的，而且是二者之一，</p>
+<p>也就是说相邻的三人之间的关系是互斥，但是对于其他人是同步的，也就是说相邻的人之间的筷子才是共享资源。</p>
+</li>
+<li>
+<p>信号量怎样设置？</p>
+<p>其实信号量有点类似资源状态机，那么我们应该表示的是被使用的筷子会更加方便，其实筷子对应哲学家的数量，所以也不是特别大的影响</p>
+</li>
+</ul>
+<h3 id="信号量设置-v4">信号量设置</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore chopstick[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}; <span class="hljs-comment">//代表五根筷子的资源</span><br>semaphore mutex = <span class="hljs-number">1</span>;  <span class="hljs-comment">//对左右筷子整体资源互斥访问</span><br></code></pre></td></tr></table></figure>
+<h3 id="实际代码">实际代码</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Philosophy_i</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span></span>{ <span class="hljs-comment">// 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 进入临界区，也就是要开始拿共享资源了</span><br>        <span class="hljs-built_in">P</span>(chopstick[i]); <span class="hljs-comment">// </span><br>        <span class="hljs-built_in">P</span>(chopstick[ (i+<span class="hljs-number">1</span>) % <span class="hljs-number">5</span> ]);<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-comment">// 筷子拿到了，干饭</span><br>        <span class="hljs-comment">// 干完了</span><br>        <span class="hljs-built_in">V</span>(chopstick[i]);<br>        <span class="hljs-built_in">V</span>(chopstick[(i+<span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<br>    <span class="hljs-comment">// 继续思考        </span><br>    }<br>}<br></code></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>进程管理</tag>
+        <tag>进程同步</tag>
+        <tag>经典问题</tag>
       </tags>
   </entry>
   <entry>
@@ -1116,171 +1383,6 @@ class addreaddSpace,pc,registry,heap important;</pre>
         <tag>操作系统</tag>
         <tag>进程管理</tag>
         <tag>调度算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结-进程同步问题</title>
-    <url>/2022/09/13/os-os-process-sync-quiz/</url>
-    <content><![CDATA[<h1>进程管理(经典问题)</h1>
-<h2 id="生产者-消费问题">生产者-消费问题</h2>
-<ul>
-<li>
-<p>系统中有一组生产者进程和一组消费者，生产者进程每次生产一个产品放入缓冲区，消费者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用；</p>
-</li>
-<li>
-<p>生产者、消费者共享一个初始为空，大小为 n 的缓冲区；</p>
-</li>
-<li>
-<p>只有缓冲区<strong>没满时</strong>，生产者才能把产品<strong>放入</strong>缓冲区，否则必须等待；</p>
-</li>
-<li>
-<p>只有缓冲区<strong>不空时</strong>，消费者才能从中取出产品，否则必须等待；</p>
-</li>
-<li>
-<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>访问。</p>
-</li>
-</ul>
-<h3 id="分析关系">分析关系</h3>
-<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914092555906.png" alt="image-20220914092555906"></p>
-<ul>
-<li>
-<p>生产者和消费者访问缓冲区是互斥的。</p>
-</li>
-<li>
-<p>生产者和消费者的工作需要同步，即生产完之后才能消费。</p>
-</li>
-</ul>
-<h3 id="设置信号量">设置信号量</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br>semaphore empty = n;<br>semaphore full  = <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="代码实现">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(empty);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 存入缓冲区</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(full);<span class="hljs-comment">// 唤起消费者</span><br>    }    <br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(full);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 使用资源</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>    <span class="hljs-built_in">V</span>(empty);        <br>    }    <br>    <br>}<br><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>其实实现思路很简单，无非就是<strong>同步互斥</strong>关系</p>
-</blockquote>
-<pre class="mermaid">sequenceDiagram
-actor producer as 生产者 
-%%可以理解为厂商关系
-participant buffer as 缓冲区
-actor consumer as 消费者
-%% 共享资源应该总是满足 同步互斥的关系
-alt 共享有资源
-	producer -&gt;&gt; buffer: 生产者生产时占据队列 
-	consumer -&gt;&gt; buffer: 消费者消耗时占据队列
-	producer --&gt; consumer: 
-end</pre>
-<p>为什么要互斥呢，因为缓冲区的本身就是一个共享资源，所以，也可以这样去理解。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore buffer_full = <span class="hljs-number">0</span>;<br>semaphore buffer = <span class="hljs-number">1</span>; <span class="hljs-comment">// 表示 缓冲区 只有一个</span><br>semaphore buffer_empty = n; <span class="hljs-comment">// 注意buffer_full + buffer_empty = n; 这表示了容量</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_empty); <span class="hljs-comment">// 等待空位</span><br>        <span class="hljs-built_in">P</span>(buffer); <span class="hljs-comment">// 申请使用 buffer</span><br>        <span class="hljs-comment">// 使用空位</span><br>        <span class="hljs-built_in">V</span>(buffer); <span class="hljs-comment">// 这里应该先退出，这样 consumer 才不会因为检测到满了，然后争夺 buffer 却拿不到权限进去，应该让他先进去，因为满足的是不满就可以进。</span><br>        <span class="hljs-built_in">V</span>(buffer_full); <span class="hljs-comment">// 更新满的状态，或者说元素的数目</span><br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_full);<br>        <span class="hljs-built_in">P</span>(buffer);<br>        <span class="hljs-comment">// 消费资源</span><br>        <span class="hljs-built_in">V</span>(buffer);<br>        <span class="hljs-built_in">V</span>(buffer_empty);<br>    }<br>}<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>🍨 能否用前驱关系理解呢？</p>
-</blockquote>
-<h2 id="多生产者-多消费者问题">多生产者-多消费者问题</h2>
-<p>有父亲、母亲、儿子、女儿四人，其中：</p>
-<ul>
-<li>父亲往盘子中放苹果；</li>
-<li>母亲往盘子中放橘子；</li>
-<li>女儿从盘子中拿苹果；</li>
-<li>儿子从盘子中拿橘子；</li>
-<li>只有盘子空时才能放水果；</li>
-<li>只有有需要的水果时才能拿水果。</li>
-</ul>
-<h3 id="关系分析">关系分析</h3>
-<h4 id="互斥关系">互斥关系</h4>
-<p>父亲和母亲使用同一个盘子</p>
-<h4 id="同步关系">同步关系</h4>
-<p>父亲放完苹果之后，女儿才能拿到苹果</p>
-<p>母亲放入橘子之后，儿子才能拿到橘子</p>
-<p>盘子为空才能放水果（大抵是只有一个空位吧）</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="image-20220914100906662.png" alt="image-20220914100906662"></p>
-<h3 id="信号量设置">信号量设置</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的互斥关系</span><br>semaphore plate = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的剩余空位</span><br>semaphore apple = <span class="hljs-number">0</span>;<br>semaphore orange= <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="程序实现">程序实现</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dad</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍎放苹果 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(apple); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 爸爸 并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">mom</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍊放橘子 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(orange); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 妈妈 也并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">daughter</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(apple); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👩吃🍎 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(apple);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">son</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(orange); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👦吃🍊 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(orange);<br>}<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>由于本问题缓冲区为1，可以考虑不设置信号量。</p>
-</blockquote>
-<h2 id="烟鬼问题-一个生产者-多消费者">烟鬼问题(一个生产者-多消费者)</h2>
-<p>系统中有一个供应者和三个吸烟者，吸烟者吸烟需要自己卷烟，其中</p>
-<ul>
-<li>卷烟需要烟草、纸、胶水三种材料</li>
-<li>每个吸烟者各有其中的一种材料</li>
-<li>供应者每次会提供其中两种材料，并由缺少该材料的吸烟者拿取</li>
-<li>吸烟者制作完烟并抽掉后，发出信号，供应者放下一组物品</li>
-</ul>
-<h3 id="分析关系-v2">分析关系</h3>
-<p>供应者：提供两种材料</p>
-<ul>
-<li>组合一：烟草 + 纸</li>
-<li>组合二：烟草 + 胶水</li>
-<li>组合三：胶水 + 纸</li>
-</ul>
-<p>烟鬼：需要两种类型，也就是供应者每次提供只够一个人使用</p>
-<h4 id="互斥关系：">互斥关系：</h4>
-<ul>
-<li>烟鬼之间互斥</li>
-</ul>
-<h4 id="同步关系-v2">同步关系</h4>
-<ul>
-<li>供应者提供的组合顺序</li>
-</ul>
-<h3 id="信号量设置-v2">信号量设置</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore cigratteAndPaper  = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草纸组合</span><br>semaphore cigratteAndGlue   = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草胶组合</span><br>semaphore glueAndPaper    = <span class="hljs-number">0</span>; <span class="hljs-comment">// 胶纸组合</span><br>semaphore finish            = <span class="hljs-number">0</span>; <span class="hljs-comment">// 抽烟状态</span><br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>; <span class="hljs-comment">// 用于标记是几轮</span><br></code></pre></td></tr></table></figure>
-<h3 id="代码实现-v2">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">1</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndGlue);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">2</span>) {<br>            <span class="hljs-built_in">V</span>(glueAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>        i = (i+<span class="hljs-number">1</span>) % <span class="hljs-number">3</span>;<br>        <span class="hljs-built_in">P</span>(finish);<br>    }<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndPaperConsumer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(cigratteAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndGlueConsumer</span>  <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {<br>      <span class="hljs-built_in">P</span>(cigratteAndGlue);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">glueAndPaperConsumer</span>     <span class="hljs-params">()</span></span>{<br>     <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(glueAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br></code></pre></td></tr></table></figure>
-<h2 id="读者-写者-问题">读者-写者 问题</h2>
-<p>有读者和写者两组并发进程，共享一个文件。要求：</p>
-<ul>
-<li>读者可以同时读取文件；</li>
-<li>同一时间只能有一个写者进行写操作；</li>
-<li>任一写着完成写操作之前不允许其他进程进行读或写操作；</li>
-<li>写者执行写操作前，应让其他读者和写者全部退出。</li>
-</ul>
-<h3 id="关系分析-v2">关系分析</h3>
-<h4 id="互斥关系-v2">互斥关系</h4>
-<ul>
-<li>
-<p>写进程和写进程之间</p>
-</li>
-<li>
-<p>写进程和读进程之间</p>
-</li>
-</ul>
-<h3 id="信号量设置-v3">信号量设置</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore rw = <span class="hljs-number">1</span>;<br>semaphore ww = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>semaphore mutex = <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="程序实现-v2">程序实现</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">writer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(rw);<br>        <span class="hljs-comment">// 写作</span><br>        <span class="hljs-built_in">V</span>(rw);<br>        <span class="hljs-built_in">V</span>(ww);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reader</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">P</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(ww);<br>        <br>        <span class="hljs-comment">// 读文件</span><br>         <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (--count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>    }   <br>}<br></code></pre></td></tr></table></figure>
-<h2 id="哲学家进餐问题">哲学家进餐问题</h2>
-<p>在一个桌子上，有5位哲学家，其中</p>
-<ul>
-<li>每位哲学家之间摆着一<strong>根</strong>筷子，共计5根</li>
-<li>哲学家平时在思考人生，饿了就会尝试拿起左右手的筷子（一根一根的拿）</li>
-<li>如果筷子在别人手上，则等待</li>
-<li>拿起了两根筷子时，哲学家开始进食</li>
-<li>用餐完毕后放下筷子继续思考</li>
-</ul>
-<h3 id="关系分析-v3">关系分析</h3>
-<p>鉴于这个和之前的不一样，所以阐明一下我的思考过程：</p>
-<ul>
-<li>
-<p>什么是共享资源？</p>
-<p>筷子？不不不，不止，我们假定一个人饿了，那么他周围的两个人都拿不到，因为他们周边只有一个筷子了，但是对于对角线的位置的人却还是可以拿到的，而且是二者之一，</p>
-<p>也就是说相邻的三人之间的关系是互斥，但是对于其他人是同步的，也就是说相邻的人之间的筷子才是共享资源。</p>
-</li>
-<li>
-<p>信号量怎样设置？</p>
-<p>其实信号量有点类似资源状态机，那么我们应该表示的是被使用的筷子会更加方便，其实筷子对应哲学家的数量，所以也不是特别大的影响</p>
-</li>
-</ul>
-<h3 id="信号量设置-v4">信号量设置</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp">semaphore chopstick[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}; <span class="hljs-comment">//代表五根筷子的资源</span><br>semaphore mutex = <span class="hljs-number">1</span>;  <span class="hljs-comment">//对左右筷子整体资源互斥访问</span><br></code></pre></td></tr></table></figure>
-<h3 id="实际代码">实际代码</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Philosophy_i</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span></span>{ <span class="hljs-comment">// 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 进入临界区，也就是要开始拿共享资源了</span><br>        <span class="hljs-built_in">P</span>(chopstick[i]); <span class="hljs-comment">// </span><br>        <span class="hljs-built_in">P</span>(chopstick[ (i+<span class="hljs-number">1</span>) % <span class="hljs-number">5</span> ]);<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-comment">// 筷子拿到了，干饭</span><br>        <span class="hljs-comment">// 干完了</span><br>        <span class="hljs-built_in">V</span>(chopstick[i]);<br>        <span class="hljs-built_in">V</span>(chopstick[(i+<span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<br>    <span class="hljs-comment">// 继续思考        </span><br>    }<br>}<br></code></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>进程管理</tag>
-        <tag>进程同步</tag>
-        <tag>经典问题</tag>
       </tags>
   </entry>
   <entry>
