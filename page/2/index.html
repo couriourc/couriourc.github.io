@@ -9,8 +9,6 @@
     
     <title>
         
-            归档 |
-        
         CouriourC Blog
     </title>
     
@@ -24,7 +22,119 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"保持疯狂 - 保持热爱."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -68,7 +178,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/"
                             >
                                 首页
@@ -76,7 +186,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -105,12 +215,12 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/">首页</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -129,109 +239,158 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="archive-container ">
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-<div class="archive-list-container">
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/13/os-os-process-sync-quiz/">
+                        操作系统知识点总结-进程同步问题
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        进程管理(经典问题)
+生产者-消费问题
+
+
+系统中有一组生产者进程和一组消费者，生产者进程每次生产一个产品放入缓冲区，消费者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用；
+
+
+生产者、消费者共享一个初始为空，大小为 n ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Sep 13 2022 16:29:03 GMT+0800">2022-09-13</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">进程管理</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/">进程同步</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/">经典问题</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/09/13/os-os-process-sync-quiz/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/07/html-HTML-base/">
+                        HTML 基础篇
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        HTML 基础总结
+SEO 相关内容
+所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。
+1. HTML 语...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Sep 07 2022 21:55:02 GMT+0800">2022-09-07</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/HTML/">HTML</a>&nbsp;
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/HTML/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/HTML/">HTML</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/2023%E9%9D%A2%E8%AF%95/">2023面试</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/09/07/html-HTML-base/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[12]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/10/01/politics-marxism/"
-                        >政治-马克思主义原理</a>
-                        <span class="article-date">10-01</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/17/data-structure-data-structure-overview/"
-                        >数据结构知识点（823）总结-概览</a>
-                        <span class="article-date">09-17</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/17/data-structure-data-structure-start/"
-                        >数据结构知识点（823）总结-考纲计划</a>
-                        <span class="article-date">09-17</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/15/os-os-cache-base/"
-                        >操作系统知识点总结-内存管理</a>
-                        <span class="article-date">09-15</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/14/os-os-process-dead-lock/"
-                        >操作系统知识点总结-进程-死锁</a>
-                        <span class="article-date">09-14</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/13/os-os-process-sync-quiz/"
-                        >操作系统知识点总结-进程同步问题</a>
-                        <span class="article-date">09-13</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/12/os-os-process-sync/"
-                        >操作系统知识点总结-进程同步</a>
-                        <span class="article-date">09-12</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/09/os-os-process-sheduler/"
-                        >操作系统知识点总结-进程调度算法</a>
-                        <span class="article-date">09-09</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/09/os-os-process/"
-                        >操作系统知识点总结-进程管理</a>
-                        <span class="article-date">09-09</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/08/os-os-development/"
-                        >操作系统知识点总结-发展与分类</a>
-                        <span class="article-date">09-08</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/08/os-os-overview/"
-                        >操作系统知识点总结-概览</a>
-                        <span class="article-date">09-08</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/07/html-HTML-base/"
-                        >HTML 基础篇</a>
-                        <span class="article-date">09-07</span>
-                    </li>
-                
-            </ul>
-        </section>
+        <a class="prev btn"
+           href="/"
+        >上一页</a>
+    
+
     
 </div>
 
     </div>
 </div>
+
 
                 
             </div>
@@ -372,6 +531,7 @@
       });
       document.head.append(mermaidLoad);
     </script>
+
 
 
 
