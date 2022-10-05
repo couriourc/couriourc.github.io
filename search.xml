@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>数据结构（823）总结 - 线性表</title>
+    <title>数据结构总结 - 线性表</title>
     <url>/posts/a4b89f58.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>线性表 - Linear</h1>
 
@@ -25,7 +25,23 @@
 <p>👿线性表是一种逻辑结构，表示元素之间一对一的相邻关系。顺序表和链表是指存储结构，是不同的概念。顺序表强调了内存上的关系。</p>
 </blockquote>
 <h3 id="线性表的基本操作">线性表的基本操作</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 为线性表分配空间</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">InitList</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> &amp;L)</span></span>;<br><span class="hljs-comment">// 获取表长</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Length</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> L)</span></span>;<br><span class="hljs-comment">// 查找元素</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">LocateElem</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> L,<span class="hljs-keyword">auto</span> e)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> L,<span class="hljs-keyword">auto</span> i)</span></span>;<br><span class="hljs-comment">// 添加元素</span><br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">ListInsert</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> &amp;L,<span class="hljs-keyword">auto</span> i,<span class="hljs-keyword">auto</span> e)</span></span>;<br><span class="hljs-comment">// 删除元素</span><br><span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">ListDelete</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> &amp;L,<span class="hljs-keyword">auto</span> i,<span class="hljs-keyword">auto</span> &amp;e)</span></span>;<br><span class="hljs-comment">// 输出操作</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PrintList</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> L)</span></span>;<br><span class="hljs-comment">// 判空</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Empty</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> L)</span></span>;<br><span class="hljs-comment">// 销毁列表，归还空间</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">DestroyList</span><span class="hljs-params">(<span class="hljs-keyword">auto</span> &amp;L)</span></span>;<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 为线性表分配空间</span>
+<span class="token keyword">void</span> <span class="token function">InitList</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取表长</span>
+<span class="token keyword">int</span> <span class="token function">Length</span><span class="token punctuation">(</span><span class="token keyword">auto</span> L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 查找元素</span>
+<span class="token keyword">void</span> <span class="token function">LocateElem</span><span class="token punctuation">(</span><span class="token keyword">auto</span> L<span class="token punctuation">,</span><span class="token keyword">auto</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> <span class="token function">GetElem</span><span class="token punctuation">(</span><span class="token keyword">auto</span> L<span class="token punctuation">,</span><span class="token keyword">auto</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 添加元素</span>
+<span class="token keyword">auto</span> <span class="token function">ListInsert</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>L<span class="token punctuation">,</span><span class="token keyword">auto</span> i<span class="token punctuation">,</span><span class="token keyword">auto</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 删除元素</span>
+<span class="token keyword">auto</span> <span class="token function">ListDelete</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>L<span class="token punctuation">,</span><span class="token keyword">auto</span> i<span class="token punctuation">,</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 输出操作</span>
+<span class="token keyword">void</span> <span class="token function">PrintList</span><span class="token punctuation">(</span><span class="token keyword">auto</span> L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 判空</span>
+<span class="token keyword">void</span> <span class="token function">Empty</span><span class="token punctuation">(</span><span class="token keyword">auto</span> L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 销毁列表，归还空间</span>
+<span class="token keyword">void</span> <span class="token function">DestroyList</span><span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>🍨对于线性表的各个类型的优势缺点，可以从 <strong>查找</strong> 和 <strong>增加删除</strong> 几个角度来分析。</p>
 </blockquote>
@@ -67,157 +83,7 @@
       </tags>
   </entry>
   <entry>
-    <title>政治 - 马克思主义原理</title>
-    <url>/posts/b985c2eb.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>马克思主义基本原理</h1>
-<h2 id="导论（马克思主义是关于无产阶级和人类解放的科学）">导论（马克思主义是关于无产阶级和人类解放的科学）</h2>
-<h3 id="马克思主义的内涵">马克思主义的内涵</h3>
-<p>马克思主义是由<abbr title="创立者"><strong>马克思</strong>和<strong>恩格斯</strong>创立并为（被）<strong>后继者</strong>所不断发展</abbr>的科学<strong>理论体系</strong>，是关于<abbr title="内容"><em>自然</em>、<em>社会</em>和<em>人类思维</em>发展一般规律</abbr>的学说。 是关于<abbr title="目的">社会主义<strong>必然</strong>代替资本主义、最终实现<strong>共产主义</strong></abbr>的学说，是关于<abbr title="立场">无产阶级、全人类解放和每个人自由而全面发展</abbr>的学说，是指引 <abbr title="意义（作用）">是指引人民创造美好生活</abbr>的<strong>行动指南</strong>。</p>
-<ul>
-<li>
-<p>一个不断发展的科学理论体系</p>
-</li>
-<li>
-<p>三个方面的学说</p>
-<ul>
-<li>内容</li>
-<li>目的</li>
-<li>立场</li>
-</ul>
-</li>
-<li>
-<p>指引人民的行动指南</p>
-</li>
-</ul>
-<h3 id="马克思主义的构成">马克思主义的构成</h3>
-<pre class="mermaid">graph LR
-center(马克思主义)
-philosophy(马克思主义哲学)
-socialEconmy(马克思主义社会经济学)
-scienceSocialism(科学社会主义)
-
-center -- 基础方法 --&gt; philosophy 
-center -- 主体    --&gt; socialEconmy
-center -- 目的归宿 --&gt; scienceSocialism</pre>
-<p>马克思主义经济学，马克思主义社会经济学，科学社会主义<strong>有机统一</strong>共同构成了马克思主义理论体系的主要内容。</p>
-<blockquote>
-<p>👿易错点</p>
-<ul>
-<li>
-<p>马克思主义的内容包括自然、社会和人类思维</p>
-</li>
-<li>
-<p>唯物史观的内容<strong style="color:red;">不包括自然</strong>，因为唯物史观研究的是人类，人类社会，和人类历史本身</p>
-</li>
-</ul>
-</blockquote>
-<h3 id="马克思主义的立场、观点、方法">马克思主义的立场、观点、方法</h3>
-]]></content>
-      <tags>
-        <tag>政治</tag>
-        <tag>马克思</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构知识点（823）总结 - 考纲计划</title>
-    <url>/posts/3664ce3b.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>数据结构</h1>
-<h2 id="应对考试（823）">应对考试（823）</h2>
-<h3 id="一、考试性质">一、考试性质</h3>
-<p>本课程是计算机类专业、网络空间安全专业的专业基础必修课，<br>
-其涵盖知识是相关专业研究生开展创新研究必须具备的基础。</p>
-<h3 id="二、考查目标">二、考查目标</h3>
-<p>本课程主要考核常见数据结构（线性表、树、图）表示方法、操<br>
-作及应用；常用查找技术与排序算法等。</p>
-<ol>
-<li>
-<p>数据结构和算法设计基础知识，计算机内部数据对象的表示和特性，线性表、树、图等常见数据逻辑结构、存储结构表示及其差异，针对具体问题的模型分析与求解。</p>
-</li>
-<li>
-<p>常见数据结构上的基本操作和算法；排序、查找等算法原理及实现；算法的时间复杂度和空间复杂度分析方法。</p>
-</li>
-<li>
-<p>综合运用课程知识开展数据结构、算法的设计与分析。</p>
-</li>
-</ol>
-<h3 id="三、适用范围">三、适用范围</h3>
-<p>本考试大纲适用于我校计算机与信息安全学院的 081200 计算机科学与技术、083900 网络空间安全、085400 电子信息（01 计算机技术、02 软件工程）专业的硕士研究生招生考试。</p>
-<h3 id="四、考试形式和试卷结构">四、考试形式和试卷结构</h3>
-<h4 id="试卷内容结构">试卷内容结构</h4>
-<ol>
-<li>数据结构、算法的基础知识：约 20 分；</li>
-<li>数据结构、算法的应用和分析：约 80 分；</li>
-<li>数据结构、算法的代码分析、设计和实现：约 50 分；</li>
-<li>命题可根据考核需要，对试卷内容结构、题型结构及分值比例做适当调整。</li>
-</ol>
-<h3 id="五、考查内容">五、考查内容</h3>
-<h4 id="1．-数据结构与算法绪论">1． 数据结构与算法绪论</h4>
-<ul>
-<li>数据结构的基本概念，包括数据的逻辑特点、存储表示；</li>
-<li>数据抽象方法，数据结构的抽象数据类型 ADT 表示；</li>
-<li>算法描述方法、算法精化过程和算法时间、空间复杂度分析方法。</li>
-</ul>
-<h4 id="2．-线性表">2． 线性表</h4>
-<ul>
-<li>线性表的逻辑结构和抽象数据类型定义；</li>
-<li>线性表的顺序存储和链式存储，线性表创建、插入、删除和查找等基本操作的实现以及算法时间复杂度分析；</li>
-<li>能分析不同存储结构的优缺点和适用场合，能分析不同的存储方式对算法性能的影响；</li>
-<li>单循环链表、双链表和循环双链表的实现以及应用；</li>
-<li>线性表的应用实例分析：一元多项式运算；Josephus 问题；</li>
-<li>字符串的逻辑结构、存储结构和模式匹配。</li>
-</ul>
-<h4 id="3．-栈和队列">3． 栈和队列</h4>
-<ul>
-<li>栈和队列的逻辑特点、抽象数据类型；</li>
-<li>栈和队列的顺序表示和链接表示，以及基于不同存储结构的基本操作的实现</li>
-<li>递归函数的执行过程以及使用栈进行递归函数与非递归函数的转换；</li>
-<li>栈的应用：数制转换；迷宫问题；</li>
-<li>队列的应用：农夫过河问题；银行业务模拟；密码加密解密问题；</li>
-<li>深度优先和广度优先搜索策略的原理、不同之处以及应用场合。</li>
-</ul>
-<h4 id="4．-树与二叉树">4． 树与二叉树</h4>
-<ul>
-<li>树与二叉树抽象数据类型、不同存储实现与约束分析；</li>
-<li>树与二叉树周游算法及复杂度分析；</li>
-<li>最优前缀编码问题及算法分析；</li>
-<li>线索二叉树；</li>
-<li>二叉排序树表示、操作实现以及时间、空间复杂度分析；</li>
-<li>平衡二叉排序树表示、操作实现以及时间、空间复杂度分析；</li>
-</ul>
-<h4 id="5．-图">5． 图</h4>
-<ul>
-<li>图的抽象数据类型、不同存储结构与适用性分析；</li>
-<li>图的深度优先周游和广度优先周游两类策略和实现方法，能基于图的具体存储结构分析周游的处理过程，并分析两类周游算法的复杂度；</li>
-<li>面向应用的核心算法实现与分析，包括 Prim 和 Kruskal 最小生成树算法、Dijkstra 和 Floyd 最短路径算法；</li>
-<li>面向特定应用的图形态，包括 AOV 网和 AOE 网。</li>
-</ul>
-<h4 id="6．-集合与字典">6． 集合与字典</h4>
-<ul>
-<li>集合与字典的顺序表示、操作实现以及时间、空间复杂度分析；</li>
-<li>字典的散列表示、操作实现以及时间、空间复杂度分析。</li>
-</ul>
-<h4 id="7-排序">7. 排序</h4>
-<ul>
-<li>插入类排序：直接插入、二分插入和希尔插入排序；</li>
-<li>选择类排序：直接选择和堆排序；</li>
-<li>交换类排序：冒泡排序和快速排序；</li>
-<li>分配类排序：基数排序；</li>
-<li>归并类排序：两路归并排序；</li>
-<li>各种排序算法时间复杂度、空间复杂度、算法稳定性等方面的综合比较，根据应用场合选择合适的排序算法。</li>
-</ul>
-<h3 id="六、参考书目（本校本科生教学用书）">六、参考书目（本校本科生教学用书）</h3>
-<p>张乃孝，陈光，孙猛。算法与数据结构（C 语言描述）（第 3 版），高等教育出版社，2012 年.</p>
-]]></content>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>数据结构</tag>
-        <tag>起步</tag>
-        <tag>考纲</tag>
-        <tag>823</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构知识点（823）总结 - 绪论</title>
+    <title>数据结构知识点总结 - 绪论</title>
     <url>/posts/1298ee59.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1>绪论</h1>
 <h2 id="数据结构的基本概念">数据结构的基本概念</h2>
@@ -327,7 +193,13 @@ Center --- 三要素
 </li>
 <li>
 <p>如果有多层循环只需要关注 <u><strong>最深层</strong></u> 循环了几次</p>
- <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">find</span> <span class="hljs-params">(<span class="hljs-type">int</span> flag[],<span class="hljs-type">int</span> n)</span> </span>{<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0l</span> i &lt; n; i++){<br>        <span class="hljs-keyword">if</span> (flag[i] == n) {<br>            <span class="hljs-keyword">break</span>; <span class="hljs-comment">// 找到后跳出循环</span><br>        }<br>    }   <br>}<br></code></pre></td></tr></tbody></table></figure>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">find</span> <span class="token punctuation">(</span><span class="token keyword">int</span> flag<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0l</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// 找到后跳出循环</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h3 id="空间复杂度">空间复杂度</h3>
@@ -905,9 +777,30 @@ Center --- 三要素
 </li>
 </ul>
 <h3 id="设置信号量">设置信号量</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br>semaphore empty = n;<br>semaphore full  = <span class="hljs-number">0</span>;<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+semaphore empty <span class="token operator">=</span> n<span class="token punctuation">;</span>
+semaphore full  <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="代码实现">代码实现</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(empty);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 存入缓冲区</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(full);<span class="hljs-comment">// 唤起消费者</span><br>    }    <br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(full);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-comment">// 使用资源</span><br>        <span class="hljs-built_in">V</span>(mutex);<br>    <span class="hljs-built_in">V</span>(empty);        <br>    }    <br>    <br>}<br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 存入缓冲区</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>full<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 唤起消费者</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>full<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 使用资源</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">V</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span><span class="token punctuation">;</span>        
+    <span class="token punctuation">}</span>    
+    
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>其实实现思路很简单，无非就是<strong>同步互斥</strong>关系</p>
 </blockquote>
@@ -923,7 +816,28 @@ alt 共享有资源
 	producer --&gt; consumer: 
 end</pre>
 <p>为什么要互斥呢，因为缓冲区的本身就是一个共享资源，所以，也可以这样去理解。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore buffer_full = <span class="hljs-number">0</span>;<br>semaphore buffer = <span class="hljs-number">1</span>; <span class="hljs-comment">// 表示 缓冲区 只有一个</span><br>semaphore buffer_empty = n; <span class="hljs-comment">// 注意buffer_full + buffer_empty = n; 这表示了容量</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_empty); <span class="hljs-comment">// 等待空位</span><br>        <span class="hljs-built_in">P</span>(buffer); <span class="hljs-comment">// 申请使用 buffer</span><br>        <span class="hljs-comment">// 使用空位</span><br>        <span class="hljs-built_in">V</span>(buffer); <span class="hljs-comment">// 这里应该先退出，这样 consumer 才不会因为检测到满了，然后争夺 buffer 却拿不到权限进去，应该让他先进去，因为满足的是不满就可以进。</span><br>        <span class="hljs-built_in">V</span>(buffer_full); <span class="hljs-comment">// 更新满的状态，或者说元素的数目</span><br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(buffer_full);<br>        <span class="hljs-built_in">P</span>(buffer);<br>        <span class="hljs-comment">// 消费资源</span><br>        <span class="hljs-built_in">V</span>(buffer);<br>        <span class="hljs-built_in">V</span>(buffer_empty);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore buffer_full <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+semaphore buffer <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 表示 缓冲区 只有一个</span>
+semaphore buffer_empty <span class="token operator">=</span> n<span class="token punctuation">;</span> <span class="token comment">// 注意buffer_full + buffer_empty = n; 这表示了容量</span>
+
+<span class="token keyword">void</span> <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>buffer_empty<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 等待空位</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请使用 buffer</span>
+        <span class="token comment">// 使用空位</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这里应该先退出，这样 consumer 才不会因为检测到满了，然后争夺 buffer 却拿不到权限进去，应该让他先进去，因为满足的是不满就可以进。</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>buffer_full<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 更新满的状态，或者说元素的数目</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>buffer_full<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 消费资源</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>buffer_empty<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>🍨 能否用前驱关系理解呢？</p>
 </blockquote>
@@ -946,9 +860,41 @@ end</pre>
 <p>盘子为空才能放水果（大抵是只有一个空位吧）</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="image-20220914100906662.png" alt="image-20220914100906662"></p>
 <h3 id="信号量设置">信号量设置</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的互斥关系</span><br>semaphore plate = <span class="hljs-number">1</span>;<span class="hljs-comment">// 盘子的剩余空位</span><br>semaphore apple = <span class="hljs-number">0</span>;<br>semaphore orange= <span class="hljs-number">0</span>;<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">// 盘子的互斥关系</span>
+semaphore plate <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">// 盘子的剩余空位</span>
+semaphore apple <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+semaphore orange<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="程序实现">程序实现</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dad</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍎放苹果 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(apple); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 爸爸 并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">mom</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(plate); <span class="hljs-comment">// 申请盘子</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 占有盘子（进入临界区</span><br>    <span class="hljs-comment">/** 🍊放橘子 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 不占据盘子</span><br>    <span class="hljs-built_in">V</span>(orange); <span class="hljs-comment">// 更新苹果</span><br>    <span class="hljs-comment">// 这里 妈妈 也并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">daughter</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(apple); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👩吃🍎 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(apple);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">son</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(orange); <span class="hljs-comment">// 申请拿一个苹果</span><br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 要等待其他的放了（进入临界区</span><br>    <span class="hljs-comment">/** 👦吃🍊 **/</span><br>  <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// </span><br>    <span class="hljs-built_in">V</span>(orange);<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">dad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>plate<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请盘子</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 占有盘子（进入临界区</span>
+    <span class="token comment">/** 🍎放苹果 **/</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 不占据盘子</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>apple<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 更新苹果</span>
+    <span class="token comment">// 这里 爸爸 并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">mom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>plate<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请盘子</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 占有盘子（进入临界区</span>
+    <span class="token comment">/** 🍊放橘子 **/</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 不占据盘子</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>orange<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 更新苹果</span>
+    <span class="token comment">// 这里 妈妈 也并没有说放了就吃了，所以 盘子的空位为 1，就没有消耗</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">daughter</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>apple<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请拿一个苹果</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 要等待其他的放了（进入临界区</span>
+    <span class="token comment">/** 👩吃🍎 **/</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// </span>
+    <span class="token function">V</span><span class="token punctuation">(</span>apple<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">son</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>orange<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请拿一个苹果</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 要等待其他的放了（进入临界区</span>
+    <span class="token comment">/** 👦吃🍊 **/</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// </span>
+    <span class="token function">V</span><span class="token punctuation">(</span>orange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>由于本问题缓冲区为 1，可以考虑不设置信号量。</p>
 </blockquote>
@@ -977,9 +923,49 @@ end</pre>
 <li>供应者提供的组合顺序</li>
 </ul>
 <h3 id="信号量设置-v2">信号量设置</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore cigratteAndPaper  = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草纸组合</span><br>semaphore cigratteAndGlue   = <span class="hljs-number">0</span>; <span class="hljs-comment">// 草胶组合</span><br>semaphore glueAndPaper    = <span class="hljs-number">0</span>; <span class="hljs-comment">// 胶纸组合</span><br>semaphore finish            = <span class="hljs-number">0</span>; <span class="hljs-comment">// 抽烟状态</span><br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>; <span class="hljs-comment">// 用于标记是几轮</span><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore cigratteAndPaper  <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 草纸组合</span>
+semaphore cigratteAndGlue   <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 草胶组合</span>
+semaphore glueAndPaper  	<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 胶纸组合</span>
+semaphore finish            <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 抽烟状态</span>
+<span class="token keyword">int</span> turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 用于标记是几轮</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="代码实现-v2">代码实现</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">1</span>) {<br>            <span class="hljs-built_in">V</span>(cigratteAndGlue);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>     <span class="hljs-keyword">if</span> (turn == <span class="hljs-number">2</span>) {<br>            <span class="hljs-built_in">V</span>(glueAndPaper);<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>        i = (i+<span class="hljs-number">1</span>) % <span class="hljs-number">3</span>;<br>        <span class="hljs-built_in">P</span>(finish);<br>    }<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndPaperConsumer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(cigratteAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cigratteAndGlueConsumer</span>  <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {<br>      <span class="hljs-built_in">P</span>(cigratteAndGlue);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">glueAndPaperConsumer</span>     <span class="hljs-params">()</span></span>{<br>     <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){<br>        <span class="hljs-built_in">P</span>(glueAndPaper);<br>        <span class="hljs-built_in">V</span>(finish);<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ 		<span class="token keyword">if</span> <span class="token punctuation">(</span>turn <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">V</span><span class="token punctuation">(</span>cigratteAndPaper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+ 		<span class="token keyword">if</span> <span class="token punctuation">(</span>turn <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">V</span><span class="token punctuation">(</span>cigratteAndGlue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+ 		<span class="token keyword">if</span> <span class="token punctuation">(</span>turn <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">V</span><span class="token punctuation">(</span>glueAndPaper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        i <span class="token operator">=</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>finish<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">cigratteAndPaperConsumer</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>cigratteAndPaper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>finish<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">cigratteAndGlueConsumer</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	    <span class="token function">P</span><span class="token punctuation">(</span>cigratteAndGlue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>finish<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">glueAndPaperConsumer</span>     <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>glueAndPaper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>finish<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="读者-写者-问题">读者 - 写者 问题</h2>
 <p>有读者和写者两组并发进程，共享一个文件。要求：</p>
 <ul>
@@ -999,9 +985,38 @@ end</pre>
 </li>
 </ul>
 <h3 id="信号量设置-v3">信号量设置</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore rw = <span class="hljs-number">1</span>;<br>semaphore ww = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>semaphore mutex = <span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore rw <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+semaphore ww <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="程序实现-v2">程序实现</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">writer</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(rw);<br>        <span class="hljs-comment">// 写作</span><br>        <span class="hljs-built_in">V</span>(rw);<br>        <span class="hljs-built_in">V</span>(ww);<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reader</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(ww);<br>        <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">P</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-built_in">V</span>(ww);<br>        <br>        <span class="hljs-comment">// 读文件</span><br>         <span class="hljs-built_in">P</span>(mutex);<br>        <span class="hljs-keyword">if</span> (--count == <span class="hljs-number">0</span>) {<br>            <span class="hljs-built_in">V</span>(rw);<br>        }<br>        <span class="hljs-built_in">V</span>(mutex);<br>    }   <br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">writer</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>ww<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>rw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 写作</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>rw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>ww<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">reader</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>ww<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">P</span><span class="token punctuation">(</span>rw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>ww<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 读文件</span>
+       	<span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span>count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">V</span><span class="token punctuation">(</span>rw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="哲学家进餐问题">哲学家进餐问题</h2>
 <p>在一个桌子上，有 5 位哲学家，其中</p>
 <ul>
@@ -1025,9 +1040,22 @@ end</pre>
 </li>
 </ul>
 <h3 id="信号量设置-v4">信号量设置</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore chopstick[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}; <span class="hljs-comment">//代表五根筷子的资源</span><br>semaphore mutex = <span class="hljs-number">1</span>;  <span class="hljs-comment">//对左右筷子整体资源互斥访问</span><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore chopstick<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">//代表五根筷子的资源</span>
+semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">//对左右筷子整体资源互斥访问</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="实际代码">实际代码</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Philosophy_i</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span></span>{ <span class="hljs-comment">// 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {<br>        <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 进入临界区，也就是要开始拿共享资源了</span><br>        <span class="hljs-built_in">P</span>(chopstick[i]); <span class="hljs-comment">// </span><br>        <span class="hljs-built_in">P</span>(chopstick[ (i+<span class="hljs-number">1</span>) % <span class="hljs-number">5</span> ]);<br>        <span class="hljs-built_in">V</span>(mutex);<br>        <span class="hljs-comment">// 筷子拿到了，干饭</span><br>        <span class="hljs-comment">// 干完了</span><br>        <span class="hljs-built_in">V</span>(chopstick[i]);<br>        <span class="hljs-built_in">V</span>(chopstick[(i+<span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<br>    <span class="hljs-comment">// 继续思考        </span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">Philosophy_i</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// 假设这里有 i 个不同的进程，这是第 i 个，因为每个人考虑的情况都一样，都是消费者</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 进入临界区，也就是要开始拿共享资源了</span>
+        <span class="token function">P</span><span class="token punctuation">(</span>chopstick<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// </span>
+        <span class="token function">P</span><span class="token punctuation">(</span>chopstick<span class="token punctuation">[</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 筷子拿到了，干饭</span>
+        <span class="token comment">// 干完了</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>chopstick<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">V</span><span class="token punctuation">(</span>chopstick<span class="token punctuation">[</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">// 继续思考        </span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <tags>
         <tag>基础知识</tag>
@@ -1083,7 +1111,20 @@ end</pre>
 <h2 id="临界区互斥的实现">临界区互斥的实现</h2>
 <h3 id="单标志法">单标志法</h3>
 <p>一个进程在访问完临界区后会把临界区资源的权限交给另一个进程，也就是说每个进程进入临界区的权限只能由前辈（另一个程序赋予）</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (turn != <span class="hljs-number">0</span>);<br>    critical section;<br>    turn = <span class="hljs-number">1</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(turn != <span class="hljs-number">1</span>);<br>    critical section;<br>    turn = <span class="hljs-number">0</span>;<br>    remainder section;<br>}<br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">p0</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>turn <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+    turn <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">p1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>turn <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+    turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>就如同单锁一样，自己在用的时候，其他进程就不能用，自己用完了，立马就把占有权给人家。</p>
 <blockquote>
 <p>好比如：现在是桌上只有一双筷子，有 A 跟 B 两个人，一开始先把筷子给 A，A 吃完后直接就把筷子洗干净给 B 了，然后说你吃完再把筷子洗干净给我，结果 B 无语了，他也没说要用筷子吃东西，然后 A 就是说不管，你必须吃完过后再把筷子给我，结果 A 自己又想吃的时候结果没有筷子用，因为筷子还在 B 那里呢，B 还在纳闷 A 怕不是有什么大病。<br>
@@ -1091,7 +1132,31 @@ end</pre>
 </blockquote>
 <h3 id="双标志先检查法">双标志先检查法</h3>
 <p>设置一个数组，相应元素标识进程访问的资源的意愿。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = {<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>  <span class="hljs-comment">// 或者 用 if (flag[1]) return ;</span><br>  <span class="hljs-comment">//大抵就是，如果 1 占有的时候，就不继续执行下面的，</span><br>    <span class="hljs-keyword">while</span> (flag[<span class="hljs-number">1</span>]);<br>    <span class="hljs-comment">// 表明自己在占有</span><br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 拿到临界区资源</span><br>    critical section;<br>    <span class="hljs-comment">// 自己用好了</span><br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 退回资源</span><br>    remaider section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(flag[<span class="hljs-number">0</span>]);<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-comment">// 拿到临界区资源</span><br>    critical section;<br>    <span class="hljs-comment">// 自己用好了</span><br>    falg[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>  <span class="hljs-comment">// 退回资源</span><br>    remaider section;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> flag<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">p0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// 或者 用 if (flag[1]) return ;</span>
+	<span class="token comment">//大抵就是，如果 1 占有的时候，就不继续执行下面的，</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 表明自己在占有</span>
+    flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">// 拿到临界区资源</span>
+    critical section<span class="token punctuation">;</span>
+    <span class="token comment">// 自己用好了</span>
+    flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">// 退回资源</span>
+    remaider section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">p1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">// 拿到临界区资源</span>
+    critical section<span class="token punctuation">;</span>
+    <span class="token comment">// 自己用好了</span>
+    falg<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token comment">// 退回资源</span>
+    remaider section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>相当于时各自等待别人表态，如果别人不用了，自己再用；可能<strong>违背忙则等待</strong>的原则。</p>
 <blockquote>
 <p>好比如：现在同样是桌上只有一双筷子，有 A 跟 B 两个人，但是现在这两个人会察言观色了，会先看对方会不会想要先用筷子，然后再判断下一步是使用筷子还是接着等待。一开始，两个人都不说自己想不想用筷子，就等对方先表态，毕竟要多谦让，最后彼此看这么久都不说话，估计就是不想用了，然后彼此都默认对方不想用筷子。这个时候就会出现问题了，两个人都默认彼此不想用筷子，然后自己就下意识去拿筷子，结果刚好对方也想用，这就尴尬了，那最后是谁用呢，这个时候就会出现资源被同时访问的问题。</p>
@@ -1100,7 +1165,26 @@ end</pre>
 <hr>
 <h3 id="双标志后检查法">双标志后检查法</h3>
 <p>相比于双标志先检查法，此算法先修改自己的一员，再进行检查。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = { <span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;which)</span></span>{<br>    <span class="hljs-keyword">while</span>(which);<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">1</span>]);<br>    critical section;<br>  flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">0</span>]);<br>    critical section;<br>  flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> flag<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">wait</span><span class="token punctuation">(</span><span class="token keyword">bool</span> <span class="token operator">&amp;</span>which<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>which<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">p0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token function">wait</span><span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+	flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">p1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token function">wait</span><span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+	flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这一算法解决了 “忙则等待” 的问题，但是若两个进程同时标记为 true，又会相互等待造成<strong>饥饿</strong>，违背了 “<strong>空闲让进</strong>” 和 “<strong>有限等待</strong>” 原则。</p>
 <blockquote>
 <p>好比如：现在还是桌上只有一双筷子，但是现在就不是 A 跟 B 了，换成孔融 1 号和孔融 2 号，为什么给他们这样取名字呢，后面就知道啦！现在这两个人呢，在想用筷子的时候都会先说出来表明自己的态度，然后再看对方会不会想要先用筷子，然后再判断下一步是使用筷子还是接着等待。如果一开始两个人同时表明自己想要筷子的话，对方都会考虑到礼仪问题，谦让给对方用，毕竟谁叫他们叫孔融呢，但是这样出现的问题就是明明有筷子可以用但是因为谦让而僵持住。结果两个人就只能饿着了，在操作系统里面这里就出现了 "死等"，即会存在进程产生 "饥饿"。</p>
@@ -1109,7 +1193,27 @@ end</pre>
 <hr>
 <h3 id="Peterson-算法">Peterson 算法</h3>
 <p>基本思路：设置一个数组<code> flag[2]</code>，这里与前面不同之处，先设置自己的标志位，再检查对方的标志状态，若对方的标志位为 <code>true</code>，再检查对方的标志状态，若对方的标志位为 <code>true</code> 则等待，</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> flag[] = {<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>};<br><span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;              <span class="hljs-comment">//标记P0希望进入临界区</span><br>  turn = <span class="hljs-number">1</span>;<br>    <br>  <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">1</span>] &amp;&amp; turn == <span class="hljs-number">1</span>);<br>    critical section;<br>    flag[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>    remainder section;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p1</span><span class="hljs-params">()</span></span>{<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    turn = <span class="hljs-number">0</span>;<br>    <br>    <span class="hljs-built_in">wait</span>(flag[<span class="hljs-number">0</span>] &amp;&amp; turn == <span class="hljs-number">0</span>);<br>    critical section;<br>    flag[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> flag<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">p0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>              <span class="token comment">//标记P0希望进入临界区</span>
+	turn <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    
+	<span class="token function">wait</span><span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> turn <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+    flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">p1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    
+    <span class="token function">wait</span><span class="token punctuation">(</span>flag<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> turn <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+    flag<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>此算法利用 flag [ ] 实现了临界资源的<strong>互斥访问</strong>，并用 <strong>turn</strong> 解决了 “<strong>饥饿</strong>” 现象；</p>
 <p>遵循了空闲让进、忙则等待和有限等待原则；</p>
@@ -1138,7 +1242,20 @@ close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</
 </ul>
 <h3 id="TSL-TestAndSet-指令">TSL (TestAndSet) 指令</h3>
 <p><strong>TS/TSL</strong> 指令时用<strong>硬件</strong>实现的，执行过程不允许被中断。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> lock;  <span class="hljs-comment">//共享变量表示临界资源是否上锁</span><br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">TSL</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;g_lock)</span></span>{<br>    <span class="hljs-type">bool</span> old = g_lock;<br>    g_lock = <span class="hljs-literal">true</span>;   <span class="hljs-comment">//无论之前是否上锁，将lock设置为true</span><br>    <span class="hljs-keyword">return</span> old; <span class="hljs-comment">//返回之前lock的值</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">TSL</span>(lock));<span class="hljs-comment">//若可以进入临界区，则进入循环</span><br>    critical section;<br>    lock = <span class="hljs-literal">false</span>;  <span class="hljs-comment">//为临界资源解锁</span><br>    remainder section;<br>}<br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> lock<span class="token punctuation">;</span>  <span class="token comment">//共享变量表示临界资源是否上锁</span>
+
+<span class="token keyword">bool</span> <span class="token function">TSL</span><span class="token punctuation">(</span><span class="token keyword">bool</span> <span class="token operator">&amp;</span>g_lock<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">bool</span> old <span class="token operator">=</span> g_lock<span class="token punctuation">;</span>
+    g_lock <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>   <span class="token comment">//无论之前是否上锁，将lock设置为true</span>
+    <span class="token keyword">return</span> old<span class="token punctuation">;</span> <span class="token comment">//返回之前lock的值</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">p0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">TSL</span><span class="token punctuation">(</span>lock<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//若可以进入临界区，则进入循环</span>
+    critical section<span class="token punctuation">;</span>
+    lock <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment">//为临界资源解锁</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="优点-v2">优点</h3>
 <ul>
 <li>实现简单</li>
@@ -1151,11 +1268,54 @@ close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</
 <h3 id="Swap-指令">Swap 指令</h3>
 <p>也称之为 <strong>Exchange</strong> 指令，或者简称 <strong>XCHG</strong>。</p>
 <p>该指令和 <strong>TSL</strong> 类似，都是用硬件实现的，执行过程不允许被中断。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> lock;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Swap</span><span class="hljs-params">(<span class="hljs-type">bool</span> &amp;a,<span class="hljs-type">bool</span> &amp;b)</span> </span>{<br>    a = a^b;<br>    b = a^b;<br>    a = a^b;<br>}<br><span class="hljs-type">bool</span> old = <span class="hljs-literal">true</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">p0</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span> (old== <span class="hljs-literal">true</span>) <span class="hljs-built_in">Swap</span>(old,lock);<br>    critical section;<br>    lock = <span class="hljs-literal">false</span>;<br>    remainder section;<br>}<br><br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> lock<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">Swap</span><span class="token punctuation">(</span><span class="token keyword">bool</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token keyword">bool</span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    a <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>
+    a <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">bool</span> old <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">p0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>old<span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token function">Swap</span><span class="token punctuation">(</span>old<span class="token punctuation">,</span>lock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    critical section<span class="token punctuation">;</span>
+    lock <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    remainder section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其原理，优缺点和 <strong>TSL</strong> 类似。</p>
 <h2 id="🔒锁（自旋锁🔒）">🔒锁（自旋锁🔒）</h2>
 <p>解决临界区最简单的方法就是锁。进程在进入临界区时获得锁，退出临界区时释放锁。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">bool</span> locked;<span class="hljs-comment">//设置是否被锁的状态 true,已锁， false,未锁</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">if</span> (locked) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// 没有上锁就不管</span><br>    <br>    lock = <span class="hljs-literal">true</span>; <span class="hljs-comment">// 加锁</span><br>  <span class="hljs-built_in">wait_unlock</span>(); <span class="hljs-comment">// 做一些东西，做完之后就 unlock</span><br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">unlock</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 解锁</span><br>    locked = <span class="hljs-literal">false</span>;<br>}<br><br><span class="hljs-comment">// or </span><br><span class="hljs-type">bool</span> available;<br><span class="hljs-comment">// 获得锁</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">acquire</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-keyword">while</span>(!available); <span class="hljs-comment">//忙等锁，注意和 nodejs 不一样，nodejs 的话就直接卡在这里超时了，而这里主要考虑的是，喔，实测这玩意在 CPP 也寄，估计这玩意需要用在多处理器之间，嗯，对，这里就是讨论的不同进程之间。</span><br>    available = <span class="hljs-literal">false</span>;  <span class="hljs-comment">//获得锁</span><br>}<br><br><span class="hljs-comment">// 释放锁</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">release</span><span class="hljs-params">()</span></span>{<br>    available = <span class="hljs-literal">true</span>;  <span class="hljs-comment">//释放锁</span><br>}<br><br><span class="hljs-comment">// 同第一种一样，把释放加锁放到中间更加自然，就不要一直 while;</span><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> locked<span class="token punctuation">;</span><span class="token comment">//设置是否被锁的状态 true,已锁， false,未锁</span>
+
+<span class="token keyword">void</span> <span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>locked<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// 没有上锁就不管</span>
+    
+    lock <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 加锁</span>
+	<span class="token function">wait_unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 做一些东西，做完之后就 unlock</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">unlock</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 解锁</span>
+    locked <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// or </span>
+<span class="token keyword">bool</span> available<span class="token punctuation">;</span>
+<span class="token comment">// 获得锁</span>
+<span class="token keyword">void</span> <span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>available<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//忙等锁，注意和 nodejs 不一样，nodejs 的话就直接卡在这里超时了，而这里主要考虑的是，喔，实测这玩意在 CPP 也寄，估计这玩意需要用在多处理器之间，嗯，对，这里就是讨论的不同进程之间。</span>
+    available <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>	<span class="token comment">//获得锁</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 释放锁</span>
+<span class="token keyword">void</span> <span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    available <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>	<span class="token comment">//释放锁</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 同第一种一样，把释放加锁放到中间更加自然，就不要一直 while;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上锁和解锁必须时原子操作。</p>
 <h3 id="优点-v3">优点</h3>
 <ul>
@@ -1175,23 +1335,75 @@ close--"关中断之后不允许当前进程被关闭"--&gt;critical--&gt;open</
 <h3 id="整型信号量">整型信号量</h3>
 <p>🚨一个整型的变量作为信号量，用来标识系统中某种资源的数量。</p>
 <p>与普通整型变量相比，信号量只有三种原子操作: <strong>初始化</strong>、<strong>P 操作</strong>、<strong>V 操作</strong>。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> S = <span class="hljs-number">1</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span> <span class="hljs-params">()</span> </span>{       <span class="hljs-comment">//wait原语，相当于进入区</span><br>    <span class="hljs-keyword">while</span> ( S &lt;= <span class="hljs-number">0</span> ) ;  <span class="hljs-comment">//若资源不够，则一直等待</span><br>    S = S - <span class="hljs-number">1</span>;      <span class="hljs-comment">//若资源够，则使用/消耗这个资源</span><br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">signal</span><span class="hljs-params">()</span></span>{ <span class="hljs-comment">// signal 原语</span><br>    S = S + <span class="hljs-number">1</span>; <span class="hljs-comment">// 释放资源</span><br>}<br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> S <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">wait</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>			 <span class="token comment">//wait原语，相当于进入区</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span> S <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token punctuation">;</span>	<span class="token comment">//若资源不够，则一直等待</span>
+    S <span class="token operator">=</span> S <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>			<span class="token comment">//若资源够，则使用/消耗这个资源</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// signal 原语</span>
+    S <span class="token operator">=</span> S <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 释放资源</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>由于 <strong>P 操作</strong> 中资源不够时会一直等待，所以不能满足让权等待，会发生<strong>忙等</strong>。</p>
 <h3 id="记录型信号量">记录型信号量</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> {<br>    <span class="hljs-type">int</span> value;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">process</span> *L;<br>} semapher;<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">process</span> <span class="token operator">*</span>L<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> semapher<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在记录型变量中，除了代表资源数量的 <strong>value</strong> 之外，还有一个进程链表 <strong>L</strong>。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span><span class="hljs-params">(semapher S)</span> </span>{<br>    S.value --;<br>    <span class="hljs-keyword">if</span> (S.value &lt; <span class="hljs-number">0</span>) {<br>        <span class="hljs-built_in">block</span>(S.L);<span class="hljs-comment">// 资源数量不足，则使用block原语将进程阻塞，并加入等待队列之中</span><br>    }<br>} <br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">signal</span><span class="hljs-params">(semapher S)</span></span>{<br>    S.value ++;<br>    <span class="hljs-keyword">if</span> ( S.value &lt;=<span class="hljs-number">0</span> ){<br>        <span class="hljs-built_in">wakeup</span>(S.L);  <span class="hljs-comment">//若释放资源后可还有进程在等待，则唤醒该进程，使其从阻塞态变为就绪态</span><br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">wait</span><span class="token punctuation">(</span>semapher S<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    S<span class="token punctuation">.</span>value <span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>S<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">block</span><span class="token punctuation">(</span>S<span class="token punctuation">.</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 资源数量不足，则使用block原语将进程阻塞，并加入等待队列之中</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+
+<span class="token keyword">void</span> <span class="token function">signal</span><span class="token punctuation">(</span>semapher S<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    S<span class="token punctuation">.</span>value <span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> S<span class="token punctuation">.</span>value <span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">wakeup</span><span class="token punctuation">(</span>S<span class="token punctuation">.</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//若释放资源后可还有进程在等待，则唤醒该进程，使其从阻塞态变为就绪态</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>此机制遵循了让权等待原则，不会发生 “<strong>忙等</strong>”。</p>
 <h2 id="用信号量实现进程同步、互斥">用信号量实现进程同步、互斥</h2>
 <h3 id="进程互斥">进程互斥</h3>
 <p>互斥的重点其实就是保证只有一个进程访问，那么这样的话其实就是加锁，上锁的过程。所以 PV 会成对出现。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semaphore mutex = <span class="hljs-number">1</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">do_something</span>();<br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 申请进入临界区</span><br>    critical section ;<span class="hljs-comment">// 获得临界区资源</span><br>    <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 释放资源</span><br>    <span class="hljs-built_in">do_something</span>();<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">do_something</span>();<br>    <span class="hljs-built_in">P</span>(mutex); <span class="hljs-comment">// 申请进入临界区</span><br>    critical section ;<span class="hljs-comment">// 获得临界区资源</span><br>    <span class="hljs-built_in">V</span>(mutex); <span class="hljs-comment">// 释放资源</span><br>    <span class="hljs-built_in">do_something</span>();<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">P1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请进入临界区</span>
+    critical section <span class="token punctuation">;</span><span class="token comment">// 获得临界区资源</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 释放资源</span>
+  	<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">P2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 申请进入临界区</span>
+    critical section <span class="token punctuation">;</span><span class="token comment">// 获得临界区资源</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 释放资源</span>
+  	<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>ℹ️ 可以理解为此信号量表示进入临界区的名额，并且只有一个。</p>
 <blockquote>
 <p>🚨 需要为不同的临界资源设置不同的互斥信号量，PV 操作必须成对出现。</p>
 </blockquote>
 <h3 id="进程同步">进程同步</h3>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp">semphore S = <span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span><span class="hljs-params">()</span></span>{<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">1</span>);<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">2</span>);<br>   <span class="hljs-built_in">V</span>(S);<br>   <span class="hljs-built_in">do_something</span>(<span class="hljs-number">3</span>);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span> <span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(S);<br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">4</span>);    <br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">5</span>);    <br>  <span class="hljs-built_in">do_something</span>(<span class="hljs-number">6</span>);    <br>}<br><br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">semphore S <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">P1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">V</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">P2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+	<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+	<span class="token function">do_something</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只有 <code>do_something </code>1 和 2 执行完毕，且进行了 <strong>V 操作</strong>之后，进程 2 中的 <strong>P 操作</strong>才不会阻塞，并且能够继续执行下去。</p>
 <h2 id="信号量实现前驱关系">信号量实现前驱关系</h2>
 <pre class="mermaid">graph TB
@@ -1226,7 +1438,56 @@ linkStyle 0,1,2,3,4,5,6 stroke:#7BCCAC,stroke-width:4px;</pre>
 <p>在后操作之前对相应的同步信号量执行 <strong>P 操作</strong></p>
 </li>
 </ol>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><code class="hljs cpp"><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    S1;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>    <span class="hljs-built_in">V</span>(a); <span class="hljs-comment">// or signal(a);</span><br>    <span class="hljs-built_in">V</span>(b); <span class="hljs-comment">// or signal(b);</span><br>}<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(a);<br>    <span class="hljs-comment">// 执行 S2 内容</span><br>    S2;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>    <span class="hljs-built_in">V</span>(d); <span class="hljs-comment">// or signal(a);</span><br>    <span class="hljs-built_in">V</span>(e); <span class="hljs-comment">// or signal(b);</span><br>}<br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P3</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(b);<br>    <span class="hljs-comment">// 执行 S3 内容</span><br>    S3;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(c);<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P4</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    <span class="hljs-built_in">P</span>(d);<br>    S4;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(f);<br>}<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P5</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(e);<br>    <span class="hljs-comment">// 执行 S5 内容</span><br>    S5;<br>    <span class="hljs-comment">// V 操作可以认为是放回结果，放回共享资源</span><br>  <span class="hljs-built_in">V</span>(g);<br>}<br>    <br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P6</span><span class="hljs-params">()</span></span>{<br>    <span class="hljs-built_in">P</span>(c);<br>    <span class="hljs-built_in">P</span>(f);<br>    <span class="hljs-built_in">P</span>(g);<br>    <span class="hljs-comment">// 执行 S1 内容</span><br>    S6;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">
+<span class="token keyword">void</span> <span class="token function">P1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 执行 S1 内容</span>
+    S1<span class="token punctuation">;</span>
+    <span class="token comment">// V 操作可以认为是放回结果，放回共享资源</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// or signal(a);</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// or signal(b);</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">void</span> <span class="token function">P2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行 S2 内容</span>
+    S2<span class="token punctuation">;</span>
+    <span class="token comment">// V 操作可以认为是放回结果，放回共享资源</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// or signal(a);</span>
+    <span class="token function">V</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// or signal(b);</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">void</span> <span class="token function">P3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行 S3 内容</span>
+    S3<span class="token punctuation">;</span>
+    <span class="token comment">// V 操作可以认为是放回结果，放回共享资源</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">P4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 执行 S1 内容</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    S4<span class="token punctuation">;</span>
+    <span class="token comment">// V 操作可以认为是放回结果，放回共享资源</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">P5</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行 S5 内容</span>
+    S5<span class="token punctuation">;</span>
+    <span class="token comment">// V 操作可以认为是放回结果，放回共享资源</span>
+	<span class="token function">V</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+    
+<span class="token keyword">void</span> <span class="token function">P6</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">P</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 执行 S1 内容</span>
+    S6<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>🚦 个人理解：其实这玩意就是 AOV 拓扑排序，具体应用有点像共享变量求和。共享资源的位置就像寄存器一样，保存操作结果，然后 <strong>P</strong> 取出，<strong>V</strong> 放入。</p>
 </blockquote>
@@ -1241,7 +1502,20 @@ linkStyle 0,1,2,3,4,5,6 stroke:#7BCCAC,stroke-width:4px;</pre>
 <p><strong>例如</strong>，<strong>Java</strong> 编程语言中提供了诸如 wait () 和 notify () 构造类的同步方法</p>
 <h3 id="Syntax-of-monitor-in-OS（操作系统中的管程）">Syntax of monitor in OS（操作系统中的管程）</h3>
 <p>Monitor in os has a simple syntax similar to how we define a class, it is as follows:（这句就不翻译了）</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><code class="hljs java">Monitor monitorName{<br>    variables_declaration;<br>    condition_variables;<br>    <br>    procedure p1{ ... };<br>    procedure p2{ ... };<br>    ...<br>    procedure pn{ ... };<br>    <br>    {<br>        initializing_code;<br>    }<br>    <br>}<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Monitor</span> monitorName<span class="token punctuation">{</span>
+    variables_declaration<span class="token punctuation">;</span>
+    condition_variables<span class="token punctuation">;</span>
+    
+    procedure p1<span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    procedure p2<span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    procedure pn<span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token punctuation">{</span>
+        initializing_code<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Characteristics-of-Monitors-in-OS（管程的特征）">Characteristics of Monitors in OS（管程的特征）</h3>
 <p>A monitor in os has the following characteristics:</p>
 <ul>
@@ -1610,7 +1884,8 @@ class addreaddSpace,pc,registry,heap important;</pre>
 </ul>
 <p>它由创建者提供，通常是由字母、数字组成，往往是由用户（进程）在访问该进程时使用，为了描述进程的家族关系，还应设置父进程标识及子进程标识。此外，还可以设置用户标识，以标识拥有该进程的用户。</p>
 <p>可以参考一个指令</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">kill</span> pid <br><span class="hljs-built_in">kill</span> p_name<br></code></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">kill</span> pid 
+<span class="token function">kill</span> p_name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="2-处理机状态">2. 处理机状态</h3>
 <p>处理机状态信息主要由处理机的各种寄存器的内容组成。</p>
 <p>包括： <code>通用寄存器</code>、<code>指令计数器</code>、<code>程序状态字 PSW </code>、<code>用户栈指针</code></p>
