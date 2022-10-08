@@ -57,8 +57,9 @@
 <h3 id="链表">链表</h3>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>数据结构</category>
+        <category>基础知识</category>
+        <category>data-structure</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -82,8 +83,9 @@
 </ul>
 ]]></content>
       <categories>
-        <category>生活</category>
         <category>旅游</category>
+        <category>生活</category>
+        <category>tourism</category>
       </categories>
       <tags>
         <tag>生活</tag>
@@ -139,8 +141,9 @@ center -- 目的归宿 --&gt; scienceSocialism</pre>
 <h3 id="马克思主义的立场、观点、方法">马克思主义的立场、观点、方法</h3>
 ]]></content>
       <categories>
-        <category>考研</category>
         <category>政治</category>
+        <category>考研</category>
+        <category>politics</category>
       </categories>
       <tags>
         <tag>考研</tag>
@@ -272,8 +275,9 @@ Center --- 三要素
 <p>略</p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>数据结构</category>
+        <category>基础知识</category>
+        <category>data-structure</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -372,8 +376,9 @@ Center --- 三要素
 <p>张乃孝，陈光，孙猛。算法与数据结构（C 语言描述）（第 3 版），高等教育出版社，2012 年.</p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>数据结构</category>
+        <category>基础知识</category>
+        <category>data-structure</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -714,8 +719,9 @@ Center --- 三要素
 <p><img lazyload="" src="/images/loading.svg" data-src="os-paging-example2.png" alt="OS Paging Example 2"><img lazyload="" src="/images/loading.svg" data-src="os-paging.png" alt="OS Paging"></p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -914,8 +920,9 @@ Center --- 三要素
 </ul>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -1238,8 +1245,9 @@ semaphore mutex <span class="token operator">=</span> <span class="token number"
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -1812,8 +1820,9 @@ linkStyle 0,1,2,3,4,5,6 stroke:#7BCCAC,stroke-width:4px;</pre>
 </ul>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -2040,8 +2049,9 @@ class addreaddSpace,pc,registry,heap important;</pre>
 </ul>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -2412,8 +2422,9 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
 <p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 <code>PIC</code>。</p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -2526,8 +2537,9 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
     Center--&gt;AnotherHandle</pre>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -2752,8 +2764,9 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
 <p>在用户程序中使用系统调用。</p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
         <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
       </categories>
       <tags>
         <tag>基础知识</tag>
@@ -2783,8 +2796,9 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
 <p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code> 和 <code>strong</code> 的区别</p>
 ]]></content>
       <categories>
-        <category>HTML</category>
         <category>2023面试</category>
+        <category>HTML</category>
+        <category>html</category>
       </categories>
       <tags>
         <tag>HTML</tag>
