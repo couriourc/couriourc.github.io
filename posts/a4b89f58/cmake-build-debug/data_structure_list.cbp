@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="data_structure_list"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data_structure_list">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/data_structure_list.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 data_structure_list"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data_structure_list/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/data_structure_list.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 data_structure_list/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-01-order-array-delete-min-value.c">
+			<Option target="data_structure_list"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/utils.h">
+			<Option target="data_structure_list"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
