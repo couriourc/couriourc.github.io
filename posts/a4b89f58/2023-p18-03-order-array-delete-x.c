@@ -4,15 +4,18 @@
  ***********************************************************************/
 #include "utils.h"
 
-void solution(int *arr, int x, int len) {
+int solution(int *arr, int x, int len) {
     printf("\n======= Debug ING ======\n");
+    // k 用于记录处理成功之后顺序表的位置
+    int k = 0;
     for (int i = 0; i < len; ++i) {
-        if ( arr[i] == x ) {
-            // 如果值相等，那么后面的值向前覆盖
-            arr[i] = arr[i+1];
+        if (arr[i] != x) {
+            // 如果碰到了不等于 x,k 指针移动并
+            arr[k++] = arr[i];
         }
     }
     printf("\n======= Debug END ======\n");
+    return k;
 }
 
 int main() {
@@ -20,7 +23,7 @@ int main() {
     int len = length(arr);
 
     printf("\n======= Debug ING ======\n");
-    solution(arr, 2, len);
+    len = solution(arr, 2, len);
     printf("\n======= Debug END ======\n");
 
     printf("\n======= Result ING ======\n");

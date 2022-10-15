@@ -1,0 +1,3 @@
+"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir/objects.a
+D:\CLION2~1.3\MINGW6~1\bin\ar.exe cr CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir/objects.a @CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\objects1.rsp
+D:\CLION2~1.3\MINGW6~1\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir/objects.a -Wl,--no-whole-archive -o 2023-p18-04-order-array-delete-x-by-range.exe -Wl,--out-implib,lib2023-p18-04-order-array-delete-x-by-range.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\linklibs.rsp

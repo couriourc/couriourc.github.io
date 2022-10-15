@@ -71,7 +71,12 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/data_structure_list.dir/all
+all: CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/all
+all: CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/all
+all: CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/all
+all: CMakeFiles/2023-p18-02-order-array-reverse.dir/all
+all: CMakeFiles/2023-p18-03-order-array-delete-x.dir/all
+all: CMakeFiles/CMakeCCompilerId.dir/all
 
 .PHONY : all
 
@@ -81,36 +86,176 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/data_structure_list.dir/clean
+clean: CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/clean
+clean: CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
+clean: CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/clean
+clean: CMakeFiles/2023-p18-02-order-array-reverse.dir/clean
+clean: CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean
+clean: CMakeFiles/CMakeCCompilerId.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/data_structure_list.dir
+# Target rules for target CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir
 
 # All Build rule for target.
-CMakeFiles/data_structure_list.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target data_structure_list"
-.PHONY : CMakeFiles/data_structure_list.dir/all
+CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target 2023-p18-05-order-non-sorted-array-delete-x-by-range"
+.PHONY : CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/data_structure_list.dir/rule: cmake_check_build_system
+CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/data_structure_list.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/data_structure_list.dir/rule
+.PHONY : CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/rule
 
 # Convenience name for target.
-data_structure_list: CMakeFiles/data_structure_list.dir/rule
+2023-p18-05-order-non-sorted-array-delete-x-by-range: CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/rule
 
-.PHONY : data_structure_list
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range
 
 # clean rule for target.
-CMakeFiles/data_structure_list.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/clean
-.PHONY : CMakeFiles/data_structure_list.dir/clean
+CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/clean
+.PHONY : CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/2023-p18-01-order-array-delete-min-value.dir
+
+# All Build rule for target.
+CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target 2023-p18-01-order-array-delete-min-value"
+.PHONY : CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/rule
+
+# Convenience name for target.
+2023-p18-01-order-array-delete-min-value: CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/rule
+
+.PHONY : 2023-p18-01-order-array-delete-min-value
+
+# clean rule for target.
+CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
+.PHONY : CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir
+
+# All Build rule for target.
+CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target 2023-p18-04-order-array-delete-x-by-range"
+.PHONY : CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/rule
+
+# Convenience name for target.
+2023-p18-04-order-array-delete-x-by-range: CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/rule
+
+.PHONY : 2023-p18-04-order-array-delete-x-by-range
+
+# clean rule for target.
+CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/clean
+.PHONY : CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/2023-p18-02-order-array-reverse.dir
+
+# All Build rule for target.
+CMakeFiles/2023-p18-02-order-array-reverse.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target 2023-p18-02-order-array-reverse"
+.PHONY : CMakeFiles/2023-p18-02-order-array-reverse.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/2023-p18-02-order-array-reverse.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/2023-p18-02-order-array-reverse.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/2023-p18-02-order-array-reverse.dir/rule
+
+# Convenience name for target.
+2023-p18-02-order-array-reverse: CMakeFiles/2023-p18-02-order-array-reverse.dir/rule
+
+.PHONY : 2023-p18-02-order-array-reverse
+
+# clean rule for target.
+CMakeFiles/2023-p18-02-order-array-reverse.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/clean
+.PHONY : CMakeFiles/2023-p18-02-order-array-reverse.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/2023-p18-03-order-array-delete-x.dir
+
+# All Build rule for target.
+CMakeFiles/2023-p18-03-order-array-delete-x.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target 2023-p18-03-order-array-delete-x"
+.PHONY : CMakeFiles/2023-p18-03-order-array-delete-x.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/2023-p18-03-order-array-delete-x.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/2023-p18-03-order-array-delete-x.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/2023-p18-03-order-array-delete-x.dir/rule
+
+# Convenience name for target.
+2023-p18-03-order-array-delete-x: CMakeFiles/2023-p18-03-order-array-delete-x.dir/rule
+
+.PHONY : 2023-p18-03-order-array-delete-x
+
+# clean rule for target.
+CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean
+.PHONY : CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/CMakeCCompilerId.dir
+
+# All Build rule for target.
+CMakeFiles/CMakeCCompilerId.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target CMakeCCompilerId"
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CMakeCCompilerId.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/CMakeCCompilerId.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/rule
+
+# Convenience name for target.
+CMakeCCompilerId: CMakeFiles/CMakeCCompilerId.dir/rule
+
+.PHONY : CMakeCCompilerId
+
+# clean rule for target.
+CMakeFiles/CMakeCCompilerId.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/clean
+.PHONY : CMakeFiles/CMakeCCompilerId.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

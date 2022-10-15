@@ -74,17 +74,6 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -95,6 +84,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -129,17 +129,82 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named data_structure_list
+# Target rules for targets named 2023-p18-05-order-non-sorted-array-delete-x-by-range
 
 # Build rule for target.
-data_structure_list: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 data_structure_list
-.PHONY : data_structure_list
+2023-p18-05-order-non-sorted-array-delete-x-by-range: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-05-order-non-sorted-array-delete-x-by-range
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range
 
 # fast build rule for target.
-data_structure_list/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/build
-.PHONY : data_structure_list/fast
+2023-p18-05-order-non-sorted-array-delete-x-by-range/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/build
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range/fast
+
+#=============================================================================
+# Target rules for targets named 2023-p18-01-order-array-delete-min-value
+
+# Build rule for target.
+2023-p18-01-order-array-delete-min-value: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-01-order-array-delete-min-value
+.PHONY : 2023-p18-01-order-array-delete-min-value
+
+# fast build rule for target.
+2023-p18-01-order-array-delete-min-value/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/build
+.PHONY : 2023-p18-01-order-array-delete-min-value/fast
+
+#=============================================================================
+# Target rules for targets named 2023-p18-04-order-array-delete-x-by-range
+
+# Build rule for target.
+2023-p18-04-order-array-delete-x-by-range: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-04-order-array-delete-x-by-range
+.PHONY : 2023-p18-04-order-array-delete-x-by-range
+
+# fast build rule for target.
+2023-p18-04-order-array-delete-x-by-range/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/build
+.PHONY : 2023-p18-04-order-array-delete-x-by-range/fast
+
+#=============================================================================
+# Target rules for targets named 2023-p18-02-order-array-reverse
+
+# Build rule for target.
+2023-p18-02-order-array-reverse: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-02-order-array-reverse
+.PHONY : 2023-p18-02-order-array-reverse
+
+# fast build rule for target.
+2023-p18-02-order-array-reverse/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/build
+.PHONY : 2023-p18-02-order-array-reverse/fast
+
+#=============================================================================
+# Target rules for targets named 2023-p18-03-order-array-delete-x
+
+# Build rule for target.
+2023-p18-03-order-array-delete-x: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-03-order-array-delete-x
+.PHONY : 2023-p18-03-order-array-delete-x
+
+# fast build rule for target.
+2023-p18-03-order-array-delete-x/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/build
+.PHONY : 2023-p18-03-order-array-delete-x/fast
+
+#=============================================================================
+# Target rules for targets named CMakeCCompilerId
+
+# Build rule for target.
+CMakeCCompilerId: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeCCompilerId
+.PHONY : CMakeCCompilerId
+
+# fast build rule for target.
+CMakeCCompilerId/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/build
+.PHONY : CMakeCCompilerId/fast
 
 2023-p18-01-order-array-delete-min-value.obj: 2023-p18-01-order-array-delete-min-value.c.obj
 
@@ -147,7 +212,7 @@ data_structure_list/fast:
 
 # target to build an object file
 2023-p18-01-order-array-delete-min-value.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/2023-p18-01-order-array-delete-min-value.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/2023-p18-01-order-array-delete-min-value.c.obj
 .PHONY : 2023-p18-01-order-array-delete-min-value.c.obj
 
 2023-p18-01-order-array-delete-min-value.i: 2023-p18-01-order-array-delete-min-value.c.i
@@ -156,7 +221,7 @@ data_structure_list/fast:
 
 # target to preprocess a source file
 2023-p18-01-order-array-delete-min-value.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/2023-p18-01-order-array-delete-min-value.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/2023-p18-01-order-array-delete-min-value.c.i
 .PHONY : 2023-p18-01-order-array-delete-min-value.c.i
 
 2023-p18-01-order-array-delete-min-value.s: 2023-p18-01-order-array-delete-min-value.c.s
@@ -165,8 +230,143 @@ data_structure_list/fast:
 
 # target to generate assembly for a file
 2023-p18-01-order-array-delete-min-value.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\data_structure_list.dir\build.make CMakeFiles/data_structure_list.dir/2023-p18-01-order-array-delete-min-value.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/2023-p18-01-order-array-delete-min-value.c.s
 .PHONY : 2023-p18-01-order-array-delete-min-value.c.s
+
+2023-p18-02-order-array-reverse.obj: 2023-p18-02-order-array-reverse.c.obj
+
+.PHONY : 2023-p18-02-order-array-reverse.obj
+
+# target to build an object file
+2023-p18-02-order-array-reverse.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/2023-p18-02-order-array-reverse.c.obj
+.PHONY : 2023-p18-02-order-array-reverse.c.obj
+
+2023-p18-02-order-array-reverse.i: 2023-p18-02-order-array-reverse.c.i
+
+.PHONY : 2023-p18-02-order-array-reverse.i
+
+# target to preprocess a source file
+2023-p18-02-order-array-reverse.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/2023-p18-02-order-array-reverse.c.i
+.PHONY : 2023-p18-02-order-array-reverse.c.i
+
+2023-p18-02-order-array-reverse.s: 2023-p18-02-order-array-reverse.c.s
+
+.PHONY : 2023-p18-02-order-array-reverse.s
+
+# target to generate assembly for a file
+2023-p18-02-order-array-reverse.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-02-order-array-reverse.dir\build.make CMakeFiles/2023-p18-02-order-array-reverse.dir/2023-p18-02-order-array-reverse.c.s
+.PHONY : 2023-p18-02-order-array-reverse.c.s
+
+2023-p18-03-order-array-delete-x.obj: 2023-p18-03-order-array-delete-x.c.obj
+
+.PHONY : 2023-p18-03-order-array-delete-x.obj
+
+# target to build an object file
+2023-p18-03-order-array-delete-x.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/2023-p18-03-order-array-delete-x.c.obj
+.PHONY : 2023-p18-03-order-array-delete-x.c.obj
+
+2023-p18-03-order-array-delete-x.i: 2023-p18-03-order-array-delete-x.c.i
+
+.PHONY : 2023-p18-03-order-array-delete-x.i
+
+# target to preprocess a source file
+2023-p18-03-order-array-delete-x.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/2023-p18-03-order-array-delete-x.c.i
+.PHONY : 2023-p18-03-order-array-delete-x.c.i
+
+2023-p18-03-order-array-delete-x.s: 2023-p18-03-order-array-delete-x.c.s
+
+.PHONY : 2023-p18-03-order-array-delete-x.s
+
+# target to generate assembly for a file
+2023-p18-03-order-array-delete-x.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/2023-p18-03-order-array-delete-x.c.s
+.PHONY : 2023-p18-03-order-array-delete-x.c.s
+
+2023-p18-04-order-array-delete-x-by-range.obj: 2023-p18-04-order-array-delete-x-by-range.c.obj
+
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.obj
+
+# target to build an object file
+2023-p18-04-order-array-delete-x-by-range.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/2023-p18-04-order-array-delete-x-by-range.c.obj
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.c.obj
+
+2023-p18-04-order-array-delete-x-by-range.i: 2023-p18-04-order-array-delete-x-by-range.c.i
+
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.i
+
+# target to preprocess a source file
+2023-p18-04-order-array-delete-x-by-range.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/2023-p18-04-order-array-delete-x-by-range.c.i
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.c.i
+
+2023-p18-04-order-array-delete-x-by-range.s: 2023-p18-04-order-array-delete-x-by-range.c.s
+
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.s
+
+# target to generate assembly for a file
+2023-p18-04-order-array-delete-x-by-range.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-04-order-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/2023-p18-04-order-array-delete-x-by-range.c.s
+.PHONY : 2023-p18-04-order-array-delete-x-by-range.c.s
+
+2023-p18-05-order-non-sorted-array-delete-x-by-range.obj: 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.obj
+
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.obj
+
+# target to build an object file
+2023-p18-05-order-non-sorted-array-delete-x-by-range.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/2023-p18-05-order-non-sorted-array-delete-x-by-range.c.obj
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.obj
+
+2023-p18-05-order-non-sorted-array-delete-x-by-range.i: 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.i
+
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.i
+
+# target to preprocess a source file
+2023-p18-05-order-non-sorted-array-delete-x-by-range.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/2023-p18-05-order-non-sorted-array-delete-x-by-range.c.i
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.i
+
+2023-p18-05-order-non-sorted-array-delete-x-by-range.s: 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s
+
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.s
+
+# target to generate assembly for a file
+2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s
+.PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s
+
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj: CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.obj
+
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
+
+# target to build an object file
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.obj
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.obj
+
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i: CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.i
+
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i
+
+# target to preprocess a source file
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.i
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.i
+
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s: CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
+
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s
+
+# target to generate assembly for a file
+CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
+.PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
 
 # Help Target
 help:
@@ -176,10 +376,30 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... data_structure_list
+	@echo ... 2023-p18-01-order-array-delete-min-value
+	@echo ... 2023-p18-02-order-array-reverse
+	@echo ... 2023-p18-03-order-array-delete-x
+	@echo ... 2023-p18-04-order-array-delete-x-by-range
+	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range
+	@echo ... CMakeCCompilerId
 	@echo ... 2023-p18-01-order-array-delete-min-value.obj
 	@echo ... 2023-p18-01-order-array-delete-min-value.i
 	@echo ... 2023-p18-01-order-array-delete-min-value.s
+	@echo ... 2023-p18-02-order-array-reverse.obj
+	@echo ... 2023-p18-02-order-array-reverse.i
+	@echo ... 2023-p18-02-order-array-reverse.s
+	@echo ... 2023-p18-03-order-array-delete-x.obj
+	@echo ... 2023-p18-03-order-array-delete-x.i
+	@echo ... 2023-p18-03-order-array-delete-x.s
+	@echo ... 2023-p18-04-order-array-delete-x-by-range.obj
+	@echo ... 2023-p18-04-order-array-delete-x-by-range.i
+	@echo ... 2023-p18-04-order-array-delete-x-by-range.s
+	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.obj
+	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.i
+	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.s
+	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
+	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i
+	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s
 .PHONY : help
 
 
