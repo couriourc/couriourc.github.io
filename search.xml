@@ -4503,6 +4503,121 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
       </tags>
   </entry>
   <entry>
+    <title>操作系统知识点总结 - 发展与分类</title>
+    <url>/posts/b1ff0fef.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
+<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
+<ul>
+<li>用户独占主机</li>
+<li> CPU 资源利用不充分</li>
+<li>主要做偏向数理运算</li>
+</ul>
+<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
+<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
+<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
+<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
+<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
+<ul>
+<li>
+<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
+</blockquote>
+<ul>
+<li>代码 / 脚本 更便于保存 (相对而言</li>
+</ul>
+<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
+<ul>
+<li>
+<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
+</li>
+<li>
+<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
+</li>
+</ul>
+<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
+<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
+<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
+<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
+<ul>
+<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
+</ul>
+<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
+<ul>
+<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
+<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
+<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
+<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
+<ul>
+<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
+</ul>
+<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
+<ul>
+<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
+</ul>
+<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
+<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
+<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
+<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
+<ul>
+<li>响应紧急任务更加及时，紧急任务可以插队</li>
+</ul>
+<blockquote>
+<p>实时操作系统分为：</p>
+<ul>
+<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
+<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
+</ul>
+</blockquote>
+<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
+<ul>
+<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
+<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
+<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<pre class="mermaid">graph LR
+    Center(操作系统的发展)
+    HumanHandle(手工操作阶段)
+    BatchHandle(批处理阶段)
+    SingleBatchHandle(单道批处理操作系统)
+    MultiBatchHandle(多道批处理系统)
+    RRCPUHandle(分时操作系统)
+    FeedbackCPUHandle(实时操作系统)
+    AnotherHandle(其他操作系统)
+
+    Center--&gt;HumanHandle
+    Center--&gt;BatchHandle--&gt;SingleBatchHandle
+    BatchHandle--&gt;MultiBatchHandle
+    Center--&gt;RRCPUHandle
+    Center--&gt;FeedbackCPUHandle
+    Center--&gt;AnotherHandle</pre>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>概览</tag>
+        <tag>发展与分类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统知识点总结 - 概览</title>
     <url>/posts/20ceef9a.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h1>
@@ -4726,121 +4841,6 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
         <tag>基础知识</tag>
         <tag>操作系统</tag>
         <tag>概览</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统知识点总结 - 发展与分类</title>
-    <url>/posts/b1ff0fef.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
-<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
-<ul>
-<li>用户独占主机</li>
-<li> CPU 资源利用不充分</li>
-<li>主要做偏向数理运算</li>
-</ul>
-<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
-<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
-<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
-<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
-<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
-<ul>
-<li>
-<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
-</li>
-</ul>
-<blockquote>
-<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
-</blockquote>
-<ul>
-<li>代码 / 脚本 更便于保存 (相对而言</li>
-</ul>
-<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
-<ul>
-<li>
-<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
-</li>
-<li>
-<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
-</li>
-</ul>
-<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
-<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
-<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
-<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
-<ul>
-<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
-</ul>
-<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
-<ul>
-<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
-</ul>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
-<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
-<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
-<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
-<ul>
-<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
-</ul>
-<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
-<ul>
-<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
-</ul>
-<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
-<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
-<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
-<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
-<ul>
-<li>响应紧急任务更加及时，紧急任务可以插队</li>
-</ul>
-<blockquote>
-<p>实时操作系统分为：</p>
-<ul>
-<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
-<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
-</ul>
-</blockquote>
-<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
-<ul>
-<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
-<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
-<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
-</ul>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<pre class="mermaid">graph LR
-    Center(操作系统的发展)
-    HumanHandle(手工操作阶段)
-    BatchHandle(批处理阶段)
-    SingleBatchHandle(单道批处理操作系统)
-    MultiBatchHandle(多道批处理系统)
-    RRCPUHandle(分时操作系统)
-    FeedbackCPUHandle(实时操作系统)
-    AnotherHandle(其他操作系统)
-
-    Center--&gt;HumanHandle
-    Center--&gt;BatchHandle--&gt;SingleBatchHandle
-    BatchHandle--&gt;MultiBatchHandle
-    Center--&gt;RRCPUHandle
-    Center--&gt;FeedbackCPUHandle
-    Center--&gt;AnotherHandle</pre>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>基础知识</category>
-        <category>os</category>
-      </categories>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
-        <tag>发展与分类</tag>
       </tags>
   </entry>
   <entry>
