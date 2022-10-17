@@ -74,17 +74,6 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -95,6 +84,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -192,6 +192,19 @@ depend:
 2023-p18-03-order-array-delete-x/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-03-order-array-delete-x.dir\build.make CMakeFiles/2023-p18-03-order-array-delete-x.dir/build
 .PHONY : 2023-p18-03-order-array-delete-x/fast
+
+#=============================================================================
+# Target rules for targets named 2023-p18-06-order-non-sorted-array-delete-duplicate
+
+# Build rule for target.
+2023-p18-06-order-non-sorted-array-delete-duplicate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2023-p18-06-order-non-sorted-array-delete-duplicate
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate
+
+# fast build rule for target.
+2023-p18-06-order-non-sorted-array-delete-duplicate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-06-order-non-sorted-array-delete-duplicate.dir\build.make CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/build
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate/fast
 
 #=============================================================================
 # Target rules for targets named CMakeCCompilerId
@@ -341,6 +354,33 @@ CMakeCCompilerId/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-05-order-non-sorted-array-delete-x-by-range.dir\build.make CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s
 .PHONY : 2023-p18-05-order-non-sorted-array-delete-x-by-range.c.s
 
+2023-p18-06-order-non-sorted-array-delete-duplicate.obj: 2023-p18-06-order-non-sorted-array-delete-duplicate.c.obj
+
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.obj
+
+# target to build an object file
+2023-p18-06-order-non-sorted-array-delete-duplicate.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-06-order-non-sorted-array-delete-duplicate.dir\build.make CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/2023-p18-06-order-non-sorted-array-delete-duplicate.c.obj
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.c.obj
+
+2023-p18-06-order-non-sorted-array-delete-duplicate.i: 2023-p18-06-order-non-sorted-array-delete-duplicate.c.i
+
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.i
+
+# target to preprocess a source file
+2023-p18-06-order-non-sorted-array-delete-duplicate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-06-order-non-sorted-array-delete-duplicate.dir\build.make CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/2023-p18-06-order-non-sorted-array-delete-duplicate.c.i
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.c.i
+
+2023-p18-06-order-non-sorted-array-delete-duplicate.s: 2023-p18-06-order-non-sorted-array-delete-duplicate.c.s
+
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.s
+
+# target to generate assembly for a file
+2023-p18-06-order-non-sorted-array-delete-duplicate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-06-order-non-sorted-array-delete-duplicate.dir\build.make CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/2023-p18-06-order-non-sorted-array-delete-duplicate.c.s
+.PHONY : 2023-p18-06-order-non-sorted-array-delete-duplicate.c.s
+
 CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj: CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.obj
 
 .PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
@@ -381,6 +421,7 @@ help:
 	@echo ... 2023-p18-03-order-array-delete-x
 	@echo ... 2023-p18-04-order-array-delete-x-by-range
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range
+	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate
 	@echo ... CMakeCCompilerId
 	@echo ... 2023-p18-01-order-array-delete-min-value.obj
 	@echo ... 2023-p18-01-order-array-delete-min-value.i
@@ -397,6 +438,9 @@ help:
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.obj
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.i
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range.s
+	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate.obj
+	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate.i
+	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate.s
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s
