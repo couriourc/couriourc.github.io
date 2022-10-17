@@ -1898,7 +1898,69 @@
   <svg data="{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;链表&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;单链表&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;定义-代码实现&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;基本操作的实现&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;双链表&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;循环链表&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;静态链表&quot;}]}"></svg>
 </div>
 
+<blockquote>
+<p>线性表的链式存储又称<strong>单链表</strong>，它是指通过一组任意的存储单元来存储线性表中的数据元素。</p>
+</blockquote>
 <h3 id="代码实现"><a class="markdownIt-Anchor" href="#代码实现"></a> 代码实现</h3>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;malloc.h&gt;</span></span>
+
+<span class="token comment">// 链表结构体</span>
+<span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">union</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 可能是链中链</span>
+    ElemType <span class="token operator">*</span>L<span class="token punctuation">;</span>
+    ElemType data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> Data<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> <span class="token class-name">LNode</span> <span class="token punctuation">{</span>
+    Data data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">LNode</span> <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">LNode</span> <span class="token operator">*</span>LinkList<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">LNode</span> Node<span class="token punctuation">;</span>
+
+Node <span class="token operator">*</span><span class="token function">GetElm</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>p <span class="token operator">=</span> L<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> L<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> p <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-&gt;</span>next<span class="token punctuation">,</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 在第 i 个位置插入 e (带头结点)
+ * */</span>
+bool <span class="token function">ListInsert</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>p <span class="token operator">=</span> L<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> p <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> p <span class="token operator">=</span> p<span class="token operator">-&gt;</span>next<span class="token punctuation">,</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>p<span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token punctuation">(</span>LinkList<span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token operator">-&gt;</span>data<span class="token punctuation">.</span>data <span class="token operator">=</span> e<span class="token punctuation">;</span>
+    s<span class="token operator">-&gt;</span>next <span class="token operator">=</span> p<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+    p<span class="token operator">-&gt;</span>next <span class="token operator">=</span> s<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//..... 此处省略后续的 前插入，后插之类 的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="优点-2"><a class="markdownIt-Anchor" href="#优点-2"></a> 优点</h4>
+<ul>
+<li>利用单链表可以解决顺序表需要大量连续存储单元的缺点</li>
+</ul>
+<h4 id="缺点-2"><a class="markdownIt-Anchor" href="#缺点-2"></a> 缺点</h4>
+<ul>
+<li>附加单链表附加指针域，也存在浪费存储空间的缺点。</li>
+<li>非随机存取的存储结构，即不能直接找到表中某个特定的结点。–<strong style="color:red;">单向检索</strong></li>
+</ul>
+<blockquote>
+<p>关于 <strong>头节点</strong> 和 <strong>头指针</strong> 的区分：</p>
+<p>不管带不带头节点，头指针都始终指向链表的第一个结点，而头节点是带头结点的链表中的第一个结点，结点内通常不存信息。</p>
+<p>引入头节点之后，可以带来两个优点</p>
+<ul>
+<li>由于第一个数据节点的位置被存放在头节点的指针域中，因此在链表的第一个位置上的操作的其他位置上的操作一致，无须特殊处理。</li>
+<li>无论链表是否为空，其头指针都指向头节点的非空指针，因此空表和非空表的处理也就得到了统一。</li>
+</ul>
+</blockquote>
+<h3 id="双链表"><a class="markdownIt-Anchor" href="#双链表"></a> 双链表</h3>
 ]]></content>
       <categories>
         <category>数据结构</category>

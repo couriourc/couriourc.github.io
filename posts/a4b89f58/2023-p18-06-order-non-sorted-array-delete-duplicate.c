@@ -5,6 +5,8 @@
  ***********************************************************************/
 #include "utils.h"
 
+
+
 int check(int *arr, int start, int end, int target) {
     for (int i = start; i < end; ++i) {
         if (arr[i] == target) return 1;
