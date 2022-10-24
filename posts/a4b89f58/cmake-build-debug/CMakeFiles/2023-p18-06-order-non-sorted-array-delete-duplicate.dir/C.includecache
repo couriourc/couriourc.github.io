@@ -10,7 +10,15 @@ C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/dat
 utils.h
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/utils.h
 
+C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/linklist.h
+
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/utils.h
 stdio.h
 -
+stdbool.h
+-
+malloc.h
+-
+linklist.h
+C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/linklist.h
 

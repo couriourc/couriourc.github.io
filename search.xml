@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据结构总结 - 字符串：Kmp</title>
+    <url>/posts/347521J.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="浅析-kmp-的-next-数组求解思想"><a class="markdownIt-Anchor" href="#浅析-kmp-的-next-数组求解思想"></a> 浅析 <code>KMP </code> 的 <code>next</code> 数组求解思想</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_next</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    next_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+    j <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    s <span class="token operator">=</span> t
+    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">or</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+            j <span class="token operator">+=</span> <span class="token number">1</span>
+            next_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> j
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            j <span class="token operator">=</span> next_list<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> next_list
+
+get_next<span class="token punctuation">(</span><span class="token string">'abababc'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于 Kmp 算法中书上的 <code>next </code>数组求法一直处于一个 <code>懵逼</code> 的状态。不理解为什么有 <code>-1</code>，为什么求前后公共后缀不需要用到单独的 <code>check</code> 机制，毕竟我们人眼来看都会去反复的判断（至少我之前一直都是）。</p>
+<ul>
+<li>
+<p>先抛出几个总结</p>
+<ul>
+<li>
+<p>窗口思考的办法</p>
+<ul>
+<li>我们求最大前后缀，依赖与前面的值所已经有的最长前后缀，从而不需要再，然后以此向前推</li>
+</ul>
+</li>
+<li>
+<p>动态规划的角度思考</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码中的求解过程"><a class="markdownIt-Anchor" href="#代码中的求解过程"></a> 代码中的求解过程</h2>
+<p>举个例子: <code>abababa</code>，我们在运行求第 6 个的时候: <code>a b a b a "b" a</code>，我们之前所求到的前面的公共前后缀的长度也就是 3 <code>aba</code></p>
+<p>前后缀是包括我们的第一个的，所以我们只需要每次从 <code>aba </code>的后面开始判断，<code>aba "?"</code>，这个 <code>?</code> 和我当前的对应到的也就是第 <code>7</code> 个的结果，这个取决于当前浏览的 <code>i</code> 也就是 <code>"b"</code> 是否满足等于之前所找到的最长的，如果不是就向下找前一段所求的公共最长子串，同样的道理也是取决于这个公共前后缀的尾巴与我现在所在的这个后缀的尾巴是否相等<br>
+<code>a b a b a "b" a</code><br>
+<code>0 1 1 2 3  4  5</code></p>
+<p><code>a 0</code>: 默认值</p>
+<p><code>b 1</code>: 前面的最长公共子串为 0 , 至于为什么要 <code>+1</code> 是因为我们当前匹配的时候，前面的已经发现在这个位置就不对，那 <code>a</code> 就没必要再与 <code>b</code> 这个位置比较，所以就跳到 <code>b</code> 的后面去，也就是 <code>j</code> 从头再开始。</p>
+<blockquote>
+<p>需要注意的是，我们求 这个值的时候，<code> i</code> 在 我们当前正在求的前一个位置，在这个满足后设置的才是我们当前求得这个 也即是说我们如果从 j = 0 开始的时候，也就是错开了一个位置<br>
+得到的 <code>next_list = ["0" 0 1 1 2 3  4  5]</code><br>
+而不是<code> next_list = [ 0 1 1 2 3  4  5]</code></p>
+</blockquote>
+<p><code>a 2</code>: 前面的前缀之前我们发现从 第 <code>0</code> 的位置是不存在前后缀的，然后现在我们要观察的是 前面的公共前后缀，也就是 ab 的公共前后缀，<code>a</code> 与 我当前的 <code>b</code> 并不相等，</p>
+<p><code>b 3</code>: OK, 基于以上的，我们到求第三的这个位置，这个位置的判定条件就是：我们前面的 <code>aba </code>所求到的这个的最长公共前后缀的最后一个 <code>ab?</code> 中的 <code>? </code>与我当前的 <code>a </code>是否相等 (需要留意，用程序求的时候，是看前面的前面与我当前的位置的情况，然后推到后面的情况</p>
+<hr>
+<p>对于我们的直觉求法就是直接瞪眼神功对于上面的 求 <code>i+1 = 3</code>(这时候 <code>i </code>是等于 <code>2</code>) 也就是求第 4**(经历了 i= i +1-&gt; next_list [3])** 这一个字符前面的公共前后缀的时候 (<code>j = -1 </code>的时候求到的 <code>next_list </code>是正常的匹配顺序，也就是 <code>i </code>是从正常的 <code>0 </code>开始的其前面的字符是 <code>aba </code>来看，之前我们发现最长公共前后缀就是 0 也就是 <code>a </code>这个时候我们判断 <code>t[2]:a</code> 是否等于 (后缀和这个前面的最长的前缀的最后一个元素做比较) 然后发现 <code>a = a</code> 是相等的，然后就可以得到 <code>2</code> 了而不是还要去扫描后面的，因为我们这一次扫描带来的元素只有一个，有一种滑动窗口的味道了。</p>
+<p>再重新整理一下：</p>
+<ul>
+<li>窗口中的进入了一个元素</li>
+<li>这个元素对窗口产生的影响</li>
+</ul>
+]]></content>
+      <categories>
+        <category>data-structure</category>
+      </categories>
+  </entry>
+  <entry>
     <title>考研英语整理 - 阅读文章词汇句子整理总结</title>
     <url>/posts/3MJ8HWH.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="英语阅读真题英语二句子词汇整理"><a class="markdownIt-Anchor" href="#英语阅读真题英语二句子词汇整理"></a> 英语阅读真题 (英语二) 句子词汇整理</h1>
@@ -4588,121 +4650,6 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
       </tags>
   </entry>
   <entry>
-    <title>操作系统知识点总结 - 发展与分类</title>
-    <url>/posts/b1ff0fef.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
-<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
-<ul>
-<li>用户独占主机</li>
-<li> CPU 资源利用不充分</li>
-<li>主要做偏向数理运算</li>
-</ul>
-<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
-<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
-<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
-<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
-<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
-<ul>
-<li>
-<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
-</li>
-</ul>
-<blockquote>
-<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
-</blockquote>
-<ul>
-<li>代码 / 脚本 更便于保存 (相对而言</li>
-</ul>
-<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
-<ul>
-<li>
-<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
-</li>
-<li>
-<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
-</li>
-</ul>
-<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
-<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
-<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
-<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
-<ul>
-<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
-</ul>
-<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
-<ul>
-<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
-</ul>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
-<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
-<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
-<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
-<ul>
-<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
-</ul>
-<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
-<ul>
-<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
-</ul>
-<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
-<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
-<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
-<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
-<ul>
-<li>响应紧急任务更加及时，紧急任务可以插队</li>
-</ul>
-<blockquote>
-<p>实时操作系统分为：</p>
-<ul>
-<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
-<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
-</ul>
-</blockquote>
-<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
-<ul>
-<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
-<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
-<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
-</ul>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<pre class="mermaid">graph LR
-    Center(操作系统的发展)
-    HumanHandle(手工操作阶段)
-    BatchHandle(批处理阶段)
-    SingleBatchHandle(单道批处理操作系统)
-    MultiBatchHandle(多道批处理系统)
-    RRCPUHandle(分时操作系统)
-    FeedbackCPUHandle(实时操作系统)
-    AnotherHandle(其他操作系统)
-
-    Center--&gt;HumanHandle
-    Center--&gt;BatchHandle--&gt;SingleBatchHandle
-    BatchHandle--&gt;MultiBatchHandle
-    Center--&gt;RRCPUHandle
-    Center--&gt;FeedbackCPUHandle
-    Center--&gt;AnotherHandle</pre>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>基础知识</category>
-        <category>os</category>
-      </categories>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
-        <tag>发展与分类</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统知识点总结 - 概览</title>
     <url>/posts/20ceef9a.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h1>
@@ -4926,6 +4873,121 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
         <tag>基础知识</tag>
         <tag>操作系统</tag>
         <tag>概览</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统知识点总结 - 发展与分类</title>
+    <url>/posts/b1ff0fef.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
+<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
+<ul>
+<li>用户独占主机</li>
+<li> CPU 资源利用不充分</li>
+<li>主要做偏向数理运算</li>
+</ul>
+<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
+<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
+<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
+<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
+<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
+<ul>
+<li>
+<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
+</blockquote>
+<ul>
+<li>代码 / 脚本 更便于保存 (相对而言</li>
+</ul>
+<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
+<ul>
+<li>
+<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
+</li>
+<li>
+<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
+</li>
+</ul>
+<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
+<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
+<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
+<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
+<ul>
+<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
+</ul>
+<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
+<ul>
+<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
+<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
+<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
+<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
+<ul>
+<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
+</ul>
+<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
+<ul>
+<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
+</ul>
+<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
+<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
+<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
+<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
+<ul>
+<li>响应紧急任务更加及时，紧急任务可以插队</li>
+</ul>
+<blockquote>
+<p>实时操作系统分为：</p>
+<ul>
+<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
+<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
+</ul>
+</blockquote>
+<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
+<ul>
+<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
+<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
+<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<pre class="mermaid">graph LR
+    Center(操作系统的发展)
+    HumanHandle(手工操作阶段)
+    BatchHandle(批处理阶段)
+    SingleBatchHandle(单道批处理操作系统)
+    MultiBatchHandle(多道批处理系统)
+    RRCPUHandle(分时操作系统)
+    FeedbackCPUHandle(实时操作系统)
+    AnotherHandle(其他操作系统)
+
+    Center--&gt;HumanHandle
+    Center--&gt;BatchHandle--&gt;SingleBatchHandle
+    BatchHandle--&gt;MultiBatchHandle
+    Center--&gt;RRCPUHandle
+    Center--&gt;FeedbackCPUHandle
+    Center--&gt;AnotherHandle</pre>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>概览</tag>
+        <tag>发展与分类</tag>
       </tags>
   </entry>
   <entry>
