@@ -10,9 +10,11 @@ int solution(int *arr, int s, int t, int len) {
 
     // 定位到 > s 的元素，带入值验证 k = 0->1->2 ，++m 定位到的位置就是满足这个元素的位置
     for (; k < len && s > arr[++k];);
+    printf("k:%d\n", k);
     // 定位到 < t 的元素，带入值验证 m =1->2->3-4
     // m++ 就是满足当前条件的后一个
     for (m = k; m < len && t >= arr[++m];);
+    printf("m:%d\n", m);
 
     // 合并元素
     for (; m < len;) arr[k++] = arr[m++];

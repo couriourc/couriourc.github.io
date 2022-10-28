@@ -53,5 +53,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/2023-p18-03-order-array-delete-x.dir/DependInfo.cmake"
   "CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/DependInfo.cmake"
   "CMakeFiles/CMakeCCompilerId.dir/DependInfo.cmake"
-  "CMakeFiles/linklist.test.dir/DependInfo.cmake"
+  "CMakeFiles/reverse_link_list.dir/DependInfo.cmake"
+  "CMakeFiles/sort.dir/DependInfo.cmake"
   )

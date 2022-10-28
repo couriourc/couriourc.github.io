@@ -220,17 +220,30 @@ CMakeCCompilerId/fast:
 .PHONY : CMakeCCompilerId/fast
 
 #=============================================================================
-# Target rules for targets named linklist.test
+# Target rules for targets named reverse_link_list
 
 # Build rule for target.
-linklist.test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 linklist.test
-.PHONY : linklist.test
+reverse_link_list: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 reverse_link_list
+.PHONY : reverse_link_list
 
 # fast build rule for target.
-linklist.test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/build
-.PHONY : linklist.test/fast
+reverse_link_list/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/build
+.PHONY : reverse_link_list/fast
+
+#=============================================================================
+# Target rules for targets named sort
+
+# Build rule for target.
+sort: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sort
+.PHONY : sort
+
+# fast build rule for target.
+sort/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/build
+.PHONY : sort/fast
 
 2023-p18-01-order-array-delete-min-value.obj: 2023-p18-01-order-array-delete-min-value.c.obj
 
@@ -421,32 +434,59 @@ CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
 .PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
 
-linklist.test.obj: linklist.test.c.obj
+reverse_link_list.obj: reverse_link_list.c.obj
 
-.PHONY : linklist.test.obj
+.PHONY : reverse_link_list.obj
 
 # target to build an object file
-linklist.test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/linklist.test.c.obj
-.PHONY : linklist.test.c.obj
+reverse_link_list.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/reverse_link_list.c.obj
+.PHONY : reverse_link_list.c.obj
 
-linklist.test.i: linklist.test.c.i
+reverse_link_list.i: reverse_link_list.c.i
 
-.PHONY : linklist.test.i
+.PHONY : reverse_link_list.i
 
 # target to preprocess a source file
-linklist.test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/linklist.test.c.i
-.PHONY : linklist.test.c.i
+reverse_link_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/reverse_link_list.c.i
+.PHONY : reverse_link_list.c.i
 
-linklist.test.s: linklist.test.c.s
+reverse_link_list.s: reverse_link_list.c.s
 
-.PHONY : linklist.test.s
+.PHONY : reverse_link_list.s
 
 # target to generate assembly for a file
-linklist.test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/linklist.test.c.s
-.PHONY : linklist.test.c.s
+reverse_link_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/reverse_link_list.c.s
+.PHONY : reverse_link_list.c.s
+
+sort.obj: sort.c.obj
+
+.PHONY : sort.obj
+
+# target to build an object file
+sort.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.obj
+.PHONY : sort.c.obj
+
+sort.i: sort.c.i
+
+.PHONY : sort.i
+
+# target to preprocess a source file
+sort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.i
+.PHONY : sort.c.i
+
+sort.s: sort.c.s
+
+.PHONY : sort.s
+
+# target to generate assembly for a file
+sort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.s
+.PHONY : sort.c.s
 
 # Help Target
 help:
@@ -463,7 +503,8 @@ help:
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range
 	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate
 	@echo ... CMakeCCompilerId
-	@echo ... linklist.test
+	@echo ... reverse_link_list
+	@echo ... sort
 	@echo ... 2023-p18-01-order-array-delete-min-value.obj
 	@echo ... 2023-p18-01-order-array-delete-min-value.i
 	@echo ... 2023-p18-01-order-array-delete-min-value.s
@@ -485,9 +526,12 @@ help:
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s
-	@echo ... linklist.test.obj
-	@echo ... linklist.test.i
-	@echo ... linklist.test.s
+	@echo ... reverse_link_list.obj
+	@echo ... reverse_link_list.i
+	@echo ... reverse_link_list.s
+	@echo ... sort.obj
+	@echo ... sort.i
+	@echo ... sort.s
 .PHONY : help
 
 

@@ -78,7 +78,8 @@ all: CMakeFiles/2023-p18-02-order-array-reverse.dir/all
 all: CMakeFiles/2023-p18-03-order-array-delete-x.dir/all
 all: CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/all
 all: CMakeFiles/CMakeCCompilerId.dir/all
-all: CMakeFiles/linklist.test.dir/all
+all: CMakeFiles/reverse_link_list.dir/all
+all: CMakeFiles/sort.dir/all
 
 .PHONY : all
 
@@ -95,7 +96,8 @@ clean: CMakeFiles/2023-p18-02-order-array-reverse.dir/clean
 clean: CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean
 clean: CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir/clean
 clean: CMakeFiles/CMakeCCompilerId.dir/clean
-clean: CMakeFiles/linklist.test.dir/clean
+clean: CMakeFiles/reverse_link_list.dir/clean
+clean: CMakeFiles/sort.dir/clean
 
 .PHONY : clean
 
@@ -289,31 +291,58 @@ CMakeFiles/CMakeCCompilerId.dir/clean:
 .PHONY : CMakeFiles/CMakeCCompilerId.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/linklist.test.dir
+# Target rules for target CMakeFiles/reverse_link_list.dir
 
 # All Build rule for target.
-CMakeFiles/linklist.test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target linklist.test"
-.PHONY : CMakeFiles/linklist.test.dir/all
+CMakeFiles/reverse_link_list.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target reverse_link_list"
+.PHONY : CMakeFiles/reverse_link_list.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/linklist.test.dir/rule: cmake_check_build_system
+CMakeFiles/reverse_link_list.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/linklist.test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/reverse_link_list.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/linklist.test.dir/rule
+.PHONY : CMakeFiles/reverse_link_list.dir/rule
 
 # Convenience name for target.
-linklist.test: CMakeFiles/linklist.test.dir/rule
+reverse_link_list: CMakeFiles/reverse_link_list.dir/rule
 
-.PHONY : linklist.test
+.PHONY : reverse_link_list
 
 # clean rule for target.
-CMakeFiles/linklist.test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\linklist.test.dir\build.make CMakeFiles/linklist.test.dir/clean
-.PHONY : CMakeFiles/linklist.test.dir/clean
+CMakeFiles/reverse_link_list.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/clean
+.PHONY : CMakeFiles/reverse_link_list.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sort.dir
+
+# All Build rule for target.
+CMakeFiles/sort.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target sort"
+.PHONY : CMakeFiles/sort.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sort.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/sort.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/sort.dir/rule
+
+# Convenience name for target.
+sort: CMakeFiles/sort.dir/rule
+
+.PHONY : sort
+
+# clean rule for target.
+CMakeFiles/sort.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/clean
+.PHONY : CMakeFiles/sort.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

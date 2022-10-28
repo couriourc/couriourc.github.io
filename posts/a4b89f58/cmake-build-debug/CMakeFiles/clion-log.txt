@@ -6,7 +6,8 @@
     -- src/2023-p18-05-order-non-sorted-array-delete-x-by-range.c will be compiled to bin/2023-p18-05-order-non-sorted-array-delete-x-by-range
     -- src/2023-p18-06-order-non-sorted-array-delete-duplicate.c will be compiled to bin/2023-p18-06-order-non-sorted-array-delete-duplicate
     -- src/CMakeCCompilerId.c will be compiled to bin/CMakeCCompilerId
-    -- src/linklist.test.c will be compiled to bin/linklist.test
+    -- src/reverse_link_list.c will be compiled to bin/reverse_link_list
+    -- src/sort.c will be compiled to bin/sort
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug

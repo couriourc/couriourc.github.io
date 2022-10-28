@@ -5,6 +5,7 @@ C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/dat
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/2023-p18-03-order-array-delete-x.dir
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/2023-p18-06-order-non-sorted-array-delete-duplicate.dir
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/CMakeCCompilerId.dir
-C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/linklist.test.dir
+C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/reverse_link_list.dir
+C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/sort.dir
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/rebuild_cache.dir
