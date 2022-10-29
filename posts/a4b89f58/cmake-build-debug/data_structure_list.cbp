@@ -401,7 +401,62 @@
 		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c">
 			<Option target="CMakeCCompilerId"/>
 		</Unit>
-		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/linklist.h">
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/data-structure-base-define.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/graph.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/linklist.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/queue.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/stack.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/tree.h">
 			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
 			<Option target="2023-p18-01-order-array-delete-min-value"/>
 			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
