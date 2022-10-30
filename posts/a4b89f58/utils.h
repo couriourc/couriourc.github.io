@@ -25,7 +25,7 @@ typedef struct Tree {
     struct Tree *left;
     struct Tree *right;
     int data;
-    
+
 } Tree;
 
 void FrontTravelTree(Tree *tree) {
