@@ -155,6 +155,19 @@ depend:
 .PHONY : 2023-p18-01-order-array-delete-min-value/fast
 
 #=============================================================================
+# Target rules for targets named Graph
+
+# Build rule for target.
+Graph: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Graph
+.PHONY : Graph
+
+# fast build rule for target.
+Graph/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/build
+.PHONY : Graph/fast
+
+#=============================================================================
 # Target rules for targets named 2023-p18-04-order-array-delete-x-by-range
 
 # Build rule for target.
@@ -434,6 +447,33 @@ CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCCompilerId.dir\build.make CMakeFiles/CMakeCCompilerId.dir/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
 .PHONY : CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c.s
 
+data-structure-base-define/Graph.obj: data-structure-base-define/Graph.c.obj
+
+.PHONY : data-structure-base-define/Graph.obj
+
+# target to build an object file
+data-structure-base-define/Graph.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/data-structure-base-define/Graph.c.obj
+.PHONY : data-structure-base-define/Graph.c.obj
+
+data-structure-base-define/Graph.i: data-structure-base-define/Graph.c.i
+
+.PHONY : data-structure-base-define/Graph.i
+
+# target to preprocess a source file
+data-structure-base-define/Graph.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/data-structure-base-define/Graph.c.i
+.PHONY : data-structure-base-define/Graph.c.i
+
+data-structure-base-define/Graph.s: data-structure-base-define/Graph.c.s
+
+.PHONY : data-structure-base-define/Graph.s
+
+# target to generate assembly for a file
+data-structure-base-define/Graph.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/data-structure-base-define/Graph.c.s
+.PHONY : data-structure-base-define/Graph.c.s
+
 reverse_link_list.obj: reverse_link_list.c.obj
 
 .PHONY : reverse_link_list.obj
@@ -461,32 +501,32 @@ reverse_link_list.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/reverse_link_list.c.s
 .PHONY : reverse_link_list.c.s
 
-sort.obj: sort.c.obj
+sort/sort.obj: sort/sort.c.obj
 
-.PHONY : sort.obj
+.PHONY : sort/sort.obj
 
 # target to build an object file
-sort.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.obj
-.PHONY : sort.c.obj
+sort/sort.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort/sort.c.obj
+.PHONY : sort/sort.c.obj
 
-sort.i: sort.c.i
+sort/sort.i: sort/sort.c.i
 
-.PHONY : sort.i
+.PHONY : sort/sort.i
 
 # target to preprocess a source file
-sort.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.i
-.PHONY : sort.c.i
+sort/sort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort/sort.c.i
+.PHONY : sort/sort.c.i
 
-sort.s: sort.c.s
+sort/sort.s: sort/sort.c.s
 
-.PHONY : sort.s
+.PHONY : sort/sort.s
 
 # target to generate assembly for a file
-sort.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort.c.s
-.PHONY : sort.c.s
+sort/sort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/sort/sort.c.s
+.PHONY : sort/sort.c.s
 
 # Help Target
 help:
@@ -503,6 +543,7 @@ help:
 	@echo ... 2023-p18-05-order-non-sorted-array-delete-x-by-range
 	@echo ... 2023-p18-06-order-non-sorted-array-delete-duplicate
 	@echo ... CMakeCCompilerId
+	@echo ... Graph
 	@echo ... reverse_link_list
 	@echo ... sort
 	@echo ... 2023-p18-01-order-array-delete-min-value.obj
@@ -526,12 +567,15 @@ help:
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.i
 	@echo ... CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.s
+	@echo ... data-structure-base-define/Graph.obj
+	@echo ... data-structure-base-define/Graph.i
+	@echo ... data-structure-base-define/Graph.s
 	@echo ... reverse_link_list.obj
 	@echo ... reverse_link_list.i
 	@echo ... reverse_link_list.s
-	@echo ... sort.obj
-	@echo ... sort.i
-	@echo ... sort.s
+	@echo ... sort/sort.obj
+	@echo ... sort/sort.i
+	@echo ... sort/sort.s
 .PHONY : help
 
 

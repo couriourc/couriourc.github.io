@@ -75,28 +75,28 @@ include CMakeFiles/sort.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sort.dir/flags.make
 
-CMakeFiles/sort.dir/sort.c.obj: CMakeFiles/sort.dir/flags.make
-CMakeFiles/sort.dir/sort.c.obj: CMakeFiles/sort.dir/includes_C.rsp
-CMakeFiles/sort.dir/sort.c.obj: ../sort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sort.dir/sort.c.obj"
-	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\sort.dir\sort.c.obj -c C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort.c
+CMakeFiles/sort.dir/sort/sort.c.obj: CMakeFiles/sort.dir/flags.make
+CMakeFiles/sort.dir/sort/sort.c.obj: CMakeFiles/sort.dir/includes_C.rsp
+CMakeFiles/sort.dir/sort/sort.c.obj: ../sort/sort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sort.dir/sort/sort.c.obj"
+	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\sort.dir\sort\sort.c.obj -c C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort\sort.c
 
-CMakeFiles/sort.dir/sort.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sort.dir/sort.c.i"
-	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort.c > CMakeFiles\sort.dir\sort.c.i
+CMakeFiles/sort.dir/sort/sort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sort.dir/sort/sort.c.i"
+	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort\sort.c > CMakeFiles\sort.dir\sort\sort.c.i
 
-CMakeFiles/sort.dir/sort.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sort.dir/sort.c.s"
-	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort.c -o CMakeFiles\sort.dir\sort.c.s
+CMakeFiles/sort.dir/sort/sort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sort.dir/sort/sort.c.s"
+	D:\CLION2~1.3\MINGW6~1\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\sort\sort.c -o CMakeFiles\sort.dir\sort\sort.c.s
 
 # Object files for target sort
 sort_OBJECTS = \
-"CMakeFiles/sort.dir/sort.c.obj"
+"CMakeFiles/sort.dir/sort/sort.c.obj"
 
 # External object files for target sort
 sort_EXTERNAL_OBJECTS =
 
-sort.exe: CMakeFiles/sort.dir/sort.c.obj
+sort.exe: CMakeFiles/sort.dir/sort/sort.c.obj
 sort.exe: CMakeFiles/sort.dir/build.make
 sort.exe: CMakeFiles/sort.dir/linklibs.rsp
 sort.exe: CMakeFiles/sort.dir/objects1.rsp

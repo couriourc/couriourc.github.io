@@ -73,6 +73,7 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts
 # The main recursive "all" target.
 all: CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/all
 all: CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/all
+all: CMakeFiles/Graph.dir/all
 all: CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/all
 all: CMakeFiles/2023-p18-02-order-array-reverse.dir/all
 all: CMakeFiles/2023-p18-03-order-array-delete-x.dir/all
@@ -91,6 +92,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/2023-p18-05-order-non-sorted-array-delete-x-by-range.dir/clean
 clean: CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
+clean: CMakeFiles/Graph.dir/clean
 clean: CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir/clean
 clean: CMakeFiles/2023-p18-02-order-array-reverse.dir/clean
 clean: CMakeFiles/2023-p18-03-order-array-delete-x.dir/clean
@@ -154,6 +156,33 @@ CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/rule: cmake_check_build_
 CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2023-p18-01-order-array-delete-min-value.dir\build.make CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
 .PHONY : CMakeFiles/2023-p18-01-order-array-delete-min-value.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Graph.dir
+
+# All Build rule for target.
+CMakeFiles/Graph.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target Graph"
+.PHONY : CMakeFiles/Graph.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Graph.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Graph.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/Graph.dir/rule
+
+# Convenience name for target.
+Graph: CMakeFiles/Graph.dir/rule
+
+.PHONY : Graph
+
+# clean rule for target.
+CMakeFiles/Graph.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/clean
+.PHONY : CMakeFiles/Graph.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/2023-p18-04-order-array-delete-x-by-range.dir
@@ -297,7 +326,7 @@ CMakeFiles/CMakeCCompilerId.dir/clean:
 CMakeFiles/reverse_link_list.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\reverse_link_list.dir\build.make CMakeFiles/reverse_link_list.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=15,16 "Built target reverse_link_list"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target reverse_link_list"
 .PHONY : CMakeFiles/reverse_link_list.dir/all
 
 # Build rule for subdir invocation for target.
@@ -324,7 +353,7 @@ CMakeFiles/reverse_link_list.dir/clean:
 CMakeFiles/sort.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make CMakeFiles/sort.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target sort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target sort"
 .PHONY : CMakeFiles/sort.dir/all
 
 # Build rule for subdir invocation for target.

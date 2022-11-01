@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sort.dir/sort.c.obj"
+  "CMakeFiles/sort.dir/sort/sort.c.obj"
   "libsort.dll.a"
   "sort.exe"
   "sort.exe.manifest"

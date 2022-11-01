@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/sort.c" "C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/sort.dir/sort.c.obj"
+  "C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/sort/sort.c" "C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/sort.dir/sort/sort.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

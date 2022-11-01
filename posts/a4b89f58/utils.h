@@ -21,31 +21,31 @@ void printLinkList(LinkList L) {
 }
 
 // 定义树
-typedef struct Tree {
-    struct Tree *left;
-    struct Tree *right;
-    int data;
-
-} Tree;
-
-void FrontTravelTree(Tree *tree) {
-    if (!tree) return;
-    printf("%d", tree->data);
-    FrontTravelTree(tree->left);
-    FrontTravelTree(tree->right);
-}
-
-void MidTravelTree(Tree *tree) {
-    if (!tree) return;
-    MidTravelTree(tree->left);
-    printf("%d", tree->data);
-    MidTravelTree(tree->right);
-}
-
-void AfterTravelTree(Tree *tree) {
-    if (!tree) return;
-    AfterTravelTree(tree->left);
-    AfterTravelTree(tree->right);
-    printf("%d", tree->data);
-}
-
+//typedef struct Tree {
+//    struct Tree *left;
+//    struct Tree *right;
+//    int data;
+//
+//} Tree;
+//
+//void FrontTravelTree(Tree *tree) {
+//    if (!tree) return;
+//    printf("%d", tree->data);
+//    FrontTravelTree(tree->left);
+//    FrontTravelTree(tree->right);
+//}
+//
+//void MidTravelTree(Tree *tree) {
+//    if (!tree) return;
+//    MidTravelTree(tree->left);
+//    printf("%d", tree->data);
+//    MidTravelTree(tree->right);
+//}
+//
+//void AfterTravelTree(Tree *tree) {
+//    if (!tree) return;
+//    AfterTravelTree(tree->left);
+//    AfterTravelTree(tree->right);
+//    printf("%d", tree->data);
+//}
+//
