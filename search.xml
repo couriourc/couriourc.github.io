@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java 基础 - Java 特点</title>
+    <url>/posts/D46XXZ.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css">]]></content>
+      <categories>
+        <category>语言基础</category>
+        <category>Java</category>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>语言基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构总结 - 递归杂想</title>
     <url>/posts/2A4N28W.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="数学方法思考递归和动规"><a class="markdownIt-Anchor" href="#数学方法思考递归和动规"></a> 数学方法思考递归和动规</h1>
@@ -115,94 +129,6 @@ Recur(…)</p>
         <tag>基础知识</tag>
         <tag>数据结构</tag>
         <tag>哈希表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构总结 - 字符串：Kmp</title>
-    <url>/posts/347521J.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="浅析-kmp-的-next-数组求解思想"><a class="markdownIt-Anchor" href="#浅析-kmp-的-next-数组求解思想"></a> 浅析 <code>KMP </code> 的 <code>next</code> 数组求解思想</h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_next</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    next_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
-    j <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
-    i <span class="token operator">=</span> <span class="token number">0</span>
-    s <span class="token operator">=</span> t
-    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">or</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            i <span class="token operator">+=</span> <span class="token number">1</span>
-            j <span class="token operator">+=</span> <span class="token number">1</span>
-            next_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> j
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            j <span class="token operator">=</span> next_list<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-    <span class="token keyword">return</span> next_list
-
-get_next<span class="token punctuation">(</span><span class="token string">'abababc'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>对于 Kmp 算法中书上的 <code>next </code>数组求法一直处于一个 <code>懵逼</code> 的状态。不理解为什么有 <code>-1</code>，为什么求前后公共后缀不需要用到单独的 <code>check</code> 机制，毕竟我们人眼来看都会去反复的判断（至少我之前一直都是）。</p>
-<ul>
-<li>
-<p>思想归类</p>
-<ul>
-<li>
-<p>滑动窗口</p>
-<ul>
-<li>
-<p>我们求最大前后缀，依赖与前面的值所已经有的最长前后缀，从而不需要再，然后以此向前推</p>
-</li>
-<li>
-<p>回忆一下之前做的习题：<a class="link" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/"> 无重复字符的最长子串<i class="fas fa-external-link-alt"></i></a></p>
-<blockquote>
-<p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
-<blockquote>
-<p>来源：力扣（LeetCode）<br>
-链接：<a class="link" href="https://leetcode.cn/problems/sliding-window-maximum">https://leetcode.cn/problems/sliding-window-maximum<i class="fas fa-external-link-alt"></i></a><br>
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-</blockquote>
-</blockquote>
-<p>在我们这里用的是一端不动的窗口</p>
-</li>
-</ul>
-</li>
-<li>
-<p>动态规划的角度思考</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="代码中的求解过程"><a class="markdownIt-Anchor" href="#代码中的求解过程"></a> 代码中的求解过程</h2>
-<p>举个例子: <code>abababa</code>，我们在运行求第 6 个的时候: <code>a b a b a "b" a</code>，我们之前所求到的前面的公共前后缀的长度也就是 3 <code>aba</code></p>
-<p>前后缀是包括我们的第一个的，所以我们只需要每次从 <code>aba </code>的后面开始判断，<code>aba "?"</code>，这个 <code>?</code> 和我当前的对应到的也就是第 <code>7</code> 个的结果，这个取决于当前浏览的 <code>i</code> 也就是 <code>"b"</code> 是否满足等于之前所找到的最长的，如果不是就向下找前一段所求的公共最长子串，同样的道理也是取决于这个公共前后缀的尾巴与我现在所在的这个后缀的尾巴是否相等<br>
-<code>a b a b a "b" a</code><br>
-<code>0 1 1 2 3  4  5</code></p>
-<p><code>a 0</code>: 默认值</p>
-<p><code>b 1</code>: 前面的最长公共子串为 0 , 至于为什么要 <code>+1</code> 是因为我们当前匹配的时候，前面的已经发现在这个位置就不对，那 <code>a</code> 就没必要再与 <code>b</code> 这个位置比较，所以就跳到 <code>b</code> 的后面去，也就是 <code>j</code> 从头再开始。</p>
-<blockquote>
-<p>需要注意的是，我们求 这个值的时候，<code> i</code> 在 我们当前正在求的前一个位置，在这个满足后设置的才是我们当前求得这个 也即是说我们如果从 j = 0 开始的时候，也就是错开了一个位置<br>
-得到的 <code>next_list = ["0" 0 1 1 2 3  4  5]</code><br>
-而不是<code> next_list = [ 0 1 1 2 3  4  5]</code></p>
-</blockquote>
-<p><code>a 2</code>: 前面的前缀之前我们发现从 第 <code>0</code> 的位置是不存在前后缀的，然后现在我们要观察的是 前面的公共前后缀，也就是 ab 的公共前后缀，<code>a</code> 与 我当前的 <code>b</code> 并不相等，</p>
-<p><code>b 3</code>: OK, 基于以上的，我们到求第三的这个位置，这个位置的判定条件就是：我们前面的 <code>aba </code>所求到的这个的最长公共前后缀的最后一个 <code>ab?</code> 中的 <code>? </code>与我当前的 <code>a </code>是否相等 (需要留意，用程序求的时候，是看前面的前面与我当前的位置的情况，然后推到后面的情况</p>
-<hr>
-<p>对于我们的直觉求法就是直接瞪眼神功对于上面的 求 <code>i+1 = 3</code>(这时候 <code>i </code>是等于 <code>2</code>) 也就是求第 4**(经历了 i= i +1-&gt; next_list [3])** 这一个字符前面的公共前后缀的时候 (<code>j = -1 </code>的时候求到的 <code>next_list </code>是正常的匹配顺序，也就是 <code>i </code>是从正常的 <code>0 </code>开始的其前面的字符是 <code>aba </code>来看，之前我们发现最长公共前后缀就是 0 也就是 <code>a </code>这个时候我们判断 <code>t[2]:a</code> 是否等于 (后缀和这个前面的最长的前缀的最后一个元素做比较) 然后发现 <code>a = a</code> 是相等的，然后就可以得到 <code>2</code> 了而不是还要去扫描后面的，因为我们这一次扫描带来的元素只有一个，有一种滑动窗口的味道了。</p>
-<p>再重新整理一下：</p>
-<ul>
-<li>窗口中的进入了一个元素</li>
-<li>这个元素对窗口产生的影响</li>
-</ul>
-<blockquote>
-<p>一些问题：这种避免回溯的方法，能否在窗口中合理的利用呢。</p>
-<p>还得继续做题，💪</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>基础知识</category>
-        <category>data-structure</category>
-      </categories>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>数据结构</tag>
-        <tag>823</tag>
-        <tag>KMP</tag>
       </tags>
   </entry>
   <entry>
@@ -506,7 +432,7 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
 <li>选择排序：直接选择排序、堆排序</li>
 <li>归并排序：二路归并，多路归并排序（外排序）</li>
 <li>基数排序、计数排序、桶排序<br>
-<img lazyload="" src="/images/loading.svg" data-src="/../data-structure-concept/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjczMzQ0Mg==,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></li>
+<img lazyload="" src="/images/loading.svg" data-src="/../data-structure-concept/watermark.png" alt="在这里插入图片描述"></li>
 </ol>
 <p>** 排序算法稳定性：** 相同数字在排序前后相对位置不变。<br>
 不稳定：希尔排序、快速排序、直接选择排序、堆排序<br>
@@ -519,8 +445,7 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(n)=O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>：直接插入排序、希尔排序、冒泡排序、直接插入排序、堆排序</li>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi> S</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(n)=O(log_2 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>：快速排序</li>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi> S</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(n)=O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>：归并排序</li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi> S</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(n)=O( r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>：基数排序<br>
-<img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20200521162729313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjczMzQ0Mg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi> S</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S(n)=O( r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>：基数排序</li>
 </ol>
 <p>** 直接插入排序：** 和打扑克牌一样，把未排序的部分按序取出一个元素插入到已经排序好的有序序列中，插入位置从前往后找。时间复杂度 O (n^2), 空间复杂度 O (1)</p>
 <p>** 希尔排序：** 分组直接插入排序，将排序元素按增量序列分为几组，组内直接插入排序，缩减增量，使得元素基本有序，在进行一次直接插入排序。时间复杂度 O (nlog2 n)，空间复杂度 O (1)</p>
@@ -537,7 +462,7 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
 </blockquote>
 
   <iframe width="100%" height="400px" name="couriourc/hexo-githubreader-tag" src="https://github1s.com/couriourc/hexo-githubreader-tag">
-    </iframe>
+  </iframe>
 
 ]]></content>
       <categories>
@@ -550,6 +475,94 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <tag>基础知识</tag>
         <tag>数据结构</tag>
         <tag>概念总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构总结 - 字符串：Kmp</title>
+    <url>/posts/347521J.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="浅析-kmp-的-next-数组求解思想"><a class="markdownIt-Anchor" href="#浅析-kmp-的-next-数组求解思想"></a> 浅析 <code>KMP </code> 的 <code>next</code> 数组求解思想</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_next</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    next_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+    j <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    s <span class="token operator">=</span> t
+    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">or</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+            j <span class="token operator">+=</span> <span class="token number">1</span>
+            next_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> j
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            j <span class="token operator">=</span> next_list<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> next_list
+
+get_next<span class="token punctuation">(</span><span class="token string">'abababc'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于 Kmp 算法中书上的 <code>next </code>数组求法一直处于一个 <code>懵逼</code> 的状态。不理解为什么有 <code>-1</code>，为什么求前后公共后缀不需要用到单独的 <code>check</code> 机制，毕竟我们人眼来看都会去反复的判断（至少我之前一直都是）。</p>
+<ul>
+<li>
+<p>思想归类</p>
+<ul>
+<li>
+<p>滑动窗口</p>
+<ul>
+<li>
+<p>我们求最大前后缀，依赖与前面的值所已经有的最长前后缀，从而不需要再，然后以此向前推</p>
+</li>
+<li>
+<p>回忆一下之前做的习题：<a class="link" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/"> 无重复字符的最长子串<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
+<blockquote>
+<p>来源：力扣（LeetCode）<br>
+链接：<a class="link" href="https://leetcode.cn/problems/sliding-window-maximum">https://leetcode.cn/problems/sliding-window-maximum<i class="fas fa-external-link-alt"></i></a><br>
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+</blockquote>
+<p>在我们这里用的是一端不动的窗口</p>
+</li>
+</ul>
+</li>
+<li>
+<p>动态规划的角度思考</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码中的求解过程"><a class="markdownIt-Anchor" href="#代码中的求解过程"></a> 代码中的求解过程</h2>
+<p>举个例子: <code>abababa</code>，我们在运行求第 6 个的时候: <code>a b a b a "b" a</code>，我们之前所求到的前面的公共前后缀的长度也就是 3 <code>aba</code></p>
+<p>前后缀是包括我们的第一个的，所以我们只需要每次从 <code>aba </code>的后面开始判断，<code>aba "?"</code>，这个 <code>?</code> 和我当前的对应到的也就是第 <code>7</code> 个的结果，这个取决于当前浏览的 <code>i</code> 也就是 <code>"b"</code> 是否满足等于之前所找到的最长的，如果不是就向下找前一段所求的公共最长子串，同样的道理也是取决于这个公共前后缀的尾巴与我现在所在的这个后缀的尾巴是否相等<br>
+<code>a b a b a "b" a</code><br>
+<code>0 1 1 2 3  4  5</code></p>
+<p><code>a 0</code>: 默认值</p>
+<p><code>b 1</code>: 前面的最长公共子串为 0 , 至于为什么要 <code>+1</code> 是因为我们当前匹配的时候，前面的已经发现在这个位置就不对，那 <code>a</code> 就没必要再与 <code>b</code> 这个位置比较，所以就跳到 <code>b</code> 的后面去，也就是 <code>j</code> 从头再开始。</p>
+<blockquote>
+<p>需要注意的是，我们求 这个值的时候，<code> i</code> 在 我们当前正在求的前一个位置，在这个满足后设置的才是我们当前求得这个 也即是说我们如果从 j = 0 开始的时候，也就是错开了一个位置<br>
+得到的 <code>next_list = ["0" 0 1 1 2 3  4  5]</code><br>
+而不是<code> next_list = [ 0 1 1 2 3  4  5]</code></p>
+</blockquote>
+<p><code>a 2</code>: 前面的前缀之前我们发现从 第 <code>0</code> 的位置是不存在前后缀的，然后现在我们要观察的是 前面的公共前后缀，也就是 ab 的公共前后缀，<code>a</code> 与 我当前的 <code>b</code> 并不相等，</p>
+<p><code>b 3</code>: OK, 基于以上的，我们到求第三的这个位置，这个位置的判定条件就是：我们前面的 <code>aba </code>所求到的这个的最长公共前后缀的最后一个 <code>ab?</code> 中的 <code>? </code>与我当前的 <code>a </code>是否相等 (需要留意，用程序求的时候，是看前面的前面与我当前的位置的情况，然后推到后面的情况</p>
+<hr>
+<p>对于我们的直觉求法就是直接瞪眼神功对于上面的 求 <code>i+1 = 3</code>(这时候 <code>i </code>是等于 <code>2</code>) 也就是求第 4**(经历了 i= i +1-&gt; next_list [3])** 这一个字符前面的公共前后缀的时候 (<code>j = -1 </code>的时候求到的 <code>next_list </code>是正常的匹配顺序，也就是 <code>i </code>是从正常的 <code>0 </code>开始的其前面的字符是 <code>aba </code>来看，之前我们发现最长公共前后缀就是 0 也就是 <code>a </code>这个时候我们判断 <code>t[2]:a</code> 是否等于 (后缀和这个前面的最长的前缀的最后一个元素做比较) 然后发现 <code>a = a</code> 是相等的，然后就可以得到 <code>2</code> 了而不是还要去扫描后面的，因为我们这一次扫描带来的元素只有一个，有一种滑动窗口的味道了。</p>
+<p>再重新整理一下：</p>
+<ul>
+<li>窗口中的进入了一个元素</li>
+<li>这个元素对窗口产生的影响</li>
+</ul>
+<blockquote>
+<p>一些问题：这种避免回溯的方法，能否在窗口中合理的利用呢。</p>
+<p>还得继续做题，💪</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>基础知识</category>
+        <category>data-structure</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>数据结构</tag>
+        <tag>823</tag>
+        <tag>KMP</tag>
       </tags>
   </entry>
   <entry>
