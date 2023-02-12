@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算机组成原理 —— 指令周期</title>
+    <url>/posts/24YB9K9.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+<h1 id="指令周期"><a class="markdownIt-Anchor" href="#指令周期"></a> 指令周期</h1>
+<p>CPU 执行指令共有四个周期：取指周期 -&gt;[间指周期]-&gt; 执行周期 -&gt;[中断周期]</p>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" id="graph1">
+ <g>
+  <title>取指周期 -&gt; 执行周期的指令周期</title>
+  <g id="svg_31">
+   <rect stroke="#000" id="svg_29" height="168" width="82" y="232" x="653" fill="#fff"></rect>
+   <text id="svg_30" x="659" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" y="326" stroke="#000" fill="#000000">存储器</text>
+  </g>
+  <g stroke="null" id="svg_33">
+   <rect stroke="#000" id="svg_6" height="287.99999" width="350.00001" y="154" x="54" fill="#fff"></rect>
+   <rect stroke="#000" id="svg_7" height="65.57538" width="70.94595" y="177.92615" x="61.43243" fill="#fff"></rect>
+   <text transform="matrix(0.675676 0 0 0.886154 17.5135 17.76)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_8" y="226.74306" x="95" stroke-width="0" fill="#000000"> PC</text>
+   <path stroke="#000" id="svg_9" d="m274.27027,182.35692l83.78379,0l0,63.80307l-83.78379,0l0,-63.80307z" opacity="undefined" fill="#fff"></path>
+   <text transform="matrix(0.675676 0 0 0.886154 17.5135 17.76)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_11" y="229.74306" x="416" fill="#000000">MAR</text>
+   <rect stroke="#000" id="svg_12" height="40.76308" width="75" y="284.26461" x="277.64865" fill="#fff"></rect>
+   <text transform="matrix(0.675676 0 0 0.886154 17.5135 17.76)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_14" y="332.74306" x="425" fill="#000000">CU</text>
+   <rect stroke="#000" id="svg_15" height="62.91692" width="87.83784" y="353.38461" x="273.5946" fill="#fff"></rect>
+   <text transform="matrix(0.675676 0 0 0.886154 17.5135 17.76)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_16" y="423.74306" x="413" fill="#000000">MDR</text>
+   <rect stroke="#000" id="svg_17" height="57.6" width="70.94595" y="361.35999" x="62.10811" fill="#fff"></rect>
+   <text transform="matrix(0.675676 0 0 0.886154 17.5135 17.76)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_19" y="430.74306" x="93" fill="#000000">IR</text>
+  </g>
+  <g id="svg_37">
+   <line id="svg_35" y2="209" x2="275" y1="208" x1="130" stroke="#000" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_36" y="198" x="192" stroke="#000" fill="#000000">1</text>
+  </g>
+  <g stroke="null" id="svg_40">
+   <line stroke="#000" id="svg_38" y2="213" x2="473" y1="212" x1="360" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_45" y="195" x="408" stroke-width="0" stroke="#000" fill="#000000">2</text>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="'Dancing Script'" font-size="24" stroke-width="0" id="svg_42" y="60" x="382" stroke="#000" fill="#000000"> 地址总线</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Dancing Script'" font-size="24" stroke-width="0" id="svg_43" y="60" x="489" stroke="#000" fill="#000000">数据总线</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Dancing Script'" font-size="24" stroke-width="0" id="svg_44" y="60" x="594" stroke="#000" fill="#000000">控制总线</text>
+  <g stroke="null" id="svg_48">
+   <line stroke="#000" id="svg_46" y2="156" x2="707.00001" y1="155" x1="476" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_49" y="140" x="586" stroke-width="0" stroke="#000" fill="#000000"> 3</text>
+   <line id="svg_52" y2="231" x2="707" y1="157" x1="707" stroke="#000" fill="none"></line>
+  </g>
+  <line id="svg_56" y2="260" x2="656" y1="259" x1="608" stroke="#000" fill="none"></line>
+  <g id="svg_61">
+   <path id="svg_54" d="m353,299l254,3" opacity="undefined" stroke="#000" fill="none"></path>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_60" y="292" x="436" stroke="#000" fill="#000000">4</text>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_62" y="242" x="622" stroke="#000" fill="#000000">5</text>
+  <path id="svg_66" d="m277,307c-183,-1 -170,2 -170,2c0,0 -2,-64 -2,-64" opacity="NaN" stroke="#000" fill="none"></path>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_71" y="286" x="200" stroke="#000" fill="#000000">9</text>
+  <g id="svg_72">
+   <line id="svg_59" y2="382" x2="137" y1="381" x1="275" stroke="#000" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_70" y="365" x="195" stroke="#000" fill="#000000">8</text>
+  </g>
+  <g id="svg_73">
+   <line id="svg_64" y2="393" x2="367" y1="392" x1="531" stroke="#000" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_69" y="381" x="437" stroke="#000" fill="#000000">7</text>
+  </g>
+  <g id="svg_74">
+   <g id="svg_32">
+    <line id="svg_24" y2="520" x2="471" y1="77" x1="474" stroke="#000" fill="none"></line>
+    <line id="svg_27" y2="520" x2="530" y1="77" x1="533" stroke="#000" fill="none"></line>
+    <line id="svg_28" y2="520" x2="605" y1="77" x1="608" stroke="#000" fill="none"></line>
+   </g>
+   <line stroke="#000" id="svg_63" y2="357" x2="528.99999" y1="357" x1="655" fill="none"></line>
+   <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_68" y="343" x="571" stroke="#000" fill="#000000">6</text>
+  </g>
+ </g>
+</svg>
+]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+        <category>computer-base</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机组成原理 —— 原码，补码，反码</title>
     <url>/posts/3J64FQ8.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
@@ -8,7 +87,10 @@
 <p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
 <p><strong>补码</strong>：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上 1（相当于将原码数值位取反然后在最低位加 1）。</p>
 <blockquote>
-<p>tips: 也就是补码才是在求绝对值，补足反码带来的缺一</p>
+<p>tips: 以上的说法是对于二进制，可以知道补码的含义是</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = K^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> K 表示几进制，n 表示有几位</p>
+<p>比如一位十进制的补码</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = 10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
 </blockquote>
 <h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2>
 <table>
