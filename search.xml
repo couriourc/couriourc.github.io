@@ -321,8 +321,8 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理 —— 原码，补码，反码</title>
-    <url>/posts/3J64FQ8.html</url>
+    <title>计算机组成原理 —— 概述</title>
+    <url>/posts/1TVR2P9.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
 <p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
 <p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
@@ -369,8 +369,8 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理 —— 概述</title>
-    <url>/posts/1TVR2P9.html</url>
+    <title>计算机组成原理 —— 原码，补码，反码</title>
+    <url>/posts/3J64FQ8.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
 <p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
 <p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
@@ -7274,8 +7274,812 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
         <category>html</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>2023面试</tag>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序开发笔记</title>
+    <url>/posts/259R3F1.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="微信小程序开发笔记"><a class="markdownIt-Anchor" href="#微信小程序开发笔记"></a> 微信小程序开发笔记</h1>
+<h2 id="小程序发展史"><a class="markdownIt-Anchor" href="#小程序发展史"></a> 小程序发展史</h2>
+<p>小程序并非凭空冒出来的一个概念。当微信中的 WebView 逐渐成为移动 Web 的一个重要入口时，微信就有相关的 JS API 了。实际上，微信官方是没有对外暴露过如此调用的，此类 API 最初是提供给腾讯内部一些业务使用，很多外部开发者发现了之后，依葫芦画瓢地使用了，逐渐成为微信中网页的事实标准。2015 年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个 API。给所有的 Web 开发者打开了一扇全新的窗户，让所有开发者都可以使用到微信的原生能力，去完成一些之前做不到或者难以做到的事情。</p>
+<h2 id="小程序与普通网页开发的区别"><a class="markdownIt-Anchor" href="#小程序与普通网页开发的区别"></a> 小程序与普通网页开发的区别</h2>
+<p>小程序的主要开发语言是 JavaScript ，小程序的开发同普通的网页开发相比有很大的相似性。对于前端开发者而言，从网页开发迁移到小程序的开发成本并不高，但是二者还是有些许区别的。</p>
+<p>网页开发渲染线程和脚本线程是互斥的，这也是为什么长时间的脚本运行可能会导致页面失去响应，而在小程序中，二者是分开的，分别运行在不同的线程中。网页开发者可以使用到各种浏览器暴露出来的 DOM API，进行 DOM 选中和操作。而如上文所述，小程序的逻辑层和渲染层是分开的，逻辑层运行在 JSCore 中，并没有一个完整浏览器对象，因而缺少相关的 DOM API 和 BOM API。这一区别导致了前端开发非常熟悉的一些库，例如 jQuery、 Zepto 等，在小程序中是无法运行的。同时 JSCore 的环境同 NodeJS 环境也是不尽相同，所以一些 NPM 的包在小程序中也是无法运行的。</p>
+<p>网页开发者需要面对的环境是各式各样的浏览器，PC 端需要面对 IE、Chrome、QQ 浏览器等，在移动端需要面对 Safari、Chrome 以及 iOS、Android 系统中的各式 WebView 。而小程序开发过程中需要面对的是两大操作系统 iOS 和 Android 的微信客户端，以及用于辅助开发的小程序开发者工具，小程序中三大运行环境也是有所区别的，如表 1-1 所示。</p>
+<p>表 1-1 小程序的运行环境</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>运行环境</strong></th>
+<th style="text-align:left"><strong>逻辑层</strong></th>
+<th style="text-align:left"><strong>渲染层</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> iOS</td>
+<td style="text-align:left">JavaScriptCore</td>
+<td style="text-align:left">WKWebView</td>
+</tr>
+<tr>
+<td style="text-align:left"> 安卓</td>
+<td style="text-align:left"> V8</td>
+<td style="text-align:left">chromium 定制内核</td>
+</tr>
+<tr>
+<td style="text-align:left">小程序开发者工具</td>
+<td style="text-align:left"> NWJS</td>
+<td style="text-align:left">Chrome WebView</td>
+</tr>
+</tbody>
+</table>
+<img lazyload="" src="/images/loading.svg" data-src="/../%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/IMZDXPqkEenRcBH.png" alt="img" style="zoom: 25%;float:left">
+<h2 id="微信小程序的开通注册流程"><a class="markdownIt-Anchor" href="#微信小程序的开通注册流程"></a> 微信小程序的开通注册流程</h2>
+<h3 id="途径一"><a class="markdownIt-Anchor" href="#途径一"></a> * 途径一</h3>
+<p>通过网站注册登陆–: (微信公众平台): <a class="link" href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/<i class="fas fa-external-link-alt"></i></a> --: (登陆) 选择主体类型 – : 开通</p>
+<p>具体流程 (因为我已经开通过了，所以无法再次回到那个页面，用的官方的图)— :</p>
+<p>进入<a class="link" href="https://mp.weixin.qq.com/wxopen/waregister?action=step1">小程序注册页<i class="fas fa-external-link-alt"></i></a> 根据指引填写信息和提交相应的资料，就可以拥有自己的小程序帐号。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/../%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/register.f3571165.png" alt="img" style="zoom: 50%;float:left">
+<p>在这个小程序管理平台，你可以管理你的小程序的权限，查看数据报表，发布小程序等操作。</p>
+<p>登录 <a class="link" href="https://mp.weixin.qq.com/">小程序后台<i class="fas fa-external-link-alt"></i></a> ，我们可以在菜单 “开发”-“开发设置” 看到小程序的 <strong>AppID</strong> 了 。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/../%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/setting.f53f9212.png" alt="img" style="zoom: 67%; float: left;">
+<p>小程序的 AppID 相当于小程序平台的一个身份证，后续你会在很多地方要用到 AppID （注意这里要区别于服务号或订阅号的 AppID）。</p>
+<p>有了小程序帐号之后，我们需要一个工具来开发小程序。</p>
+<h4 id="安装开发工具"><a class="markdownIt-Anchor" href="#安装开发工具"></a> 安装开发工具</h4>
+<p>前往 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">开发者工具下载页面<i class="fas fa-external-link-alt"></i></a> ，根据自己的操作系统下载对应的安装包进行安装，有关开发者工具更详细的介绍可以查看 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html">《开发者工具介绍》<i class="fas fa-external-link-alt"></i></a> 。</p>
+<h3 id="途径二"><a class="markdownIt-Anchor" href="#途径二"></a> * 途径二</h3>
+<p>就是反着来，你直接在开发者工具生成了测试号，然后去登陆就行勒，一般为了方便，都是采用途径一</p>
+<p>通过开发者工具上传，下次登陆微信公众平台的时候选择自己的测试号，需要注意的是个人主体 公众号 小程序号只能有一个，所以如果自己一开始开通了公众号将无法发布小程序，进入的界面也会不一样</p>
+<h2 id="安装微信小程序开发者工具"><a class="markdownIt-Anchor" href="#安装微信小程序开发者工具"></a> 安装微信小程序开发者工具</h2>
+<img lazyload="" src="/images/loading.svg" data-src="/../%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/F2NVOIbaAmP6fpD.png" alt="image-20211029103332576" style="zoom: 80%;float:left">
+<p>一般选用的是稳定版本，下载安装过程此处不再介绍，推荐别安装 C 盘；</p>
+<h3 id="界面"><a class="markdownIt-Anchor" href="#界面"></a> 界面</h3>
+<h4 id="启动页"><a class="markdownIt-Anchor" href="#启动页"></a> 启动页</h4>
+<h4 id="登录页"><a class="markdownIt-Anchor" href="#登录页"></a> 登录页</h4>
+<p>在登录页，可以使用微信扫码登录开发者工具，开发者工具将使用这个微信帐号的信息进行小程序的开发和调试。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/../%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/login.fb9c51dc.png" alt="登录" style="zoom:67%;">
+<p>具体工具使用此处不在讨论重点，所以此处略过；</p>
+<h4 id="进入正题之前的叨叨-工程项目-模块化"><a class="markdownIt-Anchor" href="#进入正题之前的叨叨-工程项目-模块化"></a> 进入正题之前的叨叨–: 工程项目 &amp;&amp; 模块化</h4>
+<p>对于工程项目：一个工程项目，不只是模块化，还有项目的跟进更新，从代码规范，到项目整体设计，如何让项目越写越好写，而不是要么在埋坑，要么在堆垃圾代码，所以对项目的整体架构是十分重要的，不仅仅是后端，前端也一样，都会去考虑到项目本身之外的东西，而不是只专注于一个页面，或者功能点，做积木的人和堆积木的人之间的区别，或许就是为什么后者被人们称之为工程师的原因吧，因此对项目有一个整体的宏观考虑之后，再去做局部优化，也就是要有一个项目宏观的概念，由表及里，而模块化，也就是分开做积木，积木的稳健也会影响到整个成品的稳定程度，所以局部优化必不可少，但是如果能支撑起你目前的系统，请让它膨胀一会；</p>
+<p>对模块化：从一个因果论分析，结果上：程序连接起来了，并且正常运行，因：每个部分的代码正常运行了，你写的代码在程序里面了，程序找到了你的逻辑名字，比如你未定义一个变量，那么你去使用它，必然会报错，因为它压根就没有，又比如，你去调用一个对象的方法，但是他没有，那么它也必然报错，因为它压根就没有，所以你要让你分开的代码能相互认识，必然就涉及到引入，导入，告诉你的代码在哪里，组成的 部分在那里，所以模块的关键在于导入导出，为什么有导出呢，因为每一个模块本身是可以独立的，所以独立的模块有模块自由权，可以选择性的出现；</p>
+<p>润氏吃面哲学：我们都喜欢吃一根一根分开的拉面，而不是糊成饼的拉面，拉面中粗细也各有不一致，同样的你的代码好不好吃，也是在于你怎么设计了.</p>
+<h2 id="进入正题-项目概览"><a class="markdownIt-Anchor" href="#进入正题-项目概览"></a> 进入正题 —: 项目概览</h2>
+<p>微信小程序项目文件主要由四大重要部分组成:</p>
+<ol>
+<li>JSON 配置文件</li>
+<li> WXML 类似于 HTML</li>
+<li>WXSS 类似于 CSS</li>
+<li>JS 就是 JS</li>
+<li>WXS (可选这个不是主要必备的文件)</li>
+</ol>
+<blockquote>
+<p>纵观所有的框架学习，无非就是使用工具，只是别人给的思想，给的哲学，或者给的 API 名字各有异同，因此对于小程序的学习或者其他的框架的学习，个人推荐的是按照项目配置穿成一条线去学习，<code>把控不变量,掌握共同点,借他山之石,可以攻玉</code></p>
+</blockquote>
+<h3 id="json-配置文件"><a class="markdownIt-Anchor" href="#json-配置文件"></a> JSON 配置文件</h3>
+<p>小程序的 JSON 文件主要分为:</p>
+<ol>
+<li>
+<p>工程配置: project.config.json 主要是对编译过程中的一些配置，和对编译器的一些配置</p>
+<ol>
+<li>
+<p>通常大家在使用一个工具的时候，都会针对各自喜好做一些个性化配置，例如界面颜色、编译配置等等，当你换了另外一台电脑重新安装工具的时候，你还要重新配置。</p>
+<p>考虑到这点，小程序开发者工具在每个项目的根目录都会生成一个 <code>project.config.json</code>，你在工具上做的任何配置都会写入到这个文件，当你重新安装工具或者换电脑工作时，你只要载入同一个项目的代码包，开发者工具就自动会帮你恢复到当时你开发项目时的个性化配置，其中会包括编辑器的颜色、代码上传时自动压缩等等一系列选项。</p>
+<p>其他配置项细节可以参考文档 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html">开发者工具的配置<i class="fas fa-external-link-alt"></i></a> 。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>应用配置:app.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。主要常用字段如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">必填</th>
+<th style="text-align:left">描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#entryPagePath">entryPagePath<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">小程序默认启动首页 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#pages">pages<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string[]</td>
+<td style="text-align:left"> 是</td>
+<td style="text-align:left">页面路径列表 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window">window<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">全局的默认窗口表现 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabBar">tabBar<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">底部 <code>tab</code> 栏的表现 [其实经常会考虑自己实现]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#networkTimeout">networkTimeout<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">网络超时时间 [一般设置为 5000 也就是 5s]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#functionalPages">functionalPages<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">是否启用插件功能页，默认关闭 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#subpackages">subpackages<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object[]</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">分包结构配置 [一般在项目大了才会去配置，app.json 整体配置类似]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#workers">workers<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"><code>Worker</code> 代码放置的目录，小程序会单独开一个线程来允许，实现伪多线程 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredBackgroundModes">requiredBackgroundModes<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string[]</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">需要在后台使用的能力，主要配置项由 [“locations” , “audio”]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#plugins">plugins<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">使用到的插件 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#preloadRule">preloadRule<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">分包预下载规则 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#resizable">resizable<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"> PC 小程序是否支持用户任意改变窗口大小（包括最大化窗口）；iPad 小程序是否支持屏幕旋转。默认关闭 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#usingComponents">usingComponents<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">全局<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">自定义组件<i class="fas fa-external-link-alt"></i></a>配置 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#permission">permission<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">小程序接口权限相关设置 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#sitemapLocation">sitemapLocation<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 是</td>
+<td style="text-align:left">指明 sitemap.json 的位置 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style">style<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">指定使用升级后的 weui 样式 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#useextendedlib">useExtendedLib<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">指定需要引用的扩展库 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#entranceDeclare">entranceDeclare<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">微信消息用小程序打开 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#darkmode">darkmode<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">小程序支持 DarkMode</td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#themeLocation">themeLocation<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">指明 theme.json 的位置，darkmode 为 true 为必填 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading">lazyCodeLoading<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">配置自定义组件代码按需注入 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#singlePage">singlePage<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">单页模式相关配置</td>
+</tr>
+<tr>
+<td style="text-align:left"> supportedMaterials</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/material/support_material.html">聊天素材小程序打开<i class="fas fa-external-link-alt"></i></a>相关配置</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>page.json 争对页面的一些配置，可以帮助你提前设置一些默认值，当然这个是可以通过程序进行修改的，我是指主要是样式类</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> navigationBarBackgroundColor</td>
+<td style="text-align:left">HexColor</td>
+<td style="text-align:left">#000000</td>
+<td style="text-align:left"> 导航栏背景颜色，如 <code>#000000</code></td>
+</tr>
+<tr>
+<td style="text-align:left">navigationBarTextStyle</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left"> 导航栏标题颜色，仅支持 <code>black</code> / <code>white</code></td>
+</tr>
+<tr>
+<td style="text-align:left">navigationBarTitleText</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"> 导航栏标题文字内容</td>
+</tr>
+<tr>
+<td style="text-align:left"> navigationStyle</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">default</td>
+<td style="text-align:left"> 导航栏样式，仅支持以下值： <code>default</code> 默认样式 <code>custom</code> 自定义导航栏，只保留右上角胶囊按钮。参见注 1。</td>
+</tr>
+<tr>
+<td style="text-align:left">backgroundColor</td>
+<td style="text-align:left">HexColor</td>
+<td style="text-align:left">#ffffff</td>
+<td style="text-align:left"> 窗口的背景色</td>
+</tr>
+<tr>
+<td style="text-align:left"> backgroundTextStyle</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">dark</td>
+<td style="text-align:left"> 下拉 loading 的样式，仅支持 <code>dark</code> / <code>light</code></td>
+</tr>
+<tr>
+<td style="text-align:left">backgroundColorTop</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">#ffffff</td>
+<td style="text-align:left"> 顶部窗口的背景色，仅 iOS 支持</td>
+</tr>
+<tr>
+<td style="text-align:left"> backgroundColorBottom</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">#ffffff</td>
+<td style="text-align:left"> 底部窗口的背景色，仅 iOS 支持</td>
+</tr>
+<tr>
+<td style="text-align:left"> enablePullDownRefresh</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left"> 是否开启当前页面下拉刷新。 详见 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onpulldownrefresh">Page.onPullDownRefresh<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:left">onReachBottomDistance</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">50</td>
+<td style="text-align:left"> 页面上拉触底事件触发时距页面底部距离，单位为 px。 详见 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onreachbottom">Page.onReachBottom<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:left">pageOrientation</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">portrait</td>
+<td style="text-align:left"> 屏幕旋转设置，支持 <code>auto</code> / <code>portrait</code> / <code>landscape</code> 详见 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html">响应显示区域变化<i class="fas fa-external-link-alt"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:left">disableScroll</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left"> 设置为 <code>true</code> 则页面整体不能上下滚动。 只在页面配置中有效，无法在 <code>app.json</code> 中设置</td>
+</tr>
+<tr>
+<td style="text-align:left"> usingComponents</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">页面<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">自定义组件<i class="fas fa-external-link-alt"></i></a>配置</td>
+</tr>
+<tr>
+<td style="text-align:left"> initialRenderingCache</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"> 页面<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/initial-rendering-cache.html">初始渲染缓存<i class="fas fa-external-link-alt"></i></a>配置，支持 <code>static</code> / <code>dynamic</code>[一般用在起手数据量比较大的时候，结合骨架屏效果，提升用户体验]</td>
+</tr>
+<tr>
+<td style="text-align:left">style</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">default</td>
+<td style="text-align:left"> 启用新版的组件样式 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html#singlePage">singlePage<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left">单页模式相关配置 </td>
+</tr>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html#restartStrategy">restartStrategy<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">homePage</td>
+<td style="text-align:left"> 重新启动策略配置</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>component.json</p>
+<pre><code> 类似于页面，一个自定义组件由 `json` `wxml` `wxss` `js` 4个文件组成。要编写一个自定义组件，首先需要在 `json` 文件中进行自定义组件声明（将 `component` 字段设为 `true` 可将这一组文件设为自定义组件）：
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> component</td>
+<td>string</td>
+<td>true</td>
+<td> 是</td>
+<td>标识是否为组件，这个在之后讲到页面和组件的区别的时候就会提到</td>
+</tr>
+<tr>
+<td> usingComponents</td>
+<td>Object[]</td>
+<td>{ }</td>
+<td> 否</td>
+<td>组件中用到的 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">自定义组件<i class="fas fa-external-link-alt"></i></a>配置</td>
+</tr>
+<tr>
+<td> styleIsolation</td>
+<td>string</td>
+<td> 无</td>
+<td>否</td>
+<td><code>page-isolated</code> 表示在这个页面禁用 app.wxss ，同时，页面的 wxss 不会影响到其他自定义组件； <code>page-apply-shared</code> 表示在这个页面禁用 app.wxss ，同时，页面 wxss 样式不会影响到其他自定义组件，但设为 <code>shared</code> 的自定义组件会影响到页面； <code>page-shared</code> 表示在这个页面禁用 app.wxss ，同时，页面 wxss 样式会影响到其他设为 <code>apply-shared</code> 或 <code>shared</code> 的自定义组件，也会受到设为 <code>shared</code> 的自定义组件的影响。此外，小程序基础库版本 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">2.2.3<i class="fas fa-external-link-alt"></i></a> 以上支持 <code>addGlobalClass</code> 选项，即在 <code>Component</code> 的 <code>options</code> 中设置 <code>addGlobalClass: true</code> 。 这个选项等价于设置 <code>styleIsolation: apply-shared</code> ，但设置了 <code>styleIsolation</code> 选项后这个选项会失效。也就是配置是否为局部样式，默认是，不受全局影响</td>
+</tr>
+<tr>
+<td> pureDataPattern</td>
+<td>String</td>
+<td> 无</td>
+<td>否</td>
+<td>从小程序基础库版本 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">2.10.1<i class="fas fa-external-link-alt"></i></a> 开始，也可以在页面或自定义组件的 json 文件中配置 <code>pureDataPattern</code> （这样就不需在 js 文件的 <code>options</code> 中再配置）。此时，其值应当写成字符串形式：</td>
+</tr>
+<tr>
+<td>componentGenerics</td>
+<td>Object</td>
+<td>{}</td>
+<td> 否</td>
+<td>配置抽象节点，节点的 generic 引用 <code>generic:xxx="yyy"</code> 中，值 <code>yyy</code> 只能是静态值，不能包含数据绑定。因而抽象节点特性并不适用于动态决定节点名的场景.</td>
+</tr>
+<tr>
+<td>componentPlaceholder</td>
+<td>Object</td>
+<td>{}</td>
+<td> 否</td>
+<td>在使用如 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/(subpackages/async.md)">分包异步化<i class="fas fa-external-link-alt"></i></a> 或 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E7%94%A8%E6%97%B6%E6%B3%A8%E5%85%A5">用时注入<i class="fas fa-external-link-alt"></i></a> 等特性时，自定义组件所引用的其他自定义组件，在刚开始进行渲染时可能处于不可用的状态。此时，为了使渲染过程不被阻塞，不可用的自定义组件需要一个 <strong>「占位组件」（Component placeholder）</strong>。基础库会用占位组件替代不可用组件进行渲染，在该组件可用后再将占位组件替换回该组件。也就是配置骨架屏的位置</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>sitemap.json 微信现已开放小程序内搜索，开发者可以通过 <code>sitemap.json</code> 配置，或者管理后台页面收录开关来配置其小程序页面是否允许微信索引。当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索词条触发该索引时，小程序的页面将可能展示在搜索结果中。 爬虫访问小程序内页面时，会携带特定的 user-agent：<code>mpcrawler</code> 及<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/scene-list.html">场景值<i class="fas fa-external-link-alt"></i></a>：<code>1129</code>。需要注意的是，若小程序爬虫发现的页面数据和真实用户的呈现不一致，那么该页面将不会进入索引中；</p>
+<p>也就是说这属于是微信的爬虫机制了，和 web 上的 robot.txt 有些类似，属于是 sso 优化，才会开始考虑到</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">必填</th>
+<th style="text-align:left">描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html#rules">rules<i class="fas fa-external-link-alt"></i></a></td>
+<td style="text-align:left">Object[]</td>
+<td style="text-align:left"> 是</td>
+<td style="text-align:left">索引规则列表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules"><a class="markdownIt-Anchor" href="#rules"></a> rules</h3>
+<p>rules 配置项指定了索引规则，每项规则为一个 JSON 对象，属性如下所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">必填</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">取值</th>
+<th style="text-align:left">取值说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> action</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"> “allow”</td>
+<td style="text-align:left">“allow”、“disallow”</td>
+<td style="text-align:left"> 命中该规则的页面是否能被索引</td>
+</tr>
+<tr>
+<td style="text-align:left"> page</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 是</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"> “*”、页面的路径</td>
+<td style="text-align:left"><code>*</code> 表示所有页面，不能作为通配符使用</td>
+</tr>
+<tr>
+<td style="text-align:left"> params</td>
+<td style="text-align:left">string[]</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"> []</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"> 当 page 字段指定的页面在被本规则匹配时可能使用的页面参数名称的列表（不含参数值）</td>
+</tr>
+<tr>
+<td style="text-align:left">matching</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"> “inclusive”</td>
+<td style="text-align:left"> 参考 <strong>matching 取值说明</strong></td>
+<td style="text-align:left">当 page 字段指定的页面在被本规则匹配时，此参数说明 params 匹配方式</td>
+</tr>
+<tr>
+<td style="text-align:left"> priority</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left"> 否</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">优先级，值越大则规则越早被匹配，否则默认从上到下匹配</td>
+</tr>
+</tbody>
+</table>
+<p><strong>matching 取值说明</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> exact</td>
+<td style="text-align:left"> 当小程序页面的参数列表等于 params 时，规则命中</td>
+</tr>
+<tr>
+<td style="text-align:left"> inclusive</td>
+<td style="text-align:left"> 当小程序页面的参数列表包含 params 时，规则命中</td>
+</tr>
+<tr>
+<td style="text-align:left"> exclusive</td>
+<td style="text-align:left"> 当小程序页面的参数列表与 params 交集为空时，规则命中</td>
+</tr>
+<tr>
+<td style="text-align:left"> partial</td>
+<td style="text-align:left"> 当小程序页面的参数列表与 params 交集不为空时，规则命中</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="小程序框架简单知道有什么这些能做什么即可再循序渐进"><a class="markdownIt-Anchor" href="#小程序框架简单知道有什么这些能做什么即可再循序渐进"></a> 小程序框架 (简单知道有什么，这些能做什么即可，再循序渐进)</h2>
+<p>小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生 APP 体验的服务。</p>
+<blockquote>
+<p>实际上很多限制，做到了尽可能简单，但是开发上有特别多的限制，哎，我就受不了</p>
+</blockquote>
+<p>整个小程序框架系统分为两部分：<strong><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/">逻辑层<i class="fas fa-external-link-alt"></i></a></strong>（App Service）和 <strong><a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/">视图层<i class="fas fa-external-link-alt"></i></a></strong>（View）。小程序提供了自己的视图层描述语言 <code>WXML</code> 和 <code>WXSS</code>，以及基于 <code>JavaScript</code> 的逻辑层框架，并在视图层与逻辑层间提供了数据传输和事件系统，让开发者能够专注于数据与逻辑。</p>
+<h3 id="视图层-wxml-wxss-需要对html-css-有一个基础的概念"><a class="markdownIt-Anchor" href="#视图层-wxml-wxss-需要对html-css-有一个基础的概念"></a> 视图层 (WXML  ,WXSS) 需要对 HTML CSS 有一个基础的概念</h3>
+<h4 id="wxml"><a class="markdownIt-Anchor" href="#wxml"></a> WXML</h4>
+<p>WXML（WeiXin Markup Language）是框架设计的一套标签语言，结合<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/component/">基础组件<i class="fas fa-external-link-alt"></i></a>、<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html">事件系统<i class="fas fa-external-link-alt"></i></a>，可以构建出页面的结构。</p>
+<p>要完整了解 WXML 语法，请参考 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/">WXML 语法参考<i class="fas fa-external-link-alt"></i></a>。</p>
+<p>用以下一些简单的例子来看看 WXML 具有什么能力：</p>
+<h5 id="数据绑定"><a class="markdownIt-Anchor" href="#数据绑定"></a> 数据绑定</h5>
+<p>之后详细的讲</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span> {{message}} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+// page.js
+Page({
+  data: {
+    message: 'Hello MINA!'
+  }
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="列表渲染"><a class="markdownIt-Anchor" href="#列表渲染"></a> 列表渲染</h5>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name"><span class="token namespace">wx:</span>for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{array}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> {{item}} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+// page.js
+Page({
+  data: {
+    array: [1, 2, 3, 4, 5]
+  }
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="条件渲染"><a class="markdownIt-Anchor" href="#条件渲染"></a> 条件渲染</h5>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{view == 'WEBVIEW'}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> WEBVIEW <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name"><span class="token namespace">wx:</span>elif</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{view == 'APP'}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> APP <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name"><span class="token namespace">wx:</span>else</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{view == 'MINA'}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> MINA <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+// page.js
+Page({
+  data: {
+    view: 'MINA'
+  }
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h5>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>staffName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>staffName<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{...staffA}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>staffName<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{...staffB}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>staffName<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{...staffC}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+// page.js
+Page({
+  data: {
+    staffA: {firstName: 'Hulk', lastName: 'Hu'},
+    staffB: {firstName: 'Shang', lastName: 'You'},
+    staffC: {firstName: 'Gideon', lastName: 'Lin'}
+  }
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id=""><a class="markdownIt-Anchor" href="#"></a> </h4>
+<h4 id="wxss"><a class="markdownIt-Anchor" href="#wxss"></a> WXSS</h4>
+<p>WXSS (WeiXin Style Sheets) 是一套样式语言，用于描述 WXML 的组件样式。</p>
+<p>WXSS 用来决定 WXML 的组件应该怎么显示。</p>
+<p>为了适应广大的前端开发者，WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。</p>
+<p>与 CSS 相比，WXSS 扩展的特性有：</p>
+<ul>
+<li>尺寸单位</li>
+<li>样式导入</li>
+</ul>
+<h5 id="尺寸单位"><a class="markdownIt-Anchor" href="#尺寸单位"></a> 尺寸单位</h5>
+<ul>
+<li>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素，1rpx = 0.5px = 1 物理像素。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">设备</th>
+<th style="text-align:left"> rpx 换算 px (屏幕宽度 / 750)</th>
+<th style="text-align:left">px 换算 rpx (750 / 屏幕宽度)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">iPhone5</td>
+<td style="text-align:left">1rpx = 0.42px</td>
+<td style="text-align:left">1px = 2.34rpx</td>
+</tr>
+<tr>
+<td style="text-align:left">iPhone6</td>
+<td style="text-align:left">1rpx = 0.5px</td>
+<td style="text-align:left">1px = 2rpx</td>
+</tr>
+<tr>
+<td style="text-align:left">iPhone6 Plus</td>
+<td style="text-align:left">1rpx = 0.552px</td>
+<td style="text-align:left">1px = 1.81rpx</td>
+</tr>
+</tbody>
+</table>
+<p><strong>建议：</strong> 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+<p><strong>注意：</strong> 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
+<h5 id="样式导入"><a class="markdownIt-Anchor" href="#样式导入"></a> 样式导入</h5>
+<p>使用 <code>@import</code> 语句可以导入外联样式表，<code>@import</code> 后跟需要导入的外联样式表的相对路径，用 <code>;</code> 表示语句结束。</p>
+<p><strong>示例代码：</strong></p>
+<pre class="line-numbers language-less" data-language="less"><code class="language-less"><span class="token comment">/** common.wxss **/</span>
+<span class="token selector">.small-p</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/** app.wxss **/</span>
+<span class="token variable">@import</span> <span class="token string">"common.wxss"</span><span class="token punctuation">;</span>
+<span class="token selector">.middle-p</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="内联样式"><a class="markdownIt-Anchor" href="#内联样式"></a> 内联样式</h5>
+<p>框架组件上支持使用 style、class 属性来控制组件的样式。</p>
+<ul>
+<li>style：静态的样式统一写到 class 中。style 接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。</li>
+</ul>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token selector">color:</span><span class="token punctuation">{</span><span class="token punctuation">{</span>color<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>class：用于指定样式规则，其属性值是样式规则中类选择器名 (样式类名) 的集合，样式类名不需要带上<code>.</code>，样式类名之间用空格分隔。</li>
+</ul>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>normal_view<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="选择器"><a class="markdownIt-Anchor" href="#选择器"></a> 选择器</h5>
+<p>目前支持的选择器有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">样例</th>
+<th style="text-align:left">样例描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.class</td>
+<td style="text-align:left"><code>.intro</code></td>
+<td style="text-align:left">选择所有拥有 class=“intro” 的组件</td>
+</tr>
+<tr>
+<td style="text-align:left">#id</td>
+<td style="text-align:left"><code>#firstname</code></td>
+<td style="text-align:left">选择拥有 id=“firstname” 的组件</td>
+</tr>
+<tr>
+<td style="text-align:left"> element</td>
+<td style="text-align:left"><code>view</code></td>
+<td style="text-align:left">选择所有 view 组件</td>
+</tr>
+<tr>
+<td style="text-align:left"> element, element</td>
+<td style="text-align:left"><code>view, checkbox</code></td>
+<td style="text-align:left">选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td style="text-align:left">::after</td>
+<td style="text-align:left"><code>view::after</code></td>
+<td style="text-align:left">在 view 组件后边插入内容</td>
+</tr>
+<tr>
+<td style="text-align:left">::before</td>
+<td style="text-align:left"><code>view::before</code></td>
+<td style="text-align:left">在 view 组件前边插入内容</td>
+</tr>
+</tbody>
+</table>
+<h5 id="全局样式与局部样式"><a class="markdownIt-Anchor" href="#全局样式与局部样式"></a> 全局样式与局部样式</h5>
+<p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p>
+<h4 id="逻辑层视图层结合wxs"><a class="markdownIt-Anchor" href="#逻辑层视图层结合wxs"></a> 逻辑层 + 视图层结合 WXS</h4>
+<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。</p>
+<h5 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h5>
+<ol>
+<li>WXS 不依赖于运行时的基础库版本，可以在所有版本的小程序中运行。</li>
+<li>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</li>
+<li>WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函数，也不能调用小程序提供的 API。</li>
+<li>WXS 函数不能作为组件的事件回调。</li>
+<li>由于运行环境的差异，在 iOS 设备上小程序内的 WXS 会比 JavaScript 代码快 2 ~ 20 倍。在 android 设备上二者运行效率无差异。</li>
+</ol>
+<p>以下是一些使用 WXS 的简单示例，要完整了解 WXS 语法，请参考 <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/">WXS 语法参考<i class="fas fa-external-link-alt"></i></a>。</p>
+<h5 id="页面渲染"><a class="markdownIt-Anchor" href="#页面渲染"></a> 页面渲染</h5>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wxs</span> <span class="token attr-name">module</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>m1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+var msg = "hello world";
+
+module.exports.message = msg;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wxs</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span> {{m1.message}} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>页面输出：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">hello world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="数据处理"><a class="markdownIt-Anchor" href="#数据处理"></a> 数据处理</h5>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// page.js</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">array</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>wxml<span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 下面的 getMax 函数，接受一个数组，且返回数组中最大的元素的值 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>wxs module<span class="token operator">=</span><span class="token string">"m1"</span><span class="token operator">&gt;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">getMax</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> max <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    max <span class="token operator">=</span> max <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">?</span>
+      array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">:</span>
+      <span class="token punctuation">(</span>max <span class="token operator">&gt;=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">?</span> max <span class="token operator">:</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>getMax <span class="token operator">=</span> getMax<span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>wxs<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 调用 wxs 里面的 getMax 函数，参数为 page<span class="token punctuation">.</span>js 里面的 array <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>view<span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">{</span>m1<span class="token punctuation">.</span><span class="token function">getMax</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="逻辑层-js"><a class="markdownIt-Anchor" href="#逻辑层-js"></a> 逻辑层 JS:</h4>
+<p>和 javascript 差不多，</p>
+<h5 id="javascript-支持情况"><a class="markdownIt-Anchor" href="#javascript-支持情况"></a> JavaScript 支持情况</h5>
+<h6 id="运行限制"><a class="markdownIt-Anchor" href="#运行限制"></a> 运行限制</h6>
+<p>基于安全考虑，小程序中不支持动态执行 JS 代码，即：</p>
+<ul>
+<li>
+<p>不支持使用 <code>eval</code> 执行 JS 代码</p>
+</li>
+<li>
+<p>不支持使用 new Function</p>
+<p>创建函数</p>
+<ul>
+<li><code>new Function('return this')</code> 除外</li>
+</ul>
+</li>
+</ul>
+<h5 id="标准-ecmascript-支持"><a class="markdownIt-Anchor" href="#标准-ecmascript-支持"></a> 标准 ECMAScript 支持</h5>
+<p>小程序的 JS <a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/env">执行环境<i class="fas fa-external-link-alt"></i></a> 在不同平台上的执行环境存在差异，因此导致不同平台对 ECMAScript 标准的支持存在差异。</p>
+<p>小程序基础库为了尽量抹平这些差异，内置了一份 <a href="https://github.com/zloirock/core-js"><code>core-js</code> Polyfill</a>。<code>core-js</code> 可以将平台环境缺失的标准 API 补齐。</p>
+<p>需要注意的是，平台对 ECMAScript 语法的支持差异无法抹平，当你需要使用一些高级语法时（如 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function"><code>async/await</code></a> 时，则需要借助<a class="link" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/codecompile.html#es6-%E8%BD%AC-es5">代码转换工具<i class="fas fa-external-link-alt"></i></a>来支持这些语法。</p>
+<h5 id="无法被-polyfill-的-api"><a class="markdownIt-Anchor" href="#无法被-polyfill-的-api"></a> 无法被 Polyfill 的 API</h5>
+<p>以下 API 在部分低版本客户端中无法使用，请注意尽量避免使用</p>
+<ul>
+<li><code>Proxy</code> 对象</li>
+</ul>
+<h4 id="与标准的差异"><a class="markdownIt-Anchor" href="#与标准的差异"></a> 与标准的差异</h4>
+<h6 id="promise-时序差异"><a class="markdownIt-Anchor" href="#promise-时序差异"></a> Promise 时序差异</h6>
+<p>由于实现原因与 iOS JavaScriptCore 限制，iOS 环境下的 <code>Promise</code> 是一个使用 <code>setTimeout</code> 模拟的 Polyfill。这意味着 <code>Promise</code> 触发的任务为普通任务，而非微任务，进而导致 <strong>在 iOS 下的 <code>Promise</code> 时序会和标准存在差异</strong>。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 应该输出 [1,2,3,4,5,6,7]</span>
+  <span class="token comment">// 在 iOS 小程序环境，这里会输出 [1,2,3,4,6,5,7]</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于普通任务和微任务的区别可以自己谷歌✌</p>
+<hr>
+<p>在对小程序中有什么了，以及各个部分是能做什么了，有了大概了解之后，就可以进行细节的学习了</p>
+]]></content>
+      <categories>
+        <category>微信小程序</category>
+        <category>微信小程序开发</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
