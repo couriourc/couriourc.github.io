@@ -167,12 +167,18 @@
 <h3 id="一些基本题"><a class="markdownIt-Anchor" href="#一些基本题"></a> 一些基本题</h3>
 <p>面试官：Promise 有哪些静态方法？</p>
 <p>我：我记得的大概有，三种状态组合，要么都完成，要么都没完成的，直接让他完成的，所有任务中完成一个就返回的，不管成不成功都要返回的（实际上，我只是想到了 race all resolve reject 还有其他的，这种 API 其实根据现实场景去寻找更加合理）</p>
+<p>面试官：ES6 有哪些常用方法</p>
+<p>我：我所记得的有，定义变量的（let const ），简化操作的 (解构赋值，展开运算符。。。)，异步操作的（yield generator）, 新的数据类型（Bigint Symbol），出现类的概念，更多的 String 方法。（回答的比较笼统，确实考研去了，这些新规范忘记了很多）</p>
+<p>面试官：说一下 let const 的区别</p>
+<p>我：（这个基本就是网上那一套，什么 const 要赋初值啊，多用 const 啊，以及和 var 再对应一下）</p>
 <h3 id="算法题"><a class="markdownIt-Anchor" href="#算法题"></a> 算法题</h3>
 <p>也不太能算作是算法题吧，只是一个应用题吧</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="image-20230227094915362.png" alt="image-20230227094915362"></p>
 <p>也就是把下面的数据集合，让你实现每一次输入，然后更新这个建议集，</p>
 <p>简单的思路直接 BF，直接 <code>Search</code>， startsWith 啥的，构造正则表达式，巴拉巴拉</p>
 <p>然后就是可以把 goog 进行结构转变，构建一个树就行了</p>
+<h5 id="反问"><a class="markdownIt-Anchor" href="#反问"></a> 反问</h5>
+<p>因为是不同业务线的面试官，就顺便问了一下他所处的业务线，以及相关内容，毕竟考虑到如果去了之后，好选择业务线。</p>
 <h2 id="三面"><a class="markdownIt-Anchor" href="#三面"></a> 三面</h2>
 ]]></content>
       <categories>
