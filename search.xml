@@ -162,9 +162,11 @@
 </li>
 </ul>
 <h2 id="二面"><a class="markdownIt-Anchor" href="#二面"></a> 二面</h2>
-<blockquote>
-<p>原谅我，确实对二面问的内容不是很感兴趣，只是一些 API 的内容，这玩意之前在备考，大部分也不是特别了解，就是有一个算法题记录一下</p>
-</blockquote>
+<h3 id="自我介绍-2"><a class="markdownIt-Anchor" href="#自我介绍-2"></a> 自我介绍</h3>
+<h3 id="讲项目"><a class="markdownIt-Anchor" href="#讲项目"></a> 讲项目</h3>
+<h3 id="一些基本题"><a class="markdownIt-Anchor" href="#一些基本题"></a> 一些基本题</h3>
+<p>面试官：Promise 有哪些静态方法？</p>
+<p>我：我记得的大概有，三种状态组合，要么都完成，要么都没完成的，直接让他完成的，所有任务中完成一个就返回的，不管成不成功都要返回的（实际上，我只是想到了 race all resolve reject 还有其他的，这种 API 其实根据现实场景去寻找更加合理）</p>
 <h3 id="算法题"><a class="markdownIt-Anchor" href="#算法题"></a> 算法题</h3>
 <p>也不太能算作是算法题吧，只是一个应用题吧</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="image-20230227094915362.png" alt="image-20230227094915362"></p>
