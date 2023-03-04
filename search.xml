@@ -194,6 +194,11 @@
 <p>当时看的时候还觉得蛮新颖的，再加上有些紧张，一时半会想不到解决方法，差点去手写真值表，然后面试官提醒，如果服务器有一个功能，可以去输出一张图片有多少个某个颜色的像素点，怎么去验证他，不过我听完之后还是没思路，然后转念一想，我作为客户端，我只有我自己的信息，那我对于服务器也是一个黑盒状态，那么我只要保证我的随机性，然后知道我自己的信息差，然后让对面来猜就行了，也就是你先来问我一次，我报一个数，然后你偷偷去拔掉一根（可以是随机的根，只要自己知道就可以了，有一种类似私钥的感觉），你再来找我问你有多少根，然后从而就能判断出，是否真的有这个能力了。</p>
 <p>后面研究了一下，发现这个是在区块链很火的一个东西，零知识证明，本来之前也在关注区块链，不过主要是 p2p 层和 共识机制（因为和分布式这个很有共同点，所以关注的比较多）。</p>
 </blockquote>
+<h2 id="hr-面"><a class="markdownIt-Anchor" href="#hr-面"></a> HR 面</h2>
+<p>原本有 CTO 面，也就是有 四面的，但是貌似后面给我免掉了，然后我就直达 HR 面了。</p>
+<p>可是就是三面之后，差不多出复试成绩了，没想到考的还算可以，那我肯定只有跑去准备复试了，真的很可惜，本来也不想为难 HR 的，因为这种鸽子，她们大概率会被骂，就希望 CTO 面的时候，然后给他解释一下，不过也可能是我想多了吧，自作多情了点，主要是一面 和 HR 给我的映像特别深，本来计划如果考的不太行，就进入他的那条业务线的。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>面试下来，面试官观察我的同时，我也会观察面试官，当然不是察言观色，而是观察我加入她们是否有意义，因为，如果是一个死气层层，只是八股文的团队，貌似可以缓解生计，但是却很没必要，可以等之后再来考虑生计问题，在满足生活的条件下，还是可以追求一下理想的🎈。</p>
 ]]></content>
       <categories>
         <category>2023面试</category>
@@ -2569,9 +2574,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
+        <tag>词根词缀</tag>
         <tag>总结</tag>
         <tag>考研</tag>
-        <tag>词根词缀</tag>
       </tags>
   </entry>
   <entry>
@@ -3747,9 +3752,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
-        <tag>English</tag>
         <tag>总结</tag>
         <tag>考研</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -3969,9 +3974,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
-        <tag>English</tag>
         <tag>总结</tag>
         <tag>考研</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
