@@ -7,8 +7,19 @@
 <p>原本有两面的，终面和线上面，后面貌似说，直接免掉了终面，让我入职了，面试时长大概是二十分钟</p>
 <h2 id="简短的自我介绍"><a class="markdownIt-Anchor" href="#简短的自我介绍"></a> 简短的自我介绍</h2>
 <h3 id="vue2-和-vue3-的区别点"><a class="markdownIt-Anchor" href="#vue2-和-vue3-的区别点"></a> Vue2 和 Vue3 的区别点</h3>
-<p>监听方式，然后</p>
-<h3 id=""><a class="markdownIt-Anchor" href="#"></a> </h3>
+<p>监听方式</p>
+<h4 id="vue3"><a class="markdownIt-Anchor" href="#vue3"></a> Vue3</h4>
+<p>watchEffect 和 watch 的区别</p>
+<h3 id="计网"><a class="markdownIt-Anchor" href="#计网"></a> 计网</h3>
+<p>HTTP 常见状态码</p>
+<p>HTTP 的发展历程（以为之前微派一面的影响，所以对 HTTP 每一段发生了什么，以及为什么要这么去做，之前都整理了一遍，所以思路比较清晰）</p>
+<h3 id="算法题"><a class="markdownIt-Anchor" href="#算法题"></a> 算法题</h3>
+<p>题目，生成随机颜色 Hex #ffffffff</p>
+<p>讲道理，确实忘记了规则，后面才想起来，分三组，然后前一位表示颜色的亮度，16 进制，这玩意，调 API 随机生成就想，起初我以为还是，生成随机码之后，写个洗牌算法呢，正打算洗牌的 N 种做法呢。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>因为没什么太多有意思的提问，就没记录太多，不过总结而言，还是需要把基础打好，然后由于这边愿意让我复试之后可以继续实习，然后想的就是反正之后除了毕设和复试，而且对于暑假刚好可以去实习的时候观望一下新的前沿技术，毕竟公司做的是数字孪生 AI 这一块，之前就听到过一些概念，就入职了</p>
+<h2 id="入职体验"><a class="markdownIt-Anchor" href="#入职体验"></a> 入职体验</h2>
+<p>还挺年轻化的，挺有意思的一个团队，很有活力，上下班时间也比较合理，整体来说差强人意。</p>
 ]]></content>
       <categories>
         <category>面试经历</category>
