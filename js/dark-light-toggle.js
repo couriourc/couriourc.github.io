@@ -51,7 +51,6 @@ KEEP.initModeToggle = () => {
       });
     }
   }
-
   KEEP.utils.modeToggle.initModeStatus();
   KEEP.utils.modeToggle.initModeToggleButton();
   KEEP.utils.modeToggle.initModeAutoTrigger();
