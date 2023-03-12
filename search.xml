@@ -374,8 +374,8 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机组成原理</tag>
         <tag>计算机基础</tag>
+        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
@@ -422,8 +422,8 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机组成原理</tag>
         <tag>计算机基础</tag>
+        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
@@ -470,8 +470,8 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机组成原理</tag>
         <tag>计算机基础</tag>
+        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
@@ -1076,8 +1076,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>数据库系统概论</tag>
+        <tag>计算机基础</tag>
         <tag>SQL</tag>
       </tags>
   </entry>
@@ -1683,8 +1683,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>数据库系统概论</tag>
+        <tag>计算机基础</tag>
         <tag>SQL</tag>
       </tags>
   </entry>
@@ -1707,8 +1707,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>数据库系统概论</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1758,8 +1758,8 @@ x---&gt;y</pre>
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>数据库系统概论</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1860,8 +1860,8 @@ x---&gt;y</pre>
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>数据库系统概论</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
@@ -2665,9 +2665,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
-        <tag>词根词缀</tag>
         <tag>总结</tag>
         <tag>考研</tag>
+        <tag>词根词缀</tag>
       </tags>
   </entry>
   <entry>
@@ -2887,9 +2887,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
+        <tag>English</tag>
         <tag>总结</tag>
         <tag>考研</tag>
-        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -4065,9 +4065,9 @@ get_next<span class="token punctuation">(</span><span class="token string">'abab
         <category>english</category>
       </categories>
       <tags>
+        <tag>English</tag>
         <tag>总结</tag>
         <tag>考研</tag>
-        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -6965,121 +6965,6 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
       </tags>
   </entry>
   <entry>
-    <title>操作系统知识点总结 - 发展与分类</title>
-    <url>/posts/b1ff0fef.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
-<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
-<ul>
-<li>用户独占主机</li>
-<li> CPU 资源利用不充分</li>
-<li>主要做偏向数理运算</li>
-</ul>
-<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
-<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
-<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
-<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
-<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
-<ul>
-<li>
-<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
-</li>
-</ul>
-<blockquote>
-<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
-</blockquote>
-<ul>
-<li>代码 / 脚本 更便于保存 (相对而言</li>
-</ul>
-<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
-<ul>
-<li>
-<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
-</li>
-<li>
-<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
-</li>
-</ul>
-<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
-<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
-<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
-<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
-<ul>
-<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
-</ul>
-<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
-<ul>
-<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
-</ul>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
-<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
-<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
-<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
-<ul>
-<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
-</ul>
-<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
-<ul>
-<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
-</ul>
-<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
-<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
-<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
-<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
-<ul>
-<li>响应紧急任务更加及时，紧急任务可以插队</li>
-</ul>
-<blockquote>
-<p>实时操作系统分为：</p>
-<ul>
-<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
-<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
-</ul>
-</blockquote>
-<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
-<ul>
-<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
-<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
-<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
-</ul>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<pre class="mermaid">graph LR
-    Center(操作系统的发展)
-    HumanHandle(手工操作阶段)
-    BatchHandle(批处理阶段)
-    SingleBatchHandle(单道批处理操作系统)
-    MultiBatchHandle(多道批处理系统)
-    RRCPUHandle(分时操作系统)
-    FeedbackCPUHandle(实时操作系统)
-    AnotherHandle(其他操作系统)
-
-    Center--&gt;HumanHandle
-    Center--&gt;BatchHandle--&gt;SingleBatchHandle
-    BatchHandle--&gt;MultiBatchHandle
-    Center--&gt;RRCPUHandle
-    Center--&gt;FeedbackCPUHandle
-    Center--&gt;AnotherHandle</pre>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>基础知识</category>
-        <category>os</category>
-      </categories>
-      <tags>
-        <tag>基础知识</tag>
-        <tag>操作系统</tag>
-        <tag>概览</tag>
-        <tag>发展与分类</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统知识点总结 - 概览</title>
     <url>/posts/20ceef9a.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h1>
@@ -7306,6 +7191,121 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
       </tags>
   </entry>
   <entry>
+    <title>操作系统知识点总结 - 发展与分类</title>
+    <url>/posts/b1ff0fef.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="操作系统的发展与分类"><a class="markdownIt-Anchor" href="#操作系统的发展与分类"></a> 操作系统的发展与分类</h1>
+<h2 id="手工操作阶段纸带机"><a class="markdownIt-Anchor" href="#手工操作阶段纸带机"></a> 手工操作阶段 (纸带机)</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&amp;riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&amp;ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" alt="R-S"></p>
+<ul>
+<li>用户独占主机</li>
+<li> CPU 资源利用不充分</li>
+<li>主要做偏向数理运算</li>
+</ul>
+<h2 id="批处理阶段"><a class="markdownIt-Anchor" href="#批处理阶段"></a> 批处理阶段</h2>
+<p>批处理阶段可以认为是<strong>模块化</strong>的一个阶段，将指令进行打包存储 (物理打包💦.</p>
+<h3 id="单道批处理系统"><a class="markdownIt-Anchor" href="#单道批处理系统"></a> 单道批处理系统</h3>
+<p>主要使用磁带作为载体，引入了<strong>脱机输入 / 输出技术</strong> , 并由监督程序复杂作业的输入输出.</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="单道批处理系统"></p>
+<h3 id="主要优点"><a class="markdownIt-Anchor" href="#主要优点"></a> 主要优点</h3>
+<ul>
+<li>
+<p>相比于手工接线，能避免这样的信息传输矛盾，资源利用率有所提升</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png" alt="img"></p>
+</li>
+</ul>
+<blockquote>
+<p>这里就相当于人工充当了 I/O 接口，和 DMA</p>
+</blockquote>
+<ul>
+<li>代码 / 脚本 更便于保存 (相对而言</li>
+</ul>
+<h3 id="主要缺点"><a class="markdownIt-Anchor" href="#主要缺点"></a> 主要缺点</h3>
+<ul>
+<li>
+<p>内存中仅能有一道程序运行，且 CPU 仍然有大量时间空闲等待 I/O 完成.</p>
+</li>
+<li>
+<p>一次性消耗，如果出现 BUG , 很难修复，需要重新打孔☢</p>
+</li>
+</ul>
+<h3 id="多道批处理系统操作系统的正式诞生"><a class="markdownIt-Anchor" href="#多道批处理系统操作系统的正式诞生"></a> 多道批处理系统 (操作系统的正式诞生</h3>
+<p>每次往计算机内存中输入多道程序，并引入了中断技术，有操作系统负责管理这些程序的并发运行.</p>
+<p>过程和单道批处理系统差不多，只不过是可以向计算机<strong>内存</strong>中调入多道程序，让他们可以<strong>并发</strong>运行. — 基本特征</p>
+<h4 id="主要优点-2"><a class="markdownIt-Anchor" href="#主要优点-2"></a> 主要优点</h4>
+<ul>
+<li>开始出现<strong>并发</strong>概念，<strong>共享</strong>计算机资源，CPU 利用率大幅提升，让人工相对而言解放.</li>
+</ul>
+<h4 id="主要缺点-2"><a class="markdownIt-Anchor" href="#主要缺点-2"></a> 主要缺点</h4>
+<ul>
+<li>用户响应时间长，没有人机交互功能 (用户提交自己的作业之后只能等待计算机处理完成，无法介入控制自己的作业执行.</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg" alt="img"></p>
+<h2 id="分时操作系统rr"><a class="markdownIt-Anchor" href="#分时操作系统rr"></a> 分时操作系统 (RR</h2>
+<p>计算机中 <strong>CPU</strong> 以时间片 (<strong>10~100ms</strong>) 为单位轮流为各个用户 / 作业服务，各个用户可以通过终端与计算机进行交互.</p>
+<p>这个在后续的 CPU 调度算法中会继续讲到。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="主要优点-3"><a class="markdownIt-Anchor" href="#主要优点-3"></a> 主要优点</h3>
+<ul>
+<li>用户请求就可以被响应，解决了人机交互问题，允许多个用户使用同一台电脑，并且用户对计算机操作是相互独立的。</li>
+</ul>
+<h3 id="主要缺点-3"><a class="markdownIt-Anchor" href="#主要缺点-3"></a> 主要缺点</h3>
+<ul>
+<li>不能优先处理一些紧急任务，操作系统对各个<strong>用户 / 作业</strong>都是完全公平的，循环的为每一个 用户 / 作业 服务时间片，不区分任务的紧急性（同时这也是 RR 的缺点</li>
+</ul>
+<h2 id="实时操作系统"><a class="markdownIt-Anchor" href="#实时操作系统"></a> 实时操作系统</h2>
+<p>为了解决分时操作系统不区分任务紧急性，导致任务饿死的情况，所以实时操作系统诞生。</p>
+<p>利用这种调度策略，会更加有效的分配资源问题，让任务优先级可控。</p>
+<h3 id="主要优点-4"><a class="markdownIt-Anchor" href="#主要优点-4"></a> 主要优点</h3>
+<ul>
+<li>响应紧急任务更加及时，紧急任务可以插队</li>
+</ul>
+<blockquote>
+<p>实时操作系统分为：</p>
+<ul>
+<li>硬实时系统（必须在绝对严格的规定时间内完成处理，如导弹控制系统，自动驾驶系统）</li>
+<li>软实时系统（能偶尔违反时间规定，如 12306 火车退票系统，有时候数据并不是实时的）</li>
+</ul>
+</blockquote>
+<h2 id="其他现代操作系统"><a class="markdownIt-Anchor" href="#其他现代操作系统"></a> 其他现代操作系统</h2>
+<ul>
+<li>网络操作熊：网络操作系统是伴随网络的发展出现的，对于网络资源的管理，比如网络邻居。</li>
+<li>分布式操作系统：随着时代的发展，并发性和存储容量要求越来越高，需要有多个节点处理更多的数据，特点是分布式和并行性，各个节点平等的完成工作。</li>
+<li>个人操作系统：面向于用户交互的操作系统，比如  <strong>Win10</strong>,<strong>Darwin</strong>,<strong>Ubuntu</strong>…</li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<pre class="mermaid">graph LR
+    Center(操作系统的发展)
+    HumanHandle(手工操作阶段)
+    BatchHandle(批处理阶段)
+    SingleBatchHandle(单道批处理操作系统)
+    MultiBatchHandle(多道批处理系统)
+    RRCPUHandle(分时操作系统)
+    FeedbackCPUHandle(实时操作系统)
+    AnotherHandle(其他操作系统)
+
+    Center--&gt;HumanHandle
+    Center--&gt;BatchHandle--&gt;SingleBatchHandle
+    BatchHandle--&gt;MultiBatchHandle
+    Center--&gt;RRCPUHandle
+    Center--&gt;FeedbackCPUHandle
+    Center--&gt;AnotherHandle</pre>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>基础知识</category>
+        <category>os</category>
+      </categories>
+      <tags>
+        <tag>基础知识</tag>
+        <tag>操作系统</tag>
+        <tag>概览</tag>
+        <tag>发展与分类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 基础篇</title>
     <url>/posts/81edab1.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="html-基础总结"><a class="markdownIt-Anchor" href="#html-基础总结"></a> HTML 基础总结</h1>
@@ -7462,6 +7462,786 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
       </categories>
       <tags>
         <tag>蓝鲸项目组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构知识点总结 - C 程序设计</title>
+    <url>/posts/ANJT58.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="c-程序设计"><a class="markdownIt-Anchor" href="#c-程序设计"></a> C 程序设计</h1>
+<blockquote>
+<p>‘’‘如果说 C 指针是 C 的灵魂，那么 C 中的类型则将是将灵魂洗净的沐浴露。 ——By （CouriourC）我自己</p>
+</blockquote>
+<blockquote>
+<p>一下是我在用 C 开发时候的一些理解心得以及读《C 语言深度剖析》有感而发</p>
+<ol>
+<li>
+<p>不管哪个版本，把需要用到的变量，放在最前面定义。</p>
+</li>
+<li>
+<p>一定要记住，赋值和初始化分开来做，不要以为 int a = 1; 就对了，这样写着在以后容易遇到问题，尤其是会很不容易理解 int *ptr = malloc 没问题，但是为结构体指针的时候却有问题；不要偷懒，写成 int  a; a=1;<br>
+int *ptr; ptr=null;</p>
+</li>
+<li>
+<p>for 可以替代 while ，能用 for 不要用 while</p>
+</li>
+<li>
+<p>C 里面没有闭包，不存在函数嵌套。</p>
+</li>
+<li>
+<p>C 中结构体的赋值，和内存申请挺麻烦的，但是挺好用的，remalloc 可用，可不用</p>
+</li>
+<li>
+<p>C 中没有字符串，形式上有字符串，但是逻辑上是数组，所以一些处理字符串的方法可以用在数组中去，不过不好维护代码。</p>
+</li>
+<li>
+<p>15 个优先级，括号，单目，双目，取址，三目，逗号</p>
+</li>
+<li>
+<p>记住数学运算 %: 负数取模 /: 整除 ，不过不建议这样去理解，后退一步，思考一下，位运算，进制运算，推荐一本书，《编码》，我最近也在看。</p>
+</li>
+<li>
+<p>记住工具函数，用惯了，面向对象的编程语言，很容易弄错，认为类型可以转换，但是 C 中可以强转，但是不建议，而是用 ‘1’-‘0’ 这种方式，以及取每一位的运算，这个必会用到</p>
+</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>优先级</strong></th>
+<th><strong>运算符</strong></th>
+<th><strong>名称或含义</strong></th>
+<th><strong>使用形式</strong></th>
+<th><strong>结合方向</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong> 1</strong></td>
+<td><strong>[]</strong></td>
+<td> 数组下标</td>
+<td>数组名 [常量表达式]</td>
+<td> 左到右</td>
+<td>–</td>
+</tr>
+<tr>
+<td>1</td>
+<td>()</td>
+<td> 圆括号</td>
+<td> (表达式）/ 函数名 (形参表)</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>.</strong></td>
+<td> 成员选择（对象）</td>
+<td>对象。成员名</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>-&gt;</strong></td>
+<td> 成员选择（指针）</td>
+<td>对象指针 -&gt; 成员名</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>-</strong></td>
+<td> 负号 运算符</td>
+<td> - 表达式</td>
+<td><strong>右到左</strong></td>
+<td>单目运算符</td>
+</tr>
+<tr>
+<td> 2</td>
+<td><em><strong>~</strong></em></td>
+<td> 按位取反运算符</td>
+<td> ~ 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>++</strong></td>
+<td> 自增运算符</td>
+<td><ins>变量名 / 变量名</ins></td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>–</strong></td>
+<td>自减运算符</td>
+<td>–变量名 / 变量名–</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>*</strong></td>
+<td> 取值运算符</td>
+<td> * 指针变量</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>&amp;</strong></td>
+<td> 取地址运算符</td>
+<td> &amp; 变量名</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>!</strong></td>
+<td> 逻辑非运算符</td>
+<td> ! 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>(类型)</strong></td>
+<td> 强制类型转换</td>
+<td> (数据类型) 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>sizeof</strong></td>
+<td> 长度运算符</td>
+<td> sizeof (表达式)</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>/</strong></td>
+<td> 除</td>
+<td>表达式 / 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td> 3</td>
+<td><strong>*</strong></td>
+<td> 乘</td>
+<td>表达式 * 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>%</strong></td>
+<td> 余数（取模）</td>
+<td>整型表达式 % 整型表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>+</strong></td>
+<td> 加</td>
+<td>表达式 + 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td> 4</td>
+<td><strong>-</strong></td>
+<td> 减</td>
+<td>表达式 - 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><em><strong>&lt;&lt;</strong></em></td>
+<td> 左移</td>
+<td>变量 &lt;&lt; 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td> 5</td>
+<td><em><strong>&gt;&gt;</strong></em></td>
+<td> 右移</td>
+<td>变量 &gt;&gt; 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>&gt;</strong></td>
+<td> 大于</td>
+<td>表达式 &gt; 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td> 6</td>
+<td><strong>&gt;=</strong></td>
+<td> 大于等于</td>
+<td>表达式 &gt;= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>&lt;</strong></td>
+<td> 小于</td>
+<td>表达式 &lt; 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>&lt;=</strong></td>
+<td> 小于等于</td>
+<td>表达式 &lt;= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>==</strong></td>
+<td> 等于</td>
+<td>表达式 == 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td> 7</td>
+<td><strong>!=</strong></td>
+<td> 不等于</td>
+<td>表达式！= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>&amp;</strong></td>
+<td> 按位与</td>
+<td>表达式 &amp; 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong> 9</strong></td>
+<td><strong>^</strong></td>
+<td> 按位异或</td>
+<td>表达式 ^ 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong> 10</strong></td>
+<td><strong>|</strong></td>
+<td> 按位或</td>
+<td>表达式 | 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong> 11</strong></td>
+<td><strong>&amp;&amp;</strong></td>
+<td> 逻辑与</td>
+<td>表达式 &amp;&amp; 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong> 12</strong></td>
+<td><strong>||</strong></td>
+<td> 逻辑或</td>
+<td>表达式 || 表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> 13</strong></td>
+<td><strong>?:</strong></td>
+<td> 条件运算符</td>
+<td>表达式 1? 表达式 2: 表达式 3</td>
+<td><span><strong> 右到左</strong></span></td>
+<td>三目运算符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> 14</strong></td>
+<td><em><strong>=</strong></em></td>
+<td> 赋值运算符</td>
+<td>变量 = 表达式</td>
+<td><strong>右到左</strong></td>
+<td>–</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>/=</strong></td>
+<td> 除后赋值</td>
+<td>变量 /= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>=</strong></td>
+<td> 乘后赋值</td>
+<td>变量 *= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>%=</strong></td>
+<td> 取模后赋值</td>
+<td>变量 %= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>+=</strong></td>
+<td> 加后赋值</td>
+<td>变量 += 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>-=</strong></td>
+<td> 减后赋值</td>
+<td>变量 -= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>&lt;&lt;=</strong></td>
+<td> 左移后赋值</td>
+<td>变量 &lt;&lt;= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>&gt;&gt;=</strong></td>
+<td> 右移后赋值</td>
+<td>变量 &gt;&gt;= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>&amp;=</strong></td>
+<td> 按位与后赋值</td>
+<td>变量 &amp;= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>^=</strong></td>
+<td> 按位异或后赋值</td>
+<td>变量 ^= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>|=</strong></td>
+<td> 按位或后赋值</td>
+<td>变量 |= 表达式</td>
+<td>–</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>，</strong></td>
+<td>逗号运算符</td>
+<td>表达式，表达式，…</td>
+<td> 左到右</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<h2 id="口诀"><a class="markdownIt-Anchor" href="#口诀"></a> 口诀</h2>
+<p>括号成员第一级。</p>
+<p>单目运算第二级。</p>
+<p>双目加减乘除法，占去三四没说法。</p>
+<p>有箭头，靠前站，移位判断五六段，剩下等于或不等，只能排在第七段</p>
+<p>先电路再逻辑，都是按照与后非，八到十二被他站</p>
+<p>三目式第十三</p>
+<p>十四赋值十五逗。</p>
+<h2 id="类型阅读规则螺旋式规则"><a class="markdownIt-Anchor" href="#类型阅读规则螺旋式规则"></a> 类型阅读规则 ——“螺旋式” 规则</h2>
+<blockquote>
+<p>翻译至：<a class="link" href="https://c-faq.com/decl/spiral.anderson.html">Clockwise/Spiral Rule (c-faq.com)<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>这是一种能让任何的 C 程序员心算 C 的类型声明的技巧；</p>
+<p>只需要以下三个简单的步骤：</p>
+<ol>
+<li>
+<p>从变量开始，按照顺时针方向（或螺旋式上升的方向），碰到以下元素就用对应的话术来描述就行：</p>
+<ul>
+<li>
+<p>[ X ] or []：</p>
+<ul>
+<li>
+<p>Array X size of… or Array undefined size of…</p>
+<p>(长度为 X 的数组（[ X]）的……, 位置大小的 数组 的 ……)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(type1, type2)：</p>
+<ul>
+<li>
+<p>function passing type1 and type2 returning…</p>
+<p>参数为 某某类型的”x“，某某类型”y“，返回类型为…</p>
+</li>
+</ul>
+</li>
+<li>
+<p>*:</p>
+<ul>
+<li>pointer(s) to… </li>
+</ul>
+<pre><code>指向…
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>然后一直保持着顺时针方向直到每一个符号都被包含。</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">     +-------+
+     | +-+   |
+     | ^ |   |
+char *str[10];
+ ^   ^   |   |
+ |   +---+   |
+ +-----------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>每次把括号内的声明优先搞定</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">*</span>fp<span class="token punctuation">)</span><span class="token punctuation">(</span> <span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>也就是这种，fp 优先碰到 <code>)</code>, 是个括号，就先说 fp 是一个指针，指向……，也就是 * 的规则</p>
+</li>
+</ol>
+<h2 id="example1一个简单的声明"><a class="markdownIt-Anchor" href="#example1一个简单的声明"></a> Example#1：一个简单的声明</h2>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">     +-------+
+     | +-+   |
+     | ^ |   |
+char *str[10];
+ ^   ^   |   |
+ |   +---+   |
+ +-----------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>Question we ask ourselves: What is str？</p>
+<blockquote>
+<p>``str is an…</p>
+</blockquote>
+<ul>
+<li>
+<p>We move in a spiral clockwise direction starting with <code>str' and the first character we see is a </code>[’ so, that means we have an array, so…</p>
+<blockquote>
+<p>``str is an array 10 of…</p>
+</blockquote>
+</li>
+<li>
+<p>Continue in a spiral clockwise direction, and the next thing we encounter is the `*’ so, that means we have pointers, so…</p>
+<blockquote>
+<p>``str is an array 10 of pointers to…</p>
+</blockquote>
+</li>
+<li>
+<p>Continue in a spiral direction and we see the end of the line (the <code>;'), so keep going and we get to the type </code>char’, so…</p>
+<blockquote>
+<p>``str is an array 10 of pointers to char’’</p>
+</blockquote>
+</li>
+<li>
+<p>We have now ``visited’’ every token; therefore we are done!</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>问问咱们自个：str 是什么？</strong></p>
+<p>``str is an…</p>
+<ul>
+<li>我们从 <code>str</code> 顺时针方向观察，第一个符号是：<code>[</code>，因此我们有一个数组：</li>
+</ul>
+<p>``str is an array 10 of…</p>
+<ul>
+<li>
+<p>继续保持顺时针方向，碰到下一个符号是 <code>*</code>，也就是说，我们有一个指针：</p>
+<p>``str is an array 10 of pointers to…</p>
+</li>
+<li>
+<p>然后继续，我们看到 <code>;</code>, 继续前进，我们看到一个 <code>char</code>，因此：</p>
+</li>
+</ul>
+<pre><code>``str is an array 10 of pointers to char''
+</code></pre>
+<ul>
+<li>很好，我们已经读完了，</li>
+</ul>
+<h3 id="example-2-指向函数的指针声明"><a class="markdownIt-Anchor" href="#example-2-指向函数的指针声明"></a> Example #2: 指向函数的指针声明</h3>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">     +--------------------+
+     | +---+              |
+     | |+-+|              |
+     | |^ ||              |
+char *(*fp)( int, float *);
+ ^   ^ ^  ||              |
+ |   | +--+|              |
+ |   +-----+              |
+ +------------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>问问咱们自己：fp 又是什么？</strong></p>
+<blockquote>
+<blockquote>
+<p>``fp is a…</p>
+</blockquote>
+<ul>
+<li>
+<p>Moving in a spiral clockwise direction, the first thing we see is a <code>)'; therefore, fp is inside parenthesis, so we continue the spiral inside the parenthesis and the next character seen is the </code>*', so…</p>
+<blockquote>
+<p>``fp is a pointer to…</p>
+</blockquote>
+</li>
+<li>
+<p>We are now out of the parenthesis and continuing in a spiral clockwise direction, we see the `('; therefore, we have a function, so…</p>
+<blockquote>
+<p>``fp is a pointer to a function passing an int and a pointer to float returning…</p>
+</blockquote>
+</li>
+<li>
+<p>Continuing in a spiral fashion, we then see the `*’ character, so…</p>
+<blockquote>
+<p>``fp is a pointer to a function passing an int and a pointer to float returning a pointer to…</p>
+</blockquote>
+</li>
+<li>
+<p>Continuing in a spiral fashion we see the <code>;', but we haven't visited all tokens, so we continue and finally get to the type </code>char’, so…</p>
+<blockquote>
+<p>``fp is a pointer to a function passing an int and a pointer to float returning a pointer to a char’’</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>沿顺时针方向观察，我们看到的第一件符号是<code>)</code>; 也就是说 <code>fp</code> 在括号内，因此我们继续括号内的前进，而看到的下一个字符是 “*”：</p>
+<p>``fp is a pointer to…</p>
+</li>
+<li>
+<p>Ok，我们已经完成了括号的匹配信息，继续沿顺时针方向螺旋前进📣，我们看到了 <code>(</code>; 因此，我们有一个 函数：</p>
+<p>``fp is a pointer to a function passing an int and a pointer to float returning…</p>
+</li>
+</ul>
+<p>​		fp 是一个指针指向一个函数，这个函数传参是一个整型和一个指向浮点型的指针类型返回为……。</p>
+<ul>
+<li>
+<p>以螺旋式上的方向前进，看到有一个 <code>;</code>，但是我们还没有访问所有符号，所以我们继续并最终碰到类型的 <code>char</code>:</p>
+<p>``fp is a pointer to a function passing an int and a pointer to float returning a pointer to a char’’</p>
+</li>
+</ul>
+<h3 id="example-3-the-ultimate"><a class="markdownIt-Anchor" href="#example-3-the-ultimate"></a> Example #3: The ``Ultimate’’</h3>
+<pre class="line-numbers language-none"><code class="language-none">      +-----------------------------+
+      |                  +---+      |
+      |  +---+           |+-+|      |
+      |  ^   |           |^ ||      |
+void (*signal(int, void (*fp)(int)))(int);
+ ^    ^      |      ^    ^  ||      |
+ |    +------+      |    +--+|      |
+ |                  +--------+      |
+ +----------------------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Question we ask ourselves: What is `signal’?</p>
+<p>Notice that signal is <em>inside</em> parenthesis, so we must resolve this first!</p>
+<ul>
+<li>
+<p>Moving in a clockwise direction we see `(’ so we have…</p>
+<blockquote>
+<p>``signal is a function passing an int and a…</p>
+</blockquote>
+</li>
+<li>
+<p>Hmmm, we can use this same rule on <code>fp', so... What is fp? fp is also inside parenthesis so continuing we see an </code>*', so…</p>
+<blockquote>
+<p>fp is a pointer to…</p>
+</blockquote>
+</li>
+<li>
+<p>Continue in a spiral clockwise direction and we get to `(', so…</p>
+<blockquote>
+<p>``fp is a pointer to a function passing int returning…‘’</p>
+</blockquote>
+</li>
+<li>
+<p>Now we continue out of the function parenthesis and we see void, so…</p>
+<blockquote>
+<p>``fp is a pointer to a function passing int returning nothing (void)‘’</p>
+</blockquote>
+</li>
+<li>
+<p>We have finished with fp so let’s catch up with `signal’, we now have…</p>
+<blockquote>
+<p>``signal is a function passing an int and a pointer to a function passing an int returning nothing (void) returning…</p>
+</blockquote>
+</li>
+<li>
+<p>We are still inside parenthesis so the next character seen is a `*', so…</p>
+<blockquote>
+<p>``signal is a function passing an int and a pointer to a function passing an int returning nothing (void) returning a pointer to…</p>
+</blockquote>
+</li>
+<li>
+<p>We have now resolved the items within parenthesis, so continuing clockwise, we then see another `(', so…</p>
+<blockquote>
+<p>``signal is a function passing an int and a pointer to a function passing an int returning nothing (void) returning a pointer to a function passing an int returning…</p>
+</blockquote>
+</li>
+<li>
+<p>Finally</p>
+<p>we continue and the only thing left is the word `void’, so the final complete definition for signal is:</p>
+<blockquote>
+<p>``signal is a function passing an int and a pointer to a function passing an int returning nothing (void) returning a pointer to a function passing an int returning nothing (void)‘’</p>
+</blockquote>
+</li>
+</ul>
+<p>对于 <code>const </code>和 <code>volatile </code>关键字，来说同样是适用：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>chptr<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>Now, what is chptr??</p>
+<p>现在，<code>chptr</code> 是啥？？</p>
+<blockquote>
+<p>``chptr is a pointer to a char constant’’</p>
+<p>是一个指向 <code>char</code> 类型的指针常量</p>
+</blockquote>
+</li>
+<li>
+<p>How about this one:</p>
+<p>再来一个：</p>
+</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">char</span> <span class="token operator">*</span> <span class="token keyword">const</span> chptr<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>Now, what is chptr??</p>
+<p>​	现在呢：</p>
+<blockquote>
+<p>``chptr is a constant pointer to char’’</p>
+</blockquote>
+</li>
+<li>
+<p>Finally:</p>
+<p>最后再来一个</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">volatile char * const chptr;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>Now, what is chptr??</p>
+<p>现在呢？</p>
+<blockquote>
+<p>``chptr is a constant pointer to a char volatile.‘’</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="简单总结"><a class="markdownIt-Anchor" href="#简单总结"></a> 简单总结</h3>
+<p>这个方式真的十分有效，记住简单的规则替换：</p>
+<p>一个声明 <strong>必须</strong> 有一个基本类型，这个基本类型 <strong>总是</strong> 在类型表达式的最左边，但是一个声明可以具有 <strong>0</strong> 或 <strong>多个</strong> 导出规则。</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>基础知识</category>
+        <category>data-structure</category>
+      </categories>
+      <tags>
+        <tag>C 程序设计</tag>
       </tags>
   </entry>
   <entry>
