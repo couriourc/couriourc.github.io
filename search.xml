@@ -374,8 +374,8 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>计算机组成原理</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
@@ -422,56 +422,8 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>计算机组成原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理 —— 原码，补码，反码</title>
-    <url>/posts/3J64FQ8.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
-<p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
-<p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
-<p><strong>补码</strong>：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上 1（相当于将原码数值位取反然后在最低位加 1）。</p>
-<blockquote>
-<p>tips: 以上的说法是对于二进制，可以知道补码的含义是</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = K^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> K 表示几进制，n 表示有几位</p>
-<p>比如一位十进制的补码</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = 10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
-</blockquote>
-<h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2>
-<table>
-<thead>
-<tr>
-<th>真值</th>
-<th>原码</th>
-<th>反码</th>
-<th>补码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 58</td>
-<td>0111010</td>
-<td>0111010</td>
-<td>0111010</td>
-</tr>
-<tr>
-<td>-58</td>
-<td><span text-red="">1</span>111010</td>
-<td>1<span text-red="">000101</span></td>
-<td>10001<span text-red="">10</span></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>计算机组成原理</category>
-        <category>computer-base</category>
-      </categories>
-      <tags>
         <tag>计算机基础</tag>
-        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
@@ -698,8 +650,56 @@
         <category>computer-base</category>
       </categories>
       <tags>
-        <tag>计算机基础</tag>
         <tag>计算机组成原理</tag>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理 —— 原码，补码，反码</title>
+    <url>/posts/3J64FQ8.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
+<p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
+<p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
+<p><strong>补码</strong>：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上 1（相当于将原码数值位取反然后在最低位加 1）。</p>
+<blockquote>
+<p>tips: 以上的说法是对于二进制，可以知道补码的含义是</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = K^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> K 表示几进制，n 表示有几位</p>
+<p>比如一位十进制的补码</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = 10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p>
+</blockquote>
+<h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2>
+<table>
+<thead>
+<tr>
+<th>真值</th>
+<th>原码</th>
+<th>反码</th>
+<th>补码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 58</td>
+<td>0111010</td>
+<td>0111010</td>
+<td>0111010</td>
+</tr>
+<tr>
+<td>-58</td>
+<td><span text-red="">1</span>111010</td>
+<td>1<span text-red="">000101</span></td>
+<td>10001<span text-red="">10</span></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+        <category>computer-base</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1304,8 +1304,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>数据库系统概论</tag>
         <tag>计算机基础</tag>
+        <tag>数据库系统概论</tag>
         <tag>SQL</tag>
       </tags>
   </entry>
@@ -1911,8 +1911,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>数据库系统概论</tag>
         <tag>计算机基础</tag>
+        <tag>数据库系统概论</tag>
         <tag>SQL</tag>
       </tags>
   </entry>
@@ -1935,8 +1935,8 @@ DROP TABLE `S-T`.sc CASCADE;
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>数据库系统概论</tag>
         <tag>计算机基础</tag>
+        <tag>数据库系统概论</tag>
       </tags>
   </entry>
   <entry>
@@ -1986,8 +1986,8 @@ x---&gt;y</pre>
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>数据库系统概论</tag>
         <tag>计算机基础</tag>
+        <tag>数据库系统概论</tag>
       </tags>
   </entry>
   <entry>
@@ -2088,8 +2088,8 @@ x---&gt;y</pre>
         <category>database-system</category>
       </categories>
       <tags>
-        <tag>数据库系统概论</tag>
         <tag>计算机基础</tag>
+        <tag>数据库系统概论</tag>
       </tags>
   </entry>
   <entry>
