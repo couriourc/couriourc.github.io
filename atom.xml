@@ -126,37 +126,9 @@
     <category term="computer-base" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/computer-base/"/>
     
     
-    <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
     <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理 —— 原码，补码，反码</title>
-    <link href="https://couriourc.github.io/posts/3J64FQ8.html"/>
-    <id>https://couriourc.github.io/posts/3J64FQ8.html</id>
-    <published>2023-02-12T04:25:57.000Z</published>
-    <updated>2023-02-12T04:25:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1><p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p><p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p><p><strong>补码</strong>：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上 1（相当于将原码数值位取反然后在最低位加 1）。</p><blockquote><p>tips: 以上的说法是对于二进制，可以知道补码的含义是</p><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = K^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> K 表示几进制，n 表示有几位</p><p>比如一位十进制的补码</p><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = 10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p></blockquote><h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2><table><thead><tr><th>真值</th><th>原码</th><th>反码</th><th>补码</th></tr></thead><tbody><tr><td> 58</td><td>0111010</td><td>0111010</td><td>0111010</td></tr><tr><td>-58</td><td><span text-red="">1</span>111010</td><td>1<span text-red="">000101</span></td><td>10001<span text-red="">10</span></td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h1 id=&quot;原码补码反</summary>
-      
-    
-    
-    
-    <category term="计算机组成原理" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    <category term="computer-base" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/computer-base/"/>
-    
-    
     <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -182,9 +154,37 @@
     <category term="computer-base" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/computer-base/"/>
     
     
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
     <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理 —— 原码，补码，反码</title>
+    <link href="https://couriourc.github.io/posts/3J64FQ8.html"/>
+    <id>https://couriourc.github.io/posts/3J64FQ8.html</id>
+    <published>2023-02-12T04:25:57.000Z</published>
+    <updated>2023-02-12T04:25:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1><p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p><p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p><p><strong>补码</strong>：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上 1（相当于将原码数值位取反然后在最低位加 1）。</p><blockquote><p>tips: 以上的说法是对于二进制，可以知道补码的含义是</p><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = K^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> K 表示几进制，n 表示有几位</p><p>比如一位十进制的补码</p><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>P</mi><msub><mo stretchy="false">]</mo><mtext> 原</mtext></msub><mo> +</mo><mo stretchy="false">[</mo><mi>Q</mi><msub><mo stretchy="false">]</mo><mtext> 补</mtext></msub><mo> =</mo><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">[P]_原 +[Q]_补 = 10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 原</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">Q</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight"> 补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></p></blockquote><h2 id="例子"><a class="markdownIt-Anchor" href="#例子"></a> 例子</h2><table><thead><tr><th>真值</th><th>原码</th><th>反码</th><th>补码</th></tr></thead><tbody><tr><td> 58</td><td>0111010</td><td>0111010</td><td>0111010</td></tr><tr><td>-58</td><td><span text-red="">1</span>111010</td><td>1<span text-red="">000101</span></td><td>10001<span text-red="">10</span></td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h1 id=&quot;原码补码反</summary>
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="computer-base" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/computer-base/"/>
+    
+    
     <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
@@ -195,12 +195,12 @@
     <published>2023-02-12T04:25:57.000Z</published>
     <updated>2023-02-12T04:25:57.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css">]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="常用寄存器"><a class="markdownIt-Anchor" href="#常用寄存器"></a> 常用寄存器</h1><h2 id="通用寄存器32位"><a class="markdownIt-Anchor" href="#通用寄存器32位"></a> 通用寄存器（32 位）</h2><h3 id="数据寄存器"><a class="markdownIt-Anchor" href="#数据寄存器"></a> 数据寄存器</h3><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> EAX(Accumulator)</td><td> 累加寄存器</td><td>在乘法和除法指令中被自动使用；在 Win32 中，一般用在函数的返回值中。</td></tr><tr><td>EBX(Base)</td><td> 基址寄存器</td><td> DS 段中的数据指针</td></tr><tr><td> ECX(Count)</td><td> 计数寄存器</td><td> CPU 自动使用 ECX 作为循环计数器，在字符串和循环操作中常用，在循环指令（LOOP）或串操作中，ECX 用来进行循环计数，每执行一次循环，ECX 都会被 CPU 自动减一</td></tr><tr><td> EDX(Data)</td><td> 数据寄存器</td><td></td></tr></tbody></table><h3 id="指针变址寄存器"><a class="markdownIt-Anchor" href="#指针变址寄存器"></a> 指针变址寄存器</h3><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> EBP(Base Pointer)</td><td> 扩展基址指针寄存器</td><td> SS 段中堆栈内数据指针。EBP 由高级语言用来引用参数和局部变量，通常称为堆栈基址指针寄存器。</td></tr><tr><td>ESP(Stack Pointer)</td><td> 堆栈指针寄存器</td><td> SS 段中堆栈指针。ESP 用来寻址堆栈上的数据，ESP 寄存器一般不参与算数运算。</td></tr><tr><td>ESI(Source Index)</td><td> 源变址寄存器</td><td>字符串操作源指针</td></tr><tr><td> EDI(Destination Index)</td><td> 目的指针寄存器</td><td>字符串操作目标指针</td></tr></tbody></table><hr><h2 id="指令指针寄存器"><a class="markdownIt-Anchor" href="#指令指针寄存器"></a> 指令指针寄存器</h2><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> EIP(Instruction Pointer)</td><td> 指令指针寄存器</td><td>保存着下一条要执行的指令的地址。程序运行时，CPU 会读取 EIP 中的一条指令的地址，传送指令到指令缓冲区后，EIP 寄存器的值自动增加，增加的大小即是读取指令的字节大小，即下一条指令的地址为当前指令的地址加上当前指令的长度。</td></tr></tbody></table><hr><h2 id="段寄存器"><a class="markdownIt-Anchor" href="#段寄存器"></a> 段寄存器</h2><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> CS(Code Segment)</td><td> 代码段</td><td></td></tr><tr><td> DS(Data Segment)</td><td> 数据段</td><td></td></tr><tr><td> SS(Stack Segment)</td><td> 堆栈段</td><td></td></tr><tr><td> ES(Extra Segment)</td><td> 附加数据段</td><td></td></tr><tr><td> FS</td><td> 附加数据段</td><td></td></tr><tr><td> GS</td><td> 附加数据段</td><td></td></tr></tbody></table><hr><h2 id="标志寄存器"><a class="markdownIt-Anchor" href="#标志寄存器"></a> 标志寄存器</h2><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> FLAGS（flags) 或 PSW</td><td> 标志寄存器</td><td>程序状态字寄存器</td></tr></tbody></table><p>标志寄存器 又分为两类：条件标志寄存器、控制标志寄存器</p><p>条件标志寄存器：</p><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> OF(OverFlow Flag)</td><td> 溢出标志位</td><td>用来反应有符号数加减法运算所得结果是否溢出。运算超出当前运算位数所能表示的范围，则称为溢出，标志位被置为 1，否则为 0。</td></tr><tr><td>SF(Sign Flag)</td><td> 符号标志位</td><td>用来反应运算结果是否为 0。运算结果为负时置为 1，否则为 0。</td></tr><tr><td>ZF(Zero Flag)</td><td> 零标志位</td><td>用来反应运算结果是否为 0。为零时置为 1，否则为 0。</td></tr><tr><td>AF(Auxilliary carry Flag)</td><td> 辅助进位标志位</td><td>在字操作址，发生低字节向高字节进位或借位时该标志位被置为 1，否则为 0。</td></tr><tr><td>PF(Parity Flag)</td><td> 奇偶标志位</td><td>用于反应结果中 “1” 的个数的奇偶性。如果 “1” 为偶数置为 1，否则为 0。</td></tr><tr><td>CF(Carry Flag)</td><td> 进位标志位</td><td>运算结果的最高位产生了一个进位或错位，则该标志位置为 1，否则为 0。</td></tr></tbody></table><h3 id="控制标志寄存器"><a class="markdownIt-Anchor" href="#控制标志寄存器"></a> 控制标志寄存器</h3><table><thead><tr><th>寄存器</th><th>解释</th><th>备注</th></tr></thead><tbody><tr><td> DF(Direction Flag)</td><td> 方向标志位</td><td>用于串操作指令中，控制地址的变化方向。当 DF 为 0 时，存储器地址自动增加；当 DF 为 1 时，存储器地址自动减少。</td></tr><tr><td>IF(Interupt Flag)</td><td> 中断标志位</td><td>用于控制外部可屏蔽中断是否可以被处理器响应。</td></tr><tr><td>TF(Trap Flag)</td><td> 陷阱标志位</td><td>用于控制处理器是否进入单步操作方式。当 TF 为 0 时，处理器在正常模式下运行；当为 1 时，处理器单步执行指令，调试器可以逐步指令进行执行就是使用了该标志位。</td></tr></tbody></table>]]></content>
     
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h1 id=&quot;常用寄存器</summary>
       
     
     
@@ -210,9 +210,9 @@
     <category term="computer-base" scheme="https://couriourc.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/computer-base/"/>
     
     
-    <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
     <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="计算机组成原理" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
@@ -240,9 +240,9 @@
     <category term="database-system" scheme="https://couriourc.github.io/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/database-system/"/>
     
     
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="数据库系统概论" scheme="https://couriourc.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     <category term="SQL" scheme="https://couriourc.github.io/tags/SQL/"/>
     
@@ -272,9 +272,9 @@
     <category term="database-system" scheme="https://couriourc.github.io/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/database-system/"/>
     
     
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="数据库系统概论" scheme="https://couriourc.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     <category term="SQL" scheme="https://couriourc.github.io/tags/SQL/"/>
     
@@ -304,9 +304,9 @@
     <category term="database-system" scheme="https://couriourc.github.io/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/database-system/"/>
     
     
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="数据库系统概论" scheme="https://couriourc.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -334,9 +334,9 @@
     <category term="database-system" scheme="https://couriourc.github.io/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/database-system/"/>
     
     
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="数据库系统概论" scheme="https://couriourc.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -364,9 +364,9 @@
     <category term="database-system" scheme="https://couriourc.github.io/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/database-system/"/>
     
     
-    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="数据库系统概论" scheme="https://couriourc.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    <category term="计算机基础" scheme="https://couriourc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
