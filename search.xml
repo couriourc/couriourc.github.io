@@ -379,8 +379,8 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理 —— 概述</title>
-    <url>/posts/1TVR2P9.html</url>
+    <title>计算机组成原理 —— 原码，补码，反码</title>
+    <url>/posts/3J64FQ8.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
 <p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
 <p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
@@ -427,8 +427,8 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机组成原理 —— 原码，补码，反码</title>
-    <url>/posts/3J64FQ8.html</url>
+    <title>计算机组成原理 —— 概述</title>
+    <url>/posts/1TVR2P9.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="原码补码反码"><a class="markdownIt-Anchor" href="#原码补码反码"></a> 原码，补码，反码</h1>
 <p><strong>原码</strong>：将最高位作为符号位（0 表示正，1 表示负），其它数字位代表数值本身的绝对值的数字表示方式。</p>
 <p><strong>反码</strong>：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
