@@ -1,0 +1,3 @@
+"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\data_structure_list.dir/objects.a
+D:\CLION2~1.3\MINGW6~1\bin\ar.exe cr CMakeFiles\data_structure_list.dir/objects.a @CMakeFiles\data_structure_list.dir\objects1.rsp
+D:\CLION2~1.3\MINGW6~1\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\data_structure_list.dir/objects.a -Wl,--no-whole-archive -o data_structure_list.exe -Wl,--out-implib,libdata_structure_list.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\data_structure_list.dir\linklibs.rsp

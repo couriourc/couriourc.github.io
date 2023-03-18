@@ -1,0 +1,14 @@
+"D:\CLion 2021.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Administrator\Desktop\Web\couriourc.io\source\_posts\data-structure\data-structure-list
+    -- src/2023-p18-01-order-array-delete-min-value.c will be compiled to bin/2023-p18-01-order-array-delete-min-value
+    -- src/2023-p18-02-order-array-reverse.c will be compiled to bin/2023-p18-02-order-array-reverse
+    -- src/2023-p18-03-order-array-delete-x.c will be compiled to bin/2023-p18-03-order-array-delete-x
+    -- src/2023-p18-04-order-array-delete-x-by-range.c will be compiled to bin/2023-p18-04-order-array-delete-x-by-range
+    -- src/2023-p18-05-order-non-sorted-array-delete-x-by-range.c will be compiled to bin/2023-p18-05-order-non-sorted-array-delete-x-by-range
+    -- src/2023-p18-06-order-non-sorted-array-delete-duplicate.c will be compiled to bin/2023-p18-06-order-non-sorted-array-delete-duplicate
+    -- src/CMakeCCompilerId.c will be compiled to bin/CMakeCCompilerId
+    -- src/Graph.c will be compiled to bin/Graph
+    -- src/reverse_link_list.c will be compiled to bin/reverse_link_list
+    -- src/sort.c will be compiled to bin/sort
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug

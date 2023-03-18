@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="data_structure_list"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-05-order-non-sorted-array-delete-x-by-range">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-05-order-non-sorted-array-delete-x-by-range.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-05-order-non-sorted-array-delete-x-by-range/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-05-order-non-sorted-array-delete-x-by-range.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-05-order-non-sorted-array-delete-x-by-range/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-01-order-array-delete-min-value">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-01-order-array-delete-min-value.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-01-order-array-delete-min-value"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-01-order-array-delete-min-value/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-01-order-array-delete-min-value.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-01-order-array-delete-min-value/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Graph">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Graph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 Graph"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Graph/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Graph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 Graph/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-04-order-array-delete-x-by-range">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-04-order-array-delete-x-by-range.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-04-order-array-delete-x-by-range"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-04-order-array-delete-x-by-range/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-04-order-array-delete-x-by-range.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-04-order-array-delete-x-by-range/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-02-order-array-reverse">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-02-order-array-reverse.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-02-order-array-reverse"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-02-order-array-reverse/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-02-order-array-reverse.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-02-order-array-reverse/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-03-order-array-delete-x">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-03-order-array-delete-x.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-03-order-array-delete-x"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-03-order-array-delete-x/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-03-order-array-delete-x.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-03-order-array-delete-x/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-06-order-non-sorted-array-delete-duplicate">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-06-order-non-sorted-array-delete-duplicate.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="2023-p18-06-order-non-sorted-array-delete-duplicate/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/2023-p18-06-order-non-sorted-array-delete-duplicate.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 2023-p18-06-order-non-sorted-array-delete-duplicate/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMakeCCompilerId">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeCCompilerId.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCCompilerId"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMakeCCompilerId/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeCCompilerId.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCCompilerId/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_link_list">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/reverse_link_list.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 reverse_link_list"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reverse_link_list/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/reverse_link_list.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 reverse_link_list/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sort">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/sort.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 sort"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sort/fast">
+				<Option output="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/sort.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/."/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\clion 2021.1.3\mingw64-master\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 sort/fast"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLION2~1.3/MINGW6~1/bin/mingw32-make.exe -f &quot;C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-01-order-array-delete-min-value.c">
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-02-order-array-reverse.c">
+			<Option target="2023-p18-02-order-array-reverse"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-03-order-array-delete-x.c">
+			<Option target="2023-p18-03-order-array-delete-x"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-04-order-array-delete-x-by-range.c">
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-05-order-non-sorted-array-delete-x-by-range.c">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/2023-p18-06-order-non-sorted-array-delete-duplicate.c">
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c">
+			<Option target="CMakeCCompilerId"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/Graph.c">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/Graph.h">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/data-structure-base-define.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/graph.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/linklist.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/queue.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/stack.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/data-structure-base-define/tree.h">
+			<Option target="2023-p18-05-order-non-sorted-array-delete-x-by-range"/>
+			<Option target="2023-p18-01-order-array-delete-min-value"/>
+			<Option target="Graph"/>
+			<Option target="2023-p18-04-order-array-delete-x-by-range"/>
+			<Option target="2023-p18-02-order-array-reverse"/>
+			<Option target="2023-p18-03-order-array-delete-x"/>
+			<Option target="2023-p18-06-order-non-sorted-array-delete-duplicate"/>
+			<Option target="CMakeCCompilerId"/>
+			<Option target="reverse_link_list"/>
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/reverse_link_list.c">
+			<Option target="reverse_link_list"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/sort/sort.c">
+			<Option target="sort"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/Web/couriourc.io/source/_posts/data-structure/data-structure-list/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
