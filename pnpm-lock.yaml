@@ -97,7 +97,10 @@ importers:
       object-assign: 4.1.1
 
   themes/keep:
-    specifiers: {}
+    specifiers:
+      '@types/hexo': ^3.8.8
+    dependencies:
+      '@types/hexo': 3.8.8
 
 packages:
 
@@ -124,6 +127,22 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: false
 
+  /@types/bluebird/3.5.38:
+    resolution: {integrity: sha512-yR/Kxc0dd4FfwtEoLZMoqJbM/VE/W7hXn/MIjb+axcwag0iFmSPK7OBUZq1YWLynJUoWQkfUrI7T0HDqGApNSg==}
+    dev: false
+
+  /@types/bunyan/1.8.8:
+    resolution: {integrity: sha512-Cblq+Yydg3u+sGiz2mjHjC5MPmdjY+No4qvHrF+BUhblsmSfMvsHLbOG62tPbonsqBj6sbWv1LHcsoe5Jw+/Ow==}
+    dependencies:
+      '@types/node': 20.3.1
+    dev: false
+
+  /@types/connect/3.4.35:
+    resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
+    dependencies:
+      '@types/node': 20.3.1
+    dev: false
+
   /@types/cookie/0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
     dev: false
@@ -134,8 +153,34 @@ packages:
       '@types/node': 20.3.1
     dev: false
 
+  /@types/hexo-util/0.6.5:
+    resolution: {integrity: sha512-iEu8Z9jCsc1HMdkRz9GXuBajNWNw0VjxGfNOZW3dJWjpp1geg0cGZRM9+DDiTwWMTgdGyUYflvzSlPWCTHRRGQ==}
+    dependencies:
+      '@types/node': 20.3.1
+    dev: false
+
+  /@types/hexo/3.8.8:
+    resolution: {integrity: sha512-xwe6UHW1rqMlawyfDSBBhI7s3tOmMHJFghklJ0SjabaQys7Yj/XCITUDLSGYG/SpvfDt+YTeVPWQ2Dt0LQiLTA==}
+    dependencies:
+      '@types/bluebird': 3.5.38
+      '@types/bunyan': 1.8.8
+      '@types/connect': 3.4.35
+      '@types/hexo-util': 0.6.5
+      '@types/minimist': 1.2.2
+      '@types/underscore': 1.11.5
+      moment: 2.29.4
+    dev: false
+
+  /@types/minimist/1.2.2:
+    resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+    dev: false
+
   /@types/node/20.3.1:
     resolution: {integrity: sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==}
+    dev: false
+
+  /@types/underscore/1.11.5:
+    resolution: {integrity: sha512-b8e//LrIlhoXaaBcMC0J/s2/lIF9y5VJYKqbW4nA+tW/nqqDk1Dacd1ULLT7zgGsKs7PGbSnqCPzqEniZ0RxYg==}
     dev: false
 
   /a-sync-waterfall/1.0.1:
