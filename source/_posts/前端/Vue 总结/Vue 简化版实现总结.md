@@ -1,72 +1,34 @@
 ---
+author: couriourc
 typora-root-url: ./assets
-title: Vue-简化版本Vue总结
+title: Vue 简化版实现总结
 mathjax: true
 tags:
   - Vue2.x
-categories:
-  - 前端
+categories: [前端]
 nanoid: _hXdgSRzgrYLXeMgeQCTK
 date: 2020-10-01 11:25:12
+date created: 2023-03-11
+date modified: 2023-06-23
 ---
-
-
 
 ## 简化版本Vue总结
 
 我们都知道`Vue`是一个`渐进式`的框架 ，它有两大核心：（`数据驱动` `组件系统`），这里将提供`数据驱动`的一些思路，`组件系统` 将在之后探讨。
 
 ### 思路：
+
 我们都知道，Vue是一个MVVM的框架，这里所谓的MVVM，其实说的是M(model)-V(view)-VM(V--M) [数据模型 - 视图层 - 视图层之间的桥梁]，其中最为重要的 `VM` 就是`Vue` 的核心——`数据驱动` . 要实现这一点，我们就有一下几大难点:
+
 1. `监测值` (diff算法)
    1. `监测值` 也就是我们需要绑定的对象也或者是值，我们要如何去监测值是否发生了变化，我们或许有时候需要拦截这种改变，进行一些加工的操作。
 2. `视图`
-   1. `虚拟Dom` 
+   1. `虚拟Dom`
    2. `节点`
 
 ### 核心关键点：
 
-	Object.defineProperty():这是对象的内置方法,方法介绍：
-
-MDN : 
-
-This method allows a precise addition to or modification of a property on an object. Normal property addition through assignment creates properties which show up during property enumeration ([`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop or [`Object.keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) method), whose values may be changed, and which may be [deleted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete). This method allows these extra details to be changed from their defaults. By default, values added using `Object.defineProperty()` are immutable and not enumerable.
-
-Property descriptors present in objects come in two main flavors: data descriptors and accessor descriptors. A *data descriptor* is a property that has a value, which may or may not be writable. An *accessor descriptor* is a property described by a getter-setter pair of functions. A descriptor must be one of these two flavors; it cannot be both.
-
-Both data and accessor descriptors are objects. They share the following optional keys (please note: the **defaults** mentioned here are in the case of defining properties using `Object.defineProperty()`):
-
-- `configurable`
-
-  `true` if the type of this property descriptor may be changed and if the property may be deleted from the corresponding object. **Defaults to `false`.**
-
-- `enumerable`
-
-  `true` if and only if this property shows up during enumeration of the properties on the corresponding object. **Defaults to `false`.**
-
-A **data descriptor** also has the following optional keys:
-
-- `value`
-
-  The value associated with the property. Can be any valid JavaScript value (number, object, function, etc). **Defaults to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined).**
-
-- `writable`
-
-  `true` if the value associated with the property may be changed with an [assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators). **Defaults to `false`.**
-
-An **accessor descriptor** also has the following optional keys:
-
-- `get`
-
-  A function which serves as a getter for the property, or [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) if there is no getter. When the property is accessed, this function is called without arguments and with `this` set to the object through which the property is accessed (this may not be the object on which the property is defined due to inheritance). The return value will be used as the value of the property. **Defaults to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined).**
-
-- `set`
-
-  A function which serves as a setter for the property, or [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) if there is no setter. When the property is assigned, this function is called with one argument (the value being assigned to the property) and with `this` set to the object through which the property is assigned. **Defaults to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined).**
-
-If a descriptor has neither of `value`, `writable`, `get` and `set` keys, it is treated as a data descriptor. If a descriptor has both [`value` or `writable`] and [`get` or `set`] keys, an exception is thrown.
-
-Bear in mind that these attributes are not necessarily the descriptor's own properties. Inherited properties will be considered as well. In order to ensure these defaults are preserved, you might freeze the [`Object.prototype`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype) upfront, specify all options explicitly, or point to [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) with [`Object.create(null)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
+`Object.defineProperty` 可以对对象的 `getter`、`setter` 进行设置，所谓 `getter` 、`setter` 就是就是指获取对象的某个值的时候触发什么，设置某个值的时候自动触发什么，熟悉 `java` 的朋友应该知道这玩意。
 
 其中 `set` 和 `get` 方法就起到了一个监测值改变的作用，这里单独拿出来分析一下：
 
@@ -123,8 +85,6 @@ obj.key = 12
 *"key say 你在改变我>（#'.'）'>"
 */
 ```
-
-
 
 ### 描述符可拥有键值
 
@@ -254,9 +214,6 @@ class viewUpdate {
 1. 数据的绑定:Object.defineProperty
 2. 视图的更新，改变对应的值，触发 set 做出对应的改变
 3. 附上简化版本的 Vue ，当然(`Vue`)会比这个复杂，这个只是在DOM下的一个做出响应这一部分的内容
-
-
-
 
 ```javascript
 class cVue {

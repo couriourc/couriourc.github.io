@@ -40,9 +40,10 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+# post_asset_folder: false
 relative_link: false
 future: true
+
 highlight:
   enable: true
   line_number: true
@@ -120,6 +121,7 @@ markdown:
     permalink: true
     permalinkClass: header-anchor
     permalinkSymbol: ¶
+  
 #  math
 mathjax:
   tags: none # or 'ams' or 'all'
@@ -157,12 +159,30 @@ markmap:
     markmap_view_js: https://fastly.jsdelivr.net/npm/markmap-view@0.2.7
     katex_css: https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css
     prism_css: https://fastly.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css
+
+plantuml:
+  #  Local or PlantUMLServer.
+  # render: "PlantUMLServer"
+
+  # "inline": <svg>xxx<svg/>
+  # "inlineUrlEncode": <img src='data:image/svg+xml;> 
+  # "inlineBase64": <img src='data:image/svg+xml;base64> 
+  # "localLink": <img src="/assert/puml/xxxx.svg">
+  # link: "inline"
+
+  # where your dot binary
+  # GraphvizDotFile: "/usr/local/bin/dot"
+  # where your jar
+  # PlantJar: "/usr/local/Cellar/plantuml/1.2021.5/libexec/plantuml.jar"
+
+  # common options: svg/png
+  # outputFormat: "png"
+
+  # class-name for element style. The default style is center-aligned block
+  # className: "plantuml"
+
 # unocss
-unocss:
-  enable: true
-spoiler:
-  style: blur # 或者box
-  color: black # 仅当 style 为 box 时起效
+nocss:
   p: false # 没懂啥意思，不管它
 # Optimize
 neat_enable: true
