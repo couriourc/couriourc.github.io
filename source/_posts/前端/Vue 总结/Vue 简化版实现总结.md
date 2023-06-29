@@ -1,22 +1,23 @@
 ---
 author: couriourc
-typora-root-url: ./assets
-title: Vue 简化版实现总结
-mathjax: true
-tags:
-  - Vue2.x
 categories: [前端]
-nanoid: _hXdgSRzgrYLXeMgeQCTK
 date: 2020-10-01 11:25:12
 date created: 2023-03-11
-date modified: 2023-06-23
+date modified: 2023-06-29
+dg-publish: false
+mathjax: true
+nanoid: _hXdgSRzgrYLXeMgeQCTK
+tags:
+  - Vue2.x
+title: Vue 简化版实现总结
+typora-root-url: ./assets
 ---
 
 ## 简化版本Vue总结
 
 我们都知道`Vue`是一个`渐进式`的框架 ，它有两大核心：（`数据驱动` `组件系统`），这里将提供`数据驱动`的一些思路，`组件系统` 将在之后探讨。
 
-### 思路：
+### 思路
 
 我们都知道，Vue是一个MVVM的框架，这里所谓的MVVM，其实说的是M(model)-V(view)-VM(V--M) [数据模型 - 视图层 - 视图层之间的桥梁]，其中最为重要的 `VM` 就是`Vue` 的核心——`数据驱动` . 要实现这一点，我们就有一下几大难点:
 
@@ -26,7 +27,7 @@ date modified: 2023-06-23
    1. `虚拟Dom`
    2. `节点`
 
-### 核心关键点：
+### 核心关键点
 
 `Object.defineProperty` 可以对对象的 `getter`、`setter` 进行设置，所谓 `getter` 、`setter` 就是就是指获取对象的某个值的时候触发什么，设置某个值的时候自动触发什么，熟悉 `java` 的朋友应该知道这玩意。
 
@@ -209,7 +210,7 @@ class viewUpdate {
 
 这一部分的话，总的来说也没有什么关键点，就是对v-if的一个简单更新，当然Vue会比这个复杂的多
 
-### 总结：
+### 总结
 
 1. 数据的绑定:Object.defineProperty
 2. 视图的更新，改变对应的值，触发 set 做出对应的改变
