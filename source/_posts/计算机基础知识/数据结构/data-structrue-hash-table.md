@@ -1,47 +1,39 @@
 ---
-typora-root-url: ./数据结构知识点总结-哈希表(散列表)
-title: 数据结构知识点总结-哈希表(散列表)
 author: CouriourC
+categories: [计算机基础知识]
+date: 2022-10-28 14:04:58
+date created: 2023-06-25
+date modified: 2023-06-25
+dg-publish: false
 mathjax: true
+nanoid: imEd9E60mAHl5KvluwS0m
+sticky: 
 tags:
   - 基础知识
   - 数据结构
   - 哈希表
-categories:
-  - 计算机基础知识
-nanoid: imEd9E60mAHl5KvluwS0m
-date: 2022-10-28 14:04:58
+title: 哈希表
+typora-root-url: ./数据结构知识点总结-哈希表(散列表)
 updated: 2022-10-28 14:04:58
-sticky:
 ---
 
 # 哈希表
 
-{% markmap 200px%}
-
-- 散列表处理冲突的方法
-
-  - 开放选址法（$H_i = (H(key) + d_i) \mod m $
-
-    - **线性探测法** （$d_i$ 是线性的）
-
-      - 除留余数法
-
-        - $ H(key) \mod p $ 不大于m 最接近 m的质数
-
-      - >   发生冲突的时候是 1 2 3 的尝试比较，冲突的时候是模表长
-
-    - **平方探测法/二次探测法**（$d_i$ 是平方的）
-
-      - >   发生冲突的时候是 $1, 2^{2},3^{2} $的尝试比较，冲突的时候是模表长
-
-    - 伪随机序列法
-
-  - 再散列法
-
-  - 拉链法
-
-{% endmarkmap %}
+```plantuml
+@startmindmap
+* 散列表处理冲突的方法
+** 开放选址法<latex>H_i=(H(key)+d_i)\mod m </latex>
+** 线性探测法<latex>d_i</latex> 是线性的）
+*** 除留余数法
+*** <latex>H(key)\mod p</latex> 不大于m最接近m的质数
+***_ 发生冲突的时候是 1 2 3 的尝试比较，冲突的时候是模表长
+*** 平方探测法/二次探测法（$d_i$ 是平方的）
+***_ 发生冲突的时候是 <latex>1, 2^{2}^{2} </latex>的尝试比较，冲突的时候是模表长
+** 伪随机序列法
+** 再散列法
+** 拉链法
+@endmindmap
+```
 
 ## 基本定义
 
