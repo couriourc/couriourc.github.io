@@ -9,7 +9,7 @@ categories: [前端]
 nanoid: _hXdgSRzgrYLXeMgeQCTK
 date: 2020-10-01 11:25:12
 date created: 2023-03-11
-date modified: 2023-06-23
+date modified: 2023-06-25
 ---
 
 ## 简化版本Vue总结
@@ -108,7 +108,7 @@ Object.defineProperty( obj , "newKey" , {
 
 下面用一张图来表示
 
-![Object.defineProperty描述](/../Vue%20%E7%AE%80%E5%8C%96%E7%89%88%E5%AE%9E%E7%8E%B0%E6%80%BB%E7%BB%93/v2-d182f410945ced52a6d559fdf51eafd7_1440w.jpg)
+![Object.defineProperty描述](/media/Vue%20%E7%AE%80%E5%8C%96%E7%89%88%E5%AE%9E%E7%8E%B0%E6%80%BB%E7%BB%93/v2-d182f410945ced52a6d559fdf51eafd7_1440w.jpg)
 
 有了以上的基础我们可以开始为每一个子节点绑定上对应的属性点：也就是下面的observe部分：
 
@@ -327,5 +327,4 @@ class viewUpdate {
     }
   }
 }
-
 ```

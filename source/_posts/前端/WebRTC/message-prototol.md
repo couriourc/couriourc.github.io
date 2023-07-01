@@ -1,68 +1,70 @@
 ---
+author: couriourc
 typora-root-url: ./assets
-title: webrtc-信令服务器约定
+title: WebRTC 中的信令服务器约定
 mathjax: true
-tags: '-webrtc'
-categories:
-  - 前端
+tags:
+  - -webrtc
+categories: [前端]
 nanoid: ij64Np7sAKDP_cuPsUlfB
 date: 2021-05-01 12:55:55
 abbrlink:
+date created: 2023-03-11
+date modified: 2023-06-25
 ---
 
 # WebRTC 中的信令服务器约定
 
-### Join    
+### Join
 
-客户端发送:       ` {"Event":"Join","Name":"test"}    `
+客户端发送: ` {"Event":"Join","Name":"test"}    `
 
-服务器返回      `  {"Event":"Msg","Msg":"Join true"}`
+服务器返回 `  {"Event":"Msg","Msg":"Join true"}`
 
 ## Show
 
-客户端发送:      `  {"Event":"Show"}    `
+客户端发送: `  {"Event":"Show"}    `
 
-服务器返回:      `  {"Event":"Show","allUsers":["user1","user2"]}`
+服务器返回: `  {"Event":"Show","allUsers":["user1","user2"]}`
 
-## Call    
+## Call
 
-客户端发送:      `  {"Event":"Call","SrcName":"user","DestName":"user"}    `
+客户端发送: `  {"Event":"Call","SrcName":"user","DestName":"user"}    `
 
-服务器返回:       ` {"Event":"Msg","Msg":"Call true"}`
+服务器返回: ` {"Event":"Msg","Msg":"Call true"}`
 
 ## Accept
 
-客户端发送:       ` {"Event":"Accept","SrcName":"user","DestName":"user","isAccept":Bool}  `  
+客户端发送: ` {"Event":"Accept","SrcName":"user","DestName":"user","isAccept":Bool}  `  
 
-服务器返回:        `{"Event":"Msg","Msg":"Accept true"}`
+服务器返回: `{"Event":"Msg","Msg":"Accept true"}`
 
 ## Offer  
 
-  客户端发送:       ` {"Event":"Offer","Offer":"Offer","SrcName":"user","DestName":"user"} `  
+  客户端发送: ` {"Event":"Offer","Offer":"Offer","SrcName":"user","DestName":"user"} `  
 
- 服务器返回：        {"Event":"Msg","Msg":"Offer true"}
+ 服务器返回： {"Event":"Msg","Msg":"Offer true"}
 
-## Candidate    
+## Candidate
 
-客户端发送:        `{"Event":"Candidate","Candidate":"Candidate","SrcName":"user","DestName":"user"}   `
+客户端发送: `{"Event":"Candidate","Candidate":"Candidate","SrcName":"user","DestName":"user"}   `
 
- 服务器返回        `{"Event":"Msg","Msg":"Candidate true"}`
+ 服务器返回 `{"Event":"Msg","Msg":"Candidate true"}`
 
-## Answer    
+## Answer
 
-客户端发送:        `{"Event":"Answer","Answer":"Answer","SrcName":"user","DestName":"user"}`
+客户端发送: `{"Event":"Answer","Answer":"Answer","SrcName":"user","DestName":"user"}`
 
-服务器返回        `{"Event":"Msg","Msg":"Answer true"}`
+服务器返回 `{"Event":"Msg","Msg":"Answer true"}`
 
-## Hangup    
+## Hangup
 
-客户端发送:       ` {"Event":"Hangup","SrcName":"user","DestName":"user"}  `
+客户端发送: ` {"Event":"Hangup","SrcName":"user","DestName":"user"}  `
 
-服务器返回   `     {"Event":"Msg","Msg":"Hangup true"}`       
+服务器返回 `     {"Event":"Msg","Msg":"Hangup true"}`
 
-## Leave   
+## Leave
 
-客户端发送:        `{"Event":"Leave","Name":"user"} `  
+客户端发送: `{"Event":"Leave","Name":"user"} `  
 
-服务器返回        `{"Event":"Msg","Msg":"Leave true"}`
-
+服务器返回 `{"Event":"Msg","Msg":"Leave true"}`
