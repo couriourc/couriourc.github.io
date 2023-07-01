@@ -1,13 +1,13 @@
+---
 author: couriourc
-title: SQL 语法规则
+categories: [技术学习]
+date created: 2023-06-25
+date modified: 2023-06-29
+dg-publish: true
+nanoid: NTIMR0OE3F8jA5iujsEvD
 tag:
   - 数据库系统概论
-dg-publish: true
-categories:
-  - 技术学习
-nanoid: NTIMR0OE3F8jA5iujsEvD
-date created: 2023-03-25 00:00:00
-date modified: 2023-06-20 00:00:00
+title: SQL 语法规则
 ---
 
 ## 介绍
@@ -65,9 +65,9 @@ date modified: 2023-06-20 00:00:00
 
 现代关系数据库管理系统提供了一个层次化的数据库对象命名机制
 
-- 一个关系数据库管理系统的实例（instance）中可以建立一个或者多个数据库
-	- 一个数据库中可以建立多个模式
-		- 一个模式下通常包括多个表、视图、索引等[[专有名词库#对象类型|数据库对象]]  
+* 一个关系数据库管理系统的实例（instance）中可以建立一个或者多个数据库
+	* 一个数据库中可以建立多个模式
+		* 一个模式下通常包括多个表、视图、索引等[[专有名词库#对象类型|数据库对象]]  
 
 #### 模式
 
@@ -111,8 +111,8 @@ DROP SCHEMA ZHANG CASCADE;
 DROP SCHEMA ZHANG RESTRICT;
 ```
 
-- 对于 `CASCADE` ，在删除模式的同时把该模式中所有的数据库对象全部删除。  
-- 对于 `RESTRICT`，如果该模式中定义了下属的数据库对象（如表、视图等），则拒绝该删除语句的执行。
+* 对于 `CASCADE` ，在删除模式的同时把该模式中所有的数据库对象全部删除。  
+* 对于 `RESTRICT`，如果该模式中定义了下属的数据库对象（如表、视图等），则拒绝该删除语句的执行。
 
 #### 修改
 

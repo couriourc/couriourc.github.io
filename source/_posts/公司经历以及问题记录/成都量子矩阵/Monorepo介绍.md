@@ -1,15 +1,15 @@
+---
 author: couriourc
-title: Monorepo 介绍
 categories:
   - 公司经历以及问题记录
+date created: 2023-06-25
+date modified: 2023-06-25
+dg-publish: false
 nanoid: eaqb2vzUyR5qCKpPHs82G
-date created: 2023-06-21 00:00:00
-date modified: 2023-06-22 00:00:00
+title: Monorepo 介绍
 ---
 
 # Monorepo 介绍
-
-![](Extras/Media/1687338318079.png)
 
 ## 技术缘由
 

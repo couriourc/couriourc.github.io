@@ -1,13 +1,13 @@
+---
 author: couriourc
-title: SQL 函数
+categories: [技术学习]
+date created: 2023-06-25
+date modified: 2023-06-29
 dg-publish: true
+nanoid: LcWWVD8-cWW_ooZuonidi
 tag:
   - 数据库系统概论
-categories:
-  - 技术学习
-nanoid: LcWWVD8-cWW_ooZuonidi
-date created: 2023-03-26 00:00:00
-date modified: 2023-06-20 00:00:00
+title: SQL 函数
 ---
 
 ## 聚合函数

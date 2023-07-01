@@ -1,16 +1,16 @@
+---
 author: couriourc
-title: EXCEL 预览方案及其实现
+categories:
+  - 公司经历以及问题记录
+date created: 2023-06-25
+date modified: 2023-06-25
+dg-publish: false
+nanoid: VB-ROP85jRNUYm7PxrA_k
 tags:
   - 实现方案
   - 前端开发
-categories:
-  - 公司经历以及问题记录
-nanoid: VB-ROP85jRNUYm7PxrA_k
-date created: 2023-04-13 00:00:00
-date modified: 2023-06-21 00:00:00
+title: EXCEL 预览方案及其实现
 ---
-
-#实现方案 #前端开发
 
 ## 面临的问题
 

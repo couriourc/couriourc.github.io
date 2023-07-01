@@ -1,10 +1,12 @@
+---
 author: couriourc
-title: CSS3 transformer 失效现象
 categories:
   - 公司经历以及问题记录
+date created: 2023-06-25
+date modified: 2023-06-25
+dg-publish: false
 nanoid: rV_E2xGCtaWaTTIjl2Xz5
-date created: 2023-04-13 00:00:00
-date modified: 2023-06-21 00:00:00
+title: CSS3 transformer 失效现象
 ---
 
 CSS 动画,color 属性能够生效，transform 属性却没能生效。

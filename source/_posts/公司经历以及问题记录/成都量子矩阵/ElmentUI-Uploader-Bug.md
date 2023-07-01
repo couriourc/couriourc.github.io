@@ -1,10 +1,12 @@
+---
 author: couriourc
-title: ElmentUI-Uploader-Bug
 categories:
   - 公司经历以及问题记录
+date created: 2023-06-25
+date modified: 2023-06-25
+dg-publish: false
 nanoid: EKyeQgYOD7DMybKD3es87
-date created: 2023-04-24 00:00:00
-date modified: 2023-06-21 00:00:00
+title: ElmentUI-Uploader-Bug
 ---
 
 ## 问题描述
