@@ -8,7 +8,6 @@ importers:
       deep-assign: ^3.0.0
       hexo: ^5.0.0
       hexo-abbrlink: ^2.2.1
-      hexo-auto-category: ^0.2.1
       hexo-autonofollow: ^1.0.1
       hexo-browsersync: ^0.3.0
       hexo-deployer-git: ^4.0.0
@@ -54,7 +53,6 @@ importers:
       deep-assign: 3.0.0
       hexo: 5.4.2
       hexo-abbrlink: 2.2.1
-      hexo-auto-category: 0.2.1
       hexo-autonofollow: 1.0.1
       hexo-browsersync: 0.3.0
       hexo-deployer-git: 4.0.0
@@ -2496,13 +2494,6 @@ packages:
     resolution: {integrity: sha512-yvazN7bbrIb7p8QU3nJ/8fbDmir1mFroYvUYcJz5xpc6DtszKggschmqZg6WNUdjhDBFyDwksrIUfwQnw0OOuA==}
     dependencies:
       hexo-front-matter: 1.0.0
-      hexo-fs: 3.1.0
-    dev: false
-
-  /hexo-auto-category/0.2.1:
-    resolution: {integrity: sha512-kIHa+0XV7CZHlcFV9Jg8FJdngLqCBtubSEcXveZMr5D6wftE+Zg3kv4R+xi+nE7wAfDSRW37TUqfgFusrf92Yw==}
-    dependencies:
-      hexo-front-matter: 2.0.0
       hexo-fs: 3.1.0
     dev: false
 
