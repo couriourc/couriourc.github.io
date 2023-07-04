@@ -1,11 +1,12 @@
 ---
 author: couriourc
-dg-publish: false
-title: Flame基础概要
-categories:
-  - 游戏开发
+categories: [游戏开发]
 date created: 2023-06-28 00:00:00
 date modified: 2023-06-29 00:00:00
+date-created: 2023-06-28
+date-modified: 2023-07-04
+dg-publish: false
+title: Flame基础概要
 ---
 
 ## 项目结构
