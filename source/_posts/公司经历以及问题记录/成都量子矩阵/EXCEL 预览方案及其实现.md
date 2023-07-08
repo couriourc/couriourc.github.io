@@ -1,15 +1,13 @@
 ---
 author: couriourc
-categories:
-  - 公司经历以及问题记录
-date created: 2023-06-25
-date modified: 2023-06-25
+categories: [公司经历以及问题记录]
 dg-publish: false
-nanoid: VB-ROP85jRNUYm7PxrA_k
 tags:
   - 实现方案
   - 前端开发
 title: EXCEL 预览方案及其实现
+date-created: 2023-06-22
+date-modified: 2023-07-08
 ---
 
 ## 面临的问题

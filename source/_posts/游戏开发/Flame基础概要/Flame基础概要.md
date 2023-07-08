@@ -2,10 +2,9 @@
 author: couriourc
 dg-publish: false
 title: Flame基础概要
-categories:
-  - 游戏开发
-date created: 2023-06-28 00:00:00
-date modified: 2023-06-29 00:00:00
+categories: [游戏开发]
+date-created: 2023-07-01
+date-modified: 2023-07-08
 ---
 
 ## 项目结构
@@ -74,10 +73,10 @@ main(){
 
 **结构化事件组件**（和生命周期钩子类似，但是是以组件的形式使用）。
 
-* [`loadingBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-loadingBuilder) 加载时的显示效果，默认是一个空 `Container`
-* [`errorBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-errorBuilder)，加载出错时展示的内容。
-* [`backgroundBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-backgroundBuilder)
-* [`overlayBuilderMap`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-overlayBuilderMap) 设置游戏弹窗实例。
+- [`loadingBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-loadingBuilder) 加载时的显示效果，默认是一个空 `Container`
+- [`errorBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-errorBuilder)，加载出错时展示的内容。
+- [`backgroundBuilder`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-backgroundBuilder)
+- [`overlayBuilderMap`](https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-overlayBuilderMap) 设置游戏弹窗实例。
 
 ```dart
 void main() {
@@ -102,19 +101,19 @@ void main() {
 
 ### 属性说明
 
-* `initialActiveOverlays:List<String>?`  
+- `initialActiveOverlays:List<String>?`  
 设置初始的弹窗。  
 
-* `focusNode:FocusNode`  
+- `focusNode:FocusNode`  
 键盘聚焦该节点。  
 
-* `autofocus:bool`  
+- `autofocus:bool`  
 是否自动聚焦  
 
-* `mouseCursor:MouseCursor`  
+- `mouseCursor:MouseCursor`  
 动态设置鼠标的显示样式。  
 
-* `addRepaintBoundary:bool`  
+- `addRepaintBoundary:bool`  
 是否添加重绘边界。
 
 ## 事件循环
@@ -163,8 +162,8 @@ main() {
 
 有了组件树之后，下一步就是构建以及更新，基本上，大多数游戏都是基于这两种方法：
 
-* **render (渲染)** : 采用画布来绘制游戏的当前状态。
-* **updte (更新)** : 会获得更新的延迟时间，同时在里面更新动画的下一个状态。
+- **render (渲染)** : 采用画布来绘制游戏的当前状态。
+- **updte (更新)** : 会获得更新的延迟时间，同时在里面更新动画的下一个状态。
 
 ` Flame` 的所有` Game` 都实现了调用这个的方法。
 

@@ -1,12 +1,10 @@
 ---
 author: couriourc
-categories:
-  - 公司经历以及问题记录
-date created: 2023-06-25
-date modified: 2023-06-25
+categories: [公司经历以及问题记录]
 dg-publish: false
-nanoid: eaqb2vzUyR5qCKpPHs82G
 title: Monorepo 介绍
+date-created: 2023-06-22
+date-modified: 2023-07-08
 ---
 
 # Monorepo 介绍
