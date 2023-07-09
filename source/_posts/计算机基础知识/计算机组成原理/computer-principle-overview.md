@@ -1,17 +1,15 @@
 ---
+dg-publish: false
 typora-root-url: ./computer-principle
-title: 计算机组成原理——概述
+title: computer-principle-overview
 author: CouriourC
 mathjax: true
 tags:
   - 计算机组成原理
   - 计算机基础
-categories:
-  - 计算机基础知识
-nanoid: zCPb-FYnNGoV0ijoUvGYh
-date: 2023-02-12 12:25:57
-updated: 2023-02-12 12:25:57
-sticky:
+categories: [计算机基础知识]
+date-created: 2023-03-11
+date-modified: 2023-07-09
 ---
 
 **原码**：将最高位作为符号位（0表示正，1表示负），其它数字位代表数值本身的绝对值的数字表示方式。
@@ -33,4 +31,4 @@ sticky:
 | 真值 | 原码                          | 反码                          | 补码                          |
 | ---- | ----------------------------- | ----------------------------- | ----------------------------- |
 | 58   | 0111010                       | 0111010                       | 0111010                       |
-| -58  | <span text-red>1</span>111010 | 1<span text-red>000101</span> | 10001<span text-red>10</span> |
+| -58  | <span class="text-red">1</span>111010 | 1<span text-red>000101</span> | 10001<span text-red>10</span> |
