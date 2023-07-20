@@ -69,7 +69,8 @@ social_contact:
 menu:
   Home: /
   Archives: /archives
-  # Categories: /categories
+#  每日: /html/daily.html
+  每日: /category
   # Tags: /tags
   # Links: /links
   # About: /about
@@ -216,3 +217,8 @@ footer:
   since: 2022 # the starting year of your website, Can be null
   icp: # ICP record number of your website, Can be null
   upyun: # url
+
+  # ads
+ads:
+  src: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5805854984079300
+

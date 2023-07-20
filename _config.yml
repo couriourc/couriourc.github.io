@@ -32,6 +32,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - "html/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -238,6 +239,7 @@ auto_category:
   enable: true
   depth: 1 #生成到第几级目录分类
 
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -247,3 +249,5 @@ deploy:
   branch: release
   message: "Site updated: at {{now('YYYY-MM-DD HH:mm') }}"
   email: godakid@outlook.com
+
+
