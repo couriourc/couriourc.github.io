@@ -14,7 +14,10 @@ timezone: "Asia/Shanghai"
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
-permalink: /:year/:month/:day/:title/
+permalink: posts/:abbrlink.html
+abbrlink:
+  alg: crc16   #算法： crc16(default) and crc32
+  rep: dec     #进制： dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -29,6 +32,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - "html/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -100,7 +104,7 @@ feed:
 ## Themes: https://hexo.io/themes/
 theme: keep
 # Markdown extensions
-## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性
+## markdown 渲染引擎配置，默认是 hexo-renderer-marked，这个插件渲染速度更快，且有新特性
 markdown:
   render:
     html: true
@@ -121,7 +125,7 @@ markdown:
     permalink: true
     permalinkClass: header-anchor
     permalinkSymbol: ¶
-  
+
 #  math
 mathjax:
   tags: none # or 'ams' or 'all'
@@ -161,25 +165,25 @@ markmap:
     prism_css: https://fastly.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css
 
 plantuml:
-  #  Local or PlantUMLServer.
-  # render: "PlantUMLServer"
+#  Local or PlantUMLServer.
+# render: "PlantUMLServer"
 
-  # "inline": <svg>xxx<svg/>
-  # "inlineUrlEncode": <img src='data:image/svg+xml;> 
-  # "inlineBase64": <img src='data:image/svg+xml;base64> 
-  # "localLink": <img src="/assert/puml/xxxx.svg">
-  # link: "inline"
+# "inline": <svg>xxx<svg/>
+# "inlineUrlEncode": <img src='data:image/svg+xml;>
+# "inlineBase64": <img src='data:image/svg+xml;base64>
+# "localLink": <img src="/assert/puml/xxxx.svg">
+# link: "inline"
 
-  # where your dot binary
-  # GraphvizDotFile: "/usr/local/bin/dot"
-  # where your jar
-  # PlantJar: "/usr/local/Cellar/plantuml/1.2021.5/libexec/plantuml.jar"
+# where your dot binary
+# GraphvizDotFile: "/usr/local/bin/dot"
+# where your jar
+# PlantJar: "/usr/local/Cellar/plantuml/1.2021.5/libexec/plantuml.jar"
 
-  # common options: svg/png
-  # outputFormat: "png"
+# common options: svg/png
+# outputFormat: "png"
 
-  # class-name for element style. The default style is center-aligned block
-  # className: "plantuml"
+# class-name for element style. The default style is center-aligned block
+# className: "plantuml"
 
 # unocss
 nocss:
@@ -199,7 +203,7 @@ hide_posts:
   # 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见
   # 常见的位置有：index, tag, category, archive, sitemap, feed, etc.
   # 留空则默认全部隐藏
-  public_generators: []
+  public_generators: [ ]
   # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
   noindex: true
 # hexo-slides-reveal
@@ -235,6 +239,7 @@ auto_category:
   enable: true
   depth: 1 #生成到第几级目录分类
 
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -242,5 +247,7 @@ deploy:
   repo:
     gitee: https://gitee.com/godakid/couriourc.blog.io.git
   branch: release
-  message: "Site updated: at {{ now('YYYY-MM-DD HH:mm') }}"
+  message: "Site updated: at {{now('YYYY-MM-DD HH:mm') }}"
   email: godakid@outlook.com
+
+

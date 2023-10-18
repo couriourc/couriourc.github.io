@@ -1,10 +1,10 @@
 ---
+dg-publish: false
 author: couriourc
 title: CSS 选择器
-categories:
-  - 前端
-date created: 2023-06-23 00:00:00
-date modified: 2023-06-24 00:00:00
+categories: [前端]
+date-created: 2023-06-23
+date-modified: 2023-07-09
 ---
 
 ## 选择器分类
@@ -125,8 +125,8 @@ div.plate{ }
 [:blank](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:blank) : 选择用户输入为空的输入框  
 [:checked](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked) : 选择任何处于选中状态的 **radio**  
 [:default](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:default): 设置之前默认设置的表单元素，例如：  
-[:disabled](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:disabled) [:enabled](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:enabled) :这两个是一对对立的东西，表示是否启用的元素。  
-[:valid](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid):表示内容[验证](https://developer.mozilla.org/zh-CN/docs/Web/HTML/HTML5/Constraint_validation "This is a link to an unwritten page")正确的[`<input>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input) 或其他 [`<form>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form) 元素
+[:disabled](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:disabled) 、 [:enabled](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:enabled) :这两个是一对对立的东西，表示是否启用的元素。  
+[:valid](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid) :表示内容[验证]( https://developer.mozilla.org/zh-CN/docs/Web/HTML/HTML5/Constraint_validation "This is a link to an unwritten page")正确的 [`<input>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input) 或其他 [`<form>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form) 元素
 
 例：
 
@@ -165,7 +165,7 @@ label {
 
 #### 超链接相关
 
-18. [:any-link](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:any-link)  
+[:any-link](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:any-link)  
 
 #### 元素状态相关
 
@@ -183,7 +183,6 @@ label {
 [:nth-of-type()](https://developer.mozilla.org/zh-CN/3 w 4. Web/CSS/:nth-of-type)  
 [:only-of-type](https://developer.mozilla.org/zh-CN3 w 6. /Web/CSS/:only-of-type)  
 [:out-of-range](https://developer.mozilla.org/zh-3 w 8. cs/Web/CSS/:out-of-range)  
-[:placeholder-shown](https://developer.mozilla.org/zh-C4 w 2. [: popover-open (en-US)]( shown)  
 [:popover-open(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/:popover-open "Currently only available in English (US)")实验性  
 [:read-write](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-write)  
 [:right](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:right)  
@@ -224,22 +223,22 @@ label {
 
 ### @规则
 
-1. [@charset](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@charset)
-2. [@color-profile(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@color-profile "Currently only available in English (US)")
-3. [@container(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@container "Currently only available in English (US)")
-4. [@counter-style](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@counter-style)
-5. [@document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@document)非标准已弃用
-6. [@font-face](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face)
-7. [@font-feature-values](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-feature-values)
-8. [@font-palette-values(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-palette-values "Currently only available in English (US)")
-9. [@import](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@import)
-10. [@keyframes](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes)
-11. [@layer](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@layer)
-12. [@media](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
-13. [@namespace](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@namespace)
-14. [@page](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@page)
-15. [@property](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property)
-16. [@supports](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@supports)
+ [@charset](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@charset)  
+ [@color-profile(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@color-profile "Currently only available in English (US)")  
+ [@container(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@container "Currently only available in English (US)")  
+ [@counter-style](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@counter-style)  
+ [@document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@document)非标准已弃用  
+ [@font-face](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face)  
+ [@font-feature-values](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-feature-values)  
+ [@font-palette-values(en-US)](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-palette-values "Currently only available in English (US)")  
+ [@import](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@import)  
+ [@keyframes](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes)  
+ [@layer](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@layer)  
+ [@media](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)  
+ [@namespace](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@namespace)  
+ [@page](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@page)  
+ [@property](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property)  
+ [@supports](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@supports)
 
 ## 选择器的优先级
 
@@ -282,5 +281,5 @@ label {
 
 此外还有层叠式的效应，也就是在同级别的优先级下。后面的会覆盖前面的。
 
->![TIP]  
+>[!TIP]  
 >当你不知道你的选择器是否生效的时候，你可以尝试使用 `border: solid !important`;来验证。
