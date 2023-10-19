@@ -69,8 +69,6 @@ social_contact:
 menu:
   Home: /
   Archives: /archives
-#  每日: /html/daily.html
-  每日: /category
   # Tags: /tags
   # Links: /links
   # About: /about
