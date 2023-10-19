@@ -13,7 +13,7 @@ base_info:
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
-  primary_color: "#0066CC"
+  primary_color: "#4c6ef5"
 
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.jpg
@@ -69,8 +69,6 @@ social_contact:
 menu:
   Home: /
   Archives: /archives
-#  每日: /html/daily.html
-  每日: /category
   # Tags: /tags
   # Links: /links
   # About: /about
