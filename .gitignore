@@ -1,5 +1,7 @@
-node_modules
 .history
-.deploy_git
-cache
-public
+.vscode
+.idea
+.trash
+
+# Ignore Smart Connections folder because embeddings file is large and updated frequently
+.smart-connections
