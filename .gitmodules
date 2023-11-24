@@ -1,7 +1,8 @@
-[submodule "themes/keep"]
-	path = themes/keep
-	url = https://gitee.com/godakid/hexo-theme-keep
 [submodule "source"]
 	path = source
 	url = https://github.com/couriourc/couriourc.github.io
 	branch = source
+[submodule "themes/hexo-keep"]
+	path = themes/hexo-keep
+	url = https://github.com/couriourc/couriourc.github.io.git
+	branch = theme
