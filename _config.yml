@@ -245,9 +245,8 @@ auto_category:
 deploy:
   type: git
   repo:
-    gitee: https://gitee.com/godakid/couriourc.blog.io.git
-  branch: release
-  message: "Site updated: at {{now('YYYY-MM-DD HH:mm') }}"
+    github: https://github.com/couriourc/couriourc.github.io.git
+  branch: master
   email: godakid@outlook.com
 
 
