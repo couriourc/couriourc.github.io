@@ -135,21 +135,30 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
     devDependencies:
+      bluebird:
+        specifier: ^3.7.2
+        version: 3.7.2
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
       ejs:
         specifier: ^3.1.9
         version: 3.1.9
+      graceful-fs:
+        specifier: ^4.2.11
+        version: 4.2.11
       hexo-fs:
         specifier: ^4.1.1
         version: 4.1.1
       hexo-util:
         specifier: ^3.1.0
         version: 3.1.0
+      js-yaml:
+        specifier: ^4.1.0
+        version: 4.1.0
       lerna:
         specifier: ^7.4.1
-        version: 7.4.1
+        version: 7.4.1(bluebird@3.7.2)
       nunjucks:
         specifier: ^3.2.4
         version: 3.2.4(chokidar@3.5.3)
@@ -236,7 +245,7 @@ packages:
       strong-log-transformer: 2.1.0
     dev: true
 
-  /@lerna/create@7.4.1(typescript@5.2.2):
+  /@lerna/create@7.4.1(bluebird@3.7.2)(typescript@5.2.2):
     resolution: {integrity: sha512-zPO9GyWceRimtMD+j+aQ8xJgNPYn/Q/SzHf4wYN+4Rj5nrFKMyX+Et7FbWgUNpj0dRgyCCKBDYmTB7xQVVq4gQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
@@ -284,7 +293,7 @@ packages:
       p-map-series: 2.1.0
       p-queue: 6.6.2
       p-reduce: 2.1.0
-      pacote: 15.2.0
+      pacote: 15.2.0(bluebird@3.7.2)
       pify: 5.0.0
       read-cmd-shim: 4.0.0
       read-package-json: 6.0.4
@@ -343,7 +352,7 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@npmcli/git@4.1.0:
+  /@npmcli/git@4.1.0(bluebird@3.7.2):
     resolution: {integrity: sha512-9hwoB3gStVfa0N31ymBmrX+GuDGdVA/QWShZVqE0HK2Af+7QGGrCTbZia/SW0ImUTjTne7SP91qxDmtXvDHRPQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
@@ -351,7 +360,7 @@ packages:
       lru-cache: 7.18.3
       npm-pick-manifest: 8.0.2
       proc-log: 3.0.0
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-retry: 2.0.1
       semver: 7.5.4
       which: 3.0.1
@@ -2757,7 +2766,7 @@ packages:
   /fs-extra@3.0.1:
     resolution: {integrity: sha512-V3Z3WZWVUYd8hoCL5xfXJCaHWYzmtwW5XWYSlLgERi8PWd8bx1kUHUk8L1BT57e49oKnDDD180mjfrHc1yA9rg==}
     dependencies:
-      graceful-fs: registry.npmmirror.com/graceful-fs@4.2.11
+      graceful-fs: 4.2.11
       jsonfile: 3.0.1
       universalify: 0.1.2
     dev: false
@@ -3217,7 +3226,7 @@ packages:
       bluebird: 3.7.2
       chokidar: 1.7.0
       escape-string-regexp: 1.0.5
-      graceful-fs: registry.npmmirror.com/graceful-fs@4.2.11
+      graceful-fs: 4.2.11
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4298,13 +4307,13 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  /lerna@7.4.1:
+  /lerna@7.4.1(bluebird@3.7.2):
     resolution: {integrity: sha512-c6sOO0dlJU689vStIsko+zjRdn2fJOWH8aNjePLNv2AubAdABKqfrDCpE2H/Q7+O80Duo68ZQtWYkUUk7hRWDw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
       '@lerna/child-process': 7.4.1
-      '@lerna/create': 7.4.1(typescript@5.2.2)
+      '@lerna/create': 7.4.1(bluebird@3.7.2)(typescript@5.2.2)
       '@npmcli/run-script': 6.0.2
       '@nx/devkit': 16.10.0(nx@16.10.0)
       '@octokit/plugin-enterprise-rest': 6.0.1
@@ -4356,7 +4365,7 @@ packages:
       p-queue: 6.6.2
       p-reduce: 2.1.0
       p-waterfall: 2.1.1
-      pacote: 15.2.0
+      pacote: 15.2.0(bluebird@3.7.2)
       pify: 5.0.0
       read-cmd-shim: 4.0.0
       read-package-json: 6.0.4
@@ -5690,12 +5699,12 @@ packages:
       p-reduce: 2.1.0
     dev: true
 
-  /pacote@15.2.0:
+  /pacote@15.2.0(bluebird@3.7.2):
     resolution: {integrity: sha512-rJVZeIwHTUta23sIZgEIM62WYwbmGbThdbnkt81ravBplQv+HjyroqnLRNH2+sLJHcGZmLRmhPwACqhfTcOmnA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     hasBin: true
     dependencies:
-      '@npmcli/git': 4.1.0
+      '@npmcli/git': 4.1.0(bluebird@3.7.2)
       '@npmcli/installed-package-contents': 2.0.2
       '@npmcli/promise-spawn': 6.0.2
       '@npmcli/run-script': 6.0.2
@@ -5918,13 +5927,15 @@ packages:
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  /promise-inflight@1.0.1:
+  /promise-inflight@1.0.1(bluebird@3.7.2):
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
     peerDependencies:
       bluebird: '*'
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise-retry@2.0.1:
@@ -7561,12 +7572,6 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
-
-  registry.npmmirror.com/graceful-fs@4.2.11:
-    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.11.tgz}
-    name: graceful-fs
-    version: 4.2.11
-    dev: false
 
   registry.npmmirror.com/mime@1.4.1:
     resolution: {integrity: sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/mime/-/mime-1.4.1.tgz}
