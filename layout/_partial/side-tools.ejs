@@ -1,54 +1,50 @@
-<div class="side-tools-container border-box <%= is_home() ? 'side-tools-show-handle' : '' %>">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+<% var options = [{
+    clasz: 'tool-font-adjust-plus', icon: 'search-plus', title:
+            ' 放大 ',
+}, {
+    clasz: 'tool-font-adjust-minus', title: ' 缩小 ', icon:
+            'search-minus',
+}, {
+    clasz: 'tool-expand-width', title: ' 缩小 ', icon:
+            'arrows-alt-h',
+}, {
+    clasz: 'tool-dark-light-toggle', title: ' 切换灯光 ', icon:
+            'moon',
+}, {
+    clasz: 'tool-github-contact-me', title: ' 找到我 ', icon:
+            'gg-bot gg-bot', params: theme['social_contact']['links']['github'],
+}, {
+    clasz:
+            'tool-scroll-to-top', title: ' 回到最上 ', icon: 'arrow-up',
+}, {
+    clasz:
+            'tool-scroll-to-bottom', title: ' 滚动至最底 ', icon: 'arrow-down',
+}]; %>
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-toggle-theme-mode flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        <% if (theme?.rss?.enable === true && config.feed) { %>
-            <li class="tools-item rss flex-center">
-                <a class="flex-center"
-                   href="<%= '/' + config.feed.path %>"
-                   target="_blank"
-                >
-                    <i class="fas fa-rss"></i>
-                </a>
+<div class="side-tools-container">
+    <ul class="side-tools-list">
+        <% options.forEach((option)=>{ %> <% if (!option.disable) { %>
+            <li
+                    class="tools-item flex-center <%= option.clasz; %>"
+                    title="<%= option.title %>"
+                    params="<%= option.params %>"
+            >
+                <i class="fas fa-<%= option.icon %>">
+                </i>
             </li>
         <% } %>
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
+        <% }); %>
     </ul>
 
-    <ul class="exposed-tools-list border-box">
-        <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        <% } %>
-
-        <% if (is_post() && page?.comment !== false && theme?.comment?.enable === true && theme?.comment?.use) { %>
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
-        <% } %>
-
+    <ul class="exposed-tools-list">
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
+        <% if (theme.style.scroll.percent.enable === true) { %>
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        <% } %>
     </ul>
 </div>

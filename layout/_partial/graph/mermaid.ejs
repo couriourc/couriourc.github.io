@@ -1,0 +1,19 @@
+<% if (config.mermaid && config.mermaid.enable) { %>
+<!--  修改 开始位置-->
+<script>
+
+  let mermaidLoad = document.createElement('script');
+  mermaidLoad.src = 'https://unpkg.com/mermaid@<%= config.mermaid.version %>/dist/mermaid.min.js';
+
+  function init(){
+    document.head.append(mermaidLoad);
+
+    setTimeout(()=>{
+      mermaid?.initialize({ <%= JSON.stringify((config.mermaid || theme.mermaid).options) %> });
+    });
+
+  }
+  mermaidLoad.addEventListener('load',init);
+  document.addEventListener("pjax:complete", init);
+</script>
+<% } %>

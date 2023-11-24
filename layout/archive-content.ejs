@@ -1,8 +1,60 @@
-<div class="fade-in-down-animation">
-    <div class="archives-container">
-        <div class="archives-timeline border-box">
-            <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
+<% const all_posts = site.posts.toArray().reduce(function (pre, now){ %>
+    <% const now_time = now.date.format('YYYY-MM');
+        if (pre[now_time]) {
+            pre[now_time].push(now);
+            return pre;
+        } else {
+            return {
+                ...pre,
+                [now_time]: [now],
+            };
+        }
+    %>
+<% },{}); %>
+<section class="fade-in-down-animation">
+    <main class="archive-container">
+        <div class="archive-total">
+            <p class="font-bold text-xl text-center select-none">
+                🎉🎉✨ Ha!Surpriseeeeee! 有了 <span><%= site.posts.length; %> 篇文章 </span>
+                <span>~(￣▽￣)~*</span>
+            </p>
         </div>
-    </div>
-    <%- partial('_partial/paginator', { page_info: page }) %>
-</div>
+        <hr class="border-dashed mt-4 mb-2 bg-black"/>
+
+        <% Object.entries(all_posts).forEach(function ([year, year_posts]) { %>
+            <details open>
+                <summary
+                        class="archive-time text-lg mt-5 mb-2 cursor-pointer font-bold"
+                        title=" 这个月有 <%= year_posts.length %> 篇喔 ~">
+                    <span><%= year; %></span>
+                    (🎨<span class="text-blue-600/100"
+                    ><%= year_posts.length %></span>)
+                </summary>
+                <div class="post-section rounded-md shadow-md hover:shadow-lg">
+                    <% year_posts.forEach(function (post) { %>
+                        <a class="block archive-title bg-slate-100 px-2 py-1 cursor-pointer"
+                           href="<%= url_for(post.path) %>"
+                        >
+                            <%= post.title %>
+                        </a>
+                    <% }); %>
+                </div>
+            </details>
+        <% }); %>
+
+    </main>
+    <footer>
+        <div class="fade-in-down-animation">
+            <div class="tagcloud-container">
+                <div class="tagcloud-content">
+                    <%- tagcloud({
+                        min_font: 1,
+                        max_font: 1.6,
+                        unit: 'rem',
+                        amount: 100
+                    }) %>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>

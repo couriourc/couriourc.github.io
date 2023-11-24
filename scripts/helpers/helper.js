@@ -1,114 +1,87 @@
 /* global hexo */
-
+const url = require("url");
 'use strict'
+// 判断是否是主页
 
-hexo.extend.helper.register('isInHomePaging', function (pagePath, route) {
+hexo.extend.helper.register('isInHomePaging', function isInHomePaging(pagePath, route) {
   if (pagePath.length > 5 && route === '/') {
-    return pagePath.slice(0, 5) === 'page/'
+    return pagePath.slice(0, 5) === 'page/';
   } else {
-    return false
+    return false;
   }
-})
+});
 
-hexo.extend.helper.register('createNewArchivePosts', function (posts) {
-  const postList = [],
-    postYearList = []
-  posts.forEach((post) => postYearList.push(post.date.year()))
-  Array.from(new Set(postYearList)).forEach((year) => {
+hexo.extend.helper.register('getAuthorLabel', function getAuthorLabel(postCount, isAuto, labelList) {
+  let level = Math.floor(Math.log2(postCount));
+  level = level < 2 ? 1 : level - 1;
+  if (isAuto === false && Array.isArray(labelList) && labelList.length > 0) {
+    return level > labelList.length ? labelList[labelList.length - 1] : labelList[level - 1];
+  } else {
+    return `Lv${level}`;
+  }
+});
+
+hexo.extend.helper.register('createNewArchivePosts', function createNewArchivePosts() {
+  // 获取新的文章列表
+  const postList = [], postYearList = [];
+
+  posts.forEach(post => postYearList.push(post.date.year()));
+  Array.from(new Set(postYearList)).forEach(year => {
     postList.push({
       year: year,
       postList: []
     })
-  })
+  });
   postList.sort((a, b) => b.year - a.year)
-  postList.forEach((item) => {
-    posts.forEach((post) => item.year === post.date.year() && item.postList.push(post))
-  })
-  postList.forEach((item) => item.postList.sort((a, b) => b.date.unix() - a.date.unix()))
-  return postList
-})
+  postList.forEach(item => {
+    posts.forEach(post => item.year === post.date.year() && item.postList.push(post))
+  });
+  postList.forEach(item => item.postList.sort((a, b) => b.date.unix() - a.date.unix()));
 
-hexo.extend.helper.register('getAuthorBadge', function (postCount, authorLabelConfig) {
-  const { level_badge: isAuto, custom_badge: customBadge } = authorLabelConfig || {}
-  let level = Math.floor(Math.log2(postCount))
-  level = level < 2 ? 1 : level - 1
+  return postList;
+});
 
-  if (isAuto === false && Array.isArray(customBadge) && customBadge.length > 0) {
-    return level > customBadge.length ? customBadge[customBadge.length - 1] : customBadge[level - 1]
-  } else if (isAuto === false && typeof customBadge === 'string' && customBadge !== '') {
-    return customBadge
+hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
+  if (rootUrl) {
+    let {href} = url.parse(rootUrl);
+    if (href.substr(href.length - 1, 1) !== '/') {
+      href = href + '/';
+    }
+    return href + path;
   } else {
-    return `Lv${level}`
+    return path;
   }
-})
+});
 
-const getSourceCdnUrl = (tyle, themeConfig, path) => {
-  const version = require('../../package.json').version
-  let { provider } = themeConfig?.cdn || {}
-  if (!provider) {
-    provider = 'jsdelivr'
-  }
-  let urlPrefix = ''
-  switch (provider?.toLocaleLowerCase()) {
-    case 'jsdelivr':
-      urlPrefix = '//cdn.jsdelivr.net/npm/hexo-theme-keep'
-      if (tyle === 'js') {
-        return `<script src="${urlPrefix}@${version}/source/${path}"></script>`
-      } else {
-        return `<link rel="stylesheet" href="${urlPrefix}@${version}/source/${path}">`
-      }
-    case 'unpkg':
-      urlPrefix = '//unpkg.com/hexo-theme-keep'
-      if (tyle === 'js') {
-        return `<script src="${urlPrefix}@${version}/source/${path}"></script>`
-      } else {
-        return `<link rel="stylesheet" href="${urlPrefix}@${version}/source/${path}">`
-      }
-  }
-}
+
+/**
+ * 列出所有种类目录
+ * @param {*} categories
+ * @param {*} options
+ */
+
+hexo.extend.helper.register('getCategoryTree', function getCategoryTree(categories, options) {
+  return [];
+});
 
 hexo.extend.helper.register('__js', function (path) {
-  const { enable } = this.theme?.cdn || {}
-  const _js = hexo.extend.helper.get('js').bind(hexo)
-  const cdnPathHandle = (pa) => {
-    return enable ? getSourceCdnUrl('js', this.theme, pa) : _js(pa)
-  }
+  const _js = hexo.extend.helper.get('js').bind(hexo);
 
-  let t = ``
+  let t = ``;
 
   if (Array.isArray(path)) {
     for (const p of path) {
-      t += cdnPathHandle(p)
+      t += _js(p);
     }
   } else {
-    t = cdnPathHandle(path)
+    t = _js(path);
   }
 
-  return t
-})
+  return t;
+});
 
 hexo.extend.helper.register('__css', function (path) {
-  const { enable } = this.theme?.cdn || {}
-  const _css = hexo.extend.helper.get('css').bind(hexo)
-  return enable ? getSourceCdnUrl('css', this.theme, path) : _css(path)
-})
+  const _css = hexo.extend.helper.get('css').bind(hexo);
 
-hexo.extend.helper.register('isJsFile', function (path) {
-  return /\.js$/i.test(path)
-})
-
-hexo.extend.helper.register('isCssFile', function (path) {
-  return /\.css$/i.test(path)
-})
-
-hexo.extend.helper.register('isLinksPage', function (pagePath) {
-  return pagePath === 'links/index.html'
-})
-
-hexo.extend.helper.register('isPhotosPage', function (pagePath) {
-  return pagePath === 'photos/index.html'
-})
-
-hexo.extend.helper.register('isCategoriesPage', function (pagePath) {
-  return pagePath === 'categories/index.html'
-})
+  return _css(path);
+});

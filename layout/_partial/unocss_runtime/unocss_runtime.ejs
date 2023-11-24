@@ -1,0 +1,8 @@
+<% if (config.unocss && config.unocss.enable) { %>
+    <!--  修改 开始位置-->
+    <script>
+      let unocss = document.createElement('script');
+      unocss.src = 'https://unpkg.com/@unocss/runtime/attributify.global.js';
+      document.head.append(unocss);
+    </script>
+<% } %>

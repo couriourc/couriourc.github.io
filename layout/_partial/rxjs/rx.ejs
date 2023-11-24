@@ -1,0 +1,12 @@
+<%- __js('js/libs/rx.min.js') %>
+
+<script>
+  window.addEventListener("load", () => {
+    const Rx = rxjs;
+    console.log(Rx);
+    const observer = Rx.Observable.fromEvent(document, "click");
+    observer.subscribe((event) => {
+      console.log(event);
+    });
+  });
+</script>

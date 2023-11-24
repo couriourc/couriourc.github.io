@@ -1,26 +1,19 @@
-/* global hexo */
-
 'use strict'
-
 hexo.extend.filter.register(
   'after_post_render',
   function (data) {
-    const theme = hexo.theme.config
-    if (!theme?.lazyload || !theme?.lazyload?.enable === true) return
+    const theme = hexo.theme.config;
+    if (!theme.lazyload || !theme.lazyload.enable) return;
     data.content = data.content.replace(
-      // Match "img" tag the src attribute
+      // Match 'img' tags width the src attribute.
       /<img([^>]*)src="([^"]*)"([^>\/]*)\/?\s*>/gim,
       function (match, attrBegin, src, attrEnd) {
-        let hasAlt = false
-        if (!src) return match
-        if (attrBegin.includes('alt="')) {
-          hasAlt = true
-        } else if (attrBegin.includes('alt="')) {
-          hasAlt = true
-        }
+        // Exit if the src doesn't exists.
+        if (!src) return match;
+
         return `<img ${attrBegin}
                      lazyload
-                     ${hasAlt ? '' : 'alt="image"'}
+                     src="/images/loading.svg"
                      data-src="${src}"
                      ${attrEnd}
                 >`
@@ -28,4 +21,4 @@ hexo.extend.filter.register(
     )
   },
   1
-)
+);

@@ -1,25 +1,28 @@
-$tag-name-font-size = 1.5rem
+$tag-name-font-size = 1.6rem;
 
 .tag-container {
 
-  keep-container(1, 2rem, 2rem)
+  keep-container(false, 0, 0, 30px, 30px);
 
   .tag-name {
-    margin-bottom var(--components-spacing)
-    color var(--text-color-2)
-    font-weight 600
-    font-size $tag-name-font-size
+    color: var(--second-text-color);
+    font-size: $tag-name-font-size;
 
     i {
-      color var(--text-color-2)
+      color: var(--second-text-color);
     }
 
     +keep-tablet() {
-      font-size $tag-name-font-size * 0.9
+      font-size: $tag-name-font-size * 0.9;
     }
 
     +keep-mobile() {
-      font-size $tag-name-font-size * 0.8
+      font-size: $tag-name-font-size * 0.8;
     }
+
+    font-weight: 600;
+    padding-bottom: 20px;
+    margin-bottom: $component-spacing-value;
+    border-bottom: 1px solid var(--border-color);
   }
 }

@@ -1,85 +1,80 @@
-$archive-year-font-size = 1.6rem
-$article-title-font-size = 1.2rem
-$article-date-font-size = 1rem
-$article-date-width = 3.6rem
-$article-item-padding = 1.2rem
-$timeline-circle-width = 0.6rem
+$archive-year-font-size = 1.8rem;
+$archive-year-count-font-size = 1.2rem;
+$article-title-font-size = 1.2rem;
+$article-date-font-size = 1rem;
 
 .archive-list-container {
 
   .archive-item {
-    margin-bottom var(--components-spacing)
+    margin-bottom: $component-spacing-value;
 
     &:last-child {
-      margin-bottom 0
+      margin-bottom: 0;
     }
 
     .archive-item-header {
-      margin-bottom 0.8rem
+      margin-bottom: 10px;
 
       .archive-year {
-        margin-right 6px
-        color var(--text-color-2)
-        font-weight 600
-        font-size $archive-year-font-size
+        font-size: $archive-year-font-size;
 
         +keep-tablet() {
-          font-size $archive-year-font-size * 0.9
+          font-size: $archive-year-font-size - 0.2rem;
+        }
+
+        color: var(--second-text-color);
+        font-weight: 600;
+        margin-right: 6px;
+      }
+
+
+      .archive-year-post-count {
+        font-size: $archive-year-count-font-size;
+        font-weight: 500;
+        color: var(--second-text-color);
+
+        +keep-tablet() {
+          font-size: $archive-year-count-font-size * 0.9;
         }
       }
+
     }
 
 
     .article-list {
-      padding-left $article-item-padding
 
+      padding-left: 10px;
+
+      +keep-tablet() {
+        padding-left: 0;
+      }
 
       .article-item {
-        display flex
-        align-items center
-        justify-content space-between
-        width 100%
-        padding ($article-item-padding * 0.68) 0 ($article-item-padding * 0.68) $article-item-padding
-        font-size 1rem
-        border-left 1px dashed var(--border-color)
+        font-size: 1rem;
+        margin-top: 18px;
 
-        &::before {
-          position absolute
-          top 50%
-          left -($timeline-circle-width * 0.5)
-          z-index $z-index-1
-          box-sizing border-box
-          width $timeline-circle-width
-          height $timeline-circle-width
-          background var(--text-color-5)
-          border-radius 50%
-          transform translateY(-50%)
-          content ''
+        +keep-tablet() {
+          margin-top: 16px;
         }
 
+        +keep-mobile() {
+          margin-top: 14px;
+        }
 
         &:hover {
-          &::before {
-            background var(--text-color-4)
+          a.article-title, .article-date {
+            color: var(--primary-color);
           }
-
-
-          a.article-title {
-            color var(--primary-color)
-          }
-        }
-
-        .article-date {
-          width $article-date-width
-          margin-right $article-item-padding
-          color var(--text-color-3)
-          font-size $article-date-font-size
         }
 
 
         a.article-title {
-          width 'calc(100% - %s)' % $article-date-width
-          color var(--text-color-3)
+          color: var(--default-text-color);
+        }
+
+        .article-date {
+          font-size: $article-date-font-size;
+          float: right;
         }
       }
     }
