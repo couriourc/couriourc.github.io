@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-23T13:30:21.778Z</updated>
+  <updated>2023-11-26T13:56:26.013Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shader</title>
+    <link href="http://example.com/posts/3ZZ77H8.html"/>
+    <id>http://example.com/posts/3ZZ77H8.html</id>
+    <published>2023-11-25T13:55:35.875Z</published>
+    <updated>2023-11-26T13:56:26.013Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution; <span class="comment">// Canvas size (width,height)</span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_mouse; <span class="comment">// mouse position in screen pixels </span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time; <span class="comment">// Time in seconds since load</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main() &#123;</span><br><span class="line"><span class="type">vec2</span> uv = <span class="built_in">gl_FragCoord</span>.xy/u_resolution;</span><br><span class="line"></span><br><span class="line"><span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(uv.x,<span class="built_in">abs</span>(<span class="built_in">sin</span>(u_time)),<span class="number">1.0</span>,<span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#define PI 3.14159265359</span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">float</span> plot(<span class="type">vec2</span> st, <span class="type">float</span> pct)&#123;</span><br><span class="line">  <span class="keyword">return</span>  <span class="built_in">smoothstep</span>( pct<span class="number">-0.02</span>, pct, st.y) -</span><br><span class="line">          <span class="built_in">smoothstep</span>( pct, pct+<span class="number">0.02</span>, st.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main() &#123;</span><br><span class="line">    <span class="type">vec2</span> st = <span class="built_in">gl_FragCoord</span>.xy/u_resolution;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Step will return 0.0 unless the value is over 0.5,</span></span><br><span class="line">    <span class="comment">// in that case it will return 1.0</span></span><br><span class="line">    <span class="type">float</span> y = <span class="built_in">step</span>(<span class="number">0.5</span>,st.x);</span><br><span class="line"></span><br><span class="line">    <span class="type">vec3</span> color = <span class="type">vec3</span>(y);</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> pct = plot(st,y);</span><br><span class="line">    color = (<span class="number">1.0</span>-pct)*color+pct*<span class="type">vec3</span>(<span class="number">0.0</span>,<span class="number">1.0</span>,<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(color,<span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="Remap-函数"><a class="header-anchor" href="#Remap-函数">¶</a>Remap 函数</h2><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="type">float</span> remap(<span class="type">float</span> x,<span class="type">float</span> s, <span class="type">float</span> e, <span class="type">float</span> s1,<span class="type">float</span> e1) &#123;</span><br><span class="line"><span class="keyword">return</span> (x - s)/(e-s)*(e1-s1) + s1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main()&#123;</span><br><span class="line"><span class="type">vec2</span> uv = <span class="built_in">gl_FragCoord</span>.xy/u_resolution.xy;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">float</span> x = <span class="built_in">abs</span>(remap(uv.x,<span class="number">0.</span>,<span class="number">1.</span>,<span class="number">-.5</span>,<span class="number">.5</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(uv,x,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">remap</span>(<span class="params">x,start,end,t_start,t_end</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (x-start)/(end-start) * ( t_end - t_start ) + t_start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">remap</span>(<span class="number">0.5</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure><h2 id="smoothstep"><a class="header-anchor" href="#smoothstep">¶</a>smoothstep</h2><blockquote><p><strong>smoothstep</strong>可以用来生成 0 到 1 的平滑过渡值，它也叫平滑阶梯函数。</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">clamp</span>(<span class="params">x,max,min</span>)&#123;</span><br><span class="line"><span class="keyword">if</span> (x&lt;min) <span class="keyword">return</span> min;</span><br><span class="line"><span class="keyword">if</span> (x&gt;max) <span class="keyword">return</span> max;</span><br><span class="line"><span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">smoothstep</span>(<span class="params">start,end,x</span>)&#123;</span><br><span class="line">x = <span class="title function_">clamp</span>((x - start)/(end-start),<span class="number">0.</span>,<span class="number">1.</span> );</span><br><span class="line"><span class="keyword">return</span> x*x*(<span class="number">3</span>-<span class="number">2</span>*x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">smoothstep</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">0.5</span>));</span><br></pre></td></tr></table></figure><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#define PI 3.14159265359</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_mouse;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time;</span><br><span class="line"></span><br><span class="line"><span class="type">float</span> plot(<span class="type">vec2</span> st,<span class="type">float</span> pct) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">smoothstep</span>(pct - <span class="number">0.02</span>,pct,st.y) - </span><br><span class="line"><span class="built_in">smoothstep</span>(pct,pct+<span class="number">0.02</span>,st.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main()&#123;</span><br><span class="line"><span class="type">vec2</span> st = <span class="built_in">gl_FragCoord</span>.xy/u_resolution.xy;</span><br><span class="line"><span class="type">float</span> y = <span class="built_in">smoothstep</span>(<span class="number">0.1</span>,<span class="number">0.9</span>,st.x);</span><br><span class="line"><span class="type">vec3</span> color = <span class="type">vec3</span>(y);</span><br><span class="line"><span class="type">float</span> pct = plot(st,y);</span><br><span class="line"></span><br><span class="line">color = (<span class="number">1.</span> - pct) * color + pct*<span class="type">vec3</span>(<span class="number">0.</span>,<span class="number">1.</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(color,<span class="number">1.</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;figure class</summary>
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="glsl" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/glsl/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>诗词佳句</title>
+    <link href="http://example.com/posts/2R3F1KB.html"/>
+    <id>http://example.com/posts/2R3F1KB.html</id>
+    <published>2023-11-25T08:29:54.444Z</published>
+    <updated>2023-11-25T11:45:44.288Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><ul><li><p>且借人间二两墨，一笔相思一笔错，再赊红尘三杯酒，饮下四季韶华落。</p></li><li><p>少年就是少年，他们看春风不喜，看夏蝉不烦，看秋风不悲，看冬雪不叹，看满身富贵懒察觉，看不公不允敢面对，只因他们是少年。</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    <category term="闲情雅致" scheme="http://example.com/categories/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>雅句</title>
+    <link href="http://example.com/posts/14NCYJ9.html"/>
+    <id>http://example.com/posts/14NCYJ9.html</id>
+    <published>2023-11-24T05:18:36.051Z</published>
+    <updated>2023-11-25T08:29:54.486Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="《滚蛋吧，肿瘤君》"><a class="header-anchor" href="#《滚蛋吧，肿瘤君》">¶</a>《滚蛋吧，肿瘤君》</h2><ol><li>抓紧有限的生命，燥起来!哪怕是冲动，也就后悔一阵子。但要是活的太怂了，就会后悔一辈子。</li><li>不要害怕死亡，死亡只是结果。人不能因为害怕失去，就不去拥有。</li><li>听一场摇滚，和耳朵一起一醉方休；喝一圈烈酒，让酒腻子们闻风丧胆；开一场cosplay party，二次元万岁；摸一下大蜥蜴，我熊胆威风凌厉；吃三斤驴打滚，翻滚吧肠胃；飚一把摩托车，成为风驰电掣的女王；见一下微博红人，感受马伯庸亲王的慈祥；至少学会一样乐器，为喜欢的人弹；种一次昙花，守望者它盛开；做一桌丰盛的晚餐给爸妈，哪怕色不香，味不美；来一次夜钓，吸取月光静臆的能量；仰望喀纳斯的星空，寻找属于我的星座；沐浴漠河的极光，感受它的神秘；去山顶看一次日出，然后大喊滚蛋吧肿瘤君。</li><li>反正开不开心，都是活一天，那就大摇大摆地活呗。</li><li>经历过，爱过，坚强过，战胜过自己，有过这些过程，才算没有白活过呢。</li></ol><h2 id="《当幸福来敲门》"><a class="header-anchor" href="#《当幸福来敲门》">¶</a>《当幸福来敲门》</h2><ol><li>Chris Gardner：You have a dream, you got to protect it.</li><li>Chris Gardner：People can’t do something by themselves; they wanna tell you you can not do it.</li><li>There is an I in “happiness”,There is no Y in “happiness”,It’s an I.</li><li>I’m the type of person,if you ask me a question, and I don’t know the answer,I’m gonna to tell you that I don’t know.But I bet you what: I know how to find the answer, and I’ll find the answer.</li><li>You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.</li></ol><h2 id="《一念天堂》"><a class="header-anchor" href="#《一念天堂》">¶</a>《一念天堂》</h2><ol><li>我演过那么多角色，看过那么多人生风景。没有留恋，也没有牵挂。了无痕迹就是最好的表演。是时候告别这个舞台了。</li><li>每场戏都有落下帷幕的时候，每个角色都有告别演出的一天。有的演出冗长而无味，有的演出短暂却精彩。</li><li>人生如戏，这一生努力的将每一个角色扮演的完美，待情节落幕，却发现忘了演自己。</li></ol><h2 id="《飞驰人生》"><a class="header-anchor" href="#《飞驰人生》">¶</a>《飞驰人生》</h2><ol><li>你呢，是这一辈子没故事，想拥有一点儿故事，我呢，是故事太多，想给故事一个结局。</li><li>五年前，我跌入人生的低谷，是你们，写出了各种文章，真真假假，把我扒光示众，扇动大家不要原谅我，让我又多跌了几米。今天，我要把曾经失去的那些尊严，一个一个再夺回来，我张弛，过了这道门，就是回来了。</li><li>成年人的崩溃是从借钱开始的。</li><li>只有当一个人对自己失去信心的那一刻，他才是真的过时了。</li><li>我的一半人生，冷暖就让我自己过问。</li><li>有的人活的是造型 有的人活的是人设 而我活的是本事。</li></ol><h2 id="《夏洛特烦恼》"><a class="header-anchor" href="#《夏洛特烦恼》">¶</a>《夏洛特烦恼》</h2><ol><li>有些人缺铁，有些人缺钙，我缺的是面子。</li><li>一次就好,我陪你去看天荒地老,在阳光灿烂的日子里开怀大笑,在自由自在的空气里吵吵闹闹,你可知道,我唯一的想要. 世界太小,我带你去到天涯海角,在没有烦恼的角落里停止寻找,在无忧无虑的时光里慢慢变老,你可知道,我全部的心跳都随你跳.</li><li>我跳过楼，脑袋可不好使，就特么跟谁脑袋好使似的。</li></ol><h2 id="《何以为家》"><a class="header-anchor" href="#《何以为家》">¶</a>《何以为家》</h2><ol><li>生活是一堆狗屎，不比我的鞋子值钱。</li><li>我以为我们能做个好人，被所有人爱，但上帝不希望我们这样，他宁愿我们做洗碗工。</li><li>我曾经以为我们长大了，就会变成好人，受人尊敬和爱戴。但是上帝不想让我们变成那样，他要我们当地毯，供人踩踏。</li><li>我只记得暴力、侮辱、殴打，链子、管子、皮带。我听过最温柔的一句话是：“滚，你这狗娘养的。滚，你这垃圾。”</li></ol><h2 id="《李茶的姑妈》"><a class="header-anchor" href="#《李茶的姑妈》">¶</a>《李茶的姑妈》</h2><ol><li>无法掌控自己体重的人，怎么掌控自己的人生。</li><li>尊严丢了，整个人就破产了。</li><li>人生七十古来稀，十年少小，十年老弱，再除去上班睡觉吃喝拉撒，好日子着实不多，及时行乐！</li></ol><h2 id="《陈翔六点半之民间高手》"><a class="header-anchor" href="#《陈翔六点半之民间高手》">¶</a>《陈翔六点半之民间高手》</h2><ol><li>想不负此生，首先就得不负身边人。</li><li>年轻的时候，以为人生很长，其实人生很短，最棒的是不后悔，最难的是不遗憾。</li><li>我以前希望自己无牵无挂，潇潇洒洒，不负此生，现在才明白，想不负此生，首先就得不负身边人，我要去完成一件我必须完成的事，希望到时候，我能和所有人坦然相见，再见了，大家。</li></ol><h2 id="《只有我不存在的城市》"><a class="header-anchor" href="#《只有我不存在的城市》">¶</a>《只有我不存在的城市》</h2><ol><li>未来总是一张白纸，只有自己的意志，才能在上面刻下足迹。</li><li>善行和恶行的本质都是相同的，只不过是人类为了弥补自己的缺陷所付出的行动罢了。</li><li>鼓起勇气采取行动的结果怎么可以是”悲剧“呢？</li><li>开心的事情、悲伤的事情，还有成功与失败，你们的小学生涯到此就结束了，大家都还有各种各样的不足，包括我也是，但是，填补这些不足才称得上是人生。我是这么认为的。</li><li>我们无时无刻都想着回到记忆中的童年，找到那时候还没丢掉的天真，可是，曾几何时我们做出童年般的事，嘴角露出一丝微笑，心中却似乌云密布。</li><li>“如果当时这么做就好了”这句话每天都萦绕于心。但是，它并没有化作真切的悔意，只是转瞬即逝的托词罢了。</li><li>大家都是为了在得到什么的过程中，忍受着、努力着，掌握了一些能力，来让自己振奋起来。</li><li>“相信”还真是句奇怪的话呢，因为若是发自真心的信任，根本不需要说出“相信”这样的话吧，只需意会，不必言传。因为有所怀疑，所以才会相信……是这个意思吗？尽管如此，我也不想承认，“相信”这种话感觉像是在撒谎。所谓“相信”，就是“想要相信”……这样充满希望的话语哦。</li><li>我一直在扮演，想要朋友，想要和人亲近，想着不擅长和人接触的自己究竟能做些什么呢？最后决定自己去喜欢大家，这样扮演也变得轻松了不少。</li></ol><h2 id="《小偷家族》"><a class="header-anchor" href="#《小偷家族》">¶</a>《小偷家族》</h2><ol><li>自己做出的选择，才能建立更牢靠的羁绊。</li><li>他们说喜欢你才会打你，是假的。真正喜欢你，会像这样，抱着你。</li><li>萍水相逢的凡人之间，也可以有真挚深沉的羁绊，这羁绊，是我们活下去的全部理由。</li><li>难道生下了孩子，你就自然能成为母亲吗？</li><li>没有扔掉，只是捡来了。最开始扔掉的人应该别有所在吧。</li><li>烟花未曾照耀的地方，也有仰望着的笑脸，生活沉重如此，仰望本身，即是美丽。</li></ol><h2 id="《弥留之国的爱丽丝》"><a class="header-anchor" href="#《弥留之国的爱丽丝》">¶</a>《弥留之国的爱丽丝》</h2><ol><li>某天突然注意到，我在这个世界里既不是勇者也不是魔法师，更不是玩家，只是是个普通的村民甲。</li><li>为什么会这么美丽，这就是命运。在死亡来临前的最后一刻为止，只是为了活下去，这就是属于生命的光辉吗？</li><li>我们活着这件事，并不单纯只是维持生命，是生命痕迹的相互交错啊。</li></ol><h2 id="《白夜行》"><a class="header-anchor" href="#《白夜行》">¶</a>《白夜行》</h2><ol><li>绝望的念想，非恸的守望。</li><li>唯有那家图书馆，才是他们两人的心灵休憩之处。他们只是想保护自己的灵魂。</li><li>“恶魔不会因为你是孩子就放过你，而且，恶魔还不止一个。”杀死恶魔的人，必定也被恶魔的鲜血所污染，自己也变成了恶魔。</li><li>曾经拥有的东西被夺走，并不代表就会回到原来没有那种东西的时候。</li><li>捡别人的东西不还跟偷别人随意放置的东西没有什么差别。有错的难道不是把装了钱的包随便放的人吗？在这个社会上，让别人有机可乘的人注定要吃亏。</li><li>所有的守护，只为你一人在阳光下行走。</li><li>你是我的…太阳，火热的太阳，不放弃在明天继续升起，这是我唯一的希望。</li><li>我的天空里没有太阳，总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮，但对我来说已经足够。凭借着这份光，我便能把黑夜当成白天。我从来就没有太阳，所以不怕失去。</li><li>她的眼神里有一种微妙得难以言喻的刺。但那并不是社交舞社社长无视她的存在，只顾和朋友讲话而自尊受伤的样子。那双眼睛里栖息的光并不属于那种类型。那是更危险的光——这才是一成的感觉，可以说是隐含了卑劣下流的光。他认为真正的名门闺秀，眼神里不应栖息着那样的光。</li><li>她唯一一次没有伪装，是在光芒熄灭的时候。从此，只剩她一个人，行走在永夜。</li><li>世上有两样东西不可直视，一是太阳，二是人心。</li><li>一天当中有太阳升起的时候，也有下沉的时候。人生也一样。有白天和黑夜，只是不会像真正的太阳那样，有定时的日出和日落。看个人，有些人一辈子都活在阳光的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失。我的天空里没有太阳总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮。但对我来说已经足够。，凭借这份光，我便能把黑夜当成白天。我从来就没有太阳，所以不怕失去。</li><li>请告诉孩子们，真正的惩罚是会留在心和记忆里面的，吞下的罪恶侵蚀着灵魂，不久之后，连那身体，连生命也都被吃尽了，请在那之前，请转达给父母们，来自一个幽灵的遗言。</li><li>有些人一辈子都活在太阳的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来就一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h2 id=&quot;《滚蛋吧，</summary>
+      
+    
+    
+    
+    <category term="闲情雅致" scheme="http://example.com/categories/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/"/>
+    
+    <category term="闲情雅致" scheme="http://example.com/categories/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>起步入门</title>
@@ -177,89 +249,6 @@
   </entry>
   
   <entry>
-    <title>核心演进-粒子特效及交互特效</title>
-    <link href="http://example.com/posts/2QRW3DC.html"/>
-    <id>http://example.com/posts/2QRW3DC.html</id>
-    <published>2023-11-23T13:30:21.762Z</published>
-    <updated>2023-11-23T13:30:21.762Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">VectorBasic</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 消失的逻辑</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 藏在前半屏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 藏在后半屏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果隐藏的境况，视图不更新，但是数据及时同步</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 使用到的一些过渡方法</span></span><br><span class="line"><span class="comment">// 将会是十字的归集效果</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">ease</span> = (<span class="params">source:VectorBasic,target:VectorBasic,speed:VectorBasic</span>)=&gt; &#123;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(source)</span><br><span class="line">.<span class="title function_">forEach</span>(<span class="function">(<span class="params">key</span>)=&gt;</span>&#123;</span><br><span class="line"><span class="keyword">const</span> dx = source[key] - target[key];</span><br><span class="line"><span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">abs</span>(dx) &lt; speed[key]) <span class="keyword">return</span> source[key] = target[key];</span><br><span class="line"><span class="keyword">return</span> source[key] &lt; target[key] ? </span><br><span class="line">source[key] += speed[key] :</span><br><span class="line">source[key] -= speed[key];</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span </summary>
-      
-    
-    
-    
-    <category term="公司经历以及问题记录" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="成都量子矩阵" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="参与的项目" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/%E5%8F%82%E4%B8%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>公司官网</title>
-    <link href="http://example.com/posts/1YBAH4F.html"/>
-    <id>http://example.com/posts/1YBAH4F.html</id>
-    <published>2023-11-23T13:30:21.762Z</published>
-    <updated>2023-11-23T13:30:21.762Z</updated>
-    
-    
-    
-    
-    <category term="公司经历以及问题记录" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="成都量子矩阵" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="参与的项目" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/%E5%8F%82%E4%B8%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>看守所</title>
-    <link href="http://example.com/posts/10RBQGR.html"/>
-    <id>http://example.com/posts/10RBQGR.html</id>
-    <published>2023-11-23T13:30:21.762Z</published>
-    <updated>2023-11-23T13:30:21.762Z</updated>
-    
-    
-    
-    
-    <category term="公司经历以及问题记录" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="成都量子矩阵" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="参与的项目" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/%E5%8F%82%E4%B8%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>AI辅助平台</title>
-    <link href="http://example.com/posts/2CFXYDX.html"/>
-    <id>http://example.com/posts/2CFXYDX.html</id>
-    <published>2023-11-23T13:30:21.761Z</published>
-    <updated>2023-11-23T13:30:21.761Z</updated>
-    
-    
-    
-    
-    <category term="公司经历以及问题记录" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="成都量子矩阵" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="参与的项目" scheme="http://example.com/categories/%E5%85%AC%E5%8F%B8%E7%BB%8F%E5%8E%86%E4%BB%A5%E5%8F%8A%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%88%90%E9%83%BD%E9%87%8F%E5%AD%90%E7%9F%A9%E9%98%B5/%E5%8F%82%E4%B8%8E%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>旅游</title>
     <link href="http://example.com/posts/26BENS9.html"/>
     <id>http://example.com/posts/26BENS9.html</id>
@@ -286,30 +275,6 @@
     <category term="旅游" scheme="http://example.com/tags/%E6%97%85%E6%B8%B8/"/>
     
     <category term="计划" scheme="http://example.com/tags/%E8%AE%A1%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>雅句</title>
-    <link href="http://example.com/posts/14NCYJ9.html"/>
-    <id>http://example.com/posts/14NCYJ9.html</id>
-    <published>2023-10-18T01:21:00.548Z</published>
-    <updated>2023-10-18T01:21:00.548Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="滚蛋吧肿瘤君"><a class="markdownIt-Anchor" href="#滚蛋吧肿瘤君"></a> 《滚蛋吧，肿瘤君》</h2><ol><li>抓紧有限的生命，燥起来!哪怕是冲动，也就后悔一阵子。但要是活的太怂了，就会后悔一辈子。</li><li>不要害怕死亡，死亡只是结果。人不能因为害怕失去，就不去拥有。</li><li>听一场摇滚，和耳朵一起一醉方休；喝一圈烈酒，让酒腻子们闻风丧胆；开一场cosplay party，二次元万岁；摸一下大蜥蜴，我熊胆威风凌厉；吃三斤驴打滚，翻滚吧肠胃；飚一把摩托车，成为风驰电掣的女王；见一下微博红人，感受马伯庸亲王的慈祥；至少学会一样乐器，为喜欢的人弹；种一次昙花，守望者它盛开；做一桌丰盛的晚餐给爸妈，哪怕色不香，味不美；来一次夜钓，吸取月光静臆的能量；仰望喀纳斯的星空，寻找属于我的星座；沐浴漠河的极光，感受它的神秘；去山顶看一次日出，然后大喊滚蛋吧肿瘤君。</li><li>反正开不开心，都是活一天，那就大摇大摆地活呗。</li><li>经历过，爱过，坚强过，战胜过自己，有过这些过程，才算没有白活过呢。</li></ol><h2 id="当幸福来敲门"><a class="markdownIt-Anchor" href="#当幸福来敲门"></a> 《当幸福来敲门》</h2><ol><li>Chris Gardner：You have a dream, you got to protect it.</li><li>Chris Gardner：People can’t do something by themselves; they wanna tell you you can not do it.</li><li>There is an I in “happiness”,There is no Y in “happiness”,It’s an I.</li><li>I’m the type of person,if you ask me a question, and I don’t know the answer,I’m gonna to tell you that I don’t know.But I bet you what: I know how to find the answer, and I’ll find the answer.</li><li>You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.</li></ol><h2 id="一念天堂"><a class="markdownIt-Anchor" href="#一念天堂"></a> 《一念天堂》</h2><ol><li>我演过那么多角色，看过那么多人生风景。没有留恋，也没有牵挂。了无痕迹就是最好的表演。是时候告别这个舞台了。</li><li>每场戏都有落下帷幕的时候，每个角色都有告别演出的一天。有的演出冗长而无味，有的演出短暂却精彩。</li><li>人生如戏，这一生努力的将每一个角色扮演的完美，待情节落幕，却发现忘了演自己。</li></ol><h2 id="飞驰人生"><a class="markdownIt-Anchor" href="#飞驰人生"></a> 《飞驰人生》</h2><ol><li>你呢，是这一辈子没故事，想拥有一点儿故事，我呢，是故事太多，想给故事一个结局。</li><li>五年前，我跌入人生的低谷，是你们，写出了各种文章，真真假假，把我扒光示众，扇动大家不要原谅我，让我又多跌了几米。今天，我要把曾经失去的那些尊严，一个一个再夺回来，我张弛，过了这道门，就是回来了。</li><li>成年人的崩溃是从借钱开始的。</li><li>只有当一个人对自己失去信心的那一刻，他才是真的过时了。</li><li>我的一半人生，冷暖就让我自己过问。</li><li>有的人活的是造型 有的人活的是人设 而我活的是本事。</li></ol><h2 id="夏洛特烦恼"><a class="markdownIt-Anchor" href="#夏洛特烦恼"></a> 《夏洛特烦恼》</h2><ol><li>有些人缺铁，有些人缺钙，我缺的是面子。</li><li>一次就好,我陪你去看天荒地老,在阳光灿烂的日子里开怀大笑,在自由自在的空气里吵吵闹闹,你可知道,我唯一的想要. 世界太小,我带你去到天涯海角,在没有烦恼的角落里停止寻找,在无忧无虑的时光里慢慢变老,你可知道,我全部的心跳都随你跳.</li><li>我跳过楼，脑袋可不好使，就特么跟谁脑袋好使似的。</li></ol><h2 id="何以为家"><a class="markdownIt-Anchor" href="#何以为家"></a> 《何以为家》</h2><ol><li>生活是一堆狗屎，不比我的鞋子值钱。</li><li>我以为我们能做个好人，被所有人爱，但上帝不希望我们这样，他宁愿我们做洗碗工。</li><li>我曾经以为我们长大了，就会变成好人，受人尊敬和爱戴。但是上帝不想让我们变成那样，他要我们当地毯，供人踩踏。</li><li>我只记得暴力、侮辱、殴打，链子、管子、皮带。我听过最温柔的一句话是：“滚，你这狗娘养的。滚，你这垃圾。”</li></ol><h2 id="李茶的姑妈"><a class="markdownIt-Anchor" href="#李茶的姑妈"></a> 《李茶的姑妈》</h2><ol><li>无法掌控自己体重的人，怎么掌控自己的人生。</li><li>尊严丢了，整个人就破产了。</li><li>人生七十古来稀，十年少小，十年老弱，再除去上班睡觉吃喝拉撒，好日子着实不多，及时行乐！</li></ol><h2 id="陈翔六点半之民间高手"><a class="markdownIt-Anchor" href="#陈翔六点半之民间高手"></a> 《陈翔六点半之民间高手》</h2><ol><li>想不负此生，首先就得不负身边人。</li><li>年轻的时候，以为人生很长，其实人生很短，最棒的是不后悔，最难的是不遗憾。</li><li>我以前希望自己无牵无挂，潇潇洒洒，不负此生，现在才明白，想不负此生，首先就得不负身边人，我要去完成一件我必须完成的事，希望到时候，我能和所有人坦然相见，再见了，大家。</li></ol><h2 id="只有我不存在的城市"><a class="markdownIt-Anchor" href="#只有我不存在的城市"></a> 《只有我不存在的城市》</h2><ol><li>未来总是一张白纸，只有自己的意志，才能在上面刻下足迹。</li><li>善行和恶行的本质都是相同的，只不过是人类为了弥补自己的缺陷所付出的行动罢了。</li><li>鼓起勇气采取行动的结果怎么可以是”悲剧“呢？</li><li>开心的事情、悲伤的事情，还有成功与失败，你们的小学生涯到此就结束了，大家都还有各种各样的不足，包括我也是，但是，填补这些不足才称得上是人生。我是这么认为的。</li><li>我们无时无刻都想着回到记忆中的童年，找到那时候还没丢掉的天真，可是，曾几何时我们做出童年般的事，嘴角露出一丝微笑，心中却似乌云密布。</li><li>“如果当时这么做就好了”这句话每天都萦绕于心。但是，它并没有化作真切的悔意，只是转瞬即逝的托词罢了。</li><li>大家都是为了在得到什么的过程中，忍受着、努力着，掌握了一些能力，来让自己振奋起来。</li><li>“相信”还真是句奇怪的话呢，因为若是发自真心的信任，根本不需要说出“相信”这样的话吧，只需意会，不必言传。因为有所怀疑，所以才会相信……是这个意思吗？尽管如此，我也不想承认，“相信”这种话感觉像是在撒谎。所谓“相信”，就是“想要相信”……这样充满希望的话语哦。</li><li>我一直在扮演，想要朋友，想要和人亲近，想着不擅长和人接触的自己究竟能做些什么呢？最后决定自己去喜欢大家，这样扮演也变得轻松了不少。</li></ol><h2 id="小偷家族"><a class="markdownIt-Anchor" href="#小偷家族"></a> 《小偷家族》</h2><ol><li>自己做出的选择，才能建立更牢靠的羁绊。</li><li>他们说喜欢你才会打你，是假的。真正喜欢你，会像这样，抱着你。</li><li>萍水相逢的凡人之间，也可以有真挚深沉的羁绊，这羁绊，是我们活下去的全部理由。</li><li>难道生下了孩子，你就自然能成为母亲吗？</li><li>没有扔掉，只是捡来了。最开始扔掉的人应该别有所在吧。</li><li>烟花未曾照耀的地方，也有仰望着的笑脸，生活沉重如此，仰望本身，即是美丽。</li></ol><h2 id="弥留之国的爱丽丝"><a class="markdownIt-Anchor" href="#弥留之国的爱丽丝"></a> 《弥留之国的爱丽丝》</h2><ol><li>某天突然注意到，我在这个世界里既不是勇者也不是魔法师，更不是玩家，只是是个普通的村民甲。</li><li>为什么会这么美丽，这就是命运。在死亡来临前的最后一刻为止，只是为了活下去，这就是属于生命的光辉吗？</li><li>我们活着这件事，并不单纯只是维持生命，是生命痕迹的相互交错啊。</li></ol><h2 id="白夜行"><a class="markdownIt-Anchor" href="#白夜行"></a> 《白夜行》</h2><ol><li>绝望的念想，非恸的守望。</li><li>唯有那家图书馆，才是他们两人的心灵休憩之处。他们只是想保护自己的灵魂。</li><li>“恶魔不会因为你是孩子就放过你，而且，恶魔还不止一个。”杀死恶魔的人，必定也被恶魔的鲜血所污染，自己也变成了恶魔。</li><li>曾经拥有的东西被夺走，并不代表就会回到原来没有那种东西的时候。</li><li>捡别人的东西不还跟偷别人随意放置的东西没有什么差别。有错的难道不是把装了钱的包随便放的人吗？在这个社会上，让别人有机可乘的人注定要吃亏。</li><li>所有的守护，只为你一人在阳光下行走。</li><li>你是我的…太阳，火热的太阳，不放弃在明天继续升起，这是我唯一的希望。</li><li>我的天空里没有太阳，总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮，但对我来说已经足够。凭借着这份光，我便能把黑夜当成白天。我从来就没有太阳，所以不怕失去。</li><li>她的眼神里有一种微妙得难以言喻的刺。但那并不是社交舞社社长无视她的存在，只顾和朋友讲话而自尊受伤的样子。那双眼睛里栖息的光并不属于那种类型。那是更危险的光——这才是一成的感觉，可以说是隐含了卑劣下流的光。他认为真正的名门闺秀，眼神里不应栖息着那样的光。</li><li>她唯一一次没有伪装，是在光芒熄灭的时候。从此，只剩她一个人，行走在永夜。</li><li>世上有两样东西不可直视，一是太阳，二是人心。</li><li>一天当中有太阳升起的时候，也有下沉的时候。人生也一样。有白天和黑夜，只是不会像真正的太阳那样，有定时的日出和日落。看个人，有些人一辈子都活在阳光的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失。我的天空里没有太阳总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮。但对我来说已经足够。，凭借这份光，我便能把黑夜当成白天。我从来就没有太阳，所以不怕失去。</li><li>请告诉孩子们，真正的惩罚是会留在心和记忆里面的，吞下的罪恶侵蚀着灵魂，不久之后，连那身体，连生命也都被吃尽了，请在那之前，请转达给父母们，来自一个幽灵的遗言。</li><li>有些人一辈子都活在太阳的照耀下，也有些人不得不一直活在漆黑的深夜里。人害怕的，就是本来就一直存在的太阳落下不再升起，也就是非常害怕原本照在身上的光芒消失。</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h2 id=&quot;滚蛋吧肿瘤</summary>
-      
-    
-    
-    
-    <category term="闲情雅致" scheme="http://example.com/categories/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/"/>
-    
-    <category term="闲情雅致" scheme="http://example.com/categories/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/%E9%97%B2%E6%83%85%E9%9B%85%E8%87%B4/"/>
-    
     
   </entry>
   
@@ -538,6 +503,66 @@
     
     
     <category term="数据库系统概论" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL 函数</title>
+    <link href="http://example.com/posts/2JP1ZR3.html"/>
+    <id>http://example.com/posts/2JP1ZR3.html</id>
+    <published>2023-10-18T01:20:59.838Z</published>
+    <updated>2023-10-18T01:20:59.838Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="聚合函数"><a class="markdownIt-Anchor" href="#聚合函数"></a> 聚合函数</h2><p><code>AVG(表达式)</code>: 返回表达式中所有的平均值。仅用于数字列，并<strong>自动忽略 <code>NULL</code> 值</strong><br /><code>COUNT(表达式)</code>: 返回表达式中<strong>非 <code>NULL</code> 值的数量</strong>。可用于数字和字符。<br /><code>COUNT(*)</code>: 返回表达式中的行数（<strong>包括有 <code>NULL</code> 值的列</strong>）。<br /><code>MAX(表达式)</code>: 返回表达式中的最大值，<strong>忽略 <code>NULL</code> 值</strong> 。可用于数字和字符列。<br /><code>MIN(表达式)</code>: 返回表达式中的最小值，<strong>忽略 <code>NULL</code> 值</strong> 。可用于数字和字符列。<br /><code>SUM(表达式)</code>: 返回表达式中的总和，<strong>忽略 <code>NULL</code> 值</strong> 。仅数字列。</p><h2 id="转换函数"><a class="markdownIt-Anchor" href="#转换函数"></a> 转换函数</h2><p><code>CONVERT(data_type[(length)],expression[,style])</code><br /><code>CAST( expression AS data_type )</code></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 将学号转为 varchar 类型</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">CONVERT</span>(<span class="type">varchar</span>(<span class="number">10</span>),stuno) <span class="keyword">as</span> stuno,stuname <span class="keyword">from</span> student;</span><br><span class="line"><span class="comment">-- 将学号转为 varchar 类型</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">CAST</span>(stuno <span class="keyword">as</span> <span class="type">varchar</span>(<span class="number">10</span>)) <span class="keyword">as</span> stuno,stuname <span class="keyword">from</span> student;</span><br></pre></td></tr></table></figure><p><code>Cast</code> 和<code> Convert</code> 都是用来将一种数据类型的表达式转换为另一种数据类型的表达式。<code>CAST</code> 和 <code>CONVERT</code> 提供相似的功能，只是语法不同。在时间转化中一般用到 <code>convert</code>,因为它比 <code>cast</code> 多加了一个 style,可以转化成不同时间的格式。</p><h2 id="日期函数"><a class="markdownIt-Anchor" href="#日期函数"></a> 日期函数</h2><p>由于不能直接执行算术函数，所以日期函数就十分有用。</p><p><code>GETDATE()</code>: 当前的系统日期</p><p><code>DATEADD(日期部分,number,date)</code>: 返回带有指定数字(number)的日期(date),该数字添加到指定的日期部分(datepart)</p><p><code>DATEDIFF(日期部分,date1,date2)</code> 返回两个日期中指定的<code>日期部分之间的差值</code>。</p><p><code>DATENAME(日期部分,date)</code> 返回日期中日期部分的 <code>字符串形式</code>。</p><p><code>DATEPART(日期部分,date)</code> 返回日期中指定的日期部分的 <code>整数形式</code>。</p><p><code>YEAR(date)</code> 返回指定日期的 <code>年份</code> 数值。</p><p><code>MONTH(date)</code> 返回指定日期的 <code>月份</code> 数值</p><p><code>DAY(date)</code> 返回指定日期的 <code>天数</code> 值</p><h2 id="数字函数"><a class="markdownIt-Anchor" href="#数字函数"></a> 数字函数</h2><p><code>ABS (num_expr) </code>返回数值表达式的绝对值。</p><h3 id="三角函数"><a class="markdownIt-Anchor" href="#三角函数"></a> 三角函数</h3><p><code>ACOS (float_expr) </code> 返回角 (以弧度表示), 它的余弦值近似于指定的浮点表达式。<br /><code>ASIN (float_expr) </code>返回角 (以弧度表示), 它的正弦值近似于指定的浮点表达式。<br /><code>ATAN (float_expr)</code> 返回角 (以弧度表示), 它的正切值近似于指定的浮点表达式。<br /><code>ATN2 (float_expr 1, float_expr 2)</code> 返回角 (以弧度表示), 它的正切值在两个近似的浮点表达式之间。<br /><code>CEILING (num_expr) </code>返回大于或等于数值表达式的最小整数。<br /><code>COS (float_expr)</code> 返回以浮点表达式表示的近似于指定角度 (以弧度表示)的余弦三角函数的值。<br /><code>COT (float_expr) </code>返回以浮点表达式表示的近似于指定角度 (以弧度表示)的余切三角函数的值。<br /><code>DEGREES (num_expr)</code>返回数值表达式表示的弧度值对应的度值。<br /><code>TAN (float_expr) </code> 返回以浮点表达式表示的近似于指定角度 (以弧度表示)的正切三角函数的值。</p><h3 id="精度转换"><a class="markdownIt-Anchor" href="#精度转换"></a> 精度转换</h3><p><code>EXP (float_expr) </code>根据指定的近似浮点表达式, 返回指数值。<br /><code>FLOOR (num_expr)</code> 返回小于或等于数值表达式的最大整数<br /><code>LOG (float_expr)</code> 根据指定的近似浮点表达式, 返回自然对数值。<br /><code>LOG10 (float_expr)</code> 根据指定的近似浮点表达式, 返回以为底的对数。<br /><code>PI () </code>返回常量值. 141592653589793<br /><code>POWER (num_expr, y)</code> 返回幂为 y 的数值表达式的值。<br /><code>RADIANS (num_expr)</code> 返回数值表达式表示的度值对应的弧度值。<br /><code>RAND ([seed])</code> 随机返回的到之间的近似浮点值, 可以对 seed 指定为整数表达式 (可选)。<br /><code>ROUND (num_expr, length)</code> 对数值表达式截取指定的整数长度, 返回四舍五入后的值。<br /><code>SIGN (num_expr) </code>对正数执行+1 操作, 对负数和零执行-1 操作。<br /><code>SIN (float_expr) </code>返回以浮点表达式表示的近似于指定角度 (以弧度表示)的正弦三角函数的值。<br /><code>SQUARE (float_expr)</code> 返回浮点表达式的平均值。<br /><code>SQRT (float_expr)</code> 返回指定的近似浮点表达式的平方根。</p><h2 id="字符串函数"><a class="markdownIt-Anchor" href="#字符串函数"></a> 字符串函数</h2><h2 id="系统函数"><a class="markdownIt-Anchor" href="#系统函数"></a> 系统函数</h2><blockquote><p>~ 用于返回元数据或配置设置。</p></blockquote><h2 id="文本和图像函数"><a class="markdownIt-Anchor" href="#文本和图像函数"></a> 文本和图像函数</h2><p>通常返回有关文本和图像数据所需的信息。文本和图像数据是以二进制格式的形式进行存储的。</p><p><code>TEXTPTR (col_name)</code> 返回 varbinary 格式的文本指针值。对文本指针进行检查以确保它指向第一个文本页。</p><p><code>TEXTVALID ('table_name. Col_name', text_ptr)</code>检查给定的文本指针是否有效。返回表示有效, 返回表示指针无效。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h2 id=&quot;聚合函数&quot;</summary>
+      
+    
+    
+    
+    <category term="技术学习" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="技术学习" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="数据库系统概论" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+    
+    <category term="数据库系统概论" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 基础篇</title>
+    <link href="http://example.com/posts/81edab1.html"/>
+    <id>http://example.com/posts/81edab1.html</id>
+    <published>2023-10-18T01:20:59.830Z</published>
+    <updated>2023-10-18T01:20:59.831Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="seo-相关内容"><a class="markdownIt-Anchor" href="#seo-相关内容"></a> SEO 相关内容</h2><p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p><h3 id="1-html-语义化的理解"><a class="markdownIt-Anchor" href="#1-html-语义化的理解"></a> 1. HTML 语义化的理解</h3><p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p><p>简而言之，一种 <code>Web</code>开发规范，规范的作用就有：</p><ol><li>更好的维护项目，提高代码可读性。</li><li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria</code>都有帮助，同时有利于编译器进行一系列优化。</li></ol><h3 id="2-h1-标签和-title-标签之间的区别是什么"><a class="markdownIt-Anchor" href="#2-h1-标签和-title-标签之间的区别是什么"></a> 2. h1 标签和 title 标签之间的区别是什么？</h3><ul><li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li><li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li></ul><h3 id="3-img-中的-title-属性和-alt-属性的区别"><a class="markdownIt-Anchor" href="#3-img-中的-title-属性和-alt-属性的区别"></a> 3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3><p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text&amp;#x2F;css&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css&quot;&gt;&lt;h2 id=&quot;seo-相</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端基础知识" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="HTML" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/HTML/"/>
+    
+    
+    <category term="2023面试" scheme="http://example.com/tags/2023%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="HTML" scheme="http://example.com/tags/HTML/"/>
     
   </entry>
   
