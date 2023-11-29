@@ -37,9 +37,9 @@ style:
 
   # First screen
   first_screen:
-    enable: false
+    enable: true
     background_img: /images/bg.svg # You can use local image or image external link
-    description: 保持疯狂 - 保持热爱.
+    description: 在天冷的时候自觉的穿上秋裤，这就是少年.
 
   # Scroll style settings
   scroll:
