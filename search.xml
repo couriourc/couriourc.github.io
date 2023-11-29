@@ -1,45 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>shader</title>
-    <url>/posts/3ZZ77H8.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution; <span class="comment">// Canvas size (width,height)</span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_mouse; <span class="comment">// mouse position in screen pixels </span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time; <span class="comment">// Time in seconds since load</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main() &#123;</span><br><span class="line">	<span class="type">vec2</span> uv = <span class="built_in">gl_FragCoord</span>.xy/u_resolution;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(uv.x,<span class="built_in">abs</span>(<span class="built_in">sin</span>(u_time)),<span class="number">1.0</span>,<span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#define PI 3.14159265359</span></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">float</span> plot(<span class="type">vec2</span> st, <span class="type">float</span> pct)&#123;</span><br><span class="line">  <span class="keyword">return</span>  <span class="built_in">smoothstep</span>( pct<span class="number">-0.02</span>, pct, st.y) -</span><br><span class="line">          <span class="built_in">smoothstep</span>( pct, pct+<span class="number">0.02</span>, st.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main() &#123;</span><br><span class="line">    <span class="type">vec2</span> st = <span class="built_in">gl_FragCoord</span>.xy/u_resolution;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Step will return 0.0 unless the value is over 0.5,</span></span><br><span class="line">    <span class="comment">// in that case it will return 1.0</span></span><br><span class="line">    <span class="type">float</span> y = <span class="built_in">step</span>(<span class="number">0.5</span>,st.x);</span><br><span class="line"></span><br><span class="line">    <span class="type">vec3</span> color = <span class="type">vec3</span>(y);</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> pct = plot(st,y);</span><br><span class="line">    color = (<span class="number">1.0</span>-pct)*color+pct*<span class="type">vec3</span>(<span class="number">0.0</span>,<span class="number">1.0</span>,<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(color,<span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Remap-函数"><a class="header-anchor" href="#Remap-函数">¶</a>Remap 函数</h2>
-<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="type">float</span> remap(<span class="type">float</span> x,<span class="type">float</span> s, <span class="type">float</span> e, <span class="type">float</span> s1,<span class="type">float</span> e1) &#123;</span><br><span class="line">	<span class="keyword">return</span> (x - s)/(e-s)*(e1-s1) + s1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main()&#123;</span><br><span class="line">	<span class="type">vec2</span> uv = <span class="built_in">gl_FragCoord</span>.xy/u_resolution.xy;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="type">float</span> x = <span class="built_in">abs</span>(remap(uv.x,<span class="number">0.</span>,<span class="number">1.</span>,<span class="number">-.5</span>,<span class="number">.5</span>));</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(uv,x,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">remap</span>(<span class="params">x,start,end,t_start,t_end</span>) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> (x-start)/(end-start) * ( t_end - t_start ) + t_start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">remap</span>(<span class="number">0.5</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="smoothstep"><a class="header-anchor" href="#smoothstep">¶</a>smoothstep</h2>
-<blockquote>
-<p><strong>smoothstep</strong>可以用来生成 0 到 1 的平滑过渡值，它也叫平滑阶梯函数。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">clamp</span>(<span class="params">x,max,min</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span> (x&lt;min) <span class="keyword">return</span> min;</span><br><span class="line">	<span class="keyword">if</span> (x&gt;max) <span class="keyword">return</span> max;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">smoothstep</span>(<span class="params">start,end,x</span>)&#123;</span><br><span class="line">	x = <span class="title function_">clamp</span>((x - start)/(end-start),<span class="number">0.</span>,<span class="number">1.</span> );</span><br><span class="line">	<span class="keyword">return</span> x*x*(<span class="number">3</span>-<span class="number">2</span>*x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">smoothstep</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">0.5</span>));</span><br></pre></td></tr></table></figure>
-<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#define PI 3.14159265359</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_mouse;</span><br><span class="line"><span class="keyword">uniform</span> <span class="type">float</span> u_time;</span><br><span class="line"></span><br><span class="line"><span class="type">float</span> plot(<span class="type">vec2</span> st,<span class="type">float</span> pct) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">smoothstep</span>(pct - <span class="number">0.02</span>,pct,st.y) - </span><br><span class="line">		<span class="built_in">smoothstep</span>(pct,pct+<span class="number">0.02</span>,st.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> main()&#123;</span><br><span class="line">	<span class="type">vec2</span> st = <span class="built_in">gl_FragCoord</span>.xy/u_resolution.xy;</span><br><span class="line">	<span class="type">float</span> y = <span class="built_in">smoothstep</span>(<span class="number">0.1</span>,<span class="number">0.9</span>,st.x);</span><br><span class="line">	<span class="type">vec3</span> color = <span class="type">vec3</span>(y);</span><br><span class="line">	<span class="type">float</span> pct = plot(st,y);</span><br><span class="line"></span><br><span class="line">	color = (<span class="number">1.</span> - pct) * color + pct*<span class="type">vec3</span>(<span class="number">0.</span>,<span class="number">1.</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(color,<span class="number">1.</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>TheBookOfShader</title>
+    <url>/posts/37RDRPJ.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="meta">#ifdef GL_ES</span></span><br><span class="line"><span class="keyword">precision</span> <span class="keyword">mediump</span> <span class="type">float</span>;</span><br><span class="line"><span class="meta">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uniform</span> <span class="type">vec2</span> u_resolution; </span><br><span class="line"><span class="type">void</span> main()&#123;</span><br><span class="line">	<span class="type">vec2</span> st = <span class="built_in">gl_FragCoord</span>.xy/u_resolution.xy;</span><br><span class="line">	<span class="type">vec3</span> color = <span class="type">vec3</span>(<span class="number">0.0</span>); <span class="comment">// Each result will return 1.0 (white) or 0.0 (black).</span></span><br><span class="line">	<span class="type">float</span> left = <span class="built_in">step</span>(<span class="number">0.1</span>,st.x); <span class="comment">// Similar to ( X greater than 0.1 )</span></span><br><span class="line">	<span class="type">float</span> bottom = <span class="built_in">step</span>(<span class="number">0.1</span>,st.y); <span class="comment">// Similar to ( Y greater than 0.1 ) </span></span><br><span class="line">	<span class="comment">// The multiplication of left*bottom will be similar to the logical AND. </span></span><br><span class="line">	color = <span class="type">vec3</span>( left * bottom );</span><br><span class="line">	<span class="built_in">gl_FragColor</span> = <span class="type">vec4</span>(color,<span class="number">1.0</span>); &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>编程语言</category>
-        <category>glsl</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>诗词佳句</title>
-    <url>/posts/2R3F1KB.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><ul>
-<li>
-<p>且借人间二两墨，一笔相思一笔错，再赊红尘三杯酒，饮下四季韶华落。</p>
-</li>
-<li>
-<p>少年就是少年，他们看春风不喜，看夏蝉不烦，看秋风不悲，看冬雪不叹，看满身富贵懒察觉，看不公不允敢面对，只因他们是少年。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>闲情雅致</category>
+        <category>计算机基础知识</category>
+        <category>计算机图形学</category>
       </categories>
   </entry>
   <entry>
     <title>雅句</title>
     <url>/posts/14NCYJ9.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="《滚蛋吧，肿瘤君》"><a class="header-anchor" href="#《滚蛋吧，肿瘤君》">¶</a>《滚蛋吧，肿瘤君》</h2>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="滚蛋吧肿瘤君"><a class="markdownIt-Anchor" href="#滚蛋吧肿瘤君"></a> 《滚蛋吧，肿瘤君》</h2>
 <ol>
 <li>抓紧有限的生命，燥起来!哪怕是冲动，也就后悔一阵子。但要是活的太怂了，就会后悔一辈子。</li>
 <li>不要害怕死亡，死亡只是结果。人不能因为害怕失去，就不去拥有。</li>
@@ -47,7 +21,7 @@
 <li>反正开不开心，都是活一天，那就大摇大摆地活呗。</li>
 <li>经历过，爱过，坚强过，战胜过自己，有过这些过程，才算没有白活过呢。</li>
 </ol>
-<h2 id="《当幸福来敲门》"><a class="header-anchor" href="#《当幸福来敲门》">¶</a>《当幸福来敲门》</h2>
+<h2 id="当幸福来敲门"><a class="markdownIt-Anchor" href="#当幸福来敲门"></a> 《当幸福来敲门》</h2>
 <ol>
 <li>Chris Gardner：You have a dream, you got to protect it.</li>
 <li>Chris Gardner：People can’t do something by themselves; they wanna tell you you can not do it.</li>
@@ -55,13 +29,13 @@
 <li>I’m the type of person,if you ask me a question, and I don’t know the answer,I’m gonna to tell you that I don’t know.But I bet you what: I know how to find the answer, and I’ll find the answer.</li>
 <li>You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.</li>
 </ol>
-<h2 id="《一念天堂》"><a class="header-anchor" href="#《一念天堂》">¶</a>《一念天堂》</h2>
+<h2 id="一念天堂"><a class="markdownIt-Anchor" href="#一念天堂"></a> 《一念天堂》</h2>
 <ol>
 <li>我演过那么多角色，看过那么多人生风景。没有留恋，也没有牵挂。了无痕迹就是最好的表演。是时候告别这个舞台了。</li>
 <li>每场戏都有落下帷幕的时候，每个角色都有告别演出的一天。有的演出冗长而无味，有的演出短暂却精彩。</li>
 <li>人生如戏，这一生努力的将每一个角色扮演的完美，待情节落幕，却发现忘了演自己。</li>
 </ol>
-<h2 id="《飞驰人生》"><a class="header-anchor" href="#《飞驰人生》">¶</a>《飞驰人生》</h2>
+<h2 id="飞驰人生"><a class="markdownIt-Anchor" href="#飞驰人生"></a> 《飞驰人生》</h2>
 <ol>
 <li>你呢，是这一辈子没故事，想拥有一点儿故事，我呢，是故事太多，想给故事一个结局。</li>
 <li>五年前，我跌入人生的低谷，是你们，写出了各种文章，真真假假，把我扒光示众，扇动大家不要原谅我，让我又多跌了几米。今天，我要把曾经失去的那些尊严，一个一个再夺回来，我张弛，过了这道门，就是回来了。</li>
@@ -70,32 +44,32 @@
 <li>我的一半人生，冷暖就让我自己过问。</li>
 <li>有的人活的是造型 有的人活的是人设 而我活的是本事。</li>
 </ol>
-<h2 id="《夏洛特烦恼》"><a class="header-anchor" href="#《夏洛特烦恼》">¶</a>《夏洛特烦恼》</h2>
+<h2 id="夏洛特烦恼"><a class="markdownIt-Anchor" href="#夏洛特烦恼"></a> 《夏洛特烦恼》</h2>
 <ol>
 <li>有些人缺铁，有些人缺钙，我缺的是面子。</li>
 <li>一次就好,我陪你去看天荒地老,在阳光灿烂的日子里开怀大笑,在自由自在的空气里吵吵闹闹,你可知道,我唯一的想要. 世界太小,我带你去到天涯海角,在没有烦恼的角落里停止寻找,在无忧无虑的时光里慢慢变老,你可知道,我全部的心跳都随你跳.</li>
 <li>我跳过楼，脑袋可不好使，就特么跟谁脑袋好使似的。</li>
 </ol>
-<h2 id="《何以为家》"><a class="header-anchor" href="#《何以为家》">¶</a>《何以为家》</h2>
+<h2 id="何以为家"><a class="markdownIt-Anchor" href="#何以为家"></a> 《何以为家》</h2>
 <ol>
 <li>生活是一堆狗屎，不比我的鞋子值钱。</li>
 <li>我以为我们能做个好人，被所有人爱，但上帝不希望我们这样，他宁愿我们做洗碗工。</li>
 <li>我曾经以为我们长大了，就会变成好人，受人尊敬和爱戴。但是上帝不想让我们变成那样，他要我们当地毯，供人踩踏。</li>
 <li>我只记得暴力、侮辱、殴打，链子、管子、皮带。我听过最温柔的一句话是：“滚，你这狗娘养的。滚，你这垃圾。”</li>
 </ol>
-<h2 id="《李茶的姑妈》"><a class="header-anchor" href="#《李茶的姑妈》">¶</a>《李茶的姑妈》</h2>
+<h2 id="李茶的姑妈"><a class="markdownIt-Anchor" href="#李茶的姑妈"></a> 《李茶的姑妈》</h2>
 <ol>
 <li>无法掌控自己体重的人，怎么掌控自己的人生。</li>
 <li>尊严丢了，整个人就破产了。</li>
 <li>人生七十古来稀，十年少小，十年老弱，再除去上班睡觉吃喝拉撒，好日子着实不多，及时行乐！</li>
 </ol>
-<h2 id="《陈翔六点半之民间高手》"><a class="header-anchor" href="#《陈翔六点半之民间高手》">¶</a>《陈翔六点半之民间高手》</h2>
+<h2 id="陈翔六点半之民间高手"><a class="markdownIt-Anchor" href="#陈翔六点半之民间高手"></a> 《陈翔六点半之民间高手》</h2>
 <ol>
 <li>想不负此生，首先就得不负身边人。</li>
 <li>年轻的时候，以为人生很长，其实人生很短，最棒的是不后悔，最难的是不遗憾。</li>
 <li>我以前希望自己无牵无挂，潇潇洒洒，不负此生，现在才明白，想不负此生，首先就得不负身边人，我要去完成一件我必须完成的事，希望到时候，我能和所有人坦然相见，再见了，大家。</li>
 </ol>
-<h2 id="《只有我不存在的城市》"><a class="header-anchor" href="#《只有我不存在的城市》">¶</a>《只有我不存在的城市》</h2>
+<h2 id="只有我不存在的城市"><a class="markdownIt-Anchor" href="#只有我不存在的城市"></a> 《只有我不存在的城市》</h2>
 <ol>
 <li>未来总是一张白纸，只有自己的意志，才能在上面刻下足迹。</li>
 <li>善行和恶行的本质都是相同的，只不过是人类为了弥补自己的缺陷所付出的行动罢了。</li>
@@ -107,7 +81,7 @@
 <li>“相信”还真是句奇怪的话呢，因为若是发自真心的信任，根本不需要说出“相信”这样的话吧，只需意会，不必言传。因为有所怀疑，所以才会相信……是这个意思吗？尽管如此，我也不想承认，“相信”这种话感觉像是在撒谎。所谓“相信”，就是“想要相信”……这样充满希望的话语哦。</li>
 <li>我一直在扮演，想要朋友，想要和人亲近，想着不擅长和人接触的自己究竟能做些什么呢？最后决定自己去喜欢大家，这样扮演也变得轻松了不少。</li>
 </ol>
-<h2 id="《小偷家族》"><a class="header-anchor" href="#《小偷家族》">¶</a>《小偷家族》</h2>
+<h2 id="小偷家族"><a class="markdownIt-Anchor" href="#小偷家族"></a> 《小偷家族》</h2>
 <ol>
 <li>自己做出的选择，才能建立更牢靠的羁绊。</li>
 <li>他们说喜欢你才会打你，是假的。真正喜欢你，会像这样，抱着你。</li>
@@ -116,13 +90,13 @@
 <li>没有扔掉，只是捡来了。最开始扔掉的人应该别有所在吧。</li>
 <li>烟花未曾照耀的地方，也有仰望着的笑脸，生活沉重如此，仰望本身，即是美丽。</li>
 </ol>
-<h2 id="《弥留之国的爱丽丝》"><a class="header-anchor" href="#《弥留之国的爱丽丝》">¶</a>《弥留之国的爱丽丝》</h2>
+<h2 id="弥留之国的爱丽丝"><a class="markdownIt-Anchor" href="#弥留之国的爱丽丝"></a> 《弥留之国的爱丽丝》</h2>
 <ol>
 <li>某天突然注意到，我在这个世界里既不是勇者也不是魔法师，更不是玩家，只是是个普通的村民甲。</li>
 <li>为什么会这么美丽，这就是命运。在死亡来临前的最后一刻为止，只是为了活下去，这就是属于生命的光辉吗？</li>
 <li>我们活着这件事，并不单纯只是维持生命，是生命痕迹的相互交错啊。</li>
 </ol>
-<h2 id="《白夜行》"><a class="header-anchor" href="#《白夜行》">¶</a>《白夜行》</h2>
+<h2 id="白夜行"><a class="markdownIt-Anchor" href="#白夜行"></a> 《白夜行》</h2>
 <ol>
 <li>绝望的念想，非恸的守望。</li>
 <li>唯有那家图书馆，才是他们两人的心灵休憩之处。他们只是想保护自己的灵魂。</li>
@@ -148,7 +122,8 @@
   <entry>
     <title>起步入门</title>
     <url>/posts/FMK1Y1.html</url>
-    <content><![CDATA[<h2 id="format-格式"><a class="markdownIt-Anchor" href="#format-格式"></a> Format 格式</h2>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>3</p>
+<h2 id="format-格式"><a class="markdownIt-Anchor" href="#format-格式"></a> Format 格式</h2>
 <figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>()&#123;</span><br><span class="line">	<span class="keyword">let</span> <span class="variable">target</span>;</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:o&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:x&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:X&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:p&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:b&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:e&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:E&#125;&quot;</span>,target);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:?&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;:#?&#125;&quot;</span>,target);</span><br><span class="line">	<span class="built_in">println!</span>(<span class="string">&quot;&#123;a&#125;&quot;</span>,a=target);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="变量声明"><a class="markdownIt-Anchor" href="#变量声明"></a> 变量声明</h2>
 <p>Rust 变量必须先声明后使用，对于局部变量，最常见的声明语法为：</p>
@@ -280,7 +255,7 @@
 </tbody>
 </table>
 <blockquote>
-<p><a href="https://www.zhihu.com/search?q=%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A14918675%7D">智能指针</a>和普通指针的区别在于智能指针实际上是对普通指针加了一层封装机制，这样的一层封装机制的目的是为了使得智能指针可以方便的管理一个对象的生命期。</p>
+<p><a class="link"   href="https://www.zhihu.com/search?q=%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A14918675%7D" >智能指针<i class="fas fa-external-link-alt"></i></a>和普通指针的区别在于智能指针实际上是对普通指针加了一层封装机制，这样的一层封装机制的目的是为了使得智能指针可以方便的管理一个对象的生命期。</p>
 </blockquote>
 <p>就是为了避免具有引用的对象，莫名其妙被销毁，常用于线程之间共享变量。<br />
 智能在自动计数引用，普通的离开了就销毁了。</p>
@@ -8981,7 +8956,7 @@ Running-- "①等待某事件"    --&gt;Stop</pre>
   <entry>
     <title>Python-Python Vs JavaScript类比学习</title>
     <url>/posts/WG8QW1.html</url>
-    <content><![CDATA[<h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h2>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h2>
 <h3 id="python和javascript中的代码块"><a class="markdownIt-Anchor" href="#python和javascript中的代码块"></a> <strong>Python和JavaScript中的代码块</strong></h3>
 <h4 id="python如何定义代码块"><a class="markdownIt-Anchor" href="#python如何定义代码块"></a> <strong>Python如何定义代码块</strong></h4>
 <p>Python依靠缩进来定义代码块。当一系列连续的代码行在同一级别缩进时，它们被视为同一代码块的一部分。</p>
