@@ -39,7 +39,7 @@ style:
   first_screen:
     enable: true
     background_img: /images/bg.svg # You can use local image or image external link
-    description: 在天冷的时候自觉的穿上秋裤，这就是少年.
+    description: 我会在在天冷的时候自觉的穿上秋裤.
 
   # Scroll style settings
   scroll:
