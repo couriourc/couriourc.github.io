@@ -9,7 +9,7 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url($first-screen-img) center center / cover no-repeat;
+  // background: url($first-screen-img) center center / cover no-repeat;
   background-position-y: $header-height;
 
 
@@ -20,7 +20,18 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
   +keep-mobile() {
     background-position-y: $header-height * 0.8;
   }
+  .doodle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
 
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .content {
     position: relative;
     box-sizing: border-box;
@@ -33,7 +44,7 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
       line-height: 1.8;
       text-align: center;
       color: var(--default-text-color);
-
+      position relative;
 
       +keep-tablet() {
         font-size: $first-screen-font-size * 0.9;

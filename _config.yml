@@ -39,7 +39,7 @@ style:
   first_screen:
     enable: true
     background_img: /images/bg.svg # You can use local image or image external link
-    description: 我会在在天冷的时候自觉的穿上秋裤.
+    description: 在天冷的时候总会穿上秋裤
 
   # Scroll style settings
   scroll:
@@ -56,7 +56,7 @@ social_contact:
   links:
     github: https://github.com/couriourc/ # your GitHub URL
     weixin: # your WeChat QR-Code URL
-    qq: 3234853521 # your QQ QR-Code URL
+    qq: https://wpa.qq.com/msgrd?v=3&uin=3234853521&site=qq&menu=yes&jumpflag=1 # your QQ QR-Code URL
     weibo: # your WeiBo URL
     zhihu: # your ZhiHu URL
     twitter: # your twitter URL
