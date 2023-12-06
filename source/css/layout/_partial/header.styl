@@ -10,9 +10,10 @@ $logo-image-box-width = 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-color);
-  padding-top: $scroll-progress-bar-height;
 
+  padding-top: $scroll-progress-bar-height;
+  backdrop-filter: blur(2px);
+  
   hover-style(false, 0, 0);
 
   .header-content {
