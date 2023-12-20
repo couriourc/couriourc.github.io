@@ -1075,6 +1075,24 @@ Subject 可以在源 Observable 和多个观察者之间充当桥梁或代理，
       </categories>
   </entry>
   <entry>
+    <title>学习中的算法</title>
+    <url>/posts/QV31K1.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="洗牌算法"><a class="markdownIt-Anchor" href="#洗牌算法"></a> 洗牌算法</h2>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Card</span> &#123;</span><br><span class="line">	<span class="attr">id</span>: <span class="built_in">number</span>,</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Cards</span>&lt;<span class="title class_">Card</span>&gt; = <span class="title class_">Card</span>[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Pos</span> = <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> shuffle&lt;<span class="title class_">Card</span>&gt;(<span class="attr">cards</span>: <span class="title class_">Cards</span>&lt;<span class="title class_">Card</span>&gt;):<span class="built_in">void</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> len = cards.<span class="property">length</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> cur = <span class="number">0</span>; cur &lt; len ;cur++ ) &#123;</span><br><span class="line">		<span class="keyword">const</span> <span class="attr">pos</span>:<span class="title class_">Pos</span> = ~~(<span class="title class_">Math</span>.<span class="title function_">random</span>()*len);</span><br><span class="line">		[cards[pos],cards[cur]] = [cards[cur],cards[pos]];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shuffle</span>(<span class="params">cards: <span class="built_in">int</span>[]</span>):</span><br><span class="line">	i:<span class="built_in">int</span> = <span class="built_in">len</span>(cards) - <span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> i:</span><br><span class="line">		i -= <span class="number">1</span></span><br><span class="line">		pos = random.randint(<span class="number">0</span>,<span class="built_in">len</span>(cards))</span><br><span class="line">		cards[i],cards[pos] = cards[pos],cards[i]</span><br><span class="line">shuffle([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<h2 id="循环打印数组"><a class="markdownIt-Anchor" href="#循环打印数组"></a> 循环打印数组</h2>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;dart:math&quot;</span> <span class="keyword">as</span> math;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Direction &#123;</span><br><span class="line">     top,</span><br><span class="line">    left,</span><br><span class="line">  right,</span><br><span class="line">  bottom </span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  Direction cur_direction = Direction.top;</span><br><span class="line">  <span class="built_in">int</span> circle = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">int</span> curX = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> curY = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; arr = [</span><br><span class="line">    <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,</span><br><span class="line">    <span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">    <span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,</span><br><span class="line">  ];</span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; res = [];</span><br><span class="line">  <span class="built_in">int</span> width = math.sqrt(arr.length).toInt();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (circle &lt; width - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 当前环   \\</span></span><br><span class="line">      <span class="comment">// 执行第一轮 \\</span></span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.top) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curX &lt; width - circle) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curX++;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.left;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.left) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curY &lt; width - circle) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curY++;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.bottom;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.bottom) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curX &gt; circle - <span class="number">1</span>) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curX--;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.right;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.right) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curY &gt; circle - <span class="number">1</span>) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curY--;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.top;</span><br><span class="line">      &#125;</span><br><span class="line">      circle++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="kmp-next-数组"><a class="markdownIt-Anchor" href="#kmp-next-数组"></a> KMP Next 数组</h2>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; getNext(<span class="built_in">String</span> text)&#123;</span><br><span class="line">	<span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; next = <span class="built_in">List</span>.generate(text.length,(_)=&gt; <span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">int</span> prefix = <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">int</span> suffix = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (suffix &lt; text.length) &#123;</span><br><span class="line">		<span class="keyword">if</span> (suffix === <span class="number">-1</span> || )</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">	<span class="built_in">print</span>(getNext(<span class="string">&quot;ababa&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="前缀树"><a class="markdownIt-Anchor" href="#前缀树"></a> 前缀树</h2>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术学习</category>
+        <category>技术学习</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>实践中的算法</title>
     <url>/posts/3CPDVQ4.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="situation-task-action-result-star"><a class="markdownIt-Anchor" href="#situation-task-action-result-star"></a> <strong>Situation Task Action Result</strong> (STAR)</h2>
@@ -1115,22 +1133,120 @@ Subject 可以在源 Observable 和多个观察者之间充当桥梁或代理，
       </categories>
   </entry>
   <entry>
-    <title>学习中的算法</title>
-    <url>/posts/QV31K1.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="洗牌算法"><a class="markdownIt-Anchor" href="#洗牌算法"></a> 洗牌算法</h2>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Card</span> &#123;</span><br><span class="line">	<span class="attr">id</span>: <span class="built_in">number</span>,</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Cards</span>&lt;<span class="title class_">Card</span>&gt; = <span class="title class_">Card</span>[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Pos</span> = <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> shuffle&lt;<span class="title class_">Card</span>&gt;(<span class="attr">cards</span>: <span class="title class_">Cards</span>&lt;<span class="title class_">Card</span>&gt;):<span class="built_in">void</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> len = cards.<span class="property">length</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> cur = <span class="number">0</span>; cur &lt; len ;cur++ ) &#123;</span><br><span class="line">		<span class="keyword">const</span> <span class="attr">pos</span>:<span class="title class_">Pos</span> = ~~(<span class="title class_">Math</span>.<span class="title function_">random</span>()*len);</span><br><span class="line">		[cards[pos],cards[cur]] = [cards[cur],cards[pos]];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shuffle</span>(<span class="params">cards: <span class="built_in">int</span>[]</span>):</span><br><span class="line">	i:<span class="built_in">int</span> = <span class="built_in">len</span>(cards) - <span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> i:</span><br><span class="line">		i -= <span class="number">1</span></span><br><span class="line">		pos = random.randint(<span class="number">0</span>,<span class="built_in">len</span>(cards))</span><br><span class="line">		cards[i],cards[pos] = cards[pos],cards[i]</span><br><span class="line">shuffle([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<h2 id="循环打印数组"><a class="markdownIt-Anchor" href="#循环打印数组"></a> 循环打印数组</h2>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;dart:math&quot;</span> <span class="keyword">as</span> math;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Direction &#123;</span><br><span class="line">     top,</span><br><span class="line">    left,</span><br><span class="line">  right,</span><br><span class="line">  bottom </span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  Direction cur_direction = Direction.top;</span><br><span class="line">  <span class="built_in">int</span> circle = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">int</span> curX = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> curY = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; arr = [</span><br><span class="line">    <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,</span><br><span class="line">    <span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">    <span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,</span><br><span class="line">  ];</span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; res = [];</span><br><span class="line">  <span class="built_in">int</span> width = math.sqrt(arr.length).toInt();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (circle &lt; width - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 当前环   \\</span></span><br><span class="line">      <span class="comment">// 执行第一轮 \\</span></span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.top) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curX &lt; width - circle) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curX++;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.left;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.left) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curY &lt; width - circle) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curY++;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.bottom;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.bottom) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curX &gt; circle - <span class="number">1</span>) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curX--;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.right;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cur_direction == Direction.right) &#123;</span><br><span class="line">        <span class="keyword">while</span> (curY &gt; circle - <span class="number">1</span>) &#123;</span><br><span class="line">          res.add(arr[curX + curY * width]);</span><br><span class="line">          curY--;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_direction = Direction.top;</span><br><span class="line">      &#125;</span><br><span class="line">      circle++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="kmp-next-数组"><a class="markdownIt-Anchor" href="#kmp-next-数组"></a> KMP Next 数组</h2>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; getNext(<span class="built_in">String</span> text)&#123;</span><br><span class="line">	<span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; next = <span class="built_in">List</span>.generate(text.length,(_)=&gt; <span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">int</span> prefix = <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">int</span> suffix = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (suffix &lt; text.length) &#123;</span><br><span class="line">		<span class="keyword">if</span> (suffix === <span class="number">-1</span> || )</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">	<span class="built_in">print</span>(getNext(<span class="string">&quot;ababa&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="前缀树"><a class="markdownIt-Anchor" href="#前缀树"></a> 前缀树</h2>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <title>并发控制</title>
+    <url>/posts/3FWXSPM.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="基本名词"><a class="markdownIt-Anchor" href="#基本名词"></a> 基本名词</h2>
+<ul>
+<li>多用户数据库系统
+<ul>
+<li>允许多个用户同时使用的数据库</li>
+</ul>
+</li>
+<li>多事务执行方式
+<ul>
+<li>事务串行执行（某一时刻只能有一个事务运行）
+<ul>
+<li>不能充分利用系统资源，发挥数据库共享资源的特点</li>
+</ul>
+</li>
+<li>交叉并发方式
+<ul>
+<li>在单处理机中，事务的并行执行是这些并行事务的并行操作轮流进行</li>
+<li>在单处理中的并行事务并没有真正地并行运行，但能够减少处理机地空闲时间</li>
+</ul>
+</li>
+<li>同时并发方式
+<ul>
+<li>在多处理机中，每个处理机可以运行一个事务，多个处理机可以同时运行多个事务。</li>
+<li>最理想地并发方式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="事务并发带来的问题"><a class="markdownIt-Anchor" href="#事务并发带来的问题"></a> 事务并发带来的问题</h2>
+<ul>
+<li>多个事务同时运行，可能会导致数据存取异常，破坏事务隔离性和数据库的<a class="backlink">专有名词库#一致性|一致性(Consistency)</a></li>
+</ul>
+<blockquote>
+<p>[!TIP] 并发控制的重要性💡<br />
+数据库系统必须提供并发控制机制。<br />
+并发控制是衡量一个数据库管理系统的重要标志之一。</p>
+</blockquote>
+<h2 id="并发操作带来的数据不一致性"><a class="markdownIt-Anchor" href="#并发操作带来的数据不一致性"></a> 并发操作带来的数据不一致性</h2>
+<ol>
+<li>丢失修改</li>
+<li>不可重复读 (Non-Reading)（幻读）</li>
+<li>读”脏“数据（Dirty Read）</li>
+</ol>
+<h3 id="丢失修改"><a class="markdownIt-Anchor" href="#丢失修改"></a> 丢失修改</h3>
+<p><code>T1</code>、<code>T2</code> 同时读入一个数据并进行修改，<code>T2</code> 的提交结果破坏了 <code>T1</code> 的提交结果。</p>
+<pre class="mermaid">sequenceDiagram  
+    participant T1  
+    participant T2  
+    
+    loop T1事务  
+        Database->>Database: 处理T1事务
+        T1->>Database: Reading Data  
+        T1->>Database: Writing Data
+    end 
+    
+    loop T2事务  
+        Database->>Database: 处理当T2事务
+        T2->>Database: 同时参与处理~  
+        T1->>Database: 也写数据
+    end</pre>
+<h3 id="不可重复读前后多次读取数据内容不一致"><a class="markdownIt-Anchor" href="#不可重复读前后多次读取数据内容不一致"></a> 不可重复读（前后多次读取，数据内容不一致）</h3>
+<p>T1 事务在某一个时刻进行读，T2 紧接着开始写，然后 T1 还没有结束，又去读数据，读到数据为 T2 修改之后的，出现前后读取数据不一致。</p>
+<h3 id="幻读-repeatable-read前后多次读取数据总量不一致"><a class="markdownIt-Anchor" href="#幻读-repeatable-read前后多次读取数据总量不一致"></a> 幻读 repeatable read（前后多次读取，数据总量不一致）</h3>
+<p>T1 事务在某一个时刻进行读数据库的内容，T2 紧接着开始添加数据或者删除数据，然后 T1 还没有结束，又去读数据库，发现数据库的总内容，增加或者减少了。</p>
+<blockquote>
+<p>[!TIP] 幻读 和 不可重复读的区别💡</p>
+<ol>
+<li>幻读强调的是表级</li>
+<li>不可重复读强调的是行级锁</li>
+</ol>
+</blockquote>
+<h2 id="脏读-dirty-read读到未提交的数据"><a class="markdownIt-Anchor" href="#脏读-dirty-read读到未提交的数据"></a> 脏读 dirty read（读到未提交的数据）</h2>
+<p><code>T1</code> 事务在某一个时刻进行写（<code>X</code>）操作，<code>T2</code> 紧接着开始读，然后 <code>T1</code> 崩了或者特殊原因，导致回滚，这条数据压根没进入数据库，于是 <code>T1</code> 读到了数据库之外的东西。</p>
+<blockquote>
+<p>[!TIP] 丢失修改、 脏读 和 不可重复读（或幻读）的区别💡</p>
+<ol>
+<li>丢失修改强调的是写入的问题，每一个事务都是成功的，也就是同时写的问题。</li>
+<li>脏读强调的是事务回滚失败，一条没有成功的事务，也就是先写后读带来的问题。</li>
+<li>不可重复读强调的是读的问题，都是成功写入的数据，也就是先读后写带来的问题。</li>
+<li>本质上，我们碰到情况通过 X(写) S(读) 进行组合，同时读不会出现问题，这也是后面的读锁（共享锁）。</li>
+</ol>
+</blockquote>
+<h2 id="并发控制的主要技术"><a class="markdownIt-Anchor" href="#并发控制的主要技术"></a> 并发控制的主要技术</h2>
+<h3 id="封锁locking"><a class="markdownIt-Anchor" href="#封锁locking"></a> 封锁（Locking）</h3>
+<p>基本规则：加锁后事务 T 就对该数据对象有了一定的控制，在事务 T 释放它的锁之前，其他的事务不能更新此数据对象。</p>
+<blockquote>
+<p>[!INFO] 锁机制<br />
+封锁是实现并发控制的一个非常重要的技术</p>
+</blockquote>
+<h4 id="基本封锁类型"><a class="markdownIt-Anchor" href="#基本封锁类型"></a> 基本封锁类型：</h4>
+<ul>
+<li>排他锁（Exclusive Lock）简称为 X 锁
+<ul>
+<li>事务对数据对象 A 加上锁，则只允许 T 读取和修改 A ，其他任何事务都不能再对 A 加任何锁，直到 T 释放。</li>
+<li>用于保证其他事务 T 释放 A 上的锁之前不能再读取和修改 A</li>
+</ul>
+</li>
+<li>共享锁 （Share Lock）简称为 S 锁</li>
+</ul>
+<h3 id="时间戳timestamp"><a class="markdownIt-Anchor" href="#时间戳timestamp"></a> 时间戳（Timestamp）</h3>
+<h3 id="乐观控制法"><a class="markdownIt-Anchor" href="#乐观控制法"></a> 乐观控制法</h3>
+<h3 id="多版本控制法mvvc"><a class="markdownIt-Anchor" href="#多版本控制法mvvc"></a> 多版本控制法（MVVC)</h3>
+]]></content>
       <categories>
         <category>技术学习</category>
         <category>技术学习</category>
-        <category>算法</category>
+        <category>数据库系统概论</category>
       </categories>
+      <tags>
+        <tag>数据库系统概论</tag>
+      </tags>
   </entry>
   <entry>
     <title>数据库系统安全</title>
@@ -1316,122 +1432,6 @@ Subject 可以在源 Observable 和多个观察者之间充当桥梁或代理，
       </tags>
   </entry>
   <entry>
-    <title>并发控制</title>
-    <url>/posts/3FWXSPM.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="基本名词"><a class="markdownIt-Anchor" href="#基本名词"></a> 基本名词</h2>
-<ul>
-<li>多用户数据库系统
-<ul>
-<li>允许多个用户同时使用的数据库</li>
-</ul>
-</li>
-<li>多事务执行方式
-<ul>
-<li>事务串行执行（某一时刻只能有一个事务运行）
-<ul>
-<li>不能充分利用系统资源，发挥数据库共享资源的特点</li>
-</ul>
-</li>
-<li>交叉并发方式
-<ul>
-<li>在单处理机中，事务的并行执行是这些并行事务的并行操作轮流进行</li>
-<li>在单处理中的并行事务并没有真正地并行运行，但能够减少处理机地空闲时间</li>
-</ul>
-</li>
-<li>同时并发方式
-<ul>
-<li>在多处理机中，每个处理机可以运行一个事务，多个处理机可以同时运行多个事务。</li>
-<li>最理想地并发方式</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="事务并发带来的问题"><a class="markdownIt-Anchor" href="#事务并发带来的问题"></a> 事务并发带来的问题</h2>
-<ul>
-<li>多个事务同时运行，可能会导致数据存取异常，破坏事务隔离性和数据库的<a class="backlink">专有名词库#一致性|一致性(Consistency)</a></li>
-</ul>
-<blockquote>
-<p>[!TIP] 并发控制的重要性💡<br />
-数据库系统必须提供并发控制机制。<br />
-并发控制是衡量一个数据库管理系统的重要标志之一。</p>
-</blockquote>
-<h2 id="并发操作带来的数据不一致性"><a class="markdownIt-Anchor" href="#并发操作带来的数据不一致性"></a> 并发操作带来的数据不一致性</h2>
-<ol>
-<li>丢失修改</li>
-<li>不可重复读 (Non-Reading)（幻读）</li>
-<li>读”脏“数据（Dirty Read）</li>
-</ol>
-<h3 id="丢失修改"><a class="markdownIt-Anchor" href="#丢失修改"></a> 丢失修改</h3>
-<p><code>T1</code>、<code>T2</code> 同时读入一个数据并进行修改，<code>T2</code> 的提交结果破坏了 <code>T1</code> 的提交结果。</p>
-<pre class="mermaid">sequenceDiagram  
-    participant T1  
-    participant T2  
-    
-    loop T1事务  
-        Database->>Database: 处理T1事务
-        T1->>Database: Reading Data  
-        T1->>Database: Writing Data
-    end 
-    
-    loop T2事务  
-        Database->>Database: 处理当T2事务
-        T2->>Database: 同时参与处理~  
-        T1->>Database: 也写数据
-    end</pre>
-<h3 id="不可重复读前后多次读取数据内容不一致"><a class="markdownIt-Anchor" href="#不可重复读前后多次读取数据内容不一致"></a> 不可重复读（前后多次读取，数据内容不一致）</h3>
-<p>T1 事务在某一个时刻进行读，T2 紧接着开始写，然后 T1 还没有结束，又去读数据，读到数据为 T2 修改之后的，出现前后读取数据不一致。</p>
-<h3 id="幻读-repeatable-read前后多次读取数据总量不一致"><a class="markdownIt-Anchor" href="#幻读-repeatable-read前后多次读取数据总量不一致"></a> 幻读 repeatable read（前后多次读取，数据总量不一致）</h3>
-<p>T1 事务在某一个时刻进行读数据库的内容，T2 紧接着开始添加数据或者删除数据，然后 T1 还没有结束，又去读数据库，发现数据库的总内容，增加或者减少了。</p>
-<blockquote>
-<p>[!TIP] 幻读 和 不可重复读的区别💡</p>
-<ol>
-<li>幻读强调的是表级</li>
-<li>不可重复读强调的是行级锁</li>
-</ol>
-</blockquote>
-<h2 id="脏读-dirty-read读到未提交的数据"><a class="markdownIt-Anchor" href="#脏读-dirty-read读到未提交的数据"></a> 脏读 dirty read（读到未提交的数据）</h2>
-<p><code>T1</code> 事务在某一个时刻进行写（<code>X</code>）操作，<code>T2</code> 紧接着开始读，然后 <code>T1</code> 崩了或者特殊原因，导致回滚，这条数据压根没进入数据库，于是 <code>T1</code> 读到了数据库之外的东西。</p>
-<blockquote>
-<p>[!TIP] 丢失修改、 脏读 和 不可重复读（或幻读）的区别💡</p>
-<ol>
-<li>丢失修改强调的是写入的问题，每一个事务都是成功的，也就是同时写的问题。</li>
-<li>脏读强调的是事务回滚失败，一条没有成功的事务，也就是先写后读带来的问题。</li>
-<li>不可重复读强调的是读的问题，都是成功写入的数据，也就是先读后写带来的问题。</li>
-<li>本质上，我们碰到情况通过 X(写) S(读) 进行组合，同时读不会出现问题，这也是后面的读锁（共享锁）。</li>
-</ol>
-</blockquote>
-<h2 id="并发控制的主要技术"><a class="markdownIt-Anchor" href="#并发控制的主要技术"></a> 并发控制的主要技术</h2>
-<h3 id="封锁locking"><a class="markdownIt-Anchor" href="#封锁locking"></a> 封锁（Locking）</h3>
-<p>基本规则：加锁后事务 T 就对该数据对象有了一定的控制，在事务 T 释放它的锁之前，其他的事务不能更新此数据对象。</p>
-<blockquote>
-<p>[!INFO] 锁机制<br />
-封锁是实现并发控制的一个非常重要的技术</p>
-</blockquote>
-<h4 id="基本封锁类型"><a class="markdownIt-Anchor" href="#基本封锁类型"></a> 基本封锁类型：</h4>
-<ul>
-<li>排他锁（Exclusive Lock）简称为 X 锁
-<ul>
-<li>事务对数据对象 A 加上锁，则只允许 T 读取和修改 A ，其他任何事务都不能再对 A 加任何锁，直到 T 释放。</li>
-<li>用于保证其他事务 T 释放 A 上的锁之前不能再读取和修改 A</li>
-</ul>
-</li>
-<li>共享锁 （Share Lock）简称为 S 锁</li>
-</ul>
-<h3 id="时间戳timestamp"><a class="markdownIt-Anchor" href="#时间戳timestamp"></a> 时间戳（Timestamp）</h3>
-<h3 id="乐观控制法"><a class="markdownIt-Anchor" href="#乐观控制法"></a> 乐观控制法</h3>
-<h3 id="多版本控制法mvvc"><a class="markdownIt-Anchor" href="#多版本控制法mvvc"></a> 多版本控制法（MVVC)</h3>
-]]></content>
-      <categories>
-        <category>技术学习</category>
-        <category>技术学习</category>
-        <category>数据库系统概论</category>
-      </categories>
-      <tags>
-        <tag>数据库系统概论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关系系统及其查询优化</title>
     <url>/posts/0E5A33.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="查询处理步骤"><a class="markdownIt-Anchor" href="#查询处理步骤"></a> 查询处理步骤</h2>
@@ -1447,6 +1447,69 @@ Anylisis --> Check --> Opz --> Exec;</pre>
 <h2 id="查询分析"><a class="markdownIt-Anchor" href="#查询分析"></a> 查询分析</h2>
 <p>首先对查询语句进行扫描，词法分析和语法分析。从查询语句中识别出语言符号，如：SQL 关键字，属性名和关系名等，进行语法检查和语法分析，即判断查询语句是否符合 <a class="backlink">SQL 语法规则</a>。如果没有就转入下一步处理，否则带上 <code>Syntax Error</code> 🎭（痛苦面具）</p>
 <h2 id="查询优化的一般准则"><a class="markdownIt-Anchor" href="#查询优化的一般准则"></a> 查询优化的一般准则</h2>
+]]></content>
+      <categories>
+        <category>技术学习</category>
+        <category>技术学习</category>
+        <category>数据库系统概论</category>
+      </categories>
+      <tags>
+        <tag>数据库系统概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL 语法规则</title>
+    <url>/posts/2RYWFWT.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2>
+<p><code>SQL</code> (Structure Query Language): 结构化查询语言，是关系数据库的标准语言。</p>
+<p><code>SQL</code> 是一个通用的、功能极强的关系数据库语言。</p>
+<h2 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h2>
+<h3 id="综合统一"><a class="markdownIt-Anchor" href="#综合统一"></a> 综合统一</h3>
+<h4 id="专有名词库ddlddl"><a class="markdownIt-Anchor" href="#专有名词库ddlddl"></a> <a class="backlink">专有名词库#DDL|DDL</a></h4>
+<p>主要包括对于<a class="backlink">专有名词库#数据库|数据库</a>、<a class="backlink">专有名词库#模式|模式</a>以及<a class="backlink">专有名词库#视图|视图</a>的一些定义方式：<code>CREATE</code> <code>DROP</code> <code>ALTER</code></p>
+<h3 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 操作对象</span><br><span class="line">	- 模式</span><br><span class="line">		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE SCHEMA</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP SCHEMA</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER SCHEMA</span><br><span class="line">	- 表</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE TABLE</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP TABLE</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER TABLE</span><br><span class="line">	- 视图</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE VIEW</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP VIEW</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER VIEW</span><br><span class="line">	- 索引</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE INDEX</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP INDEX</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER INDEX</span><br></pre></td></tr></table></figure>
+<p>现代关系数据库管理系统提供了一个层次化的数据库对象命名机制</p>
+<ul>
+<li>一个关系数据库管理系统的实例（instance）中可以建立一个或者多个数据库
+<ul>
+<li>一个数据库中可以建立多个模式
+<ul>
+<li>一个模式下通常包括多个表、视图、索引等<a class="backlink">专有名词库#对象类型|数据库对象</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="模式"><a class="markdownIt-Anchor" href="#模式"></a> 模式</h4>
+<h5 id="创建定义"><a class="markdownIt-Anchor" href="#创建定义"></a> 创建（定义）</h5>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 为 wang 用户定义一个 S-T 课程模式</span></span><br><span class="line"><span class="keyword">CREATE</span> SCHEMA &quot;S-T&quot; <span class="keyword">AUTHORIZATION</span> WANG;</span><br><span class="line"><span class="comment">-- 若是没有指定模式名，则模式名隐含为&lt;用户名&gt;</span></span><br><span class="line"><span class="keyword">CREATE</span> SCHEMA <span class="keyword">AUTHORIZATION</span> WANG;</span><br></pre></td></tr></table></figure>
+<p>定义模式实际上是定义了一个命名空间。<br />
+在这个空间中可以定义<a class="backlink">专有名词库#对象类型|数据库对象</a></p>
+<p>也就是说：<code>CREATE SCHEMA </code> 可以接受下列创建子句<br />
+具体语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> SCHEMA <span class="operator">&lt;</span>schema_name<span class="operator">&gt;</span> [<span class="keyword">AUTHORIZATION</span> <span class="operator">&lt;</span>dba_user<span class="operator">&gt;</span>]</span><br><span class="line">	[<span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="operator">&lt;</span>table_name<span class="operator">&gt;</span> ( </span><br><span class="line">		<span class="operator">&lt;&lt;</span>attribute_type<span class="operator">&gt;</span> <span class="operator">&lt;</span>attribute_name<span class="operator">&gt;</span> [<span class="keyword">constraint</span>]<span class="operator">&gt;</span>,</span><br><span class="line">		[<span class="operator">&lt;</span>attribute_type<span class="operator">&gt;</span> <span class="operator">&lt;</span>attribute_name<span class="operator">&gt;</span> [<span class="keyword">constraint</span>]] </span><br><span class="line">	)]</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><code>Constraint</code> 分为列级完整性约束条件和<a class="backlink">专有名词库#表级完整性约束条件|表级完整性约束条件</a>。</p>
+<blockquote>
+<p>[!ERROR] 注意<br />
+MySQL 中并不能支持字句嵌套。</p>
+</blockquote>
+<h5 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h5>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> SCHEMA <span class="operator">&lt;</span>schema_name<span class="operator">&gt;</span> <span class="operator">&lt;</span>CASCADE<span class="operator">|</span>RESTRICT<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 级联的方式删除模式 ZAHNG</span></span><br><span class="line"><span class="keyword">DROP</span> SCHEMA ZHANG CASCADE;</span><br><span class="line"><span class="comment">-- 限制的方式删除模式 ZAHNG</span></span><br><span class="line"><span class="keyword">DROP</span> SCHEMA ZHANG RESTRICT;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对于 <code>CASCADE</code> ，在删除模式的同时把该模式中所有的数据库对象全部删除。</li>
+<li>对于 <code>RESTRICT</code>，如果该模式中定义了下属的数据库对象（如表、视图等），则拒绝该删除语句的执行。</li>
+</ul>
+<h4 id="修改"><a class="markdownIt-Anchor" href="#修改"></a> 修改</h4>
+<h4 id="dml"><a class="markdownIt-Anchor" href="#dml"></a> DML</h4>
+<h4 id="dcl"><a class="markdownIt-Anchor" href="#dcl"></a> DCL</h4>
+<h3 id="tcl"><a class="markdownIt-Anchor" href="#tcl"></a> TCL</h3>
+<h3 id="可以独立完成数据库生命周期中的全部活动"><a class="markdownIt-Anchor" href="#可以独立完成数据库生命周期中的全部活动"></a> 可以独立完成数据库生命周期中的全部活动</h3>
+<h4 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h4>
+<h4 id="修改更新数据"><a class="markdownIt-Anchor" href="#修改更新数据"></a> 修改更新数据</h4>
+<h4 id="重构和维护"><a class="markdownIt-Anchor" href="#重构和维护"></a> 重构和维护</h4>
+<h4 id="数据库安全性-完整性-事务控制"><a class="markdownIt-Anchor" href="#数据库安全性-完整性-事务控制"></a> 数据库安全性、完整性、事务控制</h4>
+<h4 id="嵌入式-sql-和动态-sql-定义"><a class="markdownIt-Anchor" href="#嵌入式-sql-和动态-sql-定义"></a> 嵌入式 SQL 和动态 SQL 定义</h4>
 ]]></content>
       <categories>
         <category>技术学习</category>
@@ -1622,69 +1685,6 @@ Anylisis --> Check --> Opz --> Exec;</pre>
       </tags>
   </entry>
   <entry>
-    <title>SQL 语法规则</title>
-    <url>/posts/2RYWFWT.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2>
-<p><code>SQL</code> (Structure Query Language): 结构化查询语言，是关系数据库的标准语言。</p>
-<p><code>SQL</code> 是一个通用的、功能极强的关系数据库语言。</p>
-<h2 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h2>
-<h3 id="综合统一"><a class="markdownIt-Anchor" href="#综合统一"></a> 综合统一</h3>
-<h4 id="专有名词库ddlddl"><a class="markdownIt-Anchor" href="#专有名词库ddlddl"></a> <a class="backlink">专有名词库#DDL|DDL</a></h4>
-<p>主要包括对于<a class="backlink">专有名词库#数据库|数据库</a>、<a class="backlink">专有名词库#模式|模式</a>以及<a class="backlink">专有名词库#视图|视图</a>的一些定义方式：<code>CREATE</code> <code>DROP</code> <code>ALTER</code></p>
-<h3 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- 操作对象</span><br><span class="line">	- 模式</span><br><span class="line">		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE SCHEMA</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP SCHEMA</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER SCHEMA</span><br><span class="line">	- 表</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE TABLE</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP TABLE</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER TABLE</span><br><span class="line">	- 视图</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE VIEW</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP VIEW</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER VIEW</span><br><span class="line">	- 索引</span><br><span class="line"> 		- 操作方式</span><br><span class="line">			- 创建</span><br><span class="line">				- CREATE INDEX</span><br><span class="line">			- 删除</span><br><span class="line">				- DROP INDEX</span><br><span class="line">			- 修改</span><br><span class="line">				- ALTER INDEX</span><br></pre></td></tr></table></figure>
-<p>现代关系数据库管理系统提供了一个层次化的数据库对象命名机制</p>
-<ul>
-<li>一个关系数据库管理系统的实例（instance）中可以建立一个或者多个数据库
-<ul>
-<li>一个数据库中可以建立多个模式
-<ul>
-<li>一个模式下通常包括多个表、视图、索引等<a class="backlink">专有名词库#对象类型|数据库对象</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="模式"><a class="markdownIt-Anchor" href="#模式"></a> 模式</h4>
-<h5 id="创建定义"><a class="markdownIt-Anchor" href="#创建定义"></a> 创建（定义）</h5>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 为 wang 用户定义一个 S-T 课程模式</span></span><br><span class="line"><span class="keyword">CREATE</span> SCHEMA &quot;S-T&quot; <span class="keyword">AUTHORIZATION</span> WANG;</span><br><span class="line"><span class="comment">-- 若是没有指定模式名，则模式名隐含为&lt;用户名&gt;</span></span><br><span class="line"><span class="keyword">CREATE</span> SCHEMA <span class="keyword">AUTHORIZATION</span> WANG;</span><br></pre></td></tr></table></figure>
-<p>定义模式实际上是定义了一个命名空间。<br />
-在这个空间中可以定义<a class="backlink">专有名词库#对象类型|数据库对象</a></p>
-<p>也就是说：<code>CREATE SCHEMA </code> 可以接受下列创建子句<br />
-具体语法如下：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> SCHEMA <span class="operator">&lt;</span>schema_name<span class="operator">&gt;</span> [<span class="keyword">AUTHORIZATION</span> <span class="operator">&lt;</span>dba_user<span class="operator">&gt;</span>]</span><br><span class="line">	[<span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="operator">&lt;</span>table_name<span class="operator">&gt;</span> ( </span><br><span class="line">		<span class="operator">&lt;&lt;</span>attribute_type<span class="operator">&gt;</span> <span class="operator">&lt;</span>attribute_name<span class="operator">&gt;</span> [<span class="keyword">constraint</span>]<span class="operator">&gt;</span>,</span><br><span class="line">		[<span class="operator">&lt;</span>attribute_type<span class="operator">&gt;</span> <span class="operator">&lt;</span>attribute_name<span class="operator">&gt;</span> [<span class="keyword">constraint</span>]] </span><br><span class="line">	)]</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<p><code>Constraint</code> 分为列级完整性约束条件和<a class="backlink">专有名词库#表级完整性约束条件|表级完整性约束条件</a>。</p>
-<blockquote>
-<p>[!ERROR] 注意<br />
-MySQL 中并不能支持字句嵌套。</p>
-</blockquote>
-<h5 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h5>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> SCHEMA <span class="operator">&lt;</span>schema_name<span class="operator">&gt;</span> <span class="operator">&lt;</span>CASCADE<span class="operator">|</span>RESTRICT<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 级联的方式删除模式 ZAHNG</span></span><br><span class="line"><span class="keyword">DROP</span> SCHEMA ZHANG CASCADE;</span><br><span class="line"><span class="comment">-- 限制的方式删除模式 ZAHNG</span></span><br><span class="line"><span class="keyword">DROP</span> SCHEMA ZHANG RESTRICT;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对于 <code>CASCADE</code> ，在删除模式的同时把该模式中所有的数据库对象全部删除。</li>
-<li>对于 <code>RESTRICT</code>，如果该模式中定义了下属的数据库对象（如表、视图等），则拒绝该删除语句的执行。</li>
-</ul>
-<h4 id="修改"><a class="markdownIt-Anchor" href="#修改"></a> 修改</h4>
-<h4 id="dml"><a class="markdownIt-Anchor" href="#dml"></a> DML</h4>
-<h4 id="dcl"><a class="markdownIt-Anchor" href="#dcl"></a> DCL</h4>
-<h3 id="tcl"><a class="markdownIt-Anchor" href="#tcl"></a> TCL</h3>
-<h3 id="可以独立完成数据库生命周期中的全部活动"><a class="markdownIt-Anchor" href="#可以独立完成数据库生命周期中的全部活动"></a> 可以独立完成数据库生命周期中的全部活动</h3>
-<h4 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h4>
-<h4 id="修改更新数据"><a class="markdownIt-Anchor" href="#修改更新数据"></a> 修改更新数据</h4>
-<h4 id="重构和维护"><a class="markdownIt-Anchor" href="#重构和维护"></a> 重构和维护</h4>
-<h4 id="数据库安全性-完整性-事务控制"><a class="markdownIt-Anchor" href="#数据库安全性-完整性-事务控制"></a> 数据库安全性、完整性、事务控制</h4>
-<h4 id="嵌入式-sql-和动态-sql-定义"><a class="markdownIt-Anchor" href="#嵌入式-sql-和动态-sql-定义"></a> 嵌入式 SQL 和动态 SQL 定义</h4>
-]]></content>
-      <categories>
-        <category>技术学习</category>
-        <category>技术学习</category>
-        <category>数据库系统概论</category>
-      </categories>
-      <tags>
-        <tag>数据库系统概论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SQL 函数</title>
     <url>/posts/2JP1ZR3.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="聚合函数"><a class="markdownIt-Anchor" href="#聚合函数"></a> 聚合函数</h2>
@@ -1752,37 +1752,6 @@ MySQL 中并不能支持字句嵌套。</p>
       </categories>
       <tags>
         <tag>数据库系统概论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML 基础篇</title>
-    <url>/posts/81edab1.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="seo-相关内容"><a class="markdownIt-Anchor" href="#seo-相关内容"></a> SEO 相关内容</h2>
-<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
-<h3 id="1-html-语义化的理解"><a class="markdownIt-Anchor" href="#1-html-语义化的理解"></a> 1. HTML 语义化的理解</h3>
-<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
-<p>简而言之，一种 <code>Web</code>开发规范，规范的作用就有：</p>
-<ol>
-<li>更好的维护项目，提高代码可读性。</li>
-<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria</code>都有帮助，同时有利于编译器进行一系列优化。</li>
-</ol>
-<h3 id="2-h1-标签和-title-标签之间的区别是什么"><a class="markdownIt-Anchor" href="#2-h1-标签和-title-标签之间的区别是什么"></a> 2. h1 标签和 title 标签之间的区别是什么？</h3>
-<ul>
-<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
-<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
-</ul>
-<h3 id="3-img-中的-title-属性和-alt-属性的区别"><a class="markdownIt-Anchor" href="#3-img-中的-title-属性和-alt-属性的区别"></a> 3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
-<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>前端</category>
-        <category>前端基础知识</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>2023面试</tag>
-        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -1942,6 +1911,37 @@ label {
         <category>前端基础知识</category>
         <category>CSS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>HTML 基础篇</title>
+    <url>/posts/81edab1.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="seo-相关内容"><a class="markdownIt-Anchor" href="#seo-相关内容"></a> SEO 相关内容</h2>
+<p>所谓 SEO ，就是搜索引擎索引优化，让搜索引擎更容易定位到网站内容，然而对于一个网站，最重要的便是 HTML，提供完整的内容是 web 出现的首要原因，一个好的网站不应该脱离内容，功能主体。</p>
+<h3 id="1-html-语义化的理解"><a class="markdownIt-Anchor" href="#1-html-语义化的理解"></a> 1. HTML 语义化的理解</h3>
+<p>Web语义化是指使用恰当语义的<code>html</code>标签、<code>class</code>类名等内容，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容。语义化的<code>web</code>页面一方面可以让机器在更少的人类干预情况下收集并研究网页的信息，从而可以读懂网页的内容，然后将收集汇总的信息进行分析，结果为人类所用；另一方面它可以让开发人员读懂结构和用户以及屏幕阅读器（如果访客有视障）能够读懂内容。</p>
+<p>简而言之，一种 <code>Web</code>开发规范，规范的作用就有：</p>
+<ol>
+<li>更好的维护项目，提高代码可读性。</li>
+<li>机器更容易理解内容，那么对于 <code>SEO</code>,<code>Aria</code>都有帮助，同时有利于编译器进行一系列优化。</li>
+</ol>
+<h3 id="2-h1-标签和-title-标签之间的区别是什么"><a class="markdownIt-Anchor" href="#2-h1-标签和-title-标签之间的区别是什么"></a> 2. h1 标签和 title 标签之间的区别是什么？</h3>
+<ul>
+<li><code>h1</code>标签：写在文章正文的标题部分，参与文章的内容部分，对于一个页面最好只有一个主题，更好彰显主题。</li>
+<li><code>title</code>标签：写在网页的 <code>head</code> 部分，不参与文章的内容，是展示给搜索引擎的，对于 <code>SEO</code> 而言其权重无疑是最大的，其次，会作为浏览器标签卡，并会保留在历史记录中。</li>
+</ul>
+<h3 id="3-img-中的-title-属性和-alt-属性的区别"><a class="markdownIt-Anchor" href="#3-img-中的-title-属性和-alt-属性的区别"></a> 3. &lt;img /&gt; 中的 title 属性和 alt 属性的区别</h3>
+<p><code>alt</code> 属性是在图片无法加载的时候才会显示的代替文本，对于 <code>alt</code> 的作用是易用性的一个重要信息，屏幕阅读器会提示出来，而 <code>title</code> 是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有 <code>title</code> 文字显示。这两者的区别就类似于我们所说的 <code>em</code>和 <code>strong</code> 的区别</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>前端</category>
+        <category>前端基础知识</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>2023面试</tag>
+        <tag>HTML</tag>
+      </tags>
   </entry>
   <entry>
     <title>跨域问题详解</title>
@@ -2300,6 +2300,50 @@ Inline-level elements and inline boxes</p>
       <categories>
         <category>感悟思考</category>
         <category>开发Bug</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>前端的B 端设计思维</title>
+    <url>/posts/37JRPY2.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="以习惯为本的设计"><a class="markdownIt-Anchor" href="#以习惯为本的设计"></a> 以“习惯”为本的设计</h2>
+<img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXMtYXNjaWkiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSI3OHB4IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBzdHlsZT0id2lkdGg6Mjg1cHg7aGVpZ2h0Ojc4cHg7YmFja2dyb3VuZDojRkZGRkZGOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjg1IDc4IiB3aWR0aD0iMjg1cHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48cmVjdCBmaWxsPSIjRjFGMUYxIiBoZWlnaHQ9IjM2LjI5NjkiIHJ4PSIxMi41IiByeT0iMTIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjU7IiB3aWR0aD0iODAiIHg9IjEwIiB5PSIyMCIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjU2IiB4PSIyMCIgeT0iNDIuOTk1MSI+JiMyOTk5MjsmIzI1MTQzOyYjMjAzMDc7JiMzOTU2NDs8L3RleHQ+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMTI2IiB4PSIxNDMiIHk9IjI0LjY5ODIiPiYjMzE1MjY7JiMyMTUxMjsmIzI5OTkyOyYjMjUxNDM7JiMyNTgwNTsmIzIwMzE2OyYjMzAzNDA7JiMyMDEzMjsmIzIwMTE0OzwvdGV4dD48cGF0aCBkPSJNOTAsMzguMTQ4NCBMMTAwLDM4LjE0ODQgQzExNSwzOC4xNDg0IDExNSwxOS44NTE2IDEzMCwxOS44NTE2IEwxNDAsMTkuODUxNiAiIGZpbGw9Im5vbmUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MS4wOyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjcwIiB4PSIxNDMiIHk9IjQyLjk5NTEiPiYjMjA0MTU7JiMyNTQ2MzsmIzMwMzQwOyYjMjU4MDU7JiMyMDMxNjs8L3RleHQ+PHBhdGggZD0iTTkwLDM4LjE0ODQgTDEwMCwzOC4xNDg0IEMxMTUsMzguMTQ4NCAxMTUsMzguMTQ4NCAxMzAsMzguMTQ4NCBMMTQwLDM4LjE0ODQgIiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSI1NiIgeD0iMTQzIiB5PSI2MS4yOTIiPiYjMzAwMjg7JiMzODc1NDsmIzE5OTY4OyYjMzMyNjg7PC90ZXh0PjxwYXRoIGQ9Ik05MCwzOC4xNDg0IEwxMDAsMzguMTQ4NCBDMTE1LDM4LjE0ODQgMTE1LDU2LjQ0NTMgMTMwLDU2LjQ0NTMgTDE0MCw1Ni40NDUzICIgZmlsbD0ibm9uZSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDoxLjA7Ii8+PCEtLVNSQz1bVFBKRlF6aW01Q1ZGcXJ5WHNBS2pqQkNUcnV4Uks0Zl9oQUthSzlRc0VteDlhYnFITW1nQWQxOUFPT1YxVWNYWGhEamJSOVNublhXeDNaZUF0VndQaDVkX1lvY3NHeDhYb29WeFZWSS1KeXpWbFZNVUdiQWJaOUNLVEs2WmZtTzlOR0ZiLW5QM2lLR2ZGMEtGYllHYnk3RzNYUHJPWWVvSkpQNDgySF9JUFBVdXBraFBnWVE0SDNvYzFZWWctVFdjMUpJV0lJOUVKMTM2bkFnTmNIQk1Eb01nYXoyaEhHS0pJcWd2V1FhNVVEYjUxSENFYTBjbkd1b25NbzB1b0tuQWJiTXRlckFmY3lia09lOHlOdWp2MVBJWXA1WG80M2VVamlmNFo3VENGUkhnR1UyTnZLWG5PWWVQQk1rbndTYTdma1J1R08xZ2FyRmZnQWF2LUllT1djSGRIbzlKQVl6VjRwS1pXbDlMOGlVWWZ2dVVDc055LVZSdUFTMkpBWVBWMVFEenJjSm5pSjlHWTYwSXA3Z2oyWUpLOHl3aXR3ZjA2WmFYZFY1UzFLVmhhSmpIcGRyTm1INF9pV1lVVWd5QVN0SEJoQWRfQWgwbWZEd183Z21ncG51QnBfWW1ZaUY0ZlQ3S1lyTFQyT1hGcU9tVmd6OEhCSnBqb2cwQXlvY2MtVXFfMHVyN3ZPMDEydDNxdmlsVC1WTm16a2gtd21LNFNobVB6WFlYTzY3WDZIbnotX3B4ck5jMXQ1clQzY19WWnp3ejZEdnk2and5WGVyNnFPc3JqSG1UX2xuclR0Y2ptbU50VnRacXprQi1teVZYWi1UX05kd1ZaUXJKRlVCQWlHVnM0eUpMT1FpOS1ySnNjRTNHTmQ4aWZ4UGFrdldndkNtVHlXdVZOeW5HZjVzY1B1NVlBUHE3U3BseEpUV0pjR21mOUFvZDlDRVBxaGxkbUh4ZzhfV2F1c0RrMU94VnZXdlF5eDJ6RlZhOGp0Y1ZJUzVKb1hOT0VzZUw0RG1MZ2pxTEFlU3pUdDYzQVRZY0tYUzVacmZXWXFPZUl2SlU2V2gyVUJtMjNteVVCelAxS3ItNTNDTFFZN0FtZ0prbHY0MzdzZHkxXS0tPjwvZz48L3N2Zz4='>
+<p><strong>B 端</strong>产品相对于<strong>C 端</strong>产品更加注重用户交互，一般 B 端用户对于界面的要求并不高，<strong>习惯就好</strong>。那么 <strong>B 端</strong>中的以人为本又是什么意思呢？ 其实对于 B 端使用很多细节其实是在抠&quot;<strong>习惯</strong>&quot;，可以说一款适合用户习惯的设计，就是一个合理的产品了。</p>
+<h3 id="逻辑清晰的设计"><a class="markdownIt-Anchor" href="#逻辑清晰的设计"></a> 逻辑清晰的设计</h3>
+<h4 id="原则一清楚数据如何来去到哪儿"><a class="markdownIt-Anchor" href="#原则一清楚数据如何来去到哪儿"></a> 原则一：清楚数据如何来，去到哪儿</h4>
+<p>操作逻辑必须是保证贯通的，当用户对某一个步骤产生，“这个数据是怎么来的？”，这种问题的时候，毫无疑问，这个设计是失败的。甚至在自己开发的时候都产生疑问: 这堆数据究竟<strong>TMD</strong>是怎么来的🤡。</p>
+<p>在前端开发时，应该注意在代码编排的时候，请求与鉴定顺序应该是一致的。下面是一种流程编排的思考方式。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 一种函数式的数据编排模式</span></span><br><span class="line"><span class="title function_">task</span>(<span class="string">&quot;submit-form&quot;</span>) <span class="comment">// 设定任务集，代表这个是什么流程</span></span><br><span class="line">	.<span class="title function_">load</span>(formData) <span class="comment">// 填入数据</span></span><br><span class="line">	.<span class="title function_">pipe</span>(selfCheck) <span class="comment">// 数据提交前的预检查</span></span><br><span class="line">	.<span class="title function_">wait</span>(submitForm) <span class="comment">// 提交数据表，等待数据请求完成</span></span><br><span class="line">	.<span class="title function_">pipe</span>(fallback) <span class="comment">// 请求成功结果的反馈</span></span><br><span class="line">	.<span class="title function_">pipe</span>(...) <span class="comment">// 其他的并行请求，实现方式可以参考 gulp 的实现</span></span><br><span class="line">	.<span class="title function_">pipe</span>(norimalize) <span class="comment">// 将返回的数据人性化处理[见后文，原则三]</span></span><br></pre></td></tr></table></figure>
+<p>还有一些额外的交互细节，比如防抖节流，加载加锁等。</p>
+<h4 id="原则二不存在无关或不可用的控件"><a class="markdownIt-Anchor" href="#原则二不存在无关或不可用的控件"></a> 原则二：不存在无关或不可用的控件</h4>
+<p>一个页面中，不应该存在不可用的控件，每一个控件存在一定有它的意义。若是无用的控件放置在页面，会让用户认为自己被戏耍，或者认为页面出错了。</p>
+<p>开发的时候经常会碰到，第二天就要上线了，但是还有部分功能处于开发中，或者还处于安排了，但是处于待定状态，可能很多时候会整一个 <code>disabled</code> 给用户，然后置灰，或者抛错，这是没有意义的，这可以说是滥竽充数了。可以考虑 <code>stash</code> 一个功能点，然后逐步 <code>push </code>，一部分一部分来。</p>
+<h4 id="原则三-及时有用的反馈"><a class="markdownIt-Anchor" href="#原则三-及时有用的反馈"></a> 原则三 ：及时有用的反馈</h4>
+<p>B 端产品往往涉及到许多的表单，也就不可避免的考虑有效值的输入限制了，最好的控制方法就是，<strong>提前的预警+有效的拦截</strong>，当用户输入不可用的数据时，应该提供警告，甚至是给出最优建议值。</p>
+<h5 id="提前的预警"><a class="markdownIt-Anchor" href="#提前的预警"></a> 提前的预警</h5>
+<p>用户总是不可信任的，对于数据的预检是很重要的，否则很容易流入脏数据，为了系统安全往往会引入数据校验，我们开发过程中，往往是以用户点击提交之后，才对数据进行校验，这使得用户在填完信息之后，才发现这个数据不能用。这是不靠谱的，我们应该提前把一些比如手机号格式校验，邮箱校验，有效值校验，在失去焦点之后，立即进行督促，并且一步步引导用户完成表单提交。</p>
+<h5 id="有效的拦截"><a class="markdownIt-Anchor" href="#有效的拦截"></a> 有效的拦截</h5>
+<p>!<a class="backlink">/media/Pasted image 20230703173601.png</a></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 一种表单校验设计方案</span></span><br><span class="line"><span class="keyword">const</span> form = &#123;</span><br><span class="line">	<span class="attr">username</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">	<span class="attr">password</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">	<span class="attr">email</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">	<span class="comment">// 增加冗余字段</span></span><br><span class="line">	<span class="attr">_pass</span>:<span class="literal">true</span>,</span><br><span class="line">	<span class="attr">_reason</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">	<span class="title function_">check</span>(<span class="params"></span>)&#123; </span><br><span class="line">		<span class="comment">// 争对有效值及时的校验</span></span><br><span class="line">		<span class="keyword">if</span> (!<span class="title function_">valid</span>(email)) &#123;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">_pass</span>  = <span class="literal">false</span>;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">_reason</span> = <span class="string">&quot;email not valid&quot;</span>.<span class="property">tr</span>; <span class="comment">// tr 表示国际化后的文字，只做演示</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 争对当前表单的校验</span></span><br><span class="line">		<span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">username</span>) &#123;</span><br><span class="line">			<span class="comment">// 进行轻提示</span></span><br><span class="line">			 <span class="title class_">Message</span>.<span class="title function_">error</span>(<span class="string">&quot;please input username&quot;</span>.<span class="property">tr</span>) ;</span><br><span class="line">			 <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">useSubmit</span>(<span class="params">form</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span> (!form?.<span class="property">check</span>?.()) <span class="keyword">return</span>; <span class="comment">// 提前预检</span></span><br><span class="line">	<span class="title function_">call</span>(<span class="variable language_">this</span>,<span class="title function_">task</span>(<span class="string">&quot;submit-task&quot;</span>)); <span class="comment">// 执行提交任务,这里具体如何都行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="习以为常的快捷键"><a class="markdownIt-Anchor" href="#习以为常的快捷键"></a> 习以为常的快捷键</h3>
+<h4 id="原则五-不覆盖用户常用的快捷键"><a class="markdownIt-Anchor" href="#原则五-不覆盖用户常用的快捷键"></a> 原则五 ：不覆盖用户常用的快捷键</h4>
+<p>有一些历史悠久的操作快捷键，比如回车搜索，<code>Ctrl+ C|V</code> 系列的快捷键，尤其是对于富文本编辑，这个十分重要，这些对于大部分用户都已经习以为常，若是突然没了，或者改变了，会带来很多奇怪的操作。</p>
+<p>常用的快捷方式，<code>ctrl+s &lt;保存&gt;</code>，<code>enter &lt;搜索&gt;</code> ，<code>ctrl+shift+v &lt;格式粘贴&gt;</code>，<code>ctrl+z</code> ……</p>
+<p>为了便于精细化快捷操作设计，可以抽离到组件，或者直接使用指令实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;shortcut description=&quot;快捷键描述信息&quot; :shortcut=&quot;&#123;</span><br><span class="line">		  &#x27;CTRL+Z&#x27;: revoke,</span><br><span class="line">		  &#x27;CTRL+S&#x27;: save</span><br><span class="line">&#125;&quot; &gt;</span><br><span class="line">	&lt;!-- or like this --&gt;</span><br><span class="line">	&lt;input v-shortcut.ctrlB=&quot;Bold&quot; /&gt; </span><br><span class="line">&lt;/shortcut&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="操作的容错性"><a class="markdownIt-Anchor" href="#操作的容错性"></a> 操作的容错性</h3>
+<blockquote>
+<p>“当用户错误地选择了的某个功能后，系统需要提供一个明确的「紧急出口」，来让用户离开这个不想要的状态，无需额外的对话。支持撤销和重做”。——雅各布·尼尔森（Jakob Nielsen）</p>
+</blockquote>
+<p>当用户选择一个错误的操作之后，应该给予一个明确的<strong>后悔窗口</strong>，</p>
+<h4 id="可撤回可反馈"><a class="markdownIt-Anchor" href="#可撤回可反馈"></a> 可撤回可反馈</h4>
+<p>可撤回的形式有很多种，典型的表现为在消息完成提示时候，提供一个撤回按钮，还有一种就是回收站的形式。</p>
+<p>可反馈就很好理解了，就是我们常说的客服反馈。</p>
+<h4 id="不可逆操作给予警示"><a class="markdownIt-Anchor" href="#不可逆操作给予警示"></a> 不可逆操作给予警示</h4>
+<h3 id="设计一致性"><a class="markdownIt-Anchor" href="#设计一致性"></a> 设计一致性</h3>
+<p>设计上下文的风格应该是一致的，基本的圆角，配色风格，排版整齐。入口统一，这样有利于用户养成“<strong>好习惯</strong>”，从而避免误操作带来不可预料的错误。</p>
+]]></content>
+      <categories>
+        <category>感悟思考</category>
       </categories>
   </entry>
   <entry>
