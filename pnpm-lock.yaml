@@ -66,8 +66,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       hexo-hide-posts:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.4.2
+        version: 0.4.2
       hexo-lazyload-image:
         specifier: ^1.0.13
         version: 1.0.13
@@ -3310,8 +3310,8 @@ packages:
       - supports-color
     dev: false
 
-  /hexo-hide-posts@0.2.0:
-    resolution: {integrity: sha512-euTftMGCSYkhn/ARVuOv+XQIMNTUy5vCiutaY0qcN92NdZTfPG/wKCkeR3yE7LpMs/Y0aTuEp9F5NUVP/Dt6nA==}
+  /hexo-hide-posts@0.4.2:
+    resolution: {integrity: sha512-2DdJLeWAKd4HS+j2hjyWVJlZ8aqHARH1Gufqi8ft8f1txLJvXbQg+x/6SlNB2IL/wR6FJvF1YywyD+waO1p8SQ==}
     dependencies:
       chalk: 4.1.2
     dev: false
