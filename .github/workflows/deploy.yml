@@ -14,10 +14,6 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
-      - uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-            
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
