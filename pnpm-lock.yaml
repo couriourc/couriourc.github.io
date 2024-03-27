@@ -100,7 +100,7 @@ importers:
         version: 2.0.0
       hexo-spoiler:
         specifier: ^1.7.3
-        version: 1.7.3
+        version: 1.7.4
       hexo-tag-color-block:
         specifier: ^0.0.3
         version: 0.0.3
@@ -3468,8 +3468,8 @@ packages:
       - supports-color
     dev: false
 
-  /hexo-spoiler@1.7.3:
-    resolution: {integrity: sha512-vR3oJ/mXOf8pOnZgZehy+IaxxRChC1Naqvy5qRGmyCs1gZ2e2xjj5hDfgSeERCz8Ow07SkayKA9jSZ47F4+WIg==}
+  /hexo-spoiler@1.7.4:
+    resolution: {integrity: sha512-1Z3Zh8MSvUxLv+cGxBhJdck8qKSv2pCZ0XktvW8u1ehERVgsJuYewJrdUSlZ/J4Qypo7th0Hkb/1kFh+u6kaLg==}
     dev: false
 
   /hexo-tag-color-block@0.0.3:
