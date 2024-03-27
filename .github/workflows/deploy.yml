@@ -17,12 +17,6 @@ jobs:
       - uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Setup SSH Keys and known_hosts
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-             ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
             
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
