@@ -1,7 +1,14 @@
 {
-  "newFileLocation": "folder",
-  "newFileFolderPath": "media/",
-  "useMarkdownLinks": true,
+  "showLineNumber": true,
+  "spellcheck": true,
+  "attachmentFolderPath": "./monorepo.canvas_Attachments",
+  "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "newLinkFormat": "absolute"
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

@@ -1,0 +1,161 @@
+{
+  "version": 3,
+  "projects": {},
+  "selectedDraftVaultPath": "文章集/外刊/Index.md",
+  "userScriptFolder": null,
+  "sessionStorage": "data",
+  "sessions": [
+    {
+      "start": "2024-03-27T00:33:08.375Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-25T13:16:59.301Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-20T10:33:15.518Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-19T10:30:44.646Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-18T09:58:05.743Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-11T09:48:56.811Z",
+      "total": 0,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 0,
+          "scenes": {
+            "经济学人-2024.03.09": 0
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-10T00:55:33.485Z",
+      "total": 674,
+      "drafts": {
+        "文章集/外刊/Index.md": {
+          "total": 674,
+          "scenes": {
+            "经济学人-2024.03.09": 674
+          }
+        }
+      }
+    },
+    {
+      "start": "2024-03-09T14:13:57.792Z",
+      "total": 373,
+      "drafts": {
+        "英语外刊翻译/英语外刊翻译/Index.md": {
+          "total": 1,
+          "scenes": {
+            "经济学人": 1,
+            "Untitled": 0
+          }
+        },
+        "文章集/外刊/Index.md": {
+          "total": 373,
+          "scenes": {
+            "经济学人-2024.03.09": 373
+          }
+        }
+      }
+    }
+  ],
+  "showWordCountInStatusBar": true,
+  "startNewSessionEachDay": true,
+  "sessionGoal": 500,
+  "applyGoalTo": "all",
+  "notifyOnGoal": true,
+  "countDeletionsForGoal": false,
+  "keepSessionCount": 30,
+  "sessionFile": "longform-sessions.json",
+  "numberScenes": false,
+  "sceneTemplate": null,
+  "workflows": {
+    "Default Workflow": {
+      "name": "Default Workflow",
+      "description": "A starter workflow. Feel free to edit, rename, or delete it and create your own.",
+      "steps": [
+        {
+          "id": "strip-frontmatter",
+          "optionValues": {}
+        },
+        {
+          "id": "remove-links",
+          "optionValues": {
+            "remove-wikilinks": true,
+            "remove-external-links": true
+          }
+        },
+        {
+          "id": "prepend-title",
+          "optionValues": {
+            "format": "$3{#} $1",
+            "separator": "\n\n"
+          }
+        },
+        {
+          "id": "concatenate-text",
+          "optionValues": {
+            "separator": "\\n\\n---\\n\\n"
+          }
+        },
+        {
+          "id": "write-to-note",
+          "optionValues": {
+            "target": "manuscript.md",
+            "open-after": true
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,18 +1,22 @@
 {
   "main": {
-    "id": "bb6955ae746f24f9",
+    "id": "157cc41cffaee402",
     "type": "split",
     "children": [
       {
-        "id": "da0129b4c372dd52",
+        "id": "f165e6de6d494c1a",
         "type": "tabs",
         "children": [
           {
-            "id": "74dbbbe73ec73b39",
+            "id": "d36872a332c26143",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -21,25 +25,16 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c2180cecdb3cbf3c",
+    "id": "b6dcdd7a4eb0d3bc",
     "type": "split",
     "children": [
       {
-        "id": "cedabd52a24ac55a",
+        "id": "cff4147df0418d1d",
         "type": "tabs",
+        "dimension": 18.51851851851852,
         "children": [
           {
-            "id": "ac5a84cce12e0f6d",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "02a46a1dbbd64a59",
+            "id": "413ad1008678447f",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,33 +49,71 @@
             }
           },
           {
-            "id": "ba7d7b49e877a96f",
+            "id": "1e38adf6a8cfbba2",
+            "type": "leaf",
+            "state": {
+              "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+              "state": {}
+            }
+          },
+          {
+            "id": "174ba47b20c38d33",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
           }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "2491d52ba9182fea",
+        "type": "tabs",
+        "dimension": 81.48148148148148,
+        "children": [
+          {
+            "id": "31dd742ab1ff8e4d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 596
   },
   "right": {
-    "id": "e0e8281543be9acd",
+    "id": "6b8fa3944049ae75",
     "type": "split",
     "children": [
       {
-        "id": "cb234281bec33799",
+        "id": "ae75be078a040cf8",
         "type": "tabs",
         "children": [
           {
-            "id": "8a9f4362e2b5ddf4",
+            "id": "fbde211b7f7413c9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ef62db06135b3504",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,41 +125,101 @@
             }
           },
           {
-            "id": "6e71881891779ad9",
+            "id": "125bf81d768749db",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "d1f54329fa54b78f",
+            "id": "5eef79c83f7e9b88",
             "type": "leaf",
             "state": {
-              "type": "tag",
+              "type": "all-properties",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           },
           {
-            "id": "1a4dd80f24182f38",
+            "id": "0269fbc7baa96b9a",
             "type": "leaf",
             "state": {
               "type": "outline",
+              "state": {
+                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md"
+              }
+            }
+          },
+          {
+            "id": "fe67eec23e60cd2b",
+            "type": "leaf",
+            "state": {
+              "type": "mathpad-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "458e26fa59ffbb73",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "f6d1da29da3e3f9b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "615a319b1e1ec827",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "be8baf21f1228914",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "0713acf7a0e665ef",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "534797532f99d955",
+            "type": "leaf",
+            "state": {
+              "type": "Saved Queries View",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 11
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -136,55 +229,64 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "attachment-manager:Toggle visibility of attachment folder": false,
+      "mathpad:Open Mathpad": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "74dbbbe73ec73b39",
+  "active": "31dd742ab1ff8e4d",
   "lastOpenFiles": [
-    "_posts/技术学习/3D数学基础/3D坐标系.md",
-    "media/3D坐标系/IMG-3D坐标系-20231122135306121.png",
-    "media/3D坐标系/IMG-3D坐标系-20231122135200191.png",
-    "media/3D坐标系/IMG-3D坐标系-20231122135135097.png",
-    "media/3D坐标系/IMG-3D坐标系-20231121211804729.png",
-    "media/3D坐标系",
-    "media/3D坐标系/IMG-3D坐标系-20231121211039225.png",
-    "_posts/技术学习/3D数学基础/一些有用的坐标系.md",
-    "media/一些有用的坐标系/IMG-一些有用的坐标系-20231121204151244.png",
-    "media/一些有用的坐标系/IMG-一些有用的坐标系-20231121204057240.png",
-    "media/一些有用的坐标系/IMG-一些有用的坐标系-20231121203100578.png",
-    "media/一些有用的坐标系",
-    "media/一些有用的坐标系/IMG-一些有用的坐标系-20231121202800339.png",
-    "_posts/游戏开发/UE学习/Task.md",
-    "_posts/技术学习/3D数学基础",
-    "_posts/游戏开发/UE学习/游戏框架.md",
-    "_posts/技术学习/算法/学习中的算法.md",
-    "_posts/公司经历以及问题记录/成都量子矩阵/开发Bug/IE11 下的各类兼容问题以及 Hack 方案.md",
-    "media/_posts/游戏开发/UE学习/游戏框架/IMG-游戏框架-20231112091030357.png",
-    "media/游戏框架",
-    "_posts/公司经历以及问题记录/成都量子矩阵/产品思考/可视化案例效果总结.md",
-    "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
-    "_posts/技术学习/数据库系统概论/SQL 函数.md",
-    "_posts/技术学习/数据库系统概论/专有名词库.md",
-    "_posts/技术学习/数据库系统概论/数据库系统安全.md",
-    "_posts/技术学习/编程范式/函数式编程.md",
-    "_posts/计算机基础知识/数据库系统概论/database-sql.md",
-    "_posts/计算机基础知识/数据库系统概论/database-function-dependency.md",
-    "_posts/计算机基础知识/数据库系统概论/database-armstrong.md",
-    "_posts/计算机基础知识/数据结构/data-structure-string-kmp.md",
-    "_posts/计算机基础知识/数据结构/data-structure-start.md",
-    "_posts/计算机基础知识/数据结构/data-structure-overview.md",
-    "_posts/计算机基础知识/数据结构/data-structure-concept.md",
-    "_posts/计算机基础知识/操作系统/os-process.md",
-    "_posts/计算机基础知识/操作系统/os-overview.md",
-    "_posts/计算机基础知识/操作系统/os-development.md",
-    "media/_posts/游戏开发/UE学习/游戏框架",
-    "media/_posts/游戏开发/UE学习",
-    "media/_posts/游戏开发",
-    "media/_posts",
-    "_posts/游戏开发/Flame基础概要/Flame基础概要.md",
-    "media/UE学习",
-    "media/游戏框架-20231112.png.md",
-    "_posts/游戏开发/UE学习",
-    "links/index.md"
+    "_posts/公司经历以及问题记录/开发Bug/IE11 下的各类兼容问题以及 Hack 方案.md",
+    "_posts/公司经历以及问题记录/开发Bug/FormData 传数组.md",
+    "_posts/公司经历以及问题记录/开发Bug/前端完整可用的下载.md",
+    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/AI辅助平台.md",
+    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/核心演进-粒子特效及交互特效.md",
+    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/看守所.md",
+    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/公司官网.md",
+    "软考复习/操作系统部分/操作系统基础概述.md",
+    "软考复习/操作系统部分/操作系统前趋图与PV操作.md",
+    "软考复习/数据库概论/数据库系统-习题.md",
+    "Untitled",
+    "软考复习/数据库概论/数据库恢复技术.md",
+    "软考复习/计算机组成原理/计算机系统层次结构.md",
+    "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments/计算机系统层次结构-20240319183243153.jpg",
+    "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments",
+    "软考复习/计算机组成原理",
+    "软考复习/操作系统部分/索引文件结构概论.md",
+    "软考复习/操作系统部分/银行家算法.md",
+    "软考复习/操作系统部分/CPU.md",
+    "文章集/外刊/manuscript.md",
+    "文章集/外刊/Index.md",
+    "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318181049121.png",
+    "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318180255213.png",
+    "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318175944223.png",
+    "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318175905320.png",
+    "我眼中的UE/Untitled.canvas_Attachments",
+    "软考复习/软考复习.canvas",
+    "我眼中的UE/Untitled.canvas",
+    "文章集/外刊/经济学人-2024.03.09.md",
+    "我眼中的UE",
+    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310171728318.png",
+    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310170228424.png",
+    "数据库系统-习题.md_Attachments/Diagram.svg.xml",
+    "数据库系统-习题.md_Attachments/Diagram.svg",
+    "数据库系统-习题.md_Attachments",
+    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310164113359.png",
+    "软考复习/数据库概论/数据库系统-习题.md_Attachments",
+    "软考复习/数据库概论",
+    "PDF/TheEconomist.2024.03.09.pdf",
+    "文章集/外刊/Untitled 1.md",
+    "文章集/外刊/Untitled.md",
+    "软考复习/操作系统部分/操作系统-习题.md",
+    "英语外刊翻译/英语外刊翻译/经济学人.md",
+    "英语外刊翻译/英语外刊翻译/Untitled.md",
+    "英语外刊翻译/英语外刊翻译/Index.md",
+    "英语外刊翻译/英语外刊翻译/manuscript.md",
+    "软考复习/操作系统部分/操作系统-习题.md_Attachments/操作系统-习题-20240309204429171.png",
+    "软考复习.md"
   ]
 }
