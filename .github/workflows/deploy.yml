@@ -10,13 +10,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-latest]
+        platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
 
     steps:
-      - name: Set-Service -Name ssh-agent -StartupType automatic
-        run: Set-Service -Name ssh-agent -StartupType automatic 
-        
+      - uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup SSH Keys and known_hosts
         uses: webfactory/ssh-agent@v0.8.0
         with:
