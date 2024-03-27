@@ -85,7 +85,7 @@ importers:
         version: 1.0.0
       hexo-renderer-markdown-it:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.1.1
       hexo-renderer-markdown-it-plus:
         specifier: ^1.0.6
         version: 1.0.6
@@ -3417,8 +3417,8 @@ packages:
       uslug: 1.0.4
     dev: false
 
-  /hexo-renderer-markdown-it@7.1.0:
-    resolution: {integrity: sha512-CQK7/kvhWbpKzXOSTpSuANVKgOZjPzxkPna4IQ6xMnRqsNpVXNSzpn5Ke1QEVH2x6FJB1/Vf7B40sJVxQKagaw==}
+  /hexo-renderer-markdown-it@7.1.1:
+    resolution: {integrity: sha512-BxI2j2f/l7lOgb7DiT1M4GcP/QhR8/rjMlYx4MEPog/9NTpYhbaspiVsw3tGXOsZVmu+cVgBYoeyIQsFYvv3rw==}
     engines: {node: '>=14'}
     dependencies:
       hexo-util: 3.1.0
