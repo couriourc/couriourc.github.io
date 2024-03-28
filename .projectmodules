@@ -1,8 +1,10 @@
 [submodule "source"]
 	path = source
+	place = "../source"
 	url = https://github.com/couriourc/couriourc.github.io
 	branch = source
 [submodule "themes/hexo-keep"]
 	path = themes/hexo-keep
+	place = "../theme"
 	url = https://github.com/couriourc/couriourc.github.io.git
 	branch = theme

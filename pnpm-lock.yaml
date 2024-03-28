@@ -163,12 +163,6 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(chokidar@3.5.3)
 
-  themes/hexo-keep:
-    dependencies:
-      '@types/hexo':
-        specifier: ^3.8.8
-        version: 3.8.12
-
 packages:
 
   /@babel/code-frame@7.22.13:
@@ -730,22 +724,6 @@ packages:
       minimatch: 9.0.3
     dev: true
 
-  /@types/bluebird@3.5.42:
-    resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
-    dev: false
-
-  /@types/bunyan@1.8.11:
-    resolution: {integrity: sha512-758fRH7umIMk5qt5ELmRMff4mLDlN+xyYzC+dkPTdKwbSkJFvz6xwyScrytPU0QIBbRRwbiE8/BIg8bpajerNQ==}
-    dependencies:
-      '@types/node': 20.3.1
-    dev: false
-
-  /@types/connect@3.4.38:
-    resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
-    dependencies:
-      '@types/node': 20.3.1
-    dev: false
-
   /@types/cookie@0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
     dev: false
@@ -756,30 +734,13 @@ packages:
       '@types/node': 20.3.1
     dev: false
 
-  /@types/hexo-util@0.6.8:
-    resolution: {integrity: sha512-H2gDjGfVC+r7ui+n0qb/cdmVr1y/hkJYnjRI1PxGocQ9iQJQlmeTOUJdkY9MJoYSF2qy1do9sjdCulnGKT9Uzw==}
-    dependencies:
-      '@types/node': 20.3.1
-    dev: false
-
-  /@types/hexo@3.8.12:
-    resolution: {integrity: sha512-WttgP54oseh0lp0ad3WwZBvaUmIZg1LeaiYgYWKbtHgYl7a3nHBYLpkIdz0xuUItFiakh15PNMcYJwurfR6K1w==}
-    dependencies:
-      '@types/bluebird': 3.5.42
-      '@types/bunyan': 1.8.11
-      '@types/connect': 3.4.38
-      '@types/hexo-util': 0.6.8
-      '@types/minimist': 1.2.2
-      '@types/underscore': 1.11.15
-      moment: 2.29.4
-    dev: false
-
   /@types/minimatch@3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: true
 
   /@types/minimist@1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+    dev: true
 
   /@types/node@20.3.1:
     resolution: {integrity: sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==}
@@ -788,10 +749,6 @@ packages:
   /@types/normalize-package-data@2.4.3:
     resolution: {integrity: sha512-ehPtgRgaULsFG8x0NeYJvmyH1hmlfsNLujHe9dQEia/7MAJYdzMSi19JtchUHjmBA6XC/75dK55mzZH+RyieSg==}
     dev: true
-
-  /@types/underscore@1.11.15:
-    resolution: {integrity: sha512-HP38xE+GuWGlbSRq9WrZkousaQ7dragtZCruBVMi0oX1migFZavZ3OROKHSkNp/9ouq82zrWtZpg18jFnVN96g==}
-    dev: false
 
   /@yarnpkg/lockfile@1.1.0:
     resolution: {integrity: sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==}
@@ -2789,7 +2746,7 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
   /fsevents@0.3.8:
-    resolution: {integrity: sha512-3vlmn1QaPoqSnhnorLFlp3+r3dUCZ8eZlaew+H8QhqB+0YBc9HSITh9wiZo76KYYExTC9DwG6otE/OzwbBLVIw==}
+    resolution: {integrity: sha1-mZLxAyySXIKVVNDVmAHcoDE6U1Y=}
     engines: {node: '>=0.8.0'}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
@@ -2803,7 +2760,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -3758,7 +3715,7 @@ packages:
     dev: true
 
   /image-size@0.5.5:
-    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
+    resolution: {integrity: sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
@@ -6223,7 +6180,7 @@ packages:
     dev: false
 
   /request@2.81.0:
-    resolution: {integrity: sha512-IZnsR7voF0miGSu29EXPRgPTuEsI/+aibNSBbN1pplrfartF5wDYGADz3iD9vmBVf2r00rckWZf8BtS5kk7Niw==}
+    resolution: {integrity: sha1-xpKJRqDgbF+Nb4qTM0af/aRimKA=}
     engines: {node: '>= 4'}
     deprecated: request has been deprecated, see https://github.com/request/request/issues/3142
     requiresBuild: true
@@ -6707,7 +6664,7 @@ packages:
     dev: false
 
   /source-map@0.5.7:
-    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
+    resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
     engines: {node: '>=0.10.0'}
     requiresBuild: true
     dev: false
