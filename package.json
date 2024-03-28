@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "deploy",
     "server": "hexo server",
     "sync": "git submodule init && git submodule update",
     "show-article-map": "node node_modules/hexo-seo-link-visualizer/app/show-article-map.js"
