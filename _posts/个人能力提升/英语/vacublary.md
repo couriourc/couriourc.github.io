@@ -1,6 +1,6 @@
 ---
 typora-root-url: ./english
-title: 考研英语整理-单词
+title: vacublary
 mathjax: true
 tags:
   - English
@@ -72,7 +72,7 @@ sticky:
 49. later 后来，稍后，随后
 50. lest 唯恐，以免
 
-## 与“政治”有关的英语单词集合
+## 与"政治"有关的英语单词集合
 
 ### 1. 名词
 
@@ -185,7 +185,7 @@ sticky:
 
 13. be in a position to do 有资格做某事
 
-## 考研英语“一义多词”整理——动词
+## 考研英语"一义多词"整理——动词
 
 ### 1. 促进、激发
 
@@ -480,7 +480,7 @@ sticky:
 5. implicit adj. adj. 含蓄的，未言明的；内含的，固有的；无疑问的，无保留的
 6. implication n. 可能的影响；含意，暗指；牵连，涉及
 
-## 考研英语“一义多词”整理——形容词和名词
+## 考研英语"一义多词"整理——形容词和名词
 
 ### 1. 有缺陷的，不利的，有害的
 
@@ -577,7 +577,7 @@ sticky:
 5. upside n. 积极面；上涨
 6. strength n. 优势；力量；实力；意志力；强度
 
-## 易考“态度”词
+## 易考"态度"词
 
 1. indifferent 漠不关心的
 2. disregardful 漠视的

@@ -1,5 +1,5 @@
 ---
-title: HTML 基础篇
+title: HTML 基础
 tags:
   - HTML
   - 2023面试

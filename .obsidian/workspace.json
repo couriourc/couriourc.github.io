@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
+                "file": "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +31,7 @@
       {
         "id": "cff4147df0418d1d",
         "type": "tabs",
-        "dimension": 18.51851851851852,
+        "dimension": 23.46938775510204,
         "children": [
           {
             "id": "413ad1008678447f",
@@ -70,7 +70,7 @@
       {
         "id": "2491d52ba9182fea",
         "type": "tabs",
-        "dimension": 81.48148148148148,
+        "dimension": 76.53061224489795,
         "children": [
           {
             "id": "31dd742ab1ff8e4d",
@@ -86,7 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 596
+    "width": 421
   },
   "right": {
     "id": "6b8fa3944049ae75",
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
+                "file": "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md",
+                "file": "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/公司经历以及问题记录/前端的B 端设计思维.md"
+                "file": "_posts/技术学习/数据库系统概论/SQL 语法规则.md"
               }
             }
           },
@@ -215,11 +215,11 @@
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 789
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,29 +238,41 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "31dd742ab1ff8e4d",
+  "active": "d36872a332c26143",
   "lastOpenFiles": [
+    "_posts/技术学习/数据库系统概论/专有名词库.md",
+    "_posts/技术学习/数据库系统概论/SQL 函数.md",
+    "_posts/技术学习/算法/学习中的算法.md",
+    "_posts/技术学习/算法/实践中的算法.md",
+    "_posts/技术学习/数据库系统概论/关系系统及其查询优化.md",
+    "_posts/技术学习/数据库系统概论/并发控制.md",
+    "_posts/技术学习/编程范式/函数式编程.md",
+    "_posts/面试总结/微派.md",
+    "_posts/灵光炸开/思维导图实现思路.md",
+    "_posts/前端/前端开发经历/蓝鲸/蓝鲸项目组.md",
+    "_posts/前端/前端基础知识/Pasted image 20240328231757.png",
+    "_posts/前端/微信小程序开发/微信小程序开发.md",
+    "_posts/前端/Vue 总结/跨域问题详解.md",
+    "_posts/前端/前端基础知识/HTML/HTML 基础.md",
+    "_posts/前端/前端基础知识/HTML/图片格式总结.md",
+    "_posts/前端/前端基础知识/CSS/CSS 选择器.md",
+    "_posts/前端/前端基础知识/CSS/CSS 选择器.md_Attachments/CSS 选择器-20240328231315160.png",
+    "_posts/前端/前端基础知识/CSS/CSS 选择器.md_Attachments",
+    "_posts/个人能力提升/英语/vacublary.md",
+    "_posts/个人能力提升/英语/scentence.md",
+    "_posts/个人能力提升/英语/prefixer-root.md",
+    "_posts/编程语言/rust/起步入门.md",
+    "_posts/编程语言/Python/Python VS Javascript.md",
     "_posts/公司经历以及问题记录/开发Bug/IE11 下的各类兼容问题以及 Hack 方案.md",
     "_posts/公司经历以及问题记录/开发Bug/FormData 传数组.md",
     "_posts/公司经历以及问题记录/开发Bug/前端完整可用的下载.md",
     "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/AI辅助平台.md",
     "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/核心演进-粒子特效及交互特效.md",
     "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/看守所.md",
-    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/公司官网.md",
-    "软考复习/操作系统部分/操作系统基础概述.md",
-    "软考复习/操作系统部分/操作系统前趋图与PV操作.md",
-    "软考复习/数据库概论/数据库系统-习题.md",
     "Untitled",
-    "软考复习/数据库概论/数据库恢复技术.md",
-    "软考复习/计算机组成原理/计算机系统层次结构.md",
     "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments/计算机系统层次结构-20240319183243153.jpg",
     "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments",
     "软考复习/计算机组成原理",
-    "软考复习/操作系统部分/索引文件结构概论.md",
-    "软考复习/操作系统部分/银行家算法.md",
-    "软考复习/操作系统部分/CPU.md",
-    "文章集/外刊/manuscript.md",
-    "文章集/外刊/Index.md",
     "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318181049121.png",
     "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318180255213.png",
     "我眼中的UE/Untitled.canvas_Attachments/Untitled-20240318175944223.png",
@@ -268,25 +280,13 @@
     "我眼中的UE/Untitled.canvas_Attachments",
     "软考复习/软考复习.canvas",
     "我眼中的UE/Untitled.canvas",
-    "文章集/外刊/经济学人-2024.03.09.md",
     "我眼中的UE",
     "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310171728318.png",
     "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310170228424.png",
     "数据库系统-习题.md_Attachments/Diagram.svg.xml",
     "数据库系统-习题.md_Attachments/Diagram.svg",
     "数据库系统-习题.md_Attachments",
-    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310164113359.png",
     "软考复习/数据库概论/数据库系统-习题.md_Attachments",
-    "软考复习/数据库概论",
-    "PDF/TheEconomist.2024.03.09.pdf",
-    "文章集/外刊/Untitled 1.md",
-    "文章集/外刊/Untitled.md",
-    "软考复习/操作系统部分/操作系统-习题.md",
-    "英语外刊翻译/英语外刊翻译/经济学人.md",
-    "英语外刊翻译/英语外刊翻译/Untitled.md",
-    "英语外刊翻译/英语外刊翻译/Index.md",
-    "英语外刊翻译/英语外刊翻译/manuscript.md",
-    "软考复习/操作系统部分/操作系统-习题.md_Attachments/操作系统-习题-20240309204429171.png",
-    "软考复习.md"
+    "软考复习/数据库概论"
   ]
 }

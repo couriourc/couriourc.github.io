@@ -1,6 +1,6 @@
 ---
 typora-root-url: ./english
-title: 考研英语整理-句子
+title: scentence
 mathjax: true
 abbrlink: e33e3b9c
 tags:
@@ -38,9 +38,9 @@ sticky:
 
   - 哲学 Philosophy
 
-    - 马克思主义哲学 Philosophy of Marxism
-    - 中国哲学 Chinese Philosophy
-    - 外国哲学 Foreign Philosophies
+	- 马克思主义哲学 Philosophy of Marxism
+	- 中国哲学 Chinese Philosophy
+	- 外国哲学 Foreign Philosophies
 
   - 伦理学 Ethics
 
@@ -178,8 +178,8 @@ sticky:
   - 牛仔          cowboy
 
   - 素食主义者    vegetarian
-      {% endmarkmap %}
-      {% enddetails %}
+	  {% endmarkmap %}
+	  {% enddetails %}
 
 4.Because of its irritating effect on humans，the use of **phenol** as a general **antiseptic** has been largely discontinued.
 
@@ -395,7 +395,7 @@ sticky:
 
 57.During the eighteenth century，Little Turtle was chief of the Miami tribe whose territory became what is now Indiana and Ohio.
 
-译：十八世纪时，“小乌龟“是迈阿密部落的酋长，该部落的地盘就是今天的印第安那州和俄亥俄州。
+译：十八世纪时，"小乌龟"是迈阿密部落的酋长，该部落的地盘就是今天的印第安那州和俄亥俄州。
 
 58.Among almost seven hundred species of bamboo，some are fully grown at less than a foot high，while others can grow three feet in twenty-four hours.
 

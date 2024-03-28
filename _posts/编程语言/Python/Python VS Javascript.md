@@ -1,6 +1,6 @@
 ---
 typora-root-url: ./assets
-title: Python-Python Vs JavaScript类比学习
+title: Python VS Javascript
 mathjax: true
 tags: '-Python'
 categories:
