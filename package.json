@@ -16,7 +16,7 @@
   "dependencies": {
     "@heowc/hexo-tag-gdemo": "^0.15.0",
     "deep-assign": "^3.0.0",
-    "hexo": "^5.0.0",
+    "hexo": "^7.1.1",
     "hexo-abbrlink": "^2.2.1",
     "hexo-autonofollow": "^1.0.1",
     "hexo-browsersync": "^0.3.0",
