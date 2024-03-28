@@ -51,7 +51,7 @@
     "less": "^4.1.3",
     "lodash": "^4.17.21",
     "lodash.get": "^4.4.2",
-    "markdown-it-emoji": "^2.0.2",
+    "markdown-it-emoji": "^3.0.0",
     "markdown-it-plantuml": "^1.4.1",
     "markmap-common": "^0.14.2",
     "markmap-lib": "^0.14.4",
