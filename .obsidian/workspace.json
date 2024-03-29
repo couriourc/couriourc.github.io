@@ -18,8 +18,81 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b46544384b57d302",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/项目中问题记录/一些有的没的技术/音视频保存方案.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e346e6b1d9bc6928",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/游戏开发/UE学习/Task.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7d75d9308f26046e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/游戏开发/UE学习/Task.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d25e8a457d617df5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/一些小想法/一种基于OpenApi的接口自动化方案-设计过程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4b37185c7ddf5584",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/计算机基础知识/操作系统/os-process-dead-lock.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bae04261e08bf95a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/个人能力提升/英语/vacublary.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -113,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/前端/WebRTC/message-prototol.md",
+                "file": "_posts/个人能力提升/英语/vacublary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +203,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/前端/WebRTC/message-prototol.md",
+                "file": "_posts/个人能力提升/英语/vacublary.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +227,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/前端/WebRTC/message-prototol.md"
+                "file": "_posts/个人能力提升/英语/vacublary.md"
               }
             }
           },
@@ -223,11 +296,11 @@
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 789
+    "width": 261
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -246,38 +319,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d36872a332c26143",
+  "active": "bae04261e08bf95a",
   "lastOpenFiles": [
-    "_posts/前端/前端开发经历/蓝鲸/蓝鲸项目组.md",
-    "_posts/前端/前端基础知识/HTML/HTML 基础.md",
+    "_posts/个人能力提升/英语/scentence.md",
+    "_posts/个人能力提升/英语/prefixer-root.md",
+    "_posts/个人能力提升/感悟思考/理想团队.md",
+    "_posts/编程语言/rust/起步入门.md",
+    "_posts/编程语言/Python/Python VS Javascript.md",
     "_posts/前端/前端基础知识/HTML/图片格式总结.md",
+    "_posts/前端/前端基础知识/HTML/HTML 基础.md",
     "_posts/前端/前端基础知识/CSS/CSS 选择器.md",
-    "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
-    "_posts/技术学习/数据库系统概论/专有名词库.md",
-    "_posts/技术学习/数据库系统概论/SQL 函数.md",
+    "_posts/书单/个人阅读书单及文件.md",
+    "_posts/计算机基础知识/操作系统/os-process-dead-lock.md",
+    "_posts/书单",
+    "_posts/书单/计算机类/程序员修炼之道.pdf",
+    "_posts/书单/计算机类/[Network Warrior中文版思科网络工程师必备手册].（美）唐纳胡.扫描版.pdf",
+    "_posts/前端/WebRTC/message-prototol.md",
+    "_posts/前端/微信小程序开发/微信小程序开发.md",
+    "_posts/面试总结/微派.md",
+    "_posts/面试总结/interview-weipai/image-20230227094915362.png",
+    "_posts/前端/Vue 总结/Vue 简化版实现总结.md",
+    "_posts/前端/Vue 总结/跨域问题详解.md",
     "_posts/技术学习/算法/学习中的算法.md",
     "_posts/技术学习/算法/实践中的算法.md",
+    "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
+    "_posts/技术学习/数据库系统概论/SQL 函数.md",
+    "_posts/技术学习/数据库系统概论/专有名词库.md",
     "_posts/技术学习/数据库系统概论/关系系统及其查询优化.md",
     "_posts/技术学习/数据库系统概论/并发控制.md",
     "_posts/技术学习/编程范式/函数式编程.md",
-    "_posts/面试总结/微派.md",
-    "_posts/灵光炸开/思维导图实现思路.md",
+    "_posts/闲情雅致/旅游.md",
+    "_posts/闲情雅致/雅句.md",
+    "_posts/一些小想法/一种基于OpenApi的接口自动化方案-设计过程 1.md",
+    "_posts/一些小想法",
+    "_posts/项目中问题记录/monorepo.canvas",
+    "_posts/项目中问题记录/过度思考",
+    "_posts/项目中问题记录/一些有的没的技术",
     "_posts/前端/前端基础知识/Pasted image 20240328231757.png",
-    "_posts/前端/微信小程序开发/微信小程序开发.md",
-    "_posts/前端/Vue 总结/跨域问题详解.md",
     "_posts/前端/前端基础知识/CSS/CSS 选择器.md_Attachments/CSS 选择器-20240328231315160.png",
     "_posts/前端/前端基础知识/CSS/CSS 选择器.md_Attachments",
-    "_posts/个人能力提升/英语/vacublary.md",
-    "_posts/个人能力提升/英语/scentence.md",
-    "_posts/个人能力提升/英语/prefixer-root.md",
-    "_posts/编程语言/rust/起步入门.md",
-    "_posts/编程语言/Python/Python VS Javascript.md",
-    "_posts/公司经历以及问题记录/开发Bug/IE11 下的各类兼容问题以及 Hack 方案.md",
-    "_posts/公司经历以及问题记录/开发Bug/FormData 传数组.md",
-    "_posts/公司经历以及问题记录/开发Bug/前端完整可用的下载.md",
-    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/AI辅助平台.md",
-    "_posts/公司经历以及问题记录/成都量子矩阵/参与的项目/核心演进-粒子特效及交互特效.md",
-    "Untitled",
     "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments/计算机系统层次结构-20240319183243153.jpg",
     "软考复习/计算机组成原理/计算机系统层次结构.md_Attachments",
     "软考复习/计算机组成原理",
@@ -288,13 +368,7 @@
     "我眼中的UE/Untitled.canvas_Attachments",
     "软考复习/软考复习.canvas",
     "我眼中的UE/Untitled.canvas",
-    "我眼中的UE",
     "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310171728318.png",
-    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310170228424.png",
-    "数据库系统-习题.md_Attachments/Diagram.svg.xml",
-    "数据库系统-习题.md_Attachments/Diagram.svg",
-    "数据库系统-习题.md_Attachments",
-    "软考复习/数据库概论/数据库系统-习题.md_Attachments",
-    "软考复习/数据库概论"
+    "软考复习/数据库概论/数据库系统-习题.md_Attachments/数据库系统-习题-20240310170228424.png"
   ]
 }

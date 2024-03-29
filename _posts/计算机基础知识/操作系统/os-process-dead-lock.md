@@ -1,6 +1,6 @@
 ---
 typora-root-url: ./os-process-dead-lock
-title: 操作系统知识点总结-进程-死锁
+title: os-process-dead-lock
 mathjax: true
 tags:
   - 基础知识
@@ -50,7 +50,7 @@ sticky:
 
 把临界区资源变成共享资源，例如使用 **SPOOLing** 技术使得设备可以逻辑上共享，但是一般不常用。
 
-> **SPOOLING** （即[外部设备](https://baike.baidu.com/item/外部设备)联机并行操作），即Simultaneous Peripheral Operations On-Line的缩写，它是关于慢速[字符设备](https://baike.baidu.com/item/字符设备/6637035)如何与计算机主机交换信息一种技术，通常称为“[假脱机](https://baike.baidu.com/item/假脱机)技术”。
+> **SPOOLING** （即[外部设备](https://baike.baidu.com/item/外部设备)联机并行操作），即Simultaneous Peripheral Operations On-Line的缩写，它是关于慢速[字符设备](https://baike.baidu.com/item/字符设备/6637035)如何与计算机主机交换信息一种技术，通常称为"[假脱机](https://baike.baidu.com/item/假脱机)技术"。
 
 ### 破坏剥夺条件
 
@@ -124,7 +124,7 @@ sticky:
 2. 若 **Request~i~[j] < Available[i,j]**，继续下一步，否则表示尚无可用资源，P~i~ 等待；
 
 3. 系统尝试将资源分配给 P~i~，并修改相应数据:
-    $$
+	$$
     Available = Available - Request; \\
     Allocation[i,j] = Allocation[i,j] + Request_i[j] \\
     Need[i,j] = Need[i,j] - Request_i[j] \\
@@ -132,7 +132,7 @@ sticky:
 
 4. 系统执行安全算法，判断此次分配后系统是否处于安全状态，若是，则正式分配资源给 P~i~，否则此次分配作废，让 P~i~ 等待；
 
-    ![2020111521534961](2020111521534961.png)
+	![2020111521534961](2020111521534961.png)
 
 ### 例题
 

@@ -21,7 +21,7 @@ date-modified: 2023-07-02
 ## 转换函数
 
 `CONVERT(data_type[(length)],expression[,style])`  
-`CAST( expression AS data_type )`  
+`CAST( expression AS data_type )`
 
 ```sql
 -- 将学号转为 varchar 类型
@@ -40,19 +40,19 @@ select CAST(stuno as varchar(10)) as stuno,stuname from student;
 
 `DATEADD(日期部分,number,date)`: 返回带有指定数字(number)的日期(date),该数字添加到指定的日期部分(datepart)
 
-`DATEDIFF(日期部分,date1,date2)` 返回两个日期中指定的`日期部分之间的差值`。
+`DATEDIFF(日期部分,date1,date2)`  返回两个日期中指定的`日期部分之间的差值`。
 
-`DATENAME(日期部分,date)` 返回日期中日期部分的 `字符串形式`。
+`DATENAME(日期部分,date)`  返回日期中日期部分的 `字符串形式`。
 
-`DATEPART(日期部分,date)` 返回日期中指定的日期部分的 `整数形式`。  
+`DATEPART(日期部分,date)`  返回日期中指定的日期部分的 `整数形式`。
 
-`YEAR(date)` 返回指定日期的 `年份` 数值。  
+`YEAR(date)`  返回指定日期的 `年份` 数值。
 
 `MONTH(date)` 返回指定日期的 `月份` 数值
 
 `DAY(date)` 返回指定日期的 `天数` 值
 
-## 数字函数  
+## 数字函数
 
 `ABS (num_expr) `返回数值表达式的绝对值。
 
@@ -96,4 +96,4 @@ select CAST(stuno as varchar(10)) as stuno,stuname from student;
 
 `TEXTPTR (col_name)` 返回 varbinary 格式的文本指针值。对文本指针进行检查以确保它指向第一个文本页。
 
-`TEXTVALID ('table_name. Col_name', text_ptr)`检查给定的文本指针是否有效。返回表示有效, 返回表示指针无效。  
+`TEXTVALID ('table_name. Col_name', text_ptr)`检查给定的文本指针是否有效。返回表示有效, 返回表示指针无效。

@@ -591,7 +591,7 @@ sticky:
 10. superficial 肤浅的
 11. gloomy 悲观的
 12. pessimistic 悲观的
-13. optimistic乐观的
+13. optimistic 乐观的
 14. sensitive 敏感的
 15. confused 困惑的
 16. panicked 恐慌的
@@ -674,7 +674,7 @@ sticky:
 
 14. total 总的，全部的
 
-## 2022英语一黄皮书模拟卷Ⅱ生僻词整理
+## 2022 英语一黄皮书模拟卷 Ⅱ 生僻词整理
 
 ### 完型：人类可能正在淘汰基因进化
 
@@ -705,7 +705,7 @@ sticky:
 25. natural selection 自然选择
 26. at the mercy of……受……支配
 
-### Text1：暂停Covid-19疫苗知识产权的保护将适得其反
+### Text1：暂停 Covid-19 疫苗知识产权的保护将适得其反
 
 1. waiver n. 弃权
 2. access n. 机会
@@ -750,7 +750,7 @@ sticky:
 41. an actual legal document 法律文件
 42. a statement of principle 原则声明
 
-### Text2：把AI引入课堂要遵守的规则
+### Text2：把 AI 引入课堂要遵守的规则
 
 1. shovel n. 铲
 2. output n. 产出
@@ -983,7 +983,7 @@ sticky:
 
 ### 一、前缀派生形容词
 
-#### 1.由il-，im-，in-或ir-前缀构成的形容词
+#### 1.由 il-，im-，in-或 ir-前缀构成的形容词
 
 illegal 非法的 impossible 不可能的
 
@@ -993,11 +993,11 @@ irregular 不规则的，不规律的 irrelevant 不相干的，离题的
 
 irresponsible 无责任感的
 
-#### 2.由non-前缀构成的形容词
+#### 2.由 non-前缀构成的形容词
 
 non-stop 中途不停的 non-violent 非暴力的
 
-#### 3.由un-前缀构成的形容词
+#### 3.由 un-前缀构成的形容词
 
 unable 不能的，不能胜任的 unbearable 难耐的，无法接受的
 
@@ -1023,7 +1023,7 @@ unusual 不平常的，异常的 unwilling 不愿意的，勉强的
 
 ### 二、后缀派生形容词
 
-#### 1.由-able 或-ible后缀构成的形容词
+#### 1.由-able 或-ible 后缀构成的形容词
 
 able 能够；有能力的 accessible 可到达的，可接受的
 
@@ -1043,7 +1043,7 @@ suitable 合适的，适宜的 terrible 可怕的，糟糕的
 
 valuable 值钱的，贵重的
 
-#### 2.由-al后缀构成的形容词
+#### 2.由-al 后缀构成的形容词
 
 abnormal 反常的，变态的 actual 实际的，现实的
 
@@ -1077,7 +1077,7 @@ total 总数的；完全的 traditional 传统的，风俗的
 
 usual 通常的，平常的 visual 必不可少的，对...极重的
 
-#### 3.由-cal后缀构成的形容词
+#### 3.由-cal 后缀构成的形容词
 
 botanical 植物学的，植物的 chemical 化学的
 
@@ -1095,7 +1095,7 @@ theoretical 理论的 typical 典型的，有代表性的
 
 vertical 垂直的，纵向的
 
-#### 4.由-ial后缀构成的形容词
+#### 4.由-ial 后缀构成的形容词
 
 artificial 人工的，人造的 beneficial 有利的，有帮助的
 
@@ -1109,7 +1109,7 @@ racial 种族的 social 社会的，社交的
 
 special 特别的，专门的
 
-#### 5.由-ant后缀构成的形容词
+#### 5.由-ant 后缀构成的形容词
 
 abundant 大量的，丰盛的 brilliant 巧妙地，技艺高的
 
@@ -1119,49 +1119,49 @@ elegant 文雅的，漂亮的 fragrant 香的，芳香的
 
 important 重要的 instant 即时的；紧迫的；方便的
 
-merchant 商业的；商人的 pleasant令人愉快的，舒适的
+merchant 商业的；商人的 pleasant 令人愉快的，舒适的
 
-pregnant 怀孕的 relevant相关的；切题的
+pregnant 怀孕的 relevant 相关的；切题的
 
-vacant空缺的，未被占用的
+vacant 空缺的，未被占用的
 
 #### 6.由-ent 后缀构成的形容词
 
-absent缺席的，不在的 ancient 古代的，古老的
+absent 缺席的，不在的 ancient 古代的，古老的
 
-apparent显而易见的 confident 自信的，有自信的
+apparent 显而易见的 confident 自信的，有自信的
 
-consistent一致的，始终如一的 convenient便利的，方便的
+consistent 一致的，始终如一的 convenient 便利的，方便的
 
 different 不同的，有差异的 evident 清楚地，显而易见的
 
-excellent 极好的，优秀的 fluent流利的
+excellent 极好的，优秀的 fluent 流利的
 
-frequent经常的，频繁的 innocent无辜的，清白的
+frequent 经常的，频繁的 innocent 无辜的，清白的
 
 permanent 永久的，永恒的 present 出现的，出席的
 
-silent无声的，无对话的 transparent透明的，清澈的
+silent 无声的，无对话的 transparent 透明的，清澈的
 
 urgent 紧急的，紧迫的 violent 暴力的
 
-#### 7.由-ate后缀构成的形容词
+#### 7.由-ate 后缀构成的形容词
 
-adequate合适的；合乎情理的 appropriate 合适的，恰当的
+adequate 合适的；合乎情理的 appropriate 合适的，恰当的
 
-considerate体贴的，关心 delicate 易损的，易碎的
+considerate 体贴的，关心 delicate 易损的，易碎的
 
-desperate不惜冒险的 favourite幸运的，侥幸的
+desperate 不惜冒险的 favourite 幸运的，侥幸的
 
 immediate 立即的 late 晚的，迟的
 
 private 私人的
 
-#### 8.由-ic后缀构成的形容词
+#### 8.由-ic 后缀构成的形容词
 
-academic学术的，教学的 alcoholic含酒精的
+academic 学术的，教学的 alcoholic 含酒精的
 
-allergic过敏的；厌恶的 athletic 健壮的；体育运动的
+allergic 过敏的；厌恶的 athletic 健壮的；体育运动的
 
 authentic 真正的 automatic 自动的，机械的
 
@@ -1169,17 +1169,17 @@ basic 基本的 bureaucratic 官僚的
 
 catholic 天主教的 characteristic 典型的，独特的
 
-classic 一流的，经典的；有代表性的 cubic立方体的，立方形的
+classic 一流的，经典的；有代表性的 cubic 立方体的，立方形的
 
 dynamic 充满活力的 electric 用电的，点动的
 
 electronic 电子的 energetic 电子的
 
-energetic 精力旺盛的 enthusiastic热情的，热心的
+energetic 精力旺盛的 enthusiastic 热情的，热心的
 
-fantastic 极好的，美妙的 magic有魔力的；不可思议的
+fantastic 极好的，美妙的 magic 有魔力的；不可思议的
 
-olympic奥林匹克的 optimistic 乐观的
+olympic 奥林匹克的 optimistic 乐观的
 
 panic 惊慌的，惶恐不安的 plastic 塑料的
 
@@ -1187,11 +1187,11 @@ public 公共的，公众的 scientific 科学的
 
 specific 明确的，具体的；独特的 systematic 系统的，有条理的
 
-#### 9.由-ive后缀构成的形容词
+#### 9.由-ive 后缀构成的形容词
 
-active积极的 aggressive侵略的；咄咄逼人的
+active 积极的 aggressive 侵略的；咄咄逼人的
 
-alternative可供替代的 attractive 迷人的，有吸引力的
+alternative 可供替代的 attractive 迷人的，有吸引力的
 
 conservative 保守的，守旧的；谨慎的 expensive 昂贵的
 
@@ -1199,15 +1199,15 @@ native 本土的，本国的 passive 被动的
 
 primitive 原始的，远古的 radioactive 放射性的
 
-sensitive 敏感的，感觉敏锐的 subjective主观的
+sensitive 敏感的，感觉敏锐的 subjective 主观的
 
 tentative 试验性的
 
-#### 10.由-less后缀构成的形容词
+#### 10.由-less 后缀构成的形容词
 
-breathless气喘吁吁的，上气不接下气的 careless粗心的，漫不经心的
+breathless 气喘吁吁的，上气不接下气的 careless 粗心的，漫不经心的
 
-cordless无线的 endless无止境的，没有劲头的
+cordless 无线的 endless 无止境的，没有劲头的
 
 harmless 无害的，不致伤的 hopeless 没有希望的，不可救药的
 
@@ -1215,35 +1215,35 @@ regardless 不顾，不加理会 stainless 无污点的
 
 useless 无用的 worthless 没有价值的，没有用的
 
-#### 11.由-ous后缀构成的形容词
+#### 11.由-ous 后缀构成的形容词
 
-ambiguous 模棱两可的 anxious忧虑的，焦虑的
+ambiguous 模棱两可的 anxious 忧虑的，焦虑的
 
-autonomous自治的，自主的 cautious小心的，谨慎的
+autonomous 自治的，自主的 cautious 小心的，谨慎的
 
-curious好奇的；奇异的 dangerous危险的
+curious 好奇的；奇异的 dangerous 危险的
 
 delicious 美味的，可口的 famous 著名的
 
 generous 慷慨大方的 humorous 富于幽默的
 
-mountainous 多山的 nervous紧张不安的
+mountainous 多山的 nervous 紧张不安的
 
-obvious显然的，明显的 poisonous有毒的，致命的
+obvious 显然的，明显的 poisonous 有毒的，致命的
 
-precious 宝贵的，珍贵的 religious宗教的
+precious 宝贵的，珍贵的 religious 宗教的
 
-ridiculous 荒谬的，愚蠢的 serious严肃的，严重的
+ridiculous 荒谬的，愚蠢的 serious 严肃的，严重的
 
 various 各种各样的
 
 #### 12.由-y 后缀构成的形容词
 
-angry生气的，愤怒的 busy 忙的，繁忙的
+angry 生气的，愤怒的 busy 忙的，繁忙的
 
-clumsy笨拙的，不灵巧的 cosy 暖和舒适的；紧密无间的
+clumsy 笨拙的，不灵巧的 cosy 暖和舒适的；紧密无间的
 
-crazy 疯狂的 dirty脏的
+crazy 疯狂的 dirty 脏的
 
 ## 英语写作高级替换词
 

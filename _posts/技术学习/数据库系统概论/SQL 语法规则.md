@@ -21,7 +21,7 @@ date-modified: 2023-07-02
 
 #### [[专有名词库#DDL|DDL]]
 
-主要包括对于[[专有名词库#数据库|数据库]]、[[专有名词库#模式|模式]]以及[[专有名词库#视图|视图]]的一些定义方式：`CREATE` `DROP` `ALTER`  
+主要包括对于[[专有名词库#数据库|数据库]]、[[专有名词库#模式|模式]]以及[[专有名词库#视图|视图]]的一些定义方式：`CREATE` `DROP` `ALTER`
 
 ### 概览
 
@@ -66,7 +66,7 @@ date-modified: 2023-07-02
 
 - 一个关系数据库管理系统的实例（instance）中可以建立一个或者多个数据库
 	- 一个数据库中可以建立多个模式
-		- 一个模式下通常包括多个表、视图、索引等[[专有名词库#对象类型|数据库对象]]  
+		- 一个模式下通常包括多个表、视图、索引等[[专有名词库#对象类型|数据库对象]]
 
 #### 模式
 
@@ -87,9 +87,9 @@ CREATE SCHEMA AUTHORIZATION WANG;
 
 ```sql
 CREATE SCHEMA <schema_name> [AUTHORIZATION <dba_user>]
-	[CREATE TABLE <table_name> ( 
+	[CREATE TABLE <table_name> (
 		<<attribute_type> <attribute_name> [constraint]>,
-		[<attribute_type> <attribute_name> [constraint]] 
+		[<attribute_type> <attribute_name> [constraint]]
 	)]
 ;
 ```
@@ -110,7 +110,7 @@ DROP SCHEMA ZHANG CASCADE;
 DROP SCHEMA ZHANG RESTRICT;
 ```
 
-- 对于 `CASCADE` ，在删除模式的同时把该模式中所有的数据库对象全部删除。  
+- 对于 `CASCADE` ，在删除模式的同时把该模式中所有的数据库对象全部删除。
 - 对于 `RESTRICT`，如果该模式中定义了下属的数据库对象（如表、视图等），则拒绝该删除语句的执行。
 
 #### 修改
