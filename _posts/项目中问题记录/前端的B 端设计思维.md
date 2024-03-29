@@ -99,7 +99,7 @@ B 端产品往往涉及到许多的表单，也就不可避免的考虑有效值
 ```typescript
 // 一种表单校验设计方案
 const form = {
-	username: ''
+	username: '',
 	password: '',
 	email: '',
 	// 增加冗余字段
