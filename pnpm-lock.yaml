@@ -152,7 +152,7 @@ importers:
         version: 4.1.1
       hexo-util:
         specifier: ^3.1.0
-        version: 3.1.0
+        version: 3.3.0
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -2746,7 +2746,7 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
   /fsevents@0.3.8:
-    resolution: {integrity: sha1-mZLxAyySXIKVVNDVmAHcoDE6U1Y=}
+    resolution: {integrity: sha512-3vlmn1QaPoqSnhnorLFlp3+r3dUCZ8eZlaew+H8QhqB+0YBc9HSITh9wiZo76KYYExTC9DwG6otE/OzwbBLVIw==}
     engines: {node: '>=0.8.0'}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
@@ -2760,7 +2760,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -3378,7 +3378,7 @@ packages:
     resolution: {integrity: sha512-CQK7/kvhWbpKzXOSTpSuANVKgOZjPzxkPna4IQ6xMnRqsNpVXNSzpn5Ke1QEVH2x6FJB1/Vf7B40sJVxQKagaw==}
     engines: {node: '>=14'}
     dependencies:
-      hexo-util: 3.1.0
+      hexo-util: 3.3.0
       markdown-it: 13.0.1
       markdown-it-abbr: 1.0.4
       markdown-it-attrs: 4.1.6(markdown-it@13.0.1)
@@ -3467,8 +3467,8 @@ packages:
       prismjs: 1.29.0
       strip-indent: 3.0.0
 
-  /hexo-util@3.1.0:
-    resolution: {integrity: sha512-LmztAhkJHQ59VHqz6AnvwEKiNA0pCBBI0qW08cCzjhnpGoqZ8tlGDwElzy7oTxCvMChkiqg5V8VflhdI8tHsGg==}
+  /hexo-util@3.3.0:
+    resolution: {integrity: sha512-YvGngXijE2muEh5L/VI4Fmjqb+/yAkmY+VuyhWVoRwQu1X7bmWodsfYRXX7CUYhi5LqsvH8FAe/yBW1+f6ZX4Q==}
     engines: {node: '>=14'}
     requiresBuild: true
     dependencies:
@@ -6180,7 +6180,7 @@ packages:
     dev: false
 
   /request@2.81.0:
-    resolution: {integrity: sha1-xpKJRqDgbF+Nb4qTM0af/aRimKA=}
+    resolution: {integrity: sha512-IZnsR7voF0miGSu29EXPRgPTuEsI/+aibNSBbN1pplrfartF5wDYGADz3iD9vmBVf2r00rckWZf8BtS5kk7Niw==}
     engines: {node: '>= 4'}
     deprecated: request has been deprecated, see https://github.com/request/request/issues/3142
     requiresBuild: true
@@ -6664,7 +6664,7 @@ packages:
     dev: false
 
   /source-map@0.5.7:
-    resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
+    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
     engines: {node: '>=0.10.0'}
     requiresBuild: true
     dev: false
