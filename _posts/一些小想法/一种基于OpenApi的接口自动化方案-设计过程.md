@@ -5,7 +5,7 @@ title: 一种基于OpenApi的接口自动化方案-设计过程
 
 > 软件开发，因为系统复杂性提升，模块拆分也很普遍，很难形成一个团队做端到端交付，没有任何外部依赖。典型场景是模块 A 由一个团队 1 开发，模块 B 由团队 2 开发。这时，团队 A 的功能开发完成后必须要和团队 B 开发的相应功能联调。目的是走一个端到端的流程，确认功能正确。
 
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_a14d056f17c4736c2e9bd686b62293cc_r.png)
+![](media/m_a14d056f17c4736c2e9bd686b62293cc_r.png)
 
 在前端还原界面的时候，往往要面临两种极端情况，一是数据稀缺，靠谱一点的经典情况，大概率就是：
 
@@ -32,7 +32,7 @@ title: 一种基于OpenApi的接口自动化方案-设计过程
 
 ## 目标
 
-![目标结果](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_9ca9baa9176bc4457ca35da82a14dfb9_r.png)
+![目标结果](media/目标结果.png)
 作为一个 `mock server`,应该做到：
 
 - 自然的输出结果 ✨

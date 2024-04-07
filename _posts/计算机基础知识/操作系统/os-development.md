@@ -16,7 +16,7 @@ date: 2022-09-08 21:30:29
 
 ## 手工操作阶段(纸带机)
 
-![R-S](https://ts1.cn.mm.bing.net/th/id/R-C.6a9ef9f5e1fabc238012f843916fbd2c?rik=avHeSFBhXiM5YQ&riu=http%3a%2f%2fcourseware.eduwest.com%2fcourseware%2f0058%2fcontent%2fpictures%2f0001%2fimage005.jpg&ehk=%2fo9LpDirUco4jDx2BFKbxoyO7fUG8C5rJBX7ySsxdFU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1)
+![R-S](media/R-S.jpg)
 
 - 用户独占主机
 - CPU 资源利用不充分
@@ -30,13 +30,13 @@ date: 2022-09-08 21:30:29
 
 主要使用磁带作为载体,引入了**脱机输入/输出技术**,并由监督程序复杂作业的输入输出.
 
-![单道批处理系统](https://img-blog.csdnimg.cn/20190802142119391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70)
+![单道批处理系统](media/单道批处理系统.png)
 
 ### 主要优点
 
 - 相比于手工接线,能避免这样的信息传输矛盾,资源利用率有所提升
 
-    ![img](https://img2018.cnblogs.com/blog/1358881/201905/1358881-20190531114741026-285335301.png)
+    ![img](media/img.png)
 
 > 这里就相当于人工充当了 I/O 接口,和 DMA
 
@@ -62,13 +62,13 @@ date: 2022-09-08 21:30:29
 
 - 用户响应时间长,没有人机交互功能(用户提交自己的作业之后只能等待计算机处理完成,无法介入控制自己的作业执行.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019080215105153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](media/在这里插入图片描述.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190802151520789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](media/在这里插入图片描述-1.png)
 
-![img](https://pic4.zhimg.com/80/v2-792e1a2379bab12053cde690b4ddd9e7_720w.jpg)
+![img](media/img-1.jpg)
 
-![img](https://pic3.zhimg.com/80/v2-3a0434c865fa2441632523d5aacd0e1e_720w.jpg)
+![img](media/img-2.jpg)
 
 ## 分时操作系统(RR
 
@@ -76,7 +76,7 @@ date: 2022-09-08 21:30:29
 
 这个在后续的 CPU 调度算法中会继续讲到。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019080215301587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5MDE4Mjc3,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](media/在这里插入图片描述-2.png)
 
 ### 主要优点
 

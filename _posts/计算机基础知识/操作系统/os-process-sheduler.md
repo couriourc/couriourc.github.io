@@ -189,7 +189,7 @@ sequenceDiagram
   
 ```
 
-![时间片轮转调度结果](http://c.biancheng.net/uploads/allimg/181106/2-1Q10615295H44.gif)
+![时间片轮转调度结果](media/时间片轮转调度结果.gif)
 
 计算这个调度的平均等待时间,P~1~等待了 $$10-4(从第4ms就开始等待) = 6 ms$$,P~2~等待了 **4ms** ,而 P~3~ 等待了 **7ms** ,因此平均等待时间为 $$ 17/3 \approx 5.66ms$$ .
 
@@ -245,7 +245,7 @@ class addreaddSpace,pc,registry,heap important;
 
 - 保存/恢复页表寄存器
 
-- `TLB`全部失效![img](https://pic4.zhimg.com/80/v2-70f03a91b02fe51cced8cb57fa30d84b_720w.jpg)
+- `TLB`全部失效![img](media/img.jpg)
 
 - `Cache`全部失效，有可能需要 `Cache`回写恢复
 - 新进程运行初期可能缺页不高，需要 `I/O` 操作

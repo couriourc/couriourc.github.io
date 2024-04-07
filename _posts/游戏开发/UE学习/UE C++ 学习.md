@@ -11,7 +11,7 @@ title: UE C++ 学习
 
 ## C++基本的编译流程
 
-![c++生成二进制流程](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_35d4b5347da46d085c505e28c158db15_r.png)
+![c++生成二进制流程](media/c++生成二进制流程.png)
 
 ### 预处理阶段
 如上图所示，C++源码首先会被预处理，在这一步骤中，主要是为了进行一个静态替换，可以理解为编译器帮我们 Replace 了一遍：
@@ -45,12 +45,12 @@ int main (){
  return 0;
 }
 ```
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_1033babb3ac32e8529c55e898877f0ce_r.png)
+![](media/m_1033babb3ac32e8529c55e898877f0ce_r.png)
 先不看 #include 中展开的 #define ,我们直接看 main 函数部分，可以看到这个时候的 `A` 已经变成了 `1`，那这一步我们怎么在 visual studio 进行呢？其实很简单
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_62a130aa1d38e8818a20a3b77d8d4b51_r.png)
+![](media/m_62a130aa1d38e8818a20a3b77d8d4b51_r.png)
 点击或进入配置数学在此处配置，可以选择是否保留注释。
 
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_59d25d675aae1fb833fca9a861c270ea_r.png)
+![](media/m_59d25d675aae1fb833fca9a861c270ea_r.png)
 
 经过静态替换之后，也就是说其实之前还是代码源文件处理的文本阶段（这一步在使用Rust开发的时候感慨颇深😒），经过替换后才进入编译器阶段。
 
@@ -72,15 +72,15 @@ gcc -s hello.c -o hello.s
 
 ## UE 中开启 C++
 首先进入项目，然后在 `Tools>New C++ Class`
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_be157f2bcda5d660e8dfd31c8d64b28e_r.png)
+![](media/m_be157f2bcda5d660e8dfd31c8d64b28e_r.png)
 接着会弹出对话框，选择希望生成的类型模板。这里为了方便，选中 Actor 类型生成，
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_7fbc71a0f4a265e6b6752f3ea95b601e_r.png)
+![](media/m_7fbc71a0f4a265e6b6752f3ea95b601e_r.png)
 
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_4aa4e9f6963fc805255737bd37b9626a_r.png)
+![](media/m_4aa4e9f6963fc805255737bd37b9626a_r.png)
 这有两个值得关注的点，这个之后再描述，本文只是为了简要讲解如何开始一个C++项目，以及看的懂外部C++库引用。创建后，会提示询问是否重新编译，一般选**是**
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_521f70b8671af7fd55be9eb895dddb0e_r.png)
+![](media/m_521f70b8671af7fd55be9eb895dddb0e_r.png)
 之后再次点击 `Tools>Open xx Project`,本文使用的是 `Rider`,
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_cb4c558e698ba807af0a66f86c75a617_r.png)
+![](media/m_cb4c558e698ba807af0a66f86c75a617_r.png)
 值得注意的是，和C++挂钩的环境配置都很麻烦。
 
 |Unreal Engine Version|VS 2019 Version|VS 2022 Version|
@@ -89,10 +89,10 @@ gcc -s hello.c -o hello.s
 |**5.2**|16.11.5 or later|17.4 or later (Default)|
 |**5.1**|16.11.5 or later (Default)|17.4 or later|
 
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_fb9987b2cdb0d44b59df169cd454aeec_r.png)
+![](media/m_fb9987b2cdb0d44b59df169cd454aeec_r.png)
 
 ## 使用C++的Actor
 就和正常创建 Actor 一样，选择蓝图类。
-![](http://cloud.datamatrixai.com:30137/uploads/ue-web/images/m_d9c80903ca032830032735add8677eb2_r.png)
+![](media/m_d9c80903ca032830032735add8677eb2_r.png)
 
 ---待更新
