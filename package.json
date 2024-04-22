@@ -54,7 +54,7 @@
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-plantuml": "^1.4.1",
     "markmap-common": "^0.14.2",
-    "markmap-lib": "^0.14.4",
+    "markmap-lib": "^0.17.0",
     "object-assign": "^4.1.1"
   },
   "devDependencies": {
