@@ -53,7 +53,7 @@
     "lodash.get": "^4.4.2",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-plantuml": "^1.4.1",
-    "markmap-common": "^0.14.2",
+    "markmap-common": "^0.17.0",
     "markmap-lib": "^0.14.4",
     "object-assign": "^4.1.1"
   },
