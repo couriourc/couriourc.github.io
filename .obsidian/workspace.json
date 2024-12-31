@@ -16,7 +16,9 @@
                 "file": "_posts/前端/WebRTC/message-prototol.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "message-prototol"
             }
           },
           {
@@ -28,7 +30,9 @@
                 "file": "_posts/项目中问题记录/一些有的没的技术/音视频保存方案.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "音视频保存方案"
             }
           },
           {
@@ -40,7 +44,9 @@
                 "file": "_posts/游戏开发/UE学习/Task.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Task"
             }
           },
           {
@@ -52,7 +58,9 @@
                 "file": "_posts/游戏开发/UE学习/Task.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Task"
             }
           },
           {
@@ -64,7 +72,9 @@
                 "file": "_posts/一些小想法/一种基于OpenApi的接口自动化方案-设计过程.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "一种基于OpenApi的接口自动化方案-设计过程"
             }
           },
           {
@@ -76,7 +86,9 @@
                 "file": "_posts/计算机基础知识/操作系统/os-process-dead-lock.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "os-process-dead-lock"
             }
           },
           {
@@ -88,7 +100,9 @@
                 "file": "_posts/个人能力提升/英语/vacublary.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "vacublary"
             }
           },
           {
@@ -100,7 +114,9 @@
                 "file": "_posts/游戏开发/UE学习/UE C++ 学习.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "UE C++ 学习"
             }
           },
           {
@@ -112,17 +128,23 @@
                 "file": "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "使用 Git 对UE源码进行版本控制"
             }
           },
           {
             "id": "8bc2871d317cd427",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png"
-              }
+                "file": "_posts/游戏开发/UE学习/UE C++ 学习.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "UE C++ 学习"
             }
           }
         ],
@@ -152,7 +174,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -160,7 +184,9 @@
             "type": "leaf",
             "state": {
               "type": "VIEW_TYPE_LONGFORM_EXPLORER",
-              "state": {}
+              "state": {},
+              "icon": "longform",
+              "title": "Longform"
             }
           },
           {
@@ -168,11 +194,12 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "2491d52ba9182fea",
@@ -186,14 +213,16 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 532
+    "width": 235
   },
   "right": {
     "id": "6b8fa3944049ae75",
@@ -211,7 +240,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -220,7 +251,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png",
+                "file": "_posts/游戏开发/UE学习/UE C++ 学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -228,7 +259,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for UE C++ 学习"
             }
           },
           {
@@ -237,10 +270,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png",
+                "file": "_posts/游戏开发/UE学习/UE C++ 学习.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from UE C++ 学习"
             }
           },
           {
@@ -252,7 +287,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           },
           {
@@ -261,8 +298,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png"
-              }
+                "file": "_posts/游戏开发/UE学习/UE C++ 学习.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of UE C++ 学习"
             }
           },
           {
@@ -270,7 +309,9 @@
             "type": "leaf",
             "state": {
               "type": "mathpad-view",
-              "state": {}
+              "state": {},
+              "icon": "sigma",
+              "title": "Mathpad"
             }
           },
           {
@@ -278,7 +319,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -286,7 +329,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -294,7 +339,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -302,7 +349,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -310,7 +359,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -318,11 +369,33 @@
             "type": "leaf",
             "state": {
               "type": "Saved Queries View",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "2d673f3a72a7a7f8",
+            "type": "leaf",
+            "state": {
+              "type": "mathpad-view",
+              "state": {},
+              "icon": "sigma",
+              "title": "Mathpad"
+            }
+          },
+          {
+            "id": "bdf98ff23e040049",
+            "type": "leaf",
+            "state": {
+              "type": "Saved Queries View",
+              "state": {},
+              "icon": "feather-mouse-pointer",
+              "title": "Saved Queries"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 13
       }
     ],
     "direction": "horizontal",
@@ -341,17 +414,23 @@
       "attachment-manager:Toggle visibility of attachment folder": false,
       "mathpad:Open Mathpad": false,
       "obsidian-full-calendar:Open Full Calendar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "8bc2871d317cd427",
   "lastOpenFiles": [
+    "_posts/游戏开发/UE学习/UE 幸福感提升秘籍.md",
+    "_posts/游戏开发/UE学习/Task.md",
+    "_posts/游戏开发/UE学习/游戏框架.md",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md",
+    "_posts/书单/个人阅读书单及文件.md",
+    "_posts/编程语言/rust/入不了门一点.md",
+    "_posts/编程语言/Python/Python VS Javascript.md",
+    "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401175934373.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401181002380.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180735856.png",
-    "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180645797.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180537802.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180435332.png",
     "_posts/游戏开发/UE学习/使用 Git 对UE源码进行版本控制.md_Attachments/使用 Git 对UE源码进行版本控制-20240401180024295.png",
@@ -362,12 +441,9 @@
     "_posts/个人能力提升/英语/scentence.md",
     "_posts/个人能力提升/英语/prefixer-root.md",
     "_posts/个人能力提升/感悟思考/理想团队.md",
-    "_posts/编程语言/rust/起步入门.md",
-    "_posts/编程语言/Python/Python VS Javascript.md",
     "_posts/前端/前端基础知识/HTML/图片格式总结.md",
     "_posts/前端/前端基础知识/HTML/HTML 基础.md",
     "_posts/前端/前端基础知识/CSS/CSS 选择器.md",
-    "_posts/书单/个人阅读书单及文件.md",
     "_posts/计算机基础知识/操作系统/os-process-dead-lock.md",
     "_posts/书单",
     "_posts/书单/计算机类/程序员修炼之道.pdf",
@@ -383,8 +459,6 @@
     "_posts/技术学习/数据库系统概论/SQL 语法规则.md",
     "_posts/技术学习/数据库系统概论/SQL 函数.md",
     "_posts/技术学习/数据库系统概论/专有名词库.md",
-    "_posts/技术学习/数据库系统概论/关系系统及其查询优化.md",
-    "_posts/技术学习/数据库系统概论/并发控制.md",
     "_posts/一些小想法",
     "_posts/项目中问题记录/monorepo.canvas",
     "_posts/项目中问题记录/过度思考",

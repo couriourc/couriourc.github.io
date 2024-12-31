@@ -6,15 +6,15 @@ title: Task
 
 ## 程序化管道生成
 
-- [ ] [Houdini+UE4 制作线条程序化管道\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Rt411G7EJ/)
-- [ ] [Sina Visitor System](https://weibo.com/3749571965/LupwdCvJO)
-- [ ] [Houdini 程序化通道框架生成(Unity,UE4) - 知乎](https://zhuanlan.zhihu.com/p/53039879)
+- [x] [Houdini+UE4 制作线条程序化管道\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1Rt411G7EJ/)
+- [x] [Sina Visitor System](https://weibo.com/3749571965/LupwdCvJO)
+- [x] [Houdini 程序化通道框架生成(Unity,UE4) - 知乎](https://zhuanlan.zhihu.com/p/53039879)
 
 ```bat
 explorer C:\Users\123\Documents\Unreal Projects\spawnline
 ```
 
-- [ ] [【UE5】虚幻 5 动态水材质教程(一)\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1U94y1Z7Hu/?share_source=copy_web&vd_source=64becc8dd5f04c65092c107c1fe0a5e2)
+- [x] [【UE5】虚幻 5 动态水材质教程(一)\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1U94y1Z7Hu/?share_source=copy_web&vd_source=64becc8dd5f04c65092c107c1fe0a5e2)
 
 ## 点位点击弹出框效果相关思路
 
