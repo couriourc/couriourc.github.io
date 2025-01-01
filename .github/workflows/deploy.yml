@@ -2,7 +2,8 @@
 name: Deploy
 on:
   workflow_dispatch:
-
+  push:
+    branches: [core]
 jobs:
   release:
     permissions:
