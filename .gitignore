@@ -6,3 +6,5 @@ public
 *-lock.yaml
 .idea
 .vscode
+source
+themes/hexo-keep
