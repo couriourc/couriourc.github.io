@@ -39,9 +39,9 @@ jobs:
           target_branch: master
           author: couriourc<godakid@outlook.com>
           build_dir: public
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
         
         
       
